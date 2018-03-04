@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sedML xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.ceng.metu.edu.tr/~e1774785/megamodel/sedml"  level="1" version="1">
+	<listOfSimulations>
+		<uniformTimeCourse id="simulation1" initialTime="0"
+			outputStartTime="0" outputEndTime="1000" numberOfPoints="1000">
+			<algorithm kisaoID="KISAO:0000088" />
+		</uniformTimeCourse>
+		<uniformTimeCourse id="simulation2" initialTime="0"
+			outputStartTime="0" outputEndTime="1000" numberOfPoints="1000">
+			<algorithm kisaoID="KISAO:0000027" />
+		</uniformTimeCourse>
+	</listOfSimulations>
+	<listOfModels>	
+		<model id="model1" name="Repressilator-regular oscillations"
+			language="urn:sedml:language:sbml.level-2.version-3" source="urn:miriam:biomodels.db:BIOMD0000000012" >
+		</model>
+		<model id="model2" name="Damped oscillations"
+			language="urn:sedml:language:sbml.level-2.version-3" source="model1">				
+		</model>
+	</listOfModels>
+	<listOfTasks>
+		<task id="task1" name="Oscillation using a deterministic simulator"
+			modelReference="model1" simulationReference="simulation1" />
+		<task id="task2" name="Damped oscillations using a deterministic simulator"
+			modelReference="model2" simulationReference="simulation1" />
+	</listOfTasks>
+	<listOfDataGenerators>
+		<dataGenerator id="timeDG" name="Time">
+			<listOfVariables>
+				<variable id="Time" taskReference="task1" symbol="urn:sedml:symbol:time" />
+			</listOfVariables>
+		</dataGenerator>
+		<dataGenerator id="LaCI" name="LaCI repressor">
+			<listOfVariables>
+				<variable id="v1" taskReference="task1"
+					target="/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species[@id='PX']" />
+			</listOfVariables>
+		</dataGenerator>
+		<dataGenerator id="TetR" name="TetR repressor">
+			<listOfVariables>
+				<variable id="v2" taskReference="task1"
+					target="/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species[@id='PY']" />
+			</listOfVariables>
+		</dataGenerator>
+		<dataGenerator id="CI" name="CI repressor">
+			<listOfVariables>
+				<variable id="v3" taskReference="task1"
+					target="/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species[@id='PZ']" />
+			</listOfVariables>
+		</dataGenerator>
+		<dataGenerator id="timeDG2" name="Time">
+			<listOfVariables>
+				<variable id="time" taskReference="task2" symbol="urn:sedml:symbol:time" />
+			</listOfVariables>
+		</dataGenerator>
+		<dataGenerator id="LaCIb" name="LaCI repressor">
+			<listOfVariables>
+				<variable id="v1b" taskReference="task2"
+					target="/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species[@id='PX']" />
+			</listOfVariables>
+		</dataGenerator>
+		<dataGenerator id="LacIbNormalizedDG" name=" NormalizedLaCI repressor">
+			<listOfVariables>
+				<variable id="LacIbNormalized" taskReference="task1"
+					target="/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species[@id='PX']" />
+			</listOfVariables>			
+		</dataGenerator>
+		<dataGenerator id="TetRb" name="TetR repressor">
+			<listOfVariables>
+				<variable id="v2b" taskReference="task2"
+					target="/sbml:sbml/sbml:model/sbml:listOfSpecies/sbml:species[@id='PY']" />
+			</listOfVariables>
+		</dataGenerator> 
+	</listOfDataGenerators>
+	<listOfOutputs>
+		
+		<plot2D id="plot1_Basic" name="protein numbers per time point">
+			<listOfCurves>
+				<curve id="c1" logX="false" logY="false" xDataReference="timeDG"
+					yDataReference="LaCI" />
+				<curve id="c2" logX="false" logY="false" xDataReference="timeDG"
+					yDataReference="TetR" />
+				<curve id="c3" logX="false" logY="false" xDataReference="timeDG"
+					yDataReference="CI" />
+			</listOfCurves>
+		</plot2D>
+	
+		<plot2D id="plot2_damped_oscillations"
+			name="protein numbers per time point - damped oscillations">
+			<listOfCurves>
+				<curve id="c4" logX="false" logY="false" xDataReference="timeDG2"
+					yDataReference="LaCIb" />
+				<curve id="c5" logX="false" logY="false" xDataReference="timeDG2"
+					yDataReference="TetRb" />
+				<curve id="c6" logX="false" logY="false" xDataReference="timeDG2"
+					yDataReference="CIb" />
+			</listOfCurves>
+		</plot2D>
+		
+		<plot2D id="plot3_normalized_protein_levels" name="Normalized Plot">
+			<listOfCurves>
+				<curve id="c7" logX="false" logY="false" xDataReference="LacIbNormalizedDG"
+					yDataReference="TetRNormalizedDG" />
+				<curve id="c8" logX="false" logY="false" xDataReference="TetRNormalizedDG"
+					yDataReference="CIb_normalizedDG" />
+				<curve id="c9" logX="false" logY="false" xDataReference="CIb_normalizedDG"
+					yDataReference="LacIbNormalizedDG" />
+			</listOfCurves>
+		</plot2D>
+	</listOfOutputs>
+</sedML>
+

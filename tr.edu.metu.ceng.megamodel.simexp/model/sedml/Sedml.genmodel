@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/tr.edu.metu.ceng.megamodel.simexp/src" modelPluginID="tr.edu.metu.ceng.megamodel.simexp"
+    modelName="Sedml" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>Sedml.ecore</foreignModel>
+  <genPackages prefix="Sedml" disposableProviderFactory="true" ecorePackage="Sedml.ecore#/">
+    <genClasses ecoreClass="Sedml.ecore#//sedML">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//sedML/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//sedML/level"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//sedML/listOfSimulations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//sedML/listOfModels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//sedML/listOfTasks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//sedML/listOfDataGenerators"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//sedML/listOfOutputs"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//listOfSimulations">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//listOfSimulations/uniformTimeCourse"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//listOfModels">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//listOfModels/model"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//listOfTasks">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//listOfTasks/task"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//listOfDataGenerators">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//listOfDataGenerators/dataGenerator"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//listOfOutputs">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//listOfOutputs/plot2D"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//uniformTimeCourse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//uniformTimeCourse/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//uniformTimeCourse/initialTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//uniformTimeCourse/outputStartTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//uniformTimeCourse/outputEndTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//uniformTimeCourse/numberOfPoints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//uniformTimeCourse/algorithm"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//algorithm">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//algorithm/kisaoID"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//model/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//model/language"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//model/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//model/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//task/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sedml.ecore#//task/modelReference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sedml.ecore#//task/simulationReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//task/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//plot2D">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//plot2D/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//plot2D/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sedml.ecore#//plot2D/listOfCurves"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//listOfCurves">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//listOfCurves/curve"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//curve">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//curve/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//curve/logX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//curve/logY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//curve/xDataReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//curve/yDataReference"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//dataGenerator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//dataGenerator/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//dataGenerator/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//dataGenerator/listOfVariables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//dataGenerator/math"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//listOfVariables">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//listOfVariables/variable"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//variable/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//variable/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Sedml.ecore#//variable/taskReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//variable/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//math">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//math/xlms"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
