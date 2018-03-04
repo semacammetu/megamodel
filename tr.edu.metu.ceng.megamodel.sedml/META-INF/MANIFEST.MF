@@ -29,8 +29,5 @@ Export-Package: tr.edu.metu.ceng.megamodel.sedml.validation,
  tr.edu.metu.ceng.megamodel.sedml.parser.antlr,
  tr.edu.metu.ceng.megamodel.sedml.serializer,
  tr.edu.metu.ceng.megamodel.sedml.generator,
- tr.edu.metu.ceng.megamodel.sedml.sedml.impl,
- sedml,
- sedml.impl,
- sedml.util
+ tr.edu.metu.ceng.megamodel.sedml.sedml.impl
 Import-Package: org.apache.log4j
