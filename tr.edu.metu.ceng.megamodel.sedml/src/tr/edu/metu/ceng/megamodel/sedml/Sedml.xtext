@@ -13,10 +13,33 @@ listOfModels:
 
 model:
 	'model' '{'
-	'id' ':' (id=STRING)
+	'id' ':' (id=ID)
 	'language' ':' (language=STRING)
 	'source' ':' (source=STRING)
 	'name' ':' (name=STRING)
+	'}';
+	
+	
+dataGenerator:
+	'dataGenerator' '{'
+	'id' ':' (id=ID)
+	'name' ':' (name=STRING)
+	(listOfVariables=listOfVariables)?
+	(math=math)?
+	'}';
+	
+listOfVariables:
+	'listOfDataVariables' 
+	'{'
+	(variable+=variable)*
+	'}';
+
+variable:
+	'variable' '{'
+	'id' ':' (id=ID)
+	'target' ':' (target=STRING)
+	'taskReference' ':' (taskReference=task)
+	'symbol' ':' (symbol=STRING)
 	'}';
 
 listOfTasks:
@@ -27,7 +50,7 @@ listOfTasks:
 
 task:
 	'task' '{'
-	'id' ':' (id=STRING)
+	'id' ':' (id=ID)
 	'modelReference' ':' (modelReference=model)
 	'simulationReference' ':' (simulationReference=uniformTimeCourse)
 	'name' ':' (name=STRING)
@@ -39,27 +62,6 @@ listOfDataGenerators:
 	(datagenerator+=dataGenerator)*
 	'}';
 
-dataGenerator:
-	'dataGenerator' '{'
-	'id' ':' (id=STRING)
-	(listOfVariables=listOfVariables)
-	(math=math)
-	'name' ':' (name=STRING)
-	'}';
-	
-listOfVariables:
-	'listOfDataVariables' 
-	'{'
-	(variable+=variable)*
-	'}';
-
-variable:
-	'variable' '{'
-	'id' ':' (id=STRING)
-	'target' ':' (target=STRING)
-	'taskReference' ':' (taskReference=task)
-	'symbol' ':' (symbol=STRING)
-	'}';
 
 math:
 	'math' '{'
@@ -74,7 +76,7 @@ listOfOutputs:
 
 plot2D:
 	'plot2D' '{'
-	'id' ':' (id=STRING)
+	'id' ':' (id=ID)
 	'name' ':' (name=STRING)
 	(listOfCurves=listOfCurves)	
 	'}';
@@ -87,7 +89,7 @@ listOfCurves:
 
 curve:
 	'curve' '{'
-	'id' ':' (id=STRING)
+	'id' ':' (id=ID)
 	'logX' ':' (logX=STRING)
 	'logY' ':' (logY=STRING)
 	'xDataReference' ':' (xDataReference=STRING)
@@ -102,7 +104,7 @@ listOfSimulations:
 
 uniformTimeCourse:
 	'uniformtimecourse' '{'
-	'id' ':' (id=STRING)
+	'id' ':' (id=ID)
 	'initialTime' ':' (initialTime=INT)
 	'outputStartTime' ':' (outputStartTime=INT)
 	'outputEndTime' ':' (outputEndTime=INT)

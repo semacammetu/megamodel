@@ -127,7 +127,7 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     curve returns curve
 	 *
 	 * Constraint:
-	 *     (id=STRING logX=STRING logY=STRING xDataReference=STRING yDataReference=STRING)
+	 *     (id=ID logX=STRING logY=STRING xDataReference=STRING yDataReference=STRING)
 	 */
 	protected void sequence_curve(ISerializationContext context, curve semanticObject) {
 		if (errorAcceptor != null) {
@@ -143,7 +143,7 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.CURVE__YDATA_REFERENCE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCurveAccess().getIdSTRINGTerminalRuleCall_4_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getCurveAccess().getIdIDTerminalRuleCall_4_0(), semanticObject.getId());
 		feeder.accept(grammarAccess.getCurveAccess().getLogXSTRINGTerminalRuleCall_7_0(), semanticObject.getLogX());
 		feeder.accept(grammarAccess.getCurveAccess().getLogYSTRINGTerminalRuleCall_10_0(), semanticObject.getLogY());
 		feeder.accept(grammarAccess.getCurveAccess().getXDataReferenceSTRINGTerminalRuleCall_13_0(), semanticObject.getXDataReference());
@@ -157,25 +157,10 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     dataGenerator returns dataGenerator
 	 *
 	 * Constraint:
-	 *     (id=STRING listOfVariables=listOfVariables math=math name=STRING)
+	 *     (id=ID name=STRING listOfVariables=listOfVariables? math=math?)
 	 */
 	protected void sequence_dataGenerator(ISerializationContext context, dataGenerator semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SedmlPackage.Literals.DATA_GENERATOR__ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.DATA_GENERATOR__ID));
-			if (transientValues.isValueTransient(semanticObject, SedmlPackage.Literals.DATA_GENERATOR__LIST_OF_VARIABLES) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.DATA_GENERATOR__LIST_OF_VARIABLES));
-			if (transientValues.isValueTransient(semanticObject, SedmlPackage.Literals.DATA_GENERATOR__MATH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.DATA_GENERATOR__MATH));
-			if (transientValues.isValueTransient(semanticObject, SedmlPackage.Literals.DATA_GENERATOR__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.DATA_GENERATOR__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDataGeneratorAccess().getIdSTRINGTerminalRuleCall_4_0(), semanticObject.getId());
-		feeder.accept(grammarAccess.getDataGeneratorAccess().getListOfVariablesListOfVariablesParserRuleCall_5_0(), semanticObject.getListOfVariables());
-		feeder.accept(grammarAccess.getDataGeneratorAccess().getMathMathParserRuleCall_6_0(), semanticObject.getMath());
-		feeder.accept(grammarAccess.getDataGeneratorAccess().getNameSTRINGTerminalRuleCall_9_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -286,7 +271,7 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     model returns model
 	 *
 	 * Constraint:
-	 *     (id=STRING language=STRING source=STRING name=STRING)
+	 *     (id=ID language=STRING source=STRING name=STRING)
 	 */
 	protected void sequence_model(ISerializationContext context, model semanticObject) {
 		if (errorAcceptor != null) {
@@ -300,7 +285,7 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.MODEL__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getModelAccess().getIdSTRINGTerminalRuleCall_4_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getModelAccess().getIdIDTerminalRuleCall_4_0(), semanticObject.getId());
 		feeder.accept(grammarAccess.getModelAccess().getLanguageSTRINGTerminalRuleCall_7_0(), semanticObject.getLanguage());
 		feeder.accept(grammarAccess.getModelAccess().getSourceSTRINGTerminalRuleCall_10_0(), semanticObject.getSource());
 		feeder.accept(grammarAccess.getModelAccess().getNameSTRINGTerminalRuleCall_13_0(), semanticObject.getName());
@@ -313,7 +298,7 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     plot2D returns plot2D
 	 *
 	 * Constraint:
-	 *     (id=STRING name=STRING listOfCurves=listOfCurves)
+	 *     (id=ID name=STRING listOfCurves=listOfCurves)
 	 */
 	protected void sequence_plot2D(ISerializationContext context, plot2D semanticObject) {
 		if (errorAcceptor != null) {
@@ -325,7 +310,7 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.PLOT2_D__LIST_OF_CURVES));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPlot2DAccess().getIdSTRINGTerminalRuleCall_4_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getPlot2DAccess().getIdIDTerminalRuleCall_4_0(), semanticObject.getId());
 		feeder.accept(grammarAccess.getPlot2DAccess().getNameSTRINGTerminalRuleCall_7_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getPlot2DAccess().getListOfCurvesListOfCurvesParserRuleCall_8_0(), semanticObject.getListOfCurves());
 		feeder.finish();
@@ -381,7 +366,7 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     task returns task
 	 *
 	 * Constraint:
-	 *     (id=STRING modelReference=model simulationReference=uniformTimeCourse name=STRING)
+	 *     (id=ID modelReference=model simulationReference=uniformTimeCourse name=STRING)
 	 */
 	protected void sequence_task(ISerializationContext context, task semanticObject) {
 		if (errorAcceptor != null) {
@@ -395,7 +380,7 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.TASK__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTaskAccess().getIdSTRINGTerminalRuleCall_4_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getTaskAccess().getIdIDTerminalRuleCall_4_0(), semanticObject.getId());
 		feeder.accept(grammarAccess.getTaskAccess().getModelReferenceModelParserRuleCall_7_0(), semanticObject.getModelReference());
 		feeder.accept(grammarAccess.getTaskAccess().getSimulationReferenceUniformTimeCourseParserRuleCall_10_0(), semanticObject.getSimulationReference());
 		feeder.accept(grammarAccess.getTaskAccess().getNameSTRINGTerminalRuleCall_13_0(), semanticObject.getName());
@@ -409,7 +394,7 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
-	 *         id=STRING 
+	 *         id=ID 
 	 *         initialTime=INT 
 	 *         outputStartTime=INT 
 	 *         outputEndTime=INT 
@@ -433,7 +418,7 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.UNIFORM_TIME_COURSE__ALGORITHM));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getUniformTimeCourseAccess().getIdSTRINGTerminalRuleCall_4_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getUniformTimeCourseAccess().getIdIDTerminalRuleCall_4_0(), semanticObject.getId());
 		feeder.accept(grammarAccess.getUniformTimeCourseAccess().getInitialTimeINTTerminalRuleCall_7_0(), semanticObject.getInitialTime());
 		feeder.accept(grammarAccess.getUniformTimeCourseAccess().getOutputStartTimeINTTerminalRuleCall_10_0(), semanticObject.getOutputStartTime());
 		feeder.accept(grammarAccess.getUniformTimeCourseAccess().getOutputEndTimeINTTerminalRuleCall_13_0(), semanticObject.getOutputEndTime());
@@ -448,7 +433,7 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     variable returns variable
 	 *
 	 * Constraint:
-	 *     (id=STRING target=STRING taskReference=task symbol=STRING)
+	 *     (id=ID target=STRING taskReference=task symbol=STRING)
 	 */
 	protected void sequence_variable(ISerializationContext context, variable semanticObject) {
 		if (errorAcceptor != null) {
@@ -462,7 +447,7 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.VARIABLE__SYMBOL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVariableAccess().getIdSTRINGTerminalRuleCall_4_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getVariableAccess().getIdIDTerminalRuleCall_4_0(), semanticObject.getId());
 		feeder.accept(grammarAccess.getVariableAccess().getTargetSTRINGTerminalRuleCall_7_0(), semanticObject.getTarget());
 		feeder.accept(grammarAccess.getVariableAccess().getTaskReferenceTaskParserRuleCall_10_0(), semanticObject.getTaskReference());
 		feeder.accept(grammarAccess.getVariableAccess().getSymbolSTRINGTerminalRuleCall_13_0(), semanticObject.getSymbol());

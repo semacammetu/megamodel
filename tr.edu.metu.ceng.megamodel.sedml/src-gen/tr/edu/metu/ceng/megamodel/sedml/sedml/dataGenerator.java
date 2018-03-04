@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getId <em>Id</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getName <em>Name</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getListOfVariables <em>List Of Variables</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getMath <em>Math</em>}</li>
- *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getdataGenerator()
@@ -51,6 +51,32 @@ public interface dataGenerator extends EObject
    * @generated
    */
   void setId(String value);
+
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getdataGenerator_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>List Of Variables</b></em>' containment reference.
@@ -103,31 +129,5 @@ public interface dataGenerator extends EObject
    * @generated
    */
   void setMath(math value);
-
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getdataGenerator_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
 
 } // dataGenerator

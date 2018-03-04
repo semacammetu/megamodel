@@ -94,27 +94,6 @@ public class SedmlSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SedmlPackage.LIST_OF_TASKS:
-      {
-        listOfTasks listOfTasks = (listOfTasks)theEObject;
-        T result = caselistOfTasks(listOfTasks);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SedmlPackage.TASK:
-      {
-        task task = (task)theEObject;
-        T result = casetask(task);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SedmlPackage.LIST_OF_DATA_GENERATORS:
-      {
-        listOfDataGenerators listOfDataGenerators = (listOfDataGenerators)theEObject;
-        T result = caselistOfDataGenerators(listOfDataGenerators);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case SedmlPackage.DATA_GENERATOR:
       {
         dataGenerator dataGenerator = (dataGenerator)theEObject;
@@ -133,6 +112,27 @@ public class SedmlSwitch<T> extends Switch<T>
       {
         variable variable = (variable)theEObject;
         T result = casevariable(variable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.LIST_OF_TASKS:
+      {
+        listOfTasks listOfTasks = (listOfTasks)theEObject;
+        T result = caselistOfTasks(listOfTasks);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.TASK:
+      {
+        task task = (task)theEObject;
+        T result = casetask(task);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.LIST_OF_DATA_GENERATORS:
+      {
+        listOfDataGenerators listOfDataGenerators = (listOfDataGenerators)theEObject;
+        T result = caselistOfDataGenerators(listOfDataGenerators);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -245,54 +245,6 @@ public class SedmlSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>list Of Tasks</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>list Of Tasks</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caselistOfTasks(listOfTasks object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>task</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>task</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casetask(task object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>list Of Data Generators</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>list Of Data Generators</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caselistOfDataGenerators(listOfDataGenerators object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>data Generator</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -336,6 +288,54 @@ public class SedmlSwitch<T> extends Switch<T>
    * @generated
    */
   public T casevariable(variable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>list Of Tasks</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>list Of Tasks</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselistOfTasks(listOfTasks object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>task</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>task</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetask(task object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>list Of Data Generators</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>list Of Data Generators</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselistOfDataGenerators(listOfDataGenerators object)
   {
     return null;
   }

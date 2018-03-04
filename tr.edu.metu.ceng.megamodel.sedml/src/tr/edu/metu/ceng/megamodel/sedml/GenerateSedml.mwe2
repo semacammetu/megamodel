@@ -32,13 +32,7 @@ Workflow {
 		language = StandardLanguage {
 			name = "tr.edu.metu.ceng.megamodel.sedml.Sedml"
 			fileExtensions = "sedml"
-			referencedResource = "platform:/resource/tr.edu.metu.ceng.megamodel.simexp/src/outputmodel/sedml.genmodel"
-			
-			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
-
-			formatter = {
-				generateStub = true
-			}
+	
 
 			serializer = {
 				generateStub = false

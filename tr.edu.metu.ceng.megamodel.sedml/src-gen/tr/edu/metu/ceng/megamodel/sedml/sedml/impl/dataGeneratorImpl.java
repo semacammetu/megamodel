@@ -26,9 +26,9 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.math;
  * </p>
  * <ul>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl#getId <em>Id</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl#getName <em>Name</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl#getListOfVariables <em>List Of Variables</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl#getMath <em>Math</em>}</li>
- *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,26 +56,6 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
   protected String id = ID_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getListOfVariables() <em>List Of Variables</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getListOfVariables()
-   * @generated
-   * @ordered
-   */
-  protected listOfVariables listOfVariables;
-
-  /**
-   * The cached value of the '{@link #getMath() <em>Math</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMath()
-   * @generated
-   * @ordered
-   */
-  protected math math;
-
-  /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,6 +74,26 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getListOfVariables() <em>List Of Variables</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getListOfVariables()
+   * @generated
+   * @ordered
+   */
+  protected listOfVariables listOfVariables;
+
+  /**
+   * The cached value of the '{@link #getMath() <em>Math</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMath()
+   * @generated
+   * @ordered
+   */
+  protected math math;
 
   /**
    * <!-- begin-user-doc -->
@@ -137,6 +137,29 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
     id = newId;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SedmlPackage.DATA_GENERATOR__ID, oldId, id));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SedmlPackage.DATA_GENERATOR__NAME, oldName, name));
   }
 
   /**
@@ -240,29 +263,6 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SedmlPackage.DATA_GENERATOR__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -288,12 +288,12 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
     {
       case SedmlPackage.DATA_GENERATOR__ID:
         return getId();
+      case SedmlPackage.DATA_GENERATOR__NAME:
+        return getName();
       case SedmlPackage.DATA_GENERATOR__LIST_OF_VARIABLES:
         return getListOfVariables();
       case SedmlPackage.DATA_GENERATOR__MATH:
         return getMath();
-      case SedmlPackage.DATA_GENERATOR__NAME:
-        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -311,14 +311,14 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
       case SedmlPackage.DATA_GENERATOR__ID:
         setId((String)newValue);
         return;
+      case SedmlPackage.DATA_GENERATOR__NAME:
+        setName((String)newValue);
+        return;
       case SedmlPackage.DATA_GENERATOR__LIST_OF_VARIABLES:
         setListOfVariables((listOfVariables)newValue);
         return;
       case SedmlPackage.DATA_GENERATOR__MATH:
         setMath((math)newValue);
-        return;
-      case SedmlPackage.DATA_GENERATOR__NAME:
-        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -337,14 +337,14 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
       case SedmlPackage.DATA_GENERATOR__ID:
         setId(ID_EDEFAULT);
         return;
+      case SedmlPackage.DATA_GENERATOR__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case SedmlPackage.DATA_GENERATOR__LIST_OF_VARIABLES:
         setListOfVariables((listOfVariables)null);
         return;
       case SedmlPackage.DATA_GENERATOR__MATH:
         setMath((math)null);
-        return;
-      case SedmlPackage.DATA_GENERATOR__NAME:
-        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -362,12 +362,12 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
     {
       case SedmlPackage.DATA_GENERATOR__ID:
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case SedmlPackage.DATA_GENERATOR__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SedmlPackage.DATA_GENERATOR__LIST_OF_VARIABLES:
         return listOfVariables != null;
       case SedmlPackage.DATA_GENERATOR__MATH:
         return math != null;
-      case SedmlPackage.DATA_GENERATOR__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }

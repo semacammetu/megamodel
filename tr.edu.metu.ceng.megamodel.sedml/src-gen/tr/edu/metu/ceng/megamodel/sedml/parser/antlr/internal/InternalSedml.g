@@ -294,9 +294,9 @@ rulemodel returns [EObject current=null]
 		}
 		(
 			(
-				lv_id_4_0=RULE_STRING
+				lv_id_4_0=RULE_ID
 				{
-					newLeafNode(lv_id_4_0, grammarAccess.getModelAccess().getIdSTRINGTerminalRuleCall_4_0());
+					newLeafNode(lv_id_4_0, grammarAccess.getModelAccess().getIdIDTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -306,7 +306,7 @@ rulemodel returns [EObject current=null]
 						$current,
 						"id",
 						lv_id_4_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -395,6 +395,313 @@ rulemodel returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuledataGenerator
+entryRuledataGenerator returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDataGeneratorRule()); }
+	iv_ruledataGenerator=ruledataGenerator
+	{ $current=$iv_ruledataGenerator.current; }
+	EOF;
+
+// Rule dataGenerator
+ruledataGenerator returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='dataGenerator'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getDataGeneratorAccess().getDataGeneratorKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getDataGeneratorAccess().getLeftCurlyBracketKeyword_1());
+		}
+		otherlv_2='id'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getDataGeneratorAccess().getIdKeyword_2());
+		}
+		otherlv_3=':'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getDataGeneratorAccess().getColonKeyword_3());
+		}
+		(
+			(
+				lv_id_4_0=RULE_ID
+				{
+					newLeafNode(lv_id_4_0, grammarAccess.getDataGeneratorAccess().getIdIDTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDataGeneratorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"id",
+						lv_id_4_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_5='name'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getDataGeneratorAccess().getNameKeyword_5());
+		}
+		otherlv_6=':'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getDataGeneratorAccess().getColonKeyword_6());
+		}
+		(
+			(
+				lv_name_7_0=RULE_STRING
+				{
+					newLeafNode(lv_name_7_0, grammarAccess.getDataGeneratorAccess().getNameSTRINGTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDataGeneratorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_7_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDataGeneratorAccess().getListOfVariablesListOfVariablesParserRuleCall_8_0());
+				}
+				lv_listOfVariables_8_0=rulelistOfVariables
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDataGeneratorRule());
+					}
+					set(
+						$current,
+						"listOfVariables",
+						lv_listOfVariables_8_0,
+						"tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfVariables");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDataGeneratorAccess().getMathMathParserRuleCall_9_0());
+				}
+				lv_math_9_0=rulemath
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDataGeneratorRule());
+					}
+					set(
+						$current,
+						"math",
+						lv_math_9_0,
+						"tr.edu.metu.ceng.megamodel.sedml.Sedml.math");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		otherlv_10='}'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getDataGeneratorAccess().getRightCurlyBracketKeyword_10());
+		}
+	)
+;
+
+// Entry rule entryRulelistOfVariables
+entryRulelistOfVariables returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getListOfVariablesRule()); }
+	iv_rulelistOfVariables=rulelistOfVariables
+	{ $current=$iv_rulelistOfVariables.current; }
+	EOF;
+
+// Rule listOfVariables
+rulelistOfVariables returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='listOfDataVariables'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getListOfVariablesAccess().getListOfDataVariablesKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getListOfVariablesAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getListOfVariablesAccess().getVariableVariableParserRuleCall_2_0());
+				}
+				lv_variable_2_0=rulevariable
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getListOfVariablesRule());
+					}
+					add(
+						$current,
+						"variable",
+						lv_variable_2_0,
+						"tr.edu.metu.ceng.megamodel.sedml.Sedml.variable");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_3='}'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getListOfVariablesAccess().getRightCurlyBracketKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRulevariable
+entryRulevariable returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVariableRule()); }
+	iv_rulevariable=rulevariable
+	{ $current=$iv_rulevariable.current; }
+	EOF;
+
+// Rule variable
+rulevariable returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='variable'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getVariableAccess().getVariableKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getVariableAccess().getLeftCurlyBracketKeyword_1());
+		}
+		otherlv_2='id'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getVariableAccess().getIdKeyword_2());
+		}
+		otherlv_3=':'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getVariableAccess().getColonKeyword_3());
+		}
+		(
+			(
+				lv_id_4_0=RULE_ID
+				{
+					newLeafNode(lv_id_4_0, grammarAccess.getVariableAccess().getIdIDTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVariableRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"id",
+						lv_id_4_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_5='target'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getVariableAccess().getTargetKeyword_5());
+		}
+		otherlv_6=':'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getVariableAccess().getColonKeyword_6());
+		}
+		(
+			(
+				lv_target_7_0=RULE_STRING
+				{
+					newLeafNode(lv_target_7_0, grammarAccess.getVariableAccess().getTargetSTRINGTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVariableRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"target",
+						lv_target_7_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_8='taskReference'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getVariableAccess().getTaskReferenceKeyword_8());
+		}
+		otherlv_9=':'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getVariableAccess().getColonKeyword_9());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getVariableAccess().getTaskReferenceTaskParserRuleCall_10_0());
+				}
+				lv_taskReference_10_0=ruletask
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getVariableRule());
+					}
+					set(
+						$current,
+						"taskReference",
+						lv_taskReference_10_0,
+						"tr.edu.metu.ceng.megamodel.sedml.Sedml.task");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_11='symbol'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getVariableAccess().getSymbolKeyword_11());
+		}
+		otherlv_12=':'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getVariableAccess().getColonKeyword_12());
+		}
+		(
+			(
+				lv_symbol_13_0=RULE_STRING
+				{
+					newLeafNode(lv_symbol_13_0, grammarAccess.getVariableAccess().getSymbolSTRINGTerminalRuleCall_13_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVariableRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"symbol",
+						lv_symbol_13_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_14='}'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getVariableAccess().getRightCurlyBracketKeyword_14());
+		}
+	)
+;
+
 // Entry rule entryRulelistOfTasks
 entryRulelistOfTasks returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getListOfTasksRule()); }
@@ -479,9 +786,9 @@ ruletask returns [EObject current=null]
 		}
 		(
 			(
-				lv_id_4_0=RULE_STRING
+				lv_id_4_0=RULE_ID
 				{
-					newLeafNode(lv_id_4_0, grammarAccess.getTaskAccess().getIdSTRINGTerminalRuleCall_4_0());
+					newLeafNode(lv_id_4_0, grammarAccess.getTaskAccess().getIdIDTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -491,7 +798,7 @@ ruletask returns [EObject current=null]
 						$current,
 						"id",
 						lv_id_4_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -628,313 +935,6 @@ rulelistOfDataGenerators returns [EObject current=null]
 		otherlv_3='}'
 		{
 			newLeafNode(otherlv_3, grammarAccess.getListOfDataGeneratorsAccess().getRightCurlyBracketKeyword_3());
-		}
-	)
-;
-
-// Entry rule entryRuledataGenerator
-entryRuledataGenerator returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getDataGeneratorRule()); }
-	iv_ruledataGenerator=ruledataGenerator
-	{ $current=$iv_ruledataGenerator.current; }
-	EOF;
-
-// Rule dataGenerator
-ruledataGenerator returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='dataGenerator'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getDataGeneratorAccess().getDataGeneratorKeyword_0());
-		}
-		otherlv_1='{'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getDataGeneratorAccess().getLeftCurlyBracketKeyword_1());
-		}
-		otherlv_2='id'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getDataGeneratorAccess().getIdKeyword_2());
-		}
-		otherlv_3=':'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getDataGeneratorAccess().getColonKeyword_3());
-		}
-		(
-			(
-				lv_id_4_0=RULE_STRING
-				{
-					newLeafNode(lv_id_4_0, grammarAccess.getDataGeneratorAccess().getIdSTRINGTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDataGeneratorRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"id",
-						lv_id_4_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getDataGeneratorAccess().getListOfVariablesListOfVariablesParserRuleCall_5_0());
-				}
-				lv_listOfVariables_5_0=rulelistOfVariables
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDataGeneratorRule());
-					}
-					set(
-						$current,
-						"listOfVariables",
-						lv_listOfVariables_5_0,
-						"tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfVariables");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getDataGeneratorAccess().getMathMathParserRuleCall_6_0());
-				}
-				lv_math_6_0=rulemath
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDataGeneratorRule());
-					}
-					set(
-						$current,
-						"math",
-						lv_math_6_0,
-						"tr.edu.metu.ceng.megamodel.sedml.Sedml.math");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_7='name'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getDataGeneratorAccess().getNameKeyword_7());
-		}
-		otherlv_8=':'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getDataGeneratorAccess().getColonKeyword_8());
-		}
-		(
-			(
-				lv_name_9_0=RULE_STRING
-				{
-					newLeafNode(lv_name_9_0, grammarAccess.getDataGeneratorAccess().getNameSTRINGTerminalRuleCall_9_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDataGeneratorRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_9_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_10='}'
-		{
-			newLeafNode(otherlv_10, grammarAccess.getDataGeneratorAccess().getRightCurlyBracketKeyword_10());
-		}
-	)
-;
-
-// Entry rule entryRulelistOfVariables
-entryRulelistOfVariables returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getListOfVariablesRule()); }
-	iv_rulelistOfVariables=rulelistOfVariables
-	{ $current=$iv_rulelistOfVariables.current; }
-	EOF;
-
-// Rule listOfVariables
-rulelistOfVariables returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='listOfDataVariables'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getListOfVariablesAccess().getListOfDataVariablesKeyword_0());
-		}
-		otherlv_1='{'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getListOfVariablesAccess().getLeftCurlyBracketKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getListOfVariablesAccess().getVariableVariableParserRuleCall_2_0());
-				}
-				lv_variable_2_0=rulevariable
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getListOfVariablesRule());
-					}
-					add(
-						$current,
-						"variable",
-						lv_variable_2_0,
-						"tr.edu.metu.ceng.megamodel.sedml.Sedml.variable");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_3='}'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getListOfVariablesAccess().getRightCurlyBracketKeyword_3());
-		}
-	)
-;
-
-// Entry rule entryRulevariable
-entryRulevariable returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getVariableRule()); }
-	iv_rulevariable=rulevariable
-	{ $current=$iv_rulevariable.current; }
-	EOF;
-
-// Rule variable
-rulevariable returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='variable'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getVariableAccess().getVariableKeyword_0());
-		}
-		otherlv_1='{'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getVariableAccess().getLeftCurlyBracketKeyword_1());
-		}
-		otherlv_2='id'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getVariableAccess().getIdKeyword_2());
-		}
-		otherlv_3=':'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getVariableAccess().getColonKeyword_3());
-		}
-		(
-			(
-				lv_id_4_0=RULE_STRING
-				{
-					newLeafNode(lv_id_4_0, grammarAccess.getVariableAccess().getIdSTRINGTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVariableRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"id",
-						lv_id_4_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_5='target'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getVariableAccess().getTargetKeyword_5());
-		}
-		otherlv_6=':'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getVariableAccess().getColonKeyword_6());
-		}
-		(
-			(
-				lv_target_7_0=RULE_STRING
-				{
-					newLeafNode(lv_target_7_0, grammarAccess.getVariableAccess().getTargetSTRINGTerminalRuleCall_7_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVariableRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"target",
-						lv_target_7_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_8='taskReference'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getVariableAccess().getTaskReferenceKeyword_8());
-		}
-		otherlv_9=':'
-		{
-			newLeafNode(otherlv_9, grammarAccess.getVariableAccess().getColonKeyword_9());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getVariableAccess().getTaskReferenceTaskParserRuleCall_10_0());
-				}
-				lv_taskReference_10_0=ruletask
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getVariableRule());
-					}
-					set(
-						$current,
-						"taskReference",
-						lv_taskReference_10_0,
-						"tr.edu.metu.ceng.megamodel.sedml.Sedml.task");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_11='symbol'
-		{
-			newLeafNode(otherlv_11, grammarAccess.getVariableAccess().getSymbolKeyword_11());
-		}
-		otherlv_12=':'
-		{
-			newLeafNode(otherlv_12, grammarAccess.getVariableAccess().getColonKeyword_12());
-		}
-		(
-			(
-				lv_symbol_13_0=RULE_STRING
-				{
-					newLeafNode(lv_symbol_13_0, grammarAccess.getVariableAccess().getSymbolSTRINGTerminalRuleCall_13_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVariableRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"symbol",
-						lv_symbol_13_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_14='}'
-		{
-			newLeafNode(otherlv_14, grammarAccess.getVariableAccess().getRightCurlyBracketKeyword_14());
 		}
 	)
 ;
@@ -1080,9 +1080,9 @@ ruleplot2D returns [EObject current=null]
 		}
 		(
 			(
-				lv_id_4_0=RULE_STRING
+				lv_id_4_0=RULE_ID
 				{
-					newLeafNode(lv_id_4_0, grammarAccess.getPlot2DAccess().getIdSTRINGTerminalRuleCall_4_0());
+					newLeafNode(lv_id_4_0, grammarAccess.getPlot2DAccess().getIdIDTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -1092,7 +1092,7 @@ ruleplot2D returns [EObject current=null]
 						$current,
 						"id",
 						lv_id_4_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -1232,9 +1232,9 @@ rulecurve returns [EObject current=null]
 		}
 		(
 			(
-				lv_id_4_0=RULE_STRING
+				lv_id_4_0=RULE_ID
 				{
-					newLeafNode(lv_id_4_0, grammarAccess.getCurveAccess().getIdSTRINGTerminalRuleCall_4_0());
+					newLeafNode(lv_id_4_0, grammarAccess.getCurveAccess().getIdIDTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -1244,7 +1244,7 @@ rulecurve returns [EObject current=null]
 						$current,
 						"id",
 						lv_id_4_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -1443,9 +1443,9 @@ ruleuniformTimeCourse returns [EObject current=null]
 		}
 		(
 			(
-				lv_id_4_0=RULE_STRING
+				lv_id_4_0=RULE_ID
 				{
-					newLeafNode(lv_id_4_0, grammarAccess.getUniformTimeCourseAccess().getIdSTRINGTerminalRuleCall_4_0());
+					newLeafNode(lv_id_4_0, grammarAccess.getUniformTimeCourseAccess().getIdIDTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -1455,7 +1455,7 @@ ruleuniformTimeCourse returns [EObject current=null]
 						$current,
 						"id",
 						lv_id_4_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)

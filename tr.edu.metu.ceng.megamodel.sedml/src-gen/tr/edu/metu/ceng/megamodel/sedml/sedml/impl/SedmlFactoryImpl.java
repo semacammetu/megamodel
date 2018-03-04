@@ -68,12 +68,12 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
       case SedmlPackage.SED_ML: return createsedML();
       case SedmlPackage.LIST_OF_MODELS: return createlistOfModels();
       case SedmlPackage.MODEL: return createmodel();
-      case SedmlPackage.LIST_OF_TASKS: return createlistOfTasks();
-      case SedmlPackage.TASK: return createtask();
-      case SedmlPackage.LIST_OF_DATA_GENERATORS: return createlistOfDataGenerators();
       case SedmlPackage.DATA_GENERATOR: return createdataGenerator();
       case SedmlPackage.LIST_OF_VARIABLES: return createlistOfVariables();
       case SedmlPackage.VARIABLE: return createvariable();
+      case SedmlPackage.LIST_OF_TASKS: return createlistOfTasks();
+      case SedmlPackage.TASK: return createtask();
+      case SedmlPackage.LIST_OF_DATA_GENERATORS: return createlistOfDataGenerators();
       case SedmlPackage.MATH: return createmath();
       case SedmlPackage.LIST_OF_OUTPUTS: return createlistOfOutputs();
       case SedmlPackage.PLOT2_D: return createplot2D();
@@ -125,39 +125,6 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public listOfTasks createlistOfTasks()
-  {
-    listOfTasksImpl listOfTasks = new listOfTasksImpl();
-    return listOfTasks;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public task createtask()
-  {
-    taskImpl task = new taskImpl();
-    return task;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public listOfDataGenerators createlistOfDataGenerators()
-  {
-    listOfDataGeneratorsImpl listOfDataGenerators = new listOfDataGeneratorsImpl();
-    return listOfDataGenerators;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public dataGenerator createdataGenerator()
   {
     dataGeneratorImpl dataGenerator = new dataGeneratorImpl();
@@ -184,6 +151,39 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
   {
     variableImpl variable = new variableImpl();
     return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public listOfTasks createlistOfTasks()
+  {
+    listOfTasksImpl listOfTasks = new listOfTasksImpl();
+    return listOfTasks;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public task createtask()
+  {
+    taskImpl task = new taskImpl();
+    return task;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public listOfDataGenerators createlistOfDataGenerators()
+  {
+    listOfDataGeneratorsImpl listOfDataGenerators = new listOfDataGeneratorsImpl();
+    return listOfDataGenerators;
   }
 
   /**

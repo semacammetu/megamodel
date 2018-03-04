@@ -83,11 +83,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ModelSection:
-		//	'model' modName=ID '{'
-		//	mechanisms+=Mechanism*
-		//	events+=EventDescriptor*
-		//	parameters+=Factor*
-		//	'}';
+		//	'model' modName=ID '{' mechanisms+=Mechanism* events+=EventDescriptor* parameters+=Factor* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'model' modName=ID '{' mechanisms+=Mechanism* events+=EventDescriptor* parameters+=Factor* '}'
@@ -391,8 +387,8 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7_3 = (Keyword)cGroup_7.eContents().get(3);
 		
 		//Factor:
-		//	'parameter' factorName=ID ' = ' factorType=VariableType? factorType1=ID?
-		//	'with' ('values' '{' factorValue=Values '}')? ('properties' '{' factorProperties+=properties* '}')?;
+		//	'parameter' factorName=ID ' = ' factorType=VariableType? factorType1=ID? 'with' ('values' '{' factorValue=Values
+		//	'}')? ('properties' '{' factorProperties+=properties* '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'parameter' factorName=ID ' = ' factorType=VariableType? factorType1=ID? 'with' ('values' '{' factorValue=Values '}')?
@@ -510,10 +506,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFvalueFactorLevelValueTerminalRuleCall_3_0 = (RuleCall)cFvalueAssignment_3.eContents().get(0);
 		
 		//Values:
-		//	fVal=ID?
-		//	function=STRING?
-		//	value=rangeValue?
-		//	fvalue=factorLevelValue?;
+		//	fVal=ID? function=STRING? value=rangeValue? fvalue=factorLevelValue?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//fVal=ID? function=STRING? value=rangeValue? fvalue=factorLevelValue?
@@ -573,9 +566,8 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
 		
 		//Goals:
-		//	'goal' '{'
-		//	'object' 'of' 'study' ':' objOfStudy=STRING 'purpose' ':' purpose=STRING 'focus' ':' focus=STRING 'view point' ':'
-		//	viewPoint=STRING 'context' ':' context=STRING '}';
+		//	'goal' '{' 'object' 'of' 'study' ':' objOfStudy=STRING 'purpose' ':' purpose=STRING 'focus' ':' focus=STRING
+		//	'view point' ':' viewPoint=STRING 'context' ':' context=STRING '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'goal' '{' 'object' 'of' 'study' ':' objOfStudy=STRING 'purpose' ':' purpose=STRING 'focus' ':' focus=STRING
@@ -692,16 +684,9 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Hypothesis:
-		//	'hypotheses'
-		//	'{' ('mechanistic' 'hypotheses' '{'
-		//	mechHypothesis+=MechHypothesis*
-		//	'}')? ('evidence' '{'
-		//	evidences+=Evidence*
-		//	'}')? ('coherence' 'model' '{'
-		//	coherenceLinks+=CoherenceLink*
-		//	'}')? ('relational' 'hypotheses' '{'
-		//	relHypothesis+=RelationalQuery*
-		//	'}')? '}';
+		//	'hypotheses' '{' ('mechanistic' 'hypotheses' '{' mechHypothesis+=MechHypothesis* '}')? ('evidence' '{'
+		//	evidences+=Evidence* '}')? ('coherence' 'model' '{' coherenceLinks+=CoherenceLink* '}')? ('relational' 'hypotheses'
+		//	'{' relHypothesis+=RelationalQuery* '}')? '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'hypotheses' '{' ('mechanistic' 'hypotheses' '{' mechHypothesis+=MechHypothesis* '}')? ('evidence' '{'
@@ -904,8 +889,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cObjOfStudyRangeValueTerminalRuleCall_6_0 = (RuleCall)cObjOfStudyAssignment_6.eContents().get(0);
 		
 		//Evidence:
-		//	eName=ID ':' query+=TemporalPattern*
-		//	'activation' 'weight' ':' objOfStudy=rangeValue;
+		//	eName=ID ':' query+=TemporalPattern* 'activation' 'weight' ':' objOfStudy=rangeValue;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//eName=ID ':' query+=TemporalPattern* 'activation' 'weight' ':' objOfStudy=rangeValue
@@ -1084,9 +1068,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Simultaneous:
-		//	'['
-		//	sim1=Re (log+=Logical sim2+=Re)*
-		//	']';
+		//	'[' sim1=Re (log+=Logical sim2+=Re)* ']';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'[' sim1=Re (log+=Logical sim2+=Re)* ']'
@@ -1231,9 +1213,8 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEnd2RangeValueTerminalRuleCall_12_3_0 = (RuleCall)cEnd2Assignment_12_3.eContents().get(0);
 		
 		//Query1:
-		//	'if' factor=ID? control=ID? 'is' x=rangeValue?
-		//	'added'? 'removed'? ('in the range' start1=rangeValue 'to' end1=rangeValue)?
-		//	'then' response=ID 'is' y=rangeValue? ('in the range' start2=rangeValue 'to' end2=rangeValue)?;
+		//	'if' factor=ID? control=ID? 'is' x=rangeValue? 'added'? 'removed'? ('in the range' start1=rangeValue 'to'
+		//	end1=rangeValue)? 'then' response=ID 'is' y=rangeValue? ('in the range' start2=rangeValue 'to' end2=rangeValue)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'if' factor=ID? control=ID? 'is' x=rangeValue? 'added'? 'removed'? ('in the range' start1=rangeValue 'to'
@@ -1349,8 +1330,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFactor2IDTerminalRuleCall_7_0 = (RuleCall)cFactor2Assignment_7.eContents().get(0);
 		
 		//Query2:
-		//	'compare' function1=Function? response1=ID? factor1=ID? 'and'
-		//	function2=Function? response2=ID? factor2=ID?;
+		//	'compare' function1=Function? response1=ID? factor1=ID? 'and' function2=Function? response2=ID? factor2=ID?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'compare' function1=Function? response1=ID? factor1=ID? 'and' function2=Function? response2=ID? factor2=ID?
@@ -1449,9 +1429,8 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEnd1RangeValueTerminalRuleCall_5_9_0 = (RuleCall)cEnd1Assignment_5_9.eContents().get(0);
 		
 		//Query3:
-		//	'if' (factor1=ID? control1=ID? 'is' ('at' 'level' Level2=Levels)? x2=rangeValue? 'and'?)*
-		//	'then' (response1=ID 'is' ('at' 'level' Level4=Levels)? x4=rangeValue? 'and'?)*
-		//	'where' (level=Levels 'for' factor=ID? control=ID? response=ID?
+		//	'if' (factor1=ID? control1=ID? 'is' ('at' 'level' Level2=Levels)? x2=rangeValue? 'and'?)* 'then' (response1=ID 'is'
+		//	('at' 'level' Level4=Levels)? x4=rangeValue? 'and'?)* 'where' (level=Levels 'for' factor=ID? control=ID? response=ID?
 		//	'is' 'in the range' start1=rangeValue 'to' end1=rangeValue)*;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1615,8 +1594,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Experiment:
-		//	'experiment' expName=ID '{'
-		//	'design' expDesign=Design 'performance measure' 'is' perfMeasure=PerformanceMeasure '}';
+		//	'experiment' expName=ID '{' 'design' expDesign=Design 'performance measure' 'is' perfMeasure=PerformanceMeasure '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'experiment' expName=ID '{' 'design' expDesign=Design 'performance measure' 'is' perfMeasure=PerformanceMeasure '}'
@@ -1679,9 +1657,8 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Design:
-		//	'{' ('designType' designType=DesignType)? ('constraints' constraint=ID)*
-		//	iteration=Iteration? ('variables' variables=Variables)
-		//	'}';
+		//	'{' ('designType' designType=DesignType)? ('constraints' constraint=ID)* iteration=Iteration? ('variables'
+		//	variables=Variables) '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'{' ('designType' designType=DesignType)? ('constraints' constraint=ID)* iteration=Iteration? ('variables'
@@ -1749,8 +1726,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Variables:
-		//	'{'
-		//	independentVariables=IndependentVariables controlVariables=ControlVariables?
+		//	'{' independentVariables=IndependentVariables controlVariables=ControlVariables?
 		//	dependentVariables=DependentVariables '}';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1793,8 +1769,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//IndependentVariables:
-		//	'independent' 'variables' '{'
-		//	variables+=FactorLevels* '}';
+		//	'independent' 'variables' '{' variables+=FactorLevels* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'independent' 'variables' '{' variables+=FactorLevels* '}'
@@ -1905,8 +1880,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cResponseNameResponseParserRuleCall_3_0 = (RuleCall)cResponseNameAssignment_3.eContents().get(0);
 		
 		//DependentVariables:
-		//	'dependent' 'variables' '{'
-		//	responseName=Response*;
+		//	'dependent' 'variables' '{' responseName=Response*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'dependent' 'variables' '{' responseName=Response*
@@ -2113,8 +2087,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//PerformanceMeasure:
-		//	'{'
-		//	expectedResponse=ID '=' er=rangeValue ' +-' std=rangeValue '}';
+		//	'{' expectedResponse=ID '=' er=rangeValue ' +-' std=rangeValue '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'{' expectedResponse=ID '=' er=rangeValue ' +-' std=rangeValue '}'
@@ -2839,11 +2812,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ModelSection:
-	//	'model' modName=ID '{'
-	//	mechanisms+=Mechanism*
-	//	events+=EventDescriptor*
-	//	parameters+=Factor*
-	//	'}';
+	//	'model' modName=ID '{' mechanisms+=Mechanism* events+=EventDescriptor* parameters+=Factor* '}';
 	public ModelSectionElements getModelSectionAccess() {
 		return pModelSection;
 	}
@@ -2903,8 +2872,8 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Factor:
-	//	'parameter' factorName=ID ' = ' factorType=VariableType? factorType1=ID?
-	//	'with' ('values' '{' factorValue=Values '}')? ('properties' '{' factorProperties+=properties* '}')?;
+	//	'parameter' factorName=ID ' = ' factorType=VariableType? factorType1=ID? 'with' ('values' '{' factorValue=Values
+	//	'}')? ('properties' '{' factorProperties+=properties* '}')?;
 	public FactorElements getFactorAccess() {
 		return pFactor;
 	}
@@ -2934,10 +2903,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Values:
-	//	fVal=ID?
-	//	function=STRING?
-	//	value=rangeValue?
-	//	fvalue=factorLevelValue?;
+	//	fVal=ID? function=STRING? value=rangeValue? fvalue=factorLevelValue?;
 	public ValuesElements getValuesAccess() {
 		return pValues;
 	}
@@ -2959,9 +2925,8 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Goals:
-	//	'goal' '{'
-	//	'object' 'of' 'study' ':' objOfStudy=STRING 'purpose' ':' purpose=STRING 'focus' ':' focus=STRING 'view point' ':'
-	//	viewPoint=STRING 'context' ':' context=STRING '}';
+	//	'goal' '{' 'object' 'of' 'study' ':' objOfStudy=STRING 'purpose' ':' purpose=STRING 'focus' ':' focus=STRING
+	//	'view point' ':' viewPoint=STRING 'context' ':' context=STRING '}';
 	public GoalsElements getGoalsAccess() {
 		return pGoals;
 	}
@@ -2971,16 +2936,9 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Hypothesis:
-	//	'hypotheses'
-	//	'{' ('mechanistic' 'hypotheses' '{'
-	//	mechHypothesis+=MechHypothesis*
-	//	'}')? ('evidence' '{'
-	//	evidences+=Evidence*
-	//	'}')? ('coherence' 'model' '{'
-	//	coherenceLinks+=CoherenceLink*
-	//	'}')? ('relational' 'hypotheses' '{'
-	//	relHypothesis+=RelationalQuery*
-	//	'}')? '}';
+	//	'hypotheses' '{' ('mechanistic' 'hypotheses' '{' mechHypothesis+=MechHypothesis* '}')? ('evidence' '{'
+	//	evidences+=Evidence* '}')? ('coherence' 'model' '{' coherenceLinks+=CoherenceLink* '}')? ('relational' 'hypotheses'
+	//	'{' relHypothesis+=RelationalQuery* '}')? '}';
 	public HypothesisElements getHypothesisAccess() {
 		return pHypothesis;
 	}
@@ -3010,8 +2968,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Evidence:
-	//	eName=ID ':' query+=TemporalPattern*
-	//	'activation' 'weight' ':' objOfStudy=rangeValue;
+	//	eName=ID ':' query+=TemporalPattern* 'activation' 'weight' ':' objOfStudy=rangeValue;
 	public EvidenceElements getEvidenceAccess() {
 		return pEvidence;
 	}
@@ -3051,9 +3008,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Simultaneous:
-	//	'['
-	//	sim1=Re (log+=Logical sim2+=Re)*
-	//	']';
+	//	'[' sim1=Re (log+=Logical sim2+=Re)* ']';
 	public SimultaneousElements getSimultaneousAccess() {
 		return pSimultaneous;
 	}
@@ -3143,9 +3098,8 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Query1:
-	//	'if' factor=ID? control=ID? 'is' x=rangeValue?
-	//	'added'? 'removed'? ('in the range' start1=rangeValue 'to' end1=rangeValue)?
-	//	'then' response=ID 'is' y=rangeValue? ('in the range' start2=rangeValue 'to' end2=rangeValue)?;
+	//	'if' factor=ID? control=ID? 'is' x=rangeValue? 'added'? 'removed'? ('in the range' start1=rangeValue 'to'
+	//	end1=rangeValue)? 'then' response=ID 'is' y=rangeValue? ('in the range' start2=rangeValue 'to' end2=rangeValue)?;
 	public Query1Elements getQuery1Access() {
 		return pQuery1;
 	}
@@ -3155,8 +3109,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Query2:
-	//	'compare' function1=Function? response1=ID? factor1=ID? 'and'
-	//	function2=Function? response2=ID? factor2=ID?;
+	//	'compare' function1=Function? response1=ID? factor1=ID? 'and' function2=Function? response2=ID? factor2=ID?;
 	public Query2Elements getQuery2Access() {
 		return pQuery2;
 	}
@@ -3176,9 +3129,8 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Query3:
-	//	'if' (factor1=ID? control1=ID? 'is' ('at' 'level' Level2=Levels)? x2=rangeValue? 'and'?)*
-	//	'then' (response1=ID 'is' ('at' 'level' Level4=Levels)? x4=rangeValue? 'and'?)*
-	//	'where' (level=Levels 'for' factor=ID? control=ID? response=ID?
+	//	'if' (factor1=ID? control1=ID? 'is' ('at' 'level' Level2=Levels)? x2=rangeValue? 'and'?)* 'then' (response1=ID 'is'
+	//	('at' 'level' Level4=Levels)? x4=rangeValue? 'and'?)* 'where' (level=Levels 'for' factor=ID? control=ID? response=ID?
 	//	'is' 'in the range' start1=rangeValue 'to' end1=rangeValue)*;
 	public Query3Elements getQuery3Access() {
 		return pQuery3;
@@ -3209,8 +3161,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Experiment:
-	//	'experiment' expName=ID '{'
-	//	'design' expDesign=Design 'performance measure' 'is' perfMeasure=PerformanceMeasure '}';
+	//	'experiment' expName=ID '{' 'design' expDesign=Design 'performance measure' 'is' perfMeasure=PerformanceMeasure '}';
 	public ExperimentElements getExperimentAccess() {
 		return pExperiment;
 	}
@@ -3220,9 +3171,8 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Design:
-	//	'{' ('designType' designType=DesignType)? ('constraints' constraint=ID)*
-	//	iteration=Iteration? ('variables' variables=Variables)
-	//	'}';
+	//	'{' ('designType' designType=DesignType)? ('constraints' constraint=ID)* iteration=Iteration? ('variables'
+	//	variables=Variables) '}';
 	public DesignElements getDesignAccess() {
 		return pDesign;
 	}
@@ -3242,8 +3192,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Variables:
-	//	'{'
-	//	independentVariables=IndependentVariables controlVariables=ControlVariables?
+	//	'{' independentVariables=IndependentVariables controlVariables=ControlVariables?
 	//	dependentVariables=DependentVariables '}';
 	public VariablesElements getVariablesAccess() {
 		return pVariables;
@@ -3254,8 +3203,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//IndependentVariables:
-	//	'independent' 'variables' '{'
-	//	variables+=FactorLevels* '}';
+	//	'independent' 'variables' '{' variables+=FactorLevels* '}';
 	public IndependentVariablesElements getIndependentVariablesAccess() {
 		return pIndependentVariables;
 	}
@@ -3276,8 +3224,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//DependentVariables:
-	//	'dependent' 'variables' '{'
-	//	responseName=Response*;
+	//	'dependent' 'variables' '{' responseName=Response*;
 	public DependentVariablesElements getDependentVariablesAccess() {
 		return pDependentVariables;
 	}
@@ -3328,8 +3275,7 @@ public class HypoMethodGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PerformanceMeasure:
-	//	'{'
-	//	expectedResponse=ID '=' er=rangeValue ' +-' std=rangeValue '}';
+	//	'{' expectedResponse=ID '=' er=rangeValue ' +-' std=rangeValue '}';
 	public PerformanceMeasureElements getPerformanceMeasureAccess() {
 		return pPerformanceMeasure;
 	}

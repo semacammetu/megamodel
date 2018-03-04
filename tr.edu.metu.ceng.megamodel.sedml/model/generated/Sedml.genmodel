@@ -24,6 +24,21 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//model/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//model/name"/>
     </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//dataGenerator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//dataGenerator/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//dataGenerator/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//dataGenerator/listOfVariables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//dataGenerator/math"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//listOfVariables">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//listOfVariables/variable"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//variable/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//variable/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//variable/taskReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//variable/symbol"/>
+    </genClasses>
     <genClasses ecoreClass="Sedml.ecore#//listOfTasks">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//listOfTasks/task"/>
     </genClasses>
@@ -35,21 +50,6 @@
     </genClasses>
     <genClasses ecoreClass="Sedml.ecore#//listOfDataGenerators">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//listOfDataGenerators/datagenerator"/>
-    </genClasses>
-    <genClasses ecoreClass="Sedml.ecore#//dataGenerator">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//dataGenerator/id"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//dataGenerator/listOfVariables"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//dataGenerator/math"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//dataGenerator/name"/>
-    </genClasses>
-    <genClasses ecoreClass="Sedml.ecore#//listOfVariables">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//listOfVariables/variable"/>
-    </genClasses>
-    <genClasses ecoreClass="Sedml.ecore#//variable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//variable/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//variable/target"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//variable/taskReference"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//variable/symbol"/>
     </genClasses>
     <genClasses ecoreClass="Sedml.ecore#//math">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//math/xlms"/>

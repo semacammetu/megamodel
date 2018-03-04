@@ -7,4 +7,12 @@
 			class = "tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage"
 			genModel = "model/generated/Sedml.genmodel" />
 	</extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated sedml -->
+      <package
+            uri="http://www.ceng.metu.edu.tr/~e1774785/megamodel/sedml"
+            class="sedml.SedmlPackage"
+            genModel="model/generated/sedml.genmodel"/>
+   </extension>
+
 </plugin>

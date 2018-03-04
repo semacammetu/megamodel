@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSedmlParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'listOfModels'", "'{'", "'}'", "'model'", "'id'", "':'", "'language'", "'source'", "'name'", "'listOfTasks'", "'task'", "'modelReference'", "'simulationReference'", "'listOfDataGenerators'", "'dataGenerator'", "'listOfDataVariables'", "'variable'", "'target'", "'taskReference'", "'symbol'", "'math'", "'xlms'", "'listOfOutputs'", "'plot2D'", "'listOfCurves'", "'curve'", "'logX'", "'logY'", "'xDataReference'", "'yDataReference'", "'listOfSimulations'", "'uniformtimecourse'", "'initialTime'", "'outputStartTime'", "'outputEndTime'", "'numberOfPoints'", "'algorithm'", "'kisaoID'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'listOfModels'", "'{'", "'}'", "'model'", "'id'", "':'", "'language'", "'source'", "'name'", "'dataGenerator'", "'listOfDataVariables'", "'variable'", "'target'", "'taskReference'", "'symbol'", "'listOfTasks'", "'task'", "'modelReference'", "'simulationReference'", "'listOfDataGenerators'", "'math'", "'xlms'", "'listOfOutputs'", "'plot2D'", "'listOfCurves'", "'curve'", "'logX'", "'logY'", "'xDataReference'", "'yDataReference'", "'listOfSimulations'", "'uniformtimecourse'", "'initialTime'", "'outputStartTime'", "'outputEndTime'", "'numberOfPoints'", "'algorithm'", "'kisaoID'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -32,7 +32,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
-    public static final int RULE_ID=6;
+    public static final int RULE_ID=5;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -45,7 +45,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
     public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
-    public static final int RULE_STRING=5;
+    public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__37=37;
     public static final int T__38=38;
@@ -579,7 +579,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulemodel"
-    // InternalSedml.g:271:1: rulemodel returns [EObject current=null] : (otherlv_0= 'model' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'language' otherlv_6= ':' ( (lv_language_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= RULE_STRING ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' ) ;
+    // InternalSedml.g:271:1: rulemodel returns [EObject current=null] : (otherlv_0= 'model' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'language' otherlv_6= ':' ( (lv_language_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= RULE_STRING ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' ) ;
     public final EObject rulemodel() throws RecognitionException {
         EObject current = null;
 
@@ -603,11 +603,11 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSedml.g:277:2: ( (otherlv_0= 'model' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'language' otherlv_6= ':' ( (lv_language_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= RULE_STRING ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' ) )
-            // InternalSedml.g:278:2: (otherlv_0= 'model' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'language' otherlv_6= ':' ( (lv_language_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= RULE_STRING ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' )
+            // InternalSedml.g:277:2: ( (otherlv_0= 'model' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'language' otherlv_6= ':' ( (lv_language_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= RULE_STRING ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' ) )
+            // InternalSedml.g:278:2: (otherlv_0= 'model' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'language' otherlv_6= ':' ( (lv_language_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= RULE_STRING ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' )
             {
-            // InternalSedml.g:278:2: (otherlv_0= 'model' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'language' otherlv_6= ':' ( (lv_language_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= RULE_STRING ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' )
-            // InternalSedml.g:279:3: otherlv_0= 'model' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'language' otherlv_6= ':' ( (lv_language_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= RULE_STRING ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}'
+            // InternalSedml.g:278:2: (otherlv_0= 'model' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'language' otherlv_6= ':' ( (lv_language_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= RULE_STRING ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' )
+            // InternalSedml.g:279:3: otherlv_0= 'model' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'language' otherlv_6= ':' ( (lv_language_7_0= RULE_STRING ) ) otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= RULE_STRING ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}'
             {
             otherlv_0=(Token)match(input,14,FOLLOW_9); 
 
@@ -625,15 +625,15 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getModelAccess().getColonKeyword_3());
             		
-            // InternalSedml.g:295:3: ( (lv_id_4_0= RULE_STRING ) )
-            // InternalSedml.g:296:4: (lv_id_4_0= RULE_STRING )
+            // InternalSedml.g:295:3: ( (lv_id_4_0= RULE_ID ) )
+            // InternalSedml.g:296:4: (lv_id_4_0= RULE_ID )
             {
-            // InternalSedml.g:296:4: (lv_id_4_0= RULE_STRING )
-            // InternalSedml.g:297:5: lv_id_4_0= RULE_STRING
+            // InternalSedml.g:296:4: (lv_id_4_0= RULE_ID )
+            // InternalSedml.g:297:5: lv_id_4_0= RULE_ID
             {
-            lv_id_4_0=(Token)match(input,RULE_STRING,FOLLOW_14); 
+            lv_id_4_0=(Token)match(input,RULE_ID,FOLLOW_14); 
 
-            					newLeafNode(lv_id_4_0, grammarAccess.getModelAccess().getIdSTRINGTerminalRuleCall_4_0());
+            					newLeafNode(lv_id_4_0, grammarAccess.getModelAccess().getIdIDTerminalRuleCall_4_0());
             				
 
             					if (current==null) {
@@ -643,7 +643,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             						current,
             						"id",
             						lv_id_4_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						"org.eclipse.xtext.common.Terminals.ID");
             				
 
             }
@@ -655,7 +655,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getModelAccess().getLanguageKeyword_5());
             		
-            otherlv_6=(Token)match(input,16,FOLLOW_13); 
+            otherlv_6=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_6, grammarAccess.getModelAccess().getColonKeyword_6());
             		
@@ -665,7 +665,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:322:4: (lv_language_7_0= RULE_STRING )
             // InternalSedml.g:323:5: lv_language_7_0= RULE_STRING
             {
-            lv_language_7_0=(Token)match(input,RULE_STRING,FOLLOW_15); 
+            lv_language_7_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
 
             					newLeafNode(lv_language_7_0, grammarAccess.getModelAccess().getLanguageSTRINGTerminalRuleCall_7_0());
             				
@@ -689,7 +689,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_8, grammarAccess.getModelAccess().getSourceKeyword_8());
             		
-            otherlv_9=(Token)match(input,16,FOLLOW_13); 
+            otherlv_9=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_9, grammarAccess.getModelAccess().getColonKeyword_9());
             		
@@ -699,7 +699,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:348:4: (lv_source_10_0= RULE_STRING )
             // InternalSedml.g:349:5: lv_source_10_0= RULE_STRING
             {
-            lv_source_10_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
+            lv_source_10_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
 
             					newLeafNode(lv_source_10_0, grammarAccess.getModelAccess().getSourceSTRINGTerminalRuleCall_10_0());
             				
@@ -723,7 +723,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_11, grammarAccess.getModelAccess().getNameKeyword_11());
             		
-            otherlv_12=(Token)match(input,16,FOLLOW_13); 
+            otherlv_12=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_12, grammarAccess.getModelAccess().getColonKeyword_12());
             		
@@ -733,7 +733,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:374:4: (lv_name_13_0= RULE_STRING )
             // InternalSedml.g:375:5: lv_name_13_0= RULE_STRING
             {
-            lv_name_13_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
+            lv_name_13_0=(Token)match(input,RULE_STRING,FOLLOW_18); 
 
             					newLeafNode(lv_name_13_0, grammarAccess.getModelAccess().getNameSTRINGTerminalRuleCall_13_0());
             				
@@ -779,537 +779,8 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
     // $ANTLR end "rulemodel"
 
 
-    // $ANTLR start "entryRulelistOfTasks"
-    // InternalSedml.g:399:1: entryRulelistOfTasks returns [EObject current=null] : iv_rulelistOfTasks= rulelistOfTasks EOF ;
-    public final EObject entryRulelistOfTasks() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_rulelistOfTasks = null;
-
-
-        try {
-            // InternalSedml.g:399:52: (iv_rulelistOfTasks= rulelistOfTasks EOF )
-            // InternalSedml.g:400:2: iv_rulelistOfTasks= rulelistOfTasks EOF
-            {
-             newCompositeNode(grammarAccess.getListOfTasksRule()); 
-            pushFollow(FOLLOW_1);
-            iv_rulelistOfTasks=rulelistOfTasks();
-
-            state._fsp--;
-
-             current =iv_rulelistOfTasks; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRulelistOfTasks"
-
-
-    // $ANTLR start "rulelistOfTasks"
-    // InternalSedml.g:406:1: rulelistOfTasks returns [EObject current=null] : (otherlv_0= 'listOfTasks' otherlv_1= '{' ( (lv_task_2_0= ruletask ) )* otherlv_3= '}' ) ;
-    public final EObject rulelistOfTasks() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_3=null;
-        EObject lv_task_2_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalSedml.g:412:2: ( (otherlv_0= 'listOfTasks' otherlv_1= '{' ( (lv_task_2_0= ruletask ) )* otherlv_3= '}' ) )
-            // InternalSedml.g:413:2: (otherlv_0= 'listOfTasks' otherlv_1= '{' ( (lv_task_2_0= ruletask ) )* otherlv_3= '}' )
-            {
-            // InternalSedml.g:413:2: (otherlv_0= 'listOfTasks' otherlv_1= '{' ( (lv_task_2_0= ruletask ) )* otherlv_3= '}' )
-            // InternalSedml.g:414:3: otherlv_0= 'listOfTasks' otherlv_1= '{' ( (lv_task_2_0= ruletask ) )* otherlv_3= '}'
-            {
-            otherlv_0=(Token)match(input,20,FOLLOW_9); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getListOfTasksAccess().getListOfTasksKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_18); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getListOfTasksAccess().getLeftCurlyBracketKeyword_1());
-            		
-            // InternalSedml.g:422:3: ( (lv_task_2_0= ruletask ) )*
-            loop2:
-            do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
-
-                if ( (LA2_0==21) ) {
-                    alt2=1;
-                }
-
-
-                switch (alt2) {
-            	case 1 :
-            	    // InternalSedml.g:423:4: (lv_task_2_0= ruletask )
-            	    {
-            	    // InternalSedml.g:423:4: (lv_task_2_0= ruletask )
-            	    // InternalSedml.g:424:5: lv_task_2_0= ruletask
-            	    {
-
-            	    					newCompositeNode(grammarAccess.getListOfTasksAccess().getTaskTaskParserRuleCall_2_0());
-            	    				
-            	    pushFollow(FOLLOW_18);
-            	    lv_task_2_0=ruletask();
-
-            	    state._fsp--;
-
-
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getListOfTasksRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"task",
-            	    						lv_task_2_0,
-            	    						"tr.edu.metu.ceng.megamodel.sedml.Sedml.task");
-            	    					afterParserOrEnumRuleCall();
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop2;
-                }
-            } while (true);
-
-            otherlv_3=(Token)match(input,13,FOLLOW_2); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getListOfTasksAccess().getRightCurlyBracketKeyword_3());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "rulelistOfTasks"
-
-
-    // $ANTLR start "entryRuletask"
-    // InternalSedml.g:449:1: entryRuletask returns [EObject current=null] : iv_ruletask= ruletask EOF ;
-    public final EObject entryRuletask() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruletask = null;
-
-
-        try {
-            // InternalSedml.g:449:45: (iv_ruletask= ruletask EOF )
-            // InternalSedml.g:450:2: iv_ruletask= ruletask EOF
-            {
-             newCompositeNode(grammarAccess.getTaskRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruletask=ruletask();
-
-            state._fsp--;
-
-             current =iv_ruletask; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuletask"
-
-
-    // $ANTLR start "ruletask"
-    // InternalSedml.g:456:1: ruletask returns [EObject current=null] : (otherlv_0= 'task' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'modelReference' otherlv_6= ':' ( (lv_modelReference_7_0= rulemodel ) ) otherlv_8= 'simulationReference' otherlv_9= ':' ( (lv_simulationReference_10_0= ruleuniformTimeCourse ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' ) ;
-    public final EObject ruletask() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token lv_id_4_0=null;
-        Token otherlv_5=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        Token otherlv_9=null;
-        Token otherlv_11=null;
-        Token otherlv_12=null;
-        Token lv_name_13_0=null;
-        Token otherlv_14=null;
-        EObject lv_modelReference_7_0 = null;
-
-        EObject lv_simulationReference_10_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalSedml.g:462:2: ( (otherlv_0= 'task' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'modelReference' otherlv_6= ':' ( (lv_modelReference_7_0= rulemodel ) ) otherlv_8= 'simulationReference' otherlv_9= ':' ( (lv_simulationReference_10_0= ruleuniformTimeCourse ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' ) )
-            // InternalSedml.g:463:2: (otherlv_0= 'task' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'modelReference' otherlv_6= ':' ( (lv_modelReference_7_0= rulemodel ) ) otherlv_8= 'simulationReference' otherlv_9= ':' ( (lv_simulationReference_10_0= ruleuniformTimeCourse ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' )
-            {
-            // InternalSedml.g:463:2: (otherlv_0= 'task' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'modelReference' otherlv_6= ':' ( (lv_modelReference_7_0= rulemodel ) ) otherlv_8= 'simulationReference' otherlv_9= ':' ( (lv_simulationReference_10_0= ruleuniformTimeCourse ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' )
-            // InternalSedml.g:464:3: otherlv_0= 'task' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'modelReference' otherlv_6= ':' ( (lv_modelReference_7_0= rulemodel ) ) otherlv_8= 'simulationReference' otherlv_9= ':' ( (lv_simulationReference_10_0= ruleuniformTimeCourse ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}'
-            {
-            otherlv_0=(Token)match(input,21,FOLLOW_9); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getTaskAccess().getTaskKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_11); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getTaskAccess().getLeftCurlyBracketKeyword_1());
-            		
-            otherlv_2=(Token)match(input,15,FOLLOW_12); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getTaskAccess().getIdKeyword_2());
-            		
-            otherlv_3=(Token)match(input,16,FOLLOW_13); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getTaskAccess().getColonKeyword_3());
-            		
-            // InternalSedml.g:480:3: ( (lv_id_4_0= RULE_STRING ) )
-            // InternalSedml.g:481:4: (lv_id_4_0= RULE_STRING )
-            {
-            // InternalSedml.g:481:4: (lv_id_4_0= RULE_STRING )
-            // InternalSedml.g:482:5: lv_id_4_0= RULE_STRING
-            {
-            lv_id_4_0=(Token)match(input,RULE_STRING,FOLLOW_19); 
-
-            					newLeafNode(lv_id_4_0, grammarAccess.getTaskAccess().getIdSTRINGTerminalRuleCall_4_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getTaskRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"id",
-            						lv_id_4_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
-            }
-
-
-            }
-
-            otherlv_5=(Token)match(input,22,FOLLOW_12); 
-
-            			newLeafNode(otherlv_5, grammarAccess.getTaskAccess().getModelReferenceKeyword_5());
-            		
-            otherlv_6=(Token)match(input,16,FOLLOW_20); 
-
-            			newLeafNode(otherlv_6, grammarAccess.getTaskAccess().getColonKeyword_6());
-            		
-            // InternalSedml.g:506:3: ( (lv_modelReference_7_0= rulemodel ) )
-            // InternalSedml.g:507:4: (lv_modelReference_7_0= rulemodel )
-            {
-            // InternalSedml.g:507:4: (lv_modelReference_7_0= rulemodel )
-            // InternalSedml.g:508:5: lv_modelReference_7_0= rulemodel
-            {
-
-            					newCompositeNode(grammarAccess.getTaskAccess().getModelReferenceModelParserRuleCall_7_0());
-            				
-            pushFollow(FOLLOW_21);
-            lv_modelReference_7_0=rulemodel();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getTaskRule());
-            					}
-            					set(
-            						current,
-            						"modelReference",
-            						lv_modelReference_7_0,
-            						"tr.edu.metu.ceng.megamodel.sedml.Sedml.model");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_8=(Token)match(input,23,FOLLOW_12); 
-
-            			newLeafNode(otherlv_8, grammarAccess.getTaskAccess().getSimulationReferenceKeyword_8());
-            		
-            otherlv_9=(Token)match(input,16,FOLLOW_22); 
-
-            			newLeafNode(otherlv_9, grammarAccess.getTaskAccess().getColonKeyword_9());
-            		
-            // InternalSedml.g:533:3: ( (lv_simulationReference_10_0= ruleuniformTimeCourse ) )
-            // InternalSedml.g:534:4: (lv_simulationReference_10_0= ruleuniformTimeCourse )
-            {
-            // InternalSedml.g:534:4: (lv_simulationReference_10_0= ruleuniformTimeCourse )
-            // InternalSedml.g:535:5: lv_simulationReference_10_0= ruleuniformTimeCourse
-            {
-
-            					newCompositeNode(grammarAccess.getTaskAccess().getSimulationReferenceUniformTimeCourseParserRuleCall_10_0());
-            				
-            pushFollow(FOLLOW_16);
-            lv_simulationReference_10_0=ruleuniformTimeCourse();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getTaskRule());
-            					}
-            					set(
-            						current,
-            						"simulationReference",
-            						lv_simulationReference_10_0,
-            						"tr.edu.metu.ceng.megamodel.sedml.Sedml.uniformTimeCourse");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_11=(Token)match(input,19,FOLLOW_12); 
-
-            			newLeafNode(otherlv_11, grammarAccess.getTaskAccess().getNameKeyword_11());
-            		
-            otherlv_12=(Token)match(input,16,FOLLOW_13); 
-
-            			newLeafNode(otherlv_12, grammarAccess.getTaskAccess().getColonKeyword_12());
-            		
-            // InternalSedml.g:560:3: ( (lv_name_13_0= RULE_STRING ) )
-            // InternalSedml.g:561:4: (lv_name_13_0= RULE_STRING )
-            {
-            // InternalSedml.g:561:4: (lv_name_13_0= RULE_STRING )
-            // InternalSedml.g:562:5: lv_name_13_0= RULE_STRING
-            {
-            lv_name_13_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
-
-            					newLeafNode(lv_name_13_0, grammarAccess.getTaskAccess().getNameSTRINGTerminalRuleCall_13_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getTaskRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"name",
-            						lv_name_13_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
-            }
-
-
-            }
-
-            otherlv_14=(Token)match(input,13,FOLLOW_2); 
-
-            			newLeafNode(otherlv_14, grammarAccess.getTaskAccess().getRightCurlyBracketKeyword_14());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruletask"
-
-
-    // $ANTLR start "entryRulelistOfDataGenerators"
-    // InternalSedml.g:586:1: entryRulelistOfDataGenerators returns [EObject current=null] : iv_rulelistOfDataGenerators= rulelistOfDataGenerators EOF ;
-    public final EObject entryRulelistOfDataGenerators() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_rulelistOfDataGenerators = null;
-
-
-        try {
-            // InternalSedml.g:586:61: (iv_rulelistOfDataGenerators= rulelistOfDataGenerators EOF )
-            // InternalSedml.g:587:2: iv_rulelistOfDataGenerators= rulelistOfDataGenerators EOF
-            {
-             newCompositeNode(grammarAccess.getListOfDataGeneratorsRule()); 
-            pushFollow(FOLLOW_1);
-            iv_rulelistOfDataGenerators=rulelistOfDataGenerators();
-
-            state._fsp--;
-
-             current =iv_rulelistOfDataGenerators; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRulelistOfDataGenerators"
-
-
-    // $ANTLR start "rulelistOfDataGenerators"
-    // InternalSedml.g:593:1: rulelistOfDataGenerators returns [EObject current=null] : (otherlv_0= 'listOfDataGenerators' otherlv_1= '{' ( (lv_datagenerator_2_0= ruledataGenerator ) )* otherlv_3= '}' ) ;
-    public final EObject rulelistOfDataGenerators() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_3=null;
-        EObject lv_datagenerator_2_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalSedml.g:599:2: ( (otherlv_0= 'listOfDataGenerators' otherlv_1= '{' ( (lv_datagenerator_2_0= ruledataGenerator ) )* otherlv_3= '}' ) )
-            // InternalSedml.g:600:2: (otherlv_0= 'listOfDataGenerators' otherlv_1= '{' ( (lv_datagenerator_2_0= ruledataGenerator ) )* otherlv_3= '}' )
-            {
-            // InternalSedml.g:600:2: (otherlv_0= 'listOfDataGenerators' otherlv_1= '{' ( (lv_datagenerator_2_0= ruledataGenerator ) )* otherlv_3= '}' )
-            // InternalSedml.g:601:3: otherlv_0= 'listOfDataGenerators' otherlv_1= '{' ( (lv_datagenerator_2_0= ruledataGenerator ) )* otherlv_3= '}'
-            {
-            otherlv_0=(Token)match(input,24,FOLLOW_9); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getListOfDataGeneratorsAccess().getListOfDataGeneratorsKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_23); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getListOfDataGeneratorsAccess().getLeftCurlyBracketKeyword_1());
-            		
-            // InternalSedml.g:609:3: ( (lv_datagenerator_2_0= ruledataGenerator ) )*
-            loop3:
-            do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
-
-                if ( (LA3_0==25) ) {
-                    alt3=1;
-                }
-
-
-                switch (alt3) {
-            	case 1 :
-            	    // InternalSedml.g:610:4: (lv_datagenerator_2_0= ruledataGenerator )
-            	    {
-            	    // InternalSedml.g:610:4: (lv_datagenerator_2_0= ruledataGenerator )
-            	    // InternalSedml.g:611:5: lv_datagenerator_2_0= ruledataGenerator
-            	    {
-
-            	    					newCompositeNode(grammarAccess.getListOfDataGeneratorsAccess().getDatageneratorDataGeneratorParserRuleCall_2_0());
-            	    				
-            	    pushFollow(FOLLOW_23);
-            	    lv_datagenerator_2_0=ruledataGenerator();
-
-            	    state._fsp--;
-
-
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getListOfDataGeneratorsRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"datagenerator",
-            	    						lv_datagenerator_2_0,
-            	    						"tr.edu.metu.ceng.megamodel.sedml.Sedml.dataGenerator");
-            	    					afterParserOrEnumRuleCall();
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop3;
-                }
-            } while (true);
-
-            otherlv_3=(Token)match(input,13,FOLLOW_2); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getListOfDataGeneratorsAccess().getRightCurlyBracketKeyword_3());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "rulelistOfDataGenerators"
-
-
     // $ANTLR start "entryRuledataGenerator"
-    // InternalSedml.g:636:1: entryRuledataGenerator returns [EObject current=null] : iv_ruledataGenerator= ruledataGenerator EOF ;
+    // InternalSedml.g:399:1: entryRuledataGenerator returns [EObject current=null] : iv_ruledataGenerator= ruledataGenerator EOF ;
     public final EObject entryRuledataGenerator() throws RecognitionException {
         EObject current = null;
 
@@ -1317,8 +788,8 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSedml.g:636:54: (iv_ruledataGenerator= ruledataGenerator EOF )
-            // InternalSedml.g:637:2: iv_ruledataGenerator= ruledataGenerator EOF
+            // InternalSedml.g:399:54: (iv_ruledataGenerator= ruledataGenerator EOF )
+            // InternalSedml.g:400:2: iv_ruledataGenerator= ruledataGenerator EOF
             {
              newCompositeNode(grammarAccess.getDataGeneratorRule()); 
             pushFollow(FOLLOW_1);
@@ -1345,7 +816,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruledataGenerator"
-    // InternalSedml.g:643:1: ruledataGenerator returns [EObject current=null] : (otherlv_0= 'dataGenerator' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) ( (lv_listOfVariables_5_0= rulelistOfVariables ) ) ( (lv_math_6_0= rulemath ) ) otherlv_7= 'name' otherlv_8= ':' ( (lv_name_9_0= RULE_STRING ) ) otherlv_10= '}' ) ;
+    // InternalSedml.g:406:1: ruledataGenerator returns [EObject current=null] : (otherlv_0= 'dataGenerator' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfVariables_8_0= rulelistOfVariables ) )? ( (lv_math_9_0= rulemath ) )? otherlv_10= '}' ) ;
     public final EObject ruledataGenerator() throws RecognitionException {
         EObject current = null;
 
@@ -1354,26 +825,26 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token lv_id_4_0=null;
-        Token otherlv_7=null;
-        Token otherlv_8=null;
-        Token lv_name_9_0=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token lv_name_7_0=null;
         Token otherlv_10=null;
-        EObject lv_listOfVariables_5_0 = null;
+        EObject lv_listOfVariables_8_0 = null;
 
-        EObject lv_math_6_0 = null;
+        EObject lv_math_9_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSedml.g:649:2: ( (otherlv_0= 'dataGenerator' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) ( (lv_listOfVariables_5_0= rulelistOfVariables ) ) ( (lv_math_6_0= rulemath ) ) otherlv_7= 'name' otherlv_8= ':' ( (lv_name_9_0= RULE_STRING ) ) otherlv_10= '}' ) )
-            // InternalSedml.g:650:2: (otherlv_0= 'dataGenerator' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) ( (lv_listOfVariables_5_0= rulelistOfVariables ) ) ( (lv_math_6_0= rulemath ) ) otherlv_7= 'name' otherlv_8= ':' ( (lv_name_9_0= RULE_STRING ) ) otherlv_10= '}' )
+            // InternalSedml.g:412:2: ( (otherlv_0= 'dataGenerator' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfVariables_8_0= rulelistOfVariables ) )? ( (lv_math_9_0= rulemath ) )? otherlv_10= '}' ) )
+            // InternalSedml.g:413:2: (otherlv_0= 'dataGenerator' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfVariables_8_0= rulelistOfVariables ) )? ( (lv_math_9_0= rulemath ) )? otherlv_10= '}' )
             {
-            // InternalSedml.g:650:2: (otherlv_0= 'dataGenerator' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) ( (lv_listOfVariables_5_0= rulelistOfVariables ) ) ( (lv_math_6_0= rulemath ) ) otherlv_7= 'name' otherlv_8= ':' ( (lv_name_9_0= RULE_STRING ) ) otherlv_10= '}' )
-            // InternalSedml.g:651:3: otherlv_0= 'dataGenerator' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) ( (lv_listOfVariables_5_0= rulelistOfVariables ) ) ( (lv_math_6_0= rulemath ) ) otherlv_7= 'name' otherlv_8= ':' ( (lv_name_9_0= RULE_STRING ) ) otherlv_10= '}'
+            // InternalSedml.g:413:2: (otherlv_0= 'dataGenerator' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfVariables_8_0= rulelistOfVariables ) )? ( (lv_math_9_0= rulemath ) )? otherlv_10= '}' )
+            // InternalSedml.g:414:3: otherlv_0= 'dataGenerator' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfVariables_8_0= rulelistOfVariables ) )? ( (lv_math_9_0= rulemath ) )? otherlv_10= '}'
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_9); 
+            otherlv_0=(Token)match(input,20,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDataGeneratorAccess().getDataGeneratorKeyword_0());
             		
@@ -1389,15 +860,15 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getDataGeneratorAccess().getColonKeyword_3());
             		
-            // InternalSedml.g:667:3: ( (lv_id_4_0= RULE_STRING ) )
-            // InternalSedml.g:668:4: (lv_id_4_0= RULE_STRING )
+            // InternalSedml.g:430:3: ( (lv_id_4_0= RULE_ID ) )
+            // InternalSedml.g:431:4: (lv_id_4_0= RULE_ID )
             {
-            // InternalSedml.g:668:4: (lv_id_4_0= RULE_STRING )
-            // InternalSedml.g:669:5: lv_id_4_0= RULE_STRING
+            // InternalSedml.g:431:4: (lv_id_4_0= RULE_ID )
+            // InternalSedml.g:432:5: lv_id_4_0= RULE_ID
             {
-            lv_id_4_0=(Token)match(input,RULE_STRING,FOLLOW_24); 
+            lv_id_4_0=(Token)match(input,RULE_ID,FOLLOW_17); 
 
-            					newLeafNode(lv_id_4_0, grammarAccess.getDataGeneratorAccess().getIdSTRINGTerminalRuleCall_4_0());
+            					newLeafNode(lv_id_4_0, grammarAccess.getDataGeneratorAccess().getIdIDTerminalRuleCall_4_0());
             				
 
             					if (current==null) {
@@ -1407,7 +878,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             						current,
             						"id",
             						lv_id_4_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						"org.eclipse.xtext.common.Terminals.ID");
             				
 
             }
@@ -1415,85 +886,23 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSedml.g:685:3: ( (lv_listOfVariables_5_0= rulelistOfVariables ) )
-            // InternalSedml.g:686:4: (lv_listOfVariables_5_0= rulelistOfVariables )
-            {
-            // InternalSedml.g:686:4: (lv_listOfVariables_5_0= rulelistOfVariables )
-            // InternalSedml.g:687:5: lv_listOfVariables_5_0= rulelistOfVariables
-            {
+            otherlv_5=(Token)match(input,19,FOLLOW_12); 
 
-            					newCompositeNode(grammarAccess.getDataGeneratorAccess().getListOfVariablesListOfVariablesParserRuleCall_5_0());
-            				
-            pushFollow(FOLLOW_25);
-            lv_listOfVariables_5_0=rulelistOfVariables();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getDataGeneratorRule());
-            					}
-            					set(
-            						current,
-            						"listOfVariables",
-            						lv_listOfVariables_5_0,
-            						"tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfVariables");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            // InternalSedml.g:704:3: ( (lv_math_6_0= rulemath ) )
-            // InternalSedml.g:705:4: (lv_math_6_0= rulemath )
-            {
-            // InternalSedml.g:705:4: (lv_math_6_0= rulemath )
-            // InternalSedml.g:706:5: lv_math_6_0= rulemath
-            {
-
-            					newCompositeNode(grammarAccess.getDataGeneratorAccess().getMathMathParserRuleCall_6_0());
-            				
-            pushFollow(FOLLOW_16);
-            lv_math_6_0=rulemath();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getDataGeneratorRule());
-            					}
-            					set(
-            						current,
-            						"math",
-            						lv_math_6_0,
-            						"tr.edu.metu.ceng.megamodel.sedml.Sedml.math");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_7=(Token)match(input,19,FOLLOW_12); 
-
-            			newLeafNode(otherlv_7, grammarAccess.getDataGeneratorAccess().getNameKeyword_7());
+            			newLeafNode(otherlv_5, grammarAccess.getDataGeneratorAccess().getNameKeyword_5());
             		
-            otherlv_8=(Token)match(input,16,FOLLOW_13); 
+            otherlv_6=(Token)match(input,16,FOLLOW_15); 
 
-            			newLeafNode(otherlv_8, grammarAccess.getDataGeneratorAccess().getColonKeyword_8());
+            			newLeafNode(otherlv_6, grammarAccess.getDataGeneratorAccess().getColonKeyword_6());
             		
-            // InternalSedml.g:731:3: ( (lv_name_9_0= RULE_STRING ) )
-            // InternalSedml.g:732:4: (lv_name_9_0= RULE_STRING )
+            // InternalSedml.g:456:3: ( (lv_name_7_0= RULE_STRING ) )
+            // InternalSedml.g:457:4: (lv_name_7_0= RULE_STRING )
             {
-            // InternalSedml.g:732:4: (lv_name_9_0= RULE_STRING )
-            // InternalSedml.g:733:5: lv_name_9_0= RULE_STRING
+            // InternalSedml.g:457:4: (lv_name_7_0= RULE_STRING )
+            // InternalSedml.g:458:5: lv_name_7_0= RULE_STRING
             {
-            lv_name_9_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
+            lv_name_7_0=(Token)match(input,RULE_STRING,FOLLOW_19); 
 
-            					newLeafNode(lv_name_9_0, grammarAccess.getDataGeneratorAccess().getNameSTRINGTerminalRuleCall_9_0());
+            					newLeafNode(lv_name_7_0, grammarAccess.getDataGeneratorAccess().getNameSTRINGTerminalRuleCall_7_0());
             				
 
             					if (current==null) {
@@ -1502,12 +911,96 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_9_0,
+            						lv_name_7_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
             }
 
+
+            }
+
+            // InternalSedml.g:474:3: ( (lv_listOfVariables_8_0= rulelistOfVariables ) )?
+            int alt2=2;
+            int LA2_0 = input.LA(1);
+
+            if ( (LA2_0==21) ) {
+                alt2=1;
+            }
+            switch (alt2) {
+                case 1 :
+                    // InternalSedml.g:475:4: (lv_listOfVariables_8_0= rulelistOfVariables )
+                    {
+                    // InternalSedml.g:475:4: (lv_listOfVariables_8_0= rulelistOfVariables )
+                    // InternalSedml.g:476:5: lv_listOfVariables_8_0= rulelistOfVariables
+                    {
+
+                    					newCompositeNode(grammarAccess.getDataGeneratorAccess().getListOfVariablesListOfVariablesParserRuleCall_8_0());
+                    				
+                    pushFollow(FOLLOW_20);
+                    lv_listOfVariables_8_0=rulelistOfVariables();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getDataGeneratorRule());
+                    					}
+                    					set(
+                    						current,
+                    						"listOfVariables",
+                    						lv_listOfVariables_8_0,
+                    						"tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfVariables");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalSedml.g:493:3: ( (lv_math_9_0= rulemath ) )?
+            int alt3=2;
+            int LA3_0 = input.LA(1);
+
+            if ( (LA3_0==31) ) {
+                alt3=1;
+            }
+            switch (alt3) {
+                case 1 :
+                    // InternalSedml.g:494:4: (lv_math_9_0= rulemath )
+                    {
+                    // InternalSedml.g:494:4: (lv_math_9_0= rulemath )
+                    // InternalSedml.g:495:5: lv_math_9_0= rulemath
+                    {
+
+                    					newCompositeNode(grammarAccess.getDataGeneratorAccess().getMathMathParserRuleCall_9_0());
+                    				
+                    pushFollow(FOLLOW_18);
+                    lv_math_9_0=rulemath();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getDataGeneratorRule());
+                    					}
+                    					set(
+                    						current,
+                    						"math",
+                    						lv_math_9_0,
+                    						"tr.edu.metu.ceng.megamodel.sedml.Sedml.math");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -1538,7 +1031,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulelistOfVariables"
-    // InternalSedml.g:757:1: entryRulelistOfVariables returns [EObject current=null] : iv_rulelistOfVariables= rulelistOfVariables EOF ;
+    // InternalSedml.g:520:1: entryRulelistOfVariables returns [EObject current=null] : iv_rulelistOfVariables= rulelistOfVariables EOF ;
     public final EObject entryRulelistOfVariables() throws RecognitionException {
         EObject current = null;
 
@@ -1546,8 +1039,8 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSedml.g:757:56: (iv_rulelistOfVariables= rulelistOfVariables EOF )
-            // InternalSedml.g:758:2: iv_rulelistOfVariables= rulelistOfVariables EOF
+            // InternalSedml.g:520:56: (iv_rulelistOfVariables= rulelistOfVariables EOF )
+            // InternalSedml.g:521:2: iv_rulelistOfVariables= rulelistOfVariables EOF
             {
              newCompositeNode(grammarAccess.getListOfVariablesRule()); 
             pushFollow(FOLLOW_1);
@@ -1574,7 +1067,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulelistOfVariables"
-    // InternalSedml.g:764:1: rulelistOfVariables returns [EObject current=null] : (otherlv_0= 'listOfDataVariables' otherlv_1= '{' ( (lv_variable_2_0= rulevariable ) )* otherlv_3= '}' ) ;
+    // InternalSedml.g:527:1: rulelistOfVariables returns [EObject current=null] : (otherlv_0= 'listOfDataVariables' otherlv_1= '{' ( (lv_variable_2_0= rulevariable ) )* otherlv_3= '}' ) ;
     public final EObject rulelistOfVariables() throws RecognitionException {
         EObject current = null;
 
@@ -1588,42 +1081,42 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSedml.g:770:2: ( (otherlv_0= 'listOfDataVariables' otherlv_1= '{' ( (lv_variable_2_0= rulevariable ) )* otherlv_3= '}' ) )
-            // InternalSedml.g:771:2: (otherlv_0= 'listOfDataVariables' otherlv_1= '{' ( (lv_variable_2_0= rulevariable ) )* otherlv_3= '}' )
+            // InternalSedml.g:533:2: ( (otherlv_0= 'listOfDataVariables' otherlv_1= '{' ( (lv_variable_2_0= rulevariable ) )* otherlv_3= '}' ) )
+            // InternalSedml.g:534:2: (otherlv_0= 'listOfDataVariables' otherlv_1= '{' ( (lv_variable_2_0= rulevariable ) )* otherlv_3= '}' )
             {
-            // InternalSedml.g:771:2: (otherlv_0= 'listOfDataVariables' otherlv_1= '{' ( (lv_variable_2_0= rulevariable ) )* otherlv_3= '}' )
-            // InternalSedml.g:772:3: otherlv_0= 'listOfDataVariables' otherlv_1= '{' ( (lv_variable_2_0= rulevariable ) )* otherlv_3= '}'
+            // InternalSedml.g:534:2: (otherlv_0= 'listOfDataVariables' otherlv_1= '{' ( (lv_variable_2_0= rulevariable ) )* otherlv_3= '}' )
+            // InternalSedml.g:535:3: otherlv_0= 'listOfDataVariables' otherlv_1= '{' ( (lv_variable_2_0= rulevariable ) )* otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,26,FOLLOW_9); 
+            otherlv_0=(Token)match(input,21,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getListOfVariablesAccess().getListOfDataVariablesKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_26); 
+            otherlv_1=(Token)match(input,12,FOLLOW_21); 
 
             			newLeafNode(otherlv_1, grammarAccess.getListOfVariablesAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalSedml.g:780:3: ( (lv_variable_2_0= rulevariable ) )*
+            // InternalSedml.g:543:3: ( (lv_variable_2_0= rulevariable ) )*
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==27) ) {
+                if ( (LA4_0==22) ) {
                     alt4=1;
                 }
 
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalSedml.g:781:4: (lv_variable_2_0= rulevariable )
+            	    // InternalSedml.g:544:4: (lv_variable_2_0= rulevariable )
             	    {
-            	    // InternalSedml.g:781:4: (lv_variable_2_0= rulevariable )
-            	    // InternalSedml.g:782:5: lv_variable_2_0= rulevariable
+            	    // InternalSedml.g:544:4: (lv_variable_2_0= rulevariable )
+            	    // InternalSedml.g:545:5: lv_variable_2_0= rulevariable
             	    {
 
             	    					newCompositeNode(grammarAccess.getListOfVariablesAccess().getVariableVariableParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_26);
+            	    pushFollow(FOLLOW_21);
             	    lv_variable_2_0=rulevariable();
 
             	    state._fsp--;
@@ -1678,7 +1171,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulevariable"
-    // InternalSedml.g:807:1: entryRulevariable returns [EObject current=null] : iv_rulevariable= rulevariable EOF ;
+    // InternalSedml.g:570:1: entryRulevariable returns [EObject current=null] : iv_rulevariable= rulevariable EOF ;
     public final EObject entryRulevariable() throws RecognitionException {
         EObject current = null;
 
@@ -1686,8 +1179,8 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSedml.g:807:49: (iv_rulevariable= rulevariable EOF )
-            // InternalSedml.g:808:2: iv_rulevariable= rulevariable EOF
+            // InternalSedml.g:570:49: (iv_rulevariable= rulevariable EOF )
+            // InternalSedml.g:571:2: iv_rulevariable= rulevariable EOF
             {
              newCompositeNode(grammarAccess.getVariableRule()); 
             pushFollow(FOLLOW_1);
@@ -1714,7 +1207,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulevariable"
-    // InternalSedml.g:814:1: rulevariable returns [EObject current=null] : (otherlv_0= 'variable' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'target' otherlv_6= ':' ( (lv_target_7_0= RULE_STRING ) ) otherlv_8= 'taskReference' otherlv_9= ':' ( (lv_taskReference_10_0= ruletask ) ) otherlv_11= 'symbol' otherlv_12= ':' ( (lv_symbol_13_0= RULE_STRING ) ) otherlv_14= '}' ) ;
+    // InternalSedml.g:577:1: rulevariable returns [EObject current=null] : (otherlv_0= 'variable' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'target' otherlv_6= ':' ( (lv_target_7_0= RULE_STRING ) ) otherlv_8= 'taskReference' otherlv_9= ':' ( (lv_taskReference_10_0= ruletask ) ) otherlv_11= 'symbol' otherlv_12= ':' ( (lv_symbol_13_0= RULE_STRING ) ) otherlv_14= '}' ) ;
     public final EObject rulevariable() throws RecognitionException {
         EObject current = null;
 
@@ -1739,13 +1232,13 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSedml.g:820:2: ( (otherlv_0= 'variable' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'target' otherlv_6= ':' ( (lv_target_7_0= RULE_STRING ) ) otherlv_8= 'taskReference' otherlv_9= ':' ( (lv_taskReference_10_0= ruletask ) ) otherlv_11= 'symbol' otherlv_12= ':' ( (lv_symbol_13_0= RULE_STRING ) ) otherlv_14= '}' ) )
-            // InternalSedml.g:821:2: (otherlv_0= 'variable' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'target' otherlv_6= ':' ( (lv_target_7_0= RULE_STRING ) ) otherlv_8= 'taskReference' otherlv_9= ':' ( (lv_taskReference_10_0= ruletask ) ) otherlv_11= 'symbol' otherlv_12= ':' ( (lv_symbol_13_0= RULE_STRING ) ) otherlv_14= '}' )
+            // InternalSedml.g:583:2: ( (otherlv_0= 'variable' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'target' otherlv_6= ':' ( (lv_target_7_0= RULE_STRING ) ) otherlv_8= 'taskReference' otherlv_9= ':' ( (lv_taskReference_10_0= ruletask ) ) otherlv_11= 'symbol' otherlv_12= ':' ( (lv_symbol_13_0= RULE_STRING ) ) otherlv_14= '}' ) )
+            // InternalSedml.g:584:2: (otherlv_0= 'variable' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'target' otherlv_6= ':' ( (lv_target_7_0= RULE_STRING ) ) otherlv_8= 'taskReference' otherlv_9= ':' ( (lv_taskReference_10_0= ruletask ) ) otherlv_11= 'symbol' otherlv_12= ':' ( (lv_symbol_13_0= RULE_STRING ) ) otherlv_14= '}' )
             {
-            // InternalSedml.g:821:2: (otherlv_0= 'variable' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'target' otherlv_6= ':' ( (lv_target_7_0= RULE_STRING ) ) otherlv_8= 'taskReference' otherlv_9= ':' ( (lv_taskReference_10_0= ruletask ) ) otherlv_11= 'symbol' otherlv_12= ':' ( (lv_symbol_13_0= RULE_STRING ) ) otherlv_14= '}' )
-            // InternalSedml.g:822:3: otherlv_0= 'variable' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'target' otherlv_6= ':' ( (lv_target_7_0= RULE_STRING ) ) otherlv_8= 'taskReference' otherlv_9= ':' ( (lv_taskReference_10_0= ruletask ) ) otherlv_11= 'symbol' otherlv_12= ':' ( (lv_symbol_13_0= RULE_STRING ) ) otherlv_14= '}'
+            // InternalSedml.g:584:2: (otherlv_0= 'variable' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'target' otherlv_6= ':' ( (lv_target_7_0= RULE_STRING ) ) otherlv_8= 'taskReference' otherlv_9= ':' ( (lv_taskReference_10_0= ruletask ) ) otherlv_11= 'symbol' otherlv_12= ':' ( (lv_symbol_13_0= RULE_STRING ) ) otherlv_14= '}' )
+            // InternalSedml.g:585:3: otherlv_0= 'variable' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'target' otherlv_6= ':' ( (lv_target_7_0= RULE_STRING ) ) otherlv_8= 'taskReference' otherlv_9= ':' ( (lv_taskReference_10_0= ruletask ) ) otherlv_11= 'symbol' otherlv_12= ':' ( (lv_symbol_13_0= RULE_STRING ) ) otherlv_14= '}'
             {
-            otherlv_0=(Token)match(input,27,FOLLOW_9); 
+            otherlv_0=(Token)match(input,22,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getVariableAccess().getVariableKeyword_0());
             		
@@ -1761,15 +1254,15 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getVariableAccess().getColonKeyword_3());
             		
-            // InternalSedml.g:838:3: ( (lv_id_4_0= RULE_STRING ) )
-            // InternalSedml.g:839:4: (lv_id_4_0= RULE_STRING )
+            // InternalSedml.g:601:3: ( (lv_id_4_0= RULE_ID ) )
+            // InternalSedml.g:602:4: (lv_id_4_0= RULE_ID )
             {
-            // InternalSedml.g:839:4: (lv_id_4_0= RULE_STRING )
-            // InternalSedml.g:840:5: lv_id_4_0= RULE_STRING
+            // InternalSedml.g:602:4: (lv_id_4_0= RULE_ID )
+            // InternalSedml.g:603:5: lv_id_4_0= RULE_ID
             {
-            lv_id_4_0=(Token)match(input,RULE_STRING,FOLLOW_27); 
+            lv_id_4_0=(Token)match(input,RULE_ID,FOLLOW_22); 
 
-            					newLeafNode(lv_id_4_0, grammarAccess.getVariableAccess().getIdSTRINGTerminalRuleCall_4_0());
+            					newLeafNode(lv_id_4_0, grammarAccess.getVariableAccess().getIdIDTerminalRuleCall_4_0());
             				
 
             					if (current==null) {
@@ -1779,7 +1272,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             						current,
             						"id",
             						lv_id_4_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						"org.eclipse.xtext.common.Terminals.ID");
             				
 
             }
@@ -1787,21 +1280,21 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,28,FOLLOW_12); 
+            otherlv_5=(Token)match(input,23,FOLLOW_12); 
 
             			newLeafNode(otherlv_5, grammarAccess.getVariableAccess().getTargetKeyword_5());
             		
-            otherlv_6=(Token)match(input,16,FOLLOW_13); 
+            otherlv_6=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_6, grammarAccess.getVariableAccess().getColonKeyword_6());
             		
-            // InternalSedml.g:864:3: ( (lv_target_7_0= RULE_STRING ) )
-            // InternalSedml.g:865:4: (lv_target_7_0= RULE_STRING )
+            // InternalSedml.g:627:3: ( (lv_target_7_0= RULE_STRING ) )
+            // InternalSedml.g:628:4: (lv_target_7_0= RULE_STRING )
             {
-            // InternalSedml.g:865:4: (lv_target_7_0= RULE_STRING )
-            // InternalSedml.g:866:5: lv_target_7_0= RULE_STRING
+            // InternalSedml.g:628:4: (lv_target_7_0= RULE_STRING )
+            // InternalSedml.g:629:5: lv_target_7_0= RULE_STRING
             {
-            lv_target_7_0=(Token)match(input,RULE_STRING,FOLLOW_28); 
+            lv_target_7_0=(Token)match(input,RULE_STRING,FOLLOW_23); 
 
             					newLeafNode(lv_target_7_0, grammarAccess.getVariableAccess().getTargetSTRINGTerminalRuleCall_7_0());
             				
@@ -1821,24 +1314,24 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,29,FOLLOW_12); 
+            otherlv_8=(Token)match(input,24,FOLLOW_12); 
 
             			newLeafNode(otherlv_8, grammarAccess.getVariableAccess().getTaskReferenceKeyword_8());
             		
-            otherlv_9=(Token)match(input,16,FOLLOW_29); 
+            otherlv_9=(Token)match(input,16,FOLLOW_24); 
 
             			newLeafNode(otherlv_9, grammarAccess.getVariableAccess().getColonKeyword_9());
             		
-            // InternalSedml.g:890:3: ( (lv_taskReference_10_0= ruletask ) )
-            // InternalSedml.g:891:4: (lv_taskReference_10_0= ruletask )
+            // InternalSedml.g:653:3: ( (lv_taskReference_10_0= ruletask ) )
+            // InternalSedml.g:654:4: (lv_taskReference_10_0= ruletask )
             {
-            // InternalSedml.g:891:4: (lv_taskReference_10_0= ruletask )
-            // InternalSedml.g:892:5: lv_taskReference_10_0= ruletask
+            // InternalSedml.g:654:4: (lv_taskReference_10_0= ruletask )
+            // InternalSedml.g:655:5: lv_taskReference_10_0= ruletask
             {
 
             					newCompositeNode(grammarAccess.getVariableAccess().getTaskReferenceTaskParserRuleCall_10_0());
             				
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_25);
             lv_taskReference_10_0=ruletask();
 
             state._fsp--;
@@ -1860,21 +1353,21 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,30,FOLLOW_12); 
+            otherlv_11=(Token)match(input,25,FOLLOW_12); 
 
             			newLeafNode(otherlv_11, grammarAccess.getVariableAccess().getSymbolKeyword_11());
             		
-            otherlv_12=(Token)match(input,16,FOLLOW_13); 
+            otherlv_12=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_12, grammarAccess.getVariableAccess().getColonKeyword_12());
             		
-            // InternalSedml.g:917:3: ( (lv_symbol_13_0= RULE_STRING ) )
-            // InternalSedml.g:918:4: (lv_symbol_13_0= RULE_STRING )
+            // InternalSedml.g:680:3: ( (lv_symbol_13_0= RULE_STRING ) )
+            // InternalSedml.g:681:4: (lv_symbol_13_0= RULE_STRING )
             {
-            // InternalSedml.g:918:4: (lv_symbol_13_0= RULE_STRING )
-            // InternalSedml.g:919:5: lv_symbol_13_0= RULE_STRING
+            // InternalSedml.g:681:4: (lv_symbol_13_0= RULE_STRING )
+            // InternalSedml.g:682:5: lv_symbol_13_0= RULE_STRING
             {
-            lv_symbol_13_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
+            lv_symbol_13_0=(Token)match(input,RULE_STRING,FOLLOW_18); 
 
             					newLeafNode(lv_symbol_13_0, grammarAccess.getVariableAccess().getSymbolSTRINGTerminalRuleCall_13_0());
             				
@@ -1918,6 +1411,535 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
         return current;
     }
     // $ANTLR end "rulevariable"
+
+
+    // $ANTLR start "entryRulelistOfTasks"
+    // InternalSedml.g:706:1: entryRulelistOfTasks returns [EObject current=null] : iv_rulelistOfTasks= rulelistOfTasks EOF ;
+    public final EObject entryRulelistOfTasks() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulelistOfTasks = null;
+
+
+        try {
+            // InternalSedml.g:706:52: (iv_rulelistOfTasks= rulelistOfTasks EOF )
+            // InternalSedml.g:707:2: iv_rulelistOfTasks= rulelistOfTasks EOF
+            {
+             newCompositeNode(grammarAccess.getListOfTasksRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulelistOfTasks=rulelistOfTasks();
+
+            state._fsp--;
+
+             current =iv_rulelistOfTasks; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulelistOfTasks"
+
+
+    // $ANTLR start "rulelistOfTasks"
+    // InternalSedml.g:713:1: rulelistOfTasks returns [EObject current=null] : (otherlv_0= 'listOfTasks' otherlv_1= '{' ( (lv_task_2_0= ruletask ) )* otherlv_3= '}' ) ;
+    public final EObject rulelistOfTasks() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        EObject lv_task_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSedml.g:719:2: ( (otherlv_0= 'listOfTasks' otherlv_1= '{' ( (lv_task_2_0= ruletask ) )* otherlv_3= '}' ) )
+            // InternalSedml.g:720:2: (otherlv_0= 'listOfTasks' otherlv_1= '{' ( (lv_task_2_0= ruletask ) )* otherlv_3= '}' )
+            {
+            // InternalSedml.g:720:2: (otherlv_0= 'listOfTasks' otherlv_1= '{' ( (lv_task_2_0= ruletask ) )* otherlv_3= '}' )
+            // InternalSedml.g:721:3: otherlv_0= 'listOfTasks' otherlv_1= '{' ( (lv_task_2_0= ruletask ) )* otherlv_3= '}'
+            {
+            otherlv_0=(Token)match(input,26,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getListOfTasksAccess().getListOfTasksKeyword_0());
+            		
+            otherlv_1=(Token)match(input,12,FOLLOW_26); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getListOfTasksAccess().getLeftCurlyBracketKeyword_1());
+            		
+            // InternalSedml.g:729:3: ( (lv_task_2_0= ruletask ) )*
+            loop5:
+            do {
+                int alt5=2;
+                int LA5_0 = input.LA(1);
+
+                if ( (LA5_0==27) ) {
+                    alt5=1;
+                }
+
+
+                switch (alt5) {
+            	case 1 :
+            	    // InternalSedml.g:730:4: (lv_task_2_0= ruletask )
+            	    {
+            	    // InternalSedml.g:730:4: (lv_task_2_0= ruletask )
+            	    // InternalSedml.g:731:5: lv_task_2_0= ruletask
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getListOfTasksAccess().getTaskTaskParserRuleCall_2_0());
+            	    				
+            	    pushFollow(FOLLOW_26);
+            	    lv_task_2_0=ruletask();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getListOfTasksRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"task",
+            	    						lv_task_2_0,
+            	    						"tr.edu.metu.ceng.megamodel.sedml.Sedml.task");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop5;
+                }
+            } while (true);
+
+            otherlv_3=(Token)match(input,13,FOLLOW_2); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getListOfTasksAccess().getRightCurlyBracketKeyword_3());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulelistOfTasks"
+
+
+    // $ANTLR start "entryRuletask"
+    // InternalSedml.g:756:1: entryRuletask returns [EObject current=null] : iv_ruletask= ruletask EOF ;
+    public final EObject entryRuletask() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruletask = null;
+
+
+        try {
+            // InternalSedml.g:756:45: (iv_ruletask= ruletask EOF )
+            // InternalSedml.g:757:2: iv_ruletask= ruletask EOF
+            {
+             newCompositeNode(grammarAccess.getTaskRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruletask=ruletask();
+
+            state._fsp--;
+
+             current =iv_ruletask; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuletask"
+
+
+    // $ANTLR start "ruletask"
+    // InternalSedml.g:763:1: ruletask returns [EObject current=null] : (otherlv_0= 'task' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'modelReference' otherlv_6= ':' ( (lv_modelReference_7_0= rulemodel ) ) otherlv_8= 'simulationReference' otherlv_9= ':' ( (lv_simulationReference_10_0= ruleuniformTimeCourse ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' ) ;
+    public final EObject ruletask() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token lv_id_4_0=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token otherlv_8=null;
+        Token otherlv_9=null;
+        Token otherlv_11=null;
+        Token otherlv_12=null;
+        Token lv_name_13_0=null;
+        Token otherlv_14=null;
+        EObject lv_modelReference_7_0 = null;
+
+        EObject lv_simulationReference_10_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSedml.g:769:2: ( (otherlv_0= 'task' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'modelReference' otherlv_6= ':' ( (lv_modelReference_7_0= rulemodel ) ) otherlv_8= 'simulationReference' otherlv_9= ':' ( (lv_simulationReference_10_0= ruleuniformTimeCourse ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' ) )
+            // InternalSedml.g:770:2: (otherlv_0= 'task' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'modelReference' otherlv_6= ':' ( (lv_modelReference_7_0= rulemodel ) ) otherlv_8= 'simulationReference' otherlv_9= ':' ( (lv_simulationReference_10_0= ruleuniformTimeCourse ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' )
+            {
+            // InternalSedml.g:770:2: (otherlv_0= 'task' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'modelReference' otherlv_6= ':' ( (lv_modelReference_7_0= rulemodel ) ) otherlv_8= 'simulationReference' otherlv_9= ':' ( (lv_simulationReference_10_0= ruleuniformTimeCourse ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}' )
+            // InternalSedml.g:771:3: otherlv_0= 'task' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'modelReference' otherlv_6= ':' ( (lv_modelReference_7_0= rulemodel ) ) otherlv_8= 'simulationReference' otherlv_9= ':' ( (lv_simulationReference_10_0= ruleuniformTimeCourse ) ) otherlv_11= 'name' otherlv_12= ':' ( (lv_name_13_0= RULE_STRING ) ) otherlv_14= '}'
+            {
+            otherlv_0=(Token)match(input,27,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getTaskAccess().getTaskKeyword_0());
+            		
+            otherlv_1=(Token)match(input,12,FOLLOW_11); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getTaskAccess().getLeftCurlyBracketKeyword_1());
+            		
+            otherlv_2=(Token)match(input,15,FOLLOW_12); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getTaskAccess().getIdKeyword_2());
+            		
+            otherlv_3=(Token)match(input,16,FOLLOW_13); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getTaskAccess().getColonKeyword_3());
+            		
+            // InternalSedml.g:787:3: ( (lv_id_4_0= RULE_ID ) )
+            // InternalSedml.g:788:4: (lv_id_4_0= RULE_ID )
+            {
+            // InternalSedml.g:788:4: (lv_id_4_0= RULE_ID )
+            // InternalSedml.g:789:5: lv_id_4_0= RULE_ID
+            {
+            lv_id_4_0=(Token)match(input,RULE_ID,FOLLOW_27); 
+
+            					newLeafNode(lv_id_4_0, grammarAccess.getTaskAccess().getIdIDTerminalRuleCall_4_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getTaskRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"id",
+            						lv_id_4_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            otherlv_5=(Token)match(input,28,FOLLOW_12); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getTaskAccess().getModelReferenceKeyword_5());
+            		
+            otherlv_6=(Token)match(input,16,FOLLOW_28); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getTaskAccess().getColonKeyword_6());
+            		
+            // InternalSedml.g:813:3: ( (lv_modelReference_7_0= rulemodel ) )
+            // InternalSedml.g:814:4: (lv_modelReference_7_0= rulemodel )
+            {
+            // InternalSedml.g:814:4: (lv_modelReference_7_0= rulemodel )
+            // InternalSedml.g:815:5: lv_modelReference_7_0= rulemodel
+            {
+
+            					newCompositeNode(grammarAccess.getTaskAccess().getModelReferenceModelParserRuleCall_7_0());
+            				
+            pushFollow(FOLLOW_29);
+            lv_modelReference_7_0=rulemodel();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getTaskRule());
+            					}
+            					set(
+            						current,
+            						"modelReference",
+            						lv_modelReference_7_0,
+            						"tr.edu.metu.ceng.megamodel.sedml.Sedml.model");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_8=(Token)match(input,29,FOLLOW_12); 
+
+            			newLeafNode(otherlv_8, grammarAccess.getTaskAccess().getSimulationReferenceKeyword_8());
+            		
+            otherlv_9=(Token)match(input,16,FOLLOW_30); 
+
+            			newLeafNode(otherlv_9, grammarAccess.getTaskAccess().getColonKeyword_9());
+            		
+            // InternalSedml.g:840:3: ( (lv_simulationReference_10_0= ruleuniformTimeCourse ) )
+            // InternalSedml.g:841:4: (lv_simulationReference_10_0= ruleuniformTimeCourse )
+            {
+            // InternalSedml.g:841:4: (lv_simulationReference_10_0= ruleuniformTimeCourse )
+            // InternalSedml.g:842:5: lv_simulationReference_10_0= ruleuniformTimeCourse
+            {
+
+            					newCompositeNode(grammarAccess.getTaskAccess().getSimulationReferenceUniformTimeCourseParserRuleCall_10_0());
+            				
+            pushFollow(FOLLOW_17);
+            lv_simulationReference_10_0=ruleuniformTimeCourse();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getTaskRule());
+            					}
+            					set(
+            						current,
+            						"simulationReference",
+            						lv_simulationReference_10_0,
+            						"tr.edu.metu.ceng.megamodel.sedml.Sedml.uniformTimeCourse");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_11=(Token)match(input,19,FOLLOW_12); 
+
+            			newLeafNode(otherlv_11, grammarAccess.getTaskAccess().getNameKeyword_11());
+            		
+            otherlv_12=(Token)match(input,16,FOLLOW_15); 
+
+            			newLeafNode(otherlv_12, grammarAccess.getTaskAccess().getColonKeyword_12());
+            		
+            // InternalSedml.g:867:3: ( (lv_name_13_0= RULE_STRING ) )
+            // InternalSedml.g:868:4: (lv_name_13_0= RULE_STRING )
+            {
+            // InternalSedml.g:868:4: (lv_name_13_0= RULE_STRING )
+            // InternalSedml.g:869:5: lv_name_13_0= RULE_STRING
+            {
+            lv_name_13_0=(Token)match(input,RULE_STRING,FOLLOW_18); 
+
+            					newLeafNode(lv_name_13_0, grammarAccess.getTaskAccess().getNameSTRINGTerminalRuleCall_13_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getTaskRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_13_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_14=(Token)match(input,13,FOLLOW_2); 
+
+            			newLeafNode(otherlv_14, grammarAccess.getTaskAccess().getRightCurlyBracketKeyword_14());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruletask"
+
+
+    // $ANTLR start "entryRulelistOfDataGenerators"
+    // InternalSedml.g:893:1: entryRulelistOfDataGenerators returns [EObject current=null] : iv_rulelistOfDataGenerators= rulelistOfDataGenerators EOF ;
+    public final EObject entryRulelistOfDataGenerators() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulelistOfDataGenerators = null;
+
+
+        try {
+            // InternalSedml.g:893:61: (iv_rulelistOfDataGenerators= rulelistOfDataGenerators EOF )
+            // InternalSedml.g:894:2: iv_rulelistOfDataGenerators= rulelistOfDataGenerators EOF
+            {
+             newCompositeNode(grammarAccess.getListOfDataGeneratorsRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulelistOfDataGenerators=rulelistOfDataGenerators();
+
+            state._fsp--;
+
+             current =iv_rulelistOfDataGenerators; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulelistOfDataGenerators"
+
+
+    // $ANTLR start "rulelistOfDataGenerators"
+    // InternalSedml.g:900:1: rulelistOfDataGenerators returns [EObject current=null] : (otherlv_0= 'listOfDataGenerators' otherlv_1= '{' ( (lv_datagenerator_2_0= ruledataGenerator ) )* otherlv_3= '}' ) ;
+    public final EObject rulelistOfDataGenerators() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        EObject lv_datagenerator_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSedml.g:906:2: ( (otherlv_0= 'listOfDataGenerators' otherlv_1= '{' ( (lv_datagenerator_2_0= ruledataGenerator ) )* otherlv_3= '}' ) )
+            // InternalSedml.g:907:2: (otherlv_0= 'listOfDataGenerators' otherlv_1= '{' ( (lv_datagenerator_2_0= ruledataGenerator ) )* otherlv_3= '}' )
+            {
+            // InternalSedml.g:907:2: (otherlv_0= 'listOfDataGenerators' otherlv_1= '{' ( (lv_datagenerator_2_0= ruledataGenerator ) )* otherlv_3= '}' )
+            // InternalSedml.g:908:3: otherlv_0= 'listOfDataGenerators' otherlv_1= '{' ( (lv_datagenerator_2_0= ruledataGenerator ) )* otherlv_3= '}'
+            {
+            otherlv_0=(Token)match(input,30,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getListOfDataGeneratorsAccess().getListOfDataGeneratorsKeyword_0());
+            		
+            otherlv_1=(Token)match(input,12,FOLLOW_31); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getListOfDataGeneratorsAccess().getLeftCurlyBracketKeyword_1());
+            		
+            // InternalSedml.g:916:3: ( (lv_datagenerator_2_0= ruledataGenerator ) )*
+            loop6:
+            do {
+                int alt6=2;
+                int LA6_0 = input.LA(1);
+
+                if ( (LA6_0==20) ) {
+                    alt6=1;
+                }
+
+
+                switch (alt6) {
+            	case 1 :
+            	    // InternalSedml.g:917:4: (lv_datagenerator_2_0= ruledataGenerator )
+            	    {
+            	    // InternalSedml.g:917:4: (lv_datagenerator_2_0= ruledataGenerator )
+            	    // InternalSedml.g:918:5: lv_datagenerator_2_0= ruledataGenerator
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getListOfDataGeneratorsAccess().getDatageneratorDataGeneratorParserRuleCall_2_0());
+            	    				
+            	    pushFollow(FOLLOW_31);
+            	    lv_datagenerator_2_0=ruledataGenerator();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getListOfDataGeneratorsRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"datagenerator",
+            	    						lv_datagenerator_2_0,
+            	    						"tr.edu.metu.ceng.megamodel.sedml.Sedml.dataGenerator");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop6;
+                }
+            } while (true);
+
+            otherlv_3=(Token)match(input,13,FOLLOW_2); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getListOfDataGeneratorsAccess().getRightCurlyBracketKeyword_3());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulelistOfDataGenerators"
 
 
     // $ANTLR start "entryRulemath"
@@ -1982,7 +2004,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_0, grammarAccess.getMathAccess().getMathKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_31); 
+            otherlv_1=(Token)match(input,12,FOLLOW_32); 
 
             			newLeafNode(otherlv_1, grammarAccess.getMathAccess().getLeftCurlyBracketKeyword_1());
             		
@@ -1990,7 +2012,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getMathAccess().getXlmsKeyword_2());
             		
-            otherlv_3=(Token)match(input,16,FOLLOW_13); 
+            otherlv_3=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_3, grammarAccess.getMathAccess().getColonKeyword_3());
             		
@@ -2000,7 +2022,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:975:4: (lv_xlms_4_0= RULE_STRING )
             // InternalSedml.g:976:5: lv_xlms_4_0= RULE_STRING
             {
-            lv_xlms_4_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
+            lv_xlms_4_0=(Token)match(input,RULE_STRING,FOLLOW_18); 
 
             					newLeafNode(lv_xlms_4_0, grammarAccess.getMathAccess().getXlmsSTRINGTerminalRuleCall_4_0());
             				
@@ -2107,22 +2129,22 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_0, grammarAccess.getListOfOutputsAccess().getListOfOutputsKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_32); 
+            otherlv_1=(Token)match(input,12,FOLLOW_33); 
 
             			newLeafNode(otherlv_1, grammarAccess.getListOfOutputsAccess().getLeftCurlyBracketKeyword_1());
             		
             // InternalSedml.g:1023:3: ( (lv_plot2D_2_0= ruleplot2D ) )*
-            loop5:
+            loop7:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-                if ( (LA5_0==34) ) {
-                    alt5=1;
+                if ( (LA7_0==34) ) {
+                    alt7=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt7) {
             	case 1 :
             	    // InternalSedml.g:1024:4: (lv_plot2D_2_0= ruleplot2D )
             	    {
@@ -2132,7 +2154,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             	    					newCompositeNode(grammarAccess.getListOfOutputsAccess().getPlot2DPlot2DParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_32);
+            	    pushFollow(FOLLOW_33);
             	    lv_plot2D_2_0=ruleplot2D();
 
             	    state._fsp--;
@@ -2156,7 +2178,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop5;
+            	    break loop7;
                 }
             } while (true);
 
@@ -2223,7 +2245,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleplot2D"
-    // InternalSedml.g:1057:1: ruleplot2D returns [EObject current=null] : (otherlv_0= 'plot2D' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfCurves_8_0= rulelistOfCurves ) ) otherlv_9= '}' ) ;
+    // InternalSedml.g:1057:1: ruleplot2D returns [EObject current=null] : (otherlv_0= 'plot2D' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfCurves_8_0= rulelistOfCurves ) ) otherlv_9= '}' ) ;
     public final EObject ruleplot2D() throws RecognitionException {
         EObject current = null;
 
@@ -2243,11 +2265,11 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSedml.g:1063:2: ( (otherlv_0= 'plot2D' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfCurves_8_0= rulelistOfCurves ) ) otherlv_9= '}' ) )
-            // InternalSedml.g:1064:2: (otherlv_0= 'plot2D' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfCurves_8_0= rulelistOfCurves ) ) otherlv_9= '}' )
+            // InternalSedml.g:1063:2: ( (otherlv_0= 'plot2D' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfCurves_8_0= rulelistOfCurves ) ) otherlv_9= '}' ) )
+            // InternalSedml.g:1064:2: (otherlv_0= 'plot2D' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfCurves_8_0= rulelistOfCurves ) ) otherlv_9= '}' )
             {
-            // InternalSedml.g:1064:2: (otherlv_0= 'plot2D' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfCurves_8_0= rulelistOfCurves ) ) otherlv_9= '}' )
-            // InternalSedml.g:1065:3: otherlv_0= 'plot2D' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfCurves_8_0= rulelistOfCurves ) ) otherlv_9= '}'
+            // InternalSedml.g:1064:2: (otherlv_0= 'plot2D' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfCurves_8_0= rulelistOfCurves ) ) otherlv_9= '}' )
+            // InternalSedml.g:1065:3: otherlv_0= 'plot2D' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'name' otherlv_6= ':' ( (lv_name_7_0= RULE_STRING ) ) ( (lv_listOfCurves_8_0= rulelistOfCurves ) ) otherlv_9= '}'
             {
             otherlv_0=(Token)match(input,34,FOLLOW_9); 
 
@@ -2265,15 +2287,15 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getPlot2DAccess().getColonKeyword_3());
             		
-            // InternalSedml.g:1081:3: ( (lv_id_4_0= RULE_STRING ) )
-            // InternalSedml.g:1082:4: (lv_id_4_0= RULE_STRING )
+            // InternalSedml.g:1081:3: ( (lv_id_4_0= RULE_ID ) )
+            // InternalSedml.g:1082:4: (lv_id_4_0= RULE_ID )
             {
-            // InternalSedml.g:1082:4: (lv_id_4_0= RULE_STRING )
-            // InternalSedml.g:1083:5: lv_id_4_0= RULE_STRING
+            // InternalSedml.g:1082:4: (lv_id_4_0= RULE_ID )
+            // InternalSedml.g:1083:5: lv_id_4_0= RULE_ID
             {
-            lv_id_4_0=(Token)match(input,RULE_STRING,FOLLOW_16); 
+            lv_id_4_0=(Token)match(input,RULE_ID,FOLLOW_17); 
 
-            					newLeafNode(lv_id_4_0, grammarAccess.getPlot2DAccess().getIdSTRINGTerminalRuleCall_4_0());
+            					newLeafNode(lv_id_4_0, grammarAccess.getPlot2DAccess().getIdIDTerminalRuleCall_4_0());
             				
 
             					if (current==null) {
@@ -2283,7 +2305,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             						current,
             						"id",
             						lv_id_4_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						"org.eclipse.xtext.common.Terminals.ID");
             				
 
             }
@@ -2295,7 +2317,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getPlot2DAccess().getNameKeyword_5());
             		
-            otherlv_6=(Token)match(input,16,FOLLOW_13); 
+            otherlv_6=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_6, grammarAccess.getPlot2DAccess().getColonKeyword_6());
             		
@@ -2305,7 +2327,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:1108:4: (lv_name_7_0= RULE_STRING )
             // InternalSedml.g:1109:5: lv_name_7_0= RULE_STRING
             {
-            lv_name_7_0=(Token)match(input,RULE_STRING,FOLLOW_33); 
+            lv_name_7_0=(Token)match(input,RULE_STRING,FOLLOW_34); 
 
             					newLeafNode(lv_name_7_0, grammarAccess.getPlot2DAccess().getNameSTRINGTerminalRuleCall_7_0());
             				
@@ -2334,7 +2356,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getPlot2DAccess().getListOfCurvesListOfCurvesParserRuleCall_8_0());
             				
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_18);
             lv_listOfCurves_8_0=rulelistOfCurves();
 
             state._fsp--;
@@ -2443,22 +2465,22 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_0, grammarAccess.getListOfCurvesAccess().getListOfCurvesKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_34); 
+            otherlv_1=(Token)match(input,12,FOLLOW_35); 
 
             			newLeafNode(otherlv_1, grammarAccess.getListOfCurvesAccess().getLeftCurlyBracketKeyword_1());
             		
             // InternalSedml.g:1175:3: ( (lv_curve_2_0= rulecurve ) )*
-            loop6:
+            loop8:
             do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( (LA6_0==36) ) {
-                    alt6=1;
+                if ( (LA8_0==36) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt6) {
+                switch (alt8) {
             	case 1 :
             	    // InternalSedml.g:1176:4: (lv_curve_2_0= rulecurve )
             	    {
@@ -2468,7 +2490,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             	    					newCompositeNode(grammarAccess.getListOfCurvesAccess().getCurveCurveParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_34);
+            	    pushFollow(FOLLOW_35);
             	    lv_curve_2_0=rulecurve();
 
             	    state._fsp--;
@@ -2492,7 +2514,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop6;
+            	    break loop8;
                 }
             } while (true);
 
@@ -2559,7 +2581,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulecurve"
-    // InternalSedml.g:1209:1: rulecurve returns [EObject current=null] : (otherlv_0= 'curve' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'logX' otherlv_6= ':' ( (lv_logX_7_0= RULE_STRING ) ) otherlv_8= 'logY' otherlv_9= ':' ( (lv_logY_10_0= RULE_STRING ) ) otherlv_11= 'xDataReference' otherlv_12= ':' ( (lv_xDataReference_13_0= RULE_STRING ) ) otherlv_14= 'yDataReference' otherlv_15= ':' ( (lv_yDataReference_16_0= RULE_STRING ) ) otherlv_17= '}' ) ;
+    // InternalSedml.g:1209:1: rulecurve returns [EObject current=null] : (otherlv_0= 'curve' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'logX' otherlv_6= ':' ( (lv_logX_7_0= RULE_STRING ) ) otherlv_8= 'logY' otherlv_9= ':' ( (lv_logY_10_0= RULE_STRING ) ) otherlv_11= 'xDataReference' otherlv_12= ':' ( (lv_xDataReference_13_0= RULE_STRING ) ) otherlv_14= 'yDataReference' otherlv_15= ':' ( (lv_yDataReference_16_0= RULE_STRING ) ) otherlv_17= '}' ) ;
     public final EObject rulecurve() throws RecognitionException {
         EObject current = null;
 
@@ -2586,11 +2608,11 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSedml.g:1215:2: ( (otherlv_0= 'curve' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'logX' otherlv_6= ':' ( (lv_logX_7_0= RULE_STRING ) ) otherlv_8= 'logY' otherlv_9= ':' ( (lv_logY_10_0= RULE_STRING ) ) otherlv_11= 'xDataReference' otherlv_12= ':' ( (lv_xDataReference_13_0= RULE_STRING ) ) otherlv_14= 'yDataReference' otherlv_15= ':' ( (lv_yDataReference_16_0= RULE_STRING ) ) otherlv_17= '}' ) )
-            // InternalSedml.g:1216:2: (otherlv_0= 'curve' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'logX' otherlv_6= ':' ( (lv_logX_7_0= RULE_STRING ) ) otherlv_8= 'logY' otherlv_9= ':' ( (lv_logY_10_0= RULE_STRING ) ) otherlv_11= 'xDataReference' otherlv_12= ':' ( (lv_xDataReference_13_0= RULE_STRING ) ) otherlv_14= 'yDataReference' otherlv_15= ':' ( (lv_yDataReference_16_0= RULE_STRING ) ) otherlv_17= '}' )
+            // InternalSedml.g:1215:2: ( (otherlv_0= 'curve' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'logX' otherlv_6= ':' ( (lv_logX_7_0= RULE_STRING ) ) otherlv_8= 'logY' otherlv_9= ':' ( (lv_logY_10_0= RULE_STRING ) ) otherlv_11= 'xDataReference' otherlv_12= ':' ( (lv_xDataReference_13_0= RULE_STRING ) ) otherlv_14= 'yDataReference' otherlv_15= ':' ( (lv_yDataReference_16_0= RULE_STRING ) ) otherlv_17= '}' ) )
+            // InternalSedml.g:1216:2: (otherlv_0= 'curve' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'logX' otherlv_6= ':' ( (lv_logX_7_0= RULE_STRING ) ) otherlv_8= 'logY' otherlv_9= ':' ( (lv_logY_10_0= RULE_STRING ) ) otherlv_11= 'xDataReference' otherlv_12= ':' ( (lv_xDataReference_13_0= RULE_STRING ) ) otherlv_14= 'yDataReference' otherlv_15= ':' ( (lv_yDataReference_16_0= RULE_STRING ) ) otherlv_17= '}' )
             {
-            // InternalSedml.g:1216:2: (otherlv_0= 'curve' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'logX' otherlv_6= ':' ( (lv_logX_7_0= RULE_STRING ) ) otherlv_8= 'logY' otherlv_9= ':' ( (lv_logY_10_0= RULE_STRING ) ) otherlv_11= 'xDataReference' otherlv_12= ':' ( (lv_xDataReference_13_0= RULE_STRING ) ) otherlv_14= 'yDataReference' otherlv_15= ':' ( (lv_yDataReference_16_0= RULE_STRING ) ) otherlv_17= '}' )
-            // InternalSedml.g:1217:3: otherlv_0= 'curve' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'logX' otherlv_6= ':' ( (lv_logX_7_0= RULE_STRING ) ) otherlv_8= 'logY' otherlv_9= ':' ( (lv_logY_10_0= RULE_STRING ) ) otherlv_11= 'xDataReference' otherlv_12= ':' ( (lv_xDataReference_13_0= RULE_STRING ) ) otherlv_14= 'yDataReference' otherlv_15= ':' ( (lv_yDataReference_16_0= RULE_STRING ) ) otherlv_17= '}'
+            // InternalSedml.g:1216:2: (otherlv_0= 'curve' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'logX' otherlv_6= ':' ( (lv_logX_7_0= RULE_STRING ) ) otherlv_8= 'logY' otherlv_9= ':' ( (lv_logY_10_0= RULE_STRING ) ) otherlv_11= 'xDataReference' otherlv_12= ':' ( (lv_xDataReference_13_0= RULE_STRING ) ) otherlv_14= 'yDataReference' otherlv_15= ':' ( (lv_yDataReference_16_0= RULE_STRING ) ) otherlv_17= '}' )
+            // InternalSedml.g:1217:3: otherlv_0= 'curve' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'logX' otherlv_6= ':' ( (lv_logX_7_0= RULE_STRING ) ) otherlv_8= 'logY' otherlv_9= ':' ( (lv_logY_10_0= RULE_STRING ) ) otherlv_11= 'xDataReference' otherlv_12= ':' ( (lv_xDataReference_13_0= RULE_STRING ) ) otherlv_14= 'yDataReference' otherlv_15= ':' ( (lv_yDataReference_16_0= RULE_STRING ) ) otherlv_17= '}'
             {
             otherlv_0=(Token)match(input,36,FOLLOW_9); 
 
@@ -2608,15 +2630,15 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getCurveAccess().getColonKeyword_3());
             		
-            // InternalSedml.g:1233:3: ( (lv_id_4_0= RULE_STRING ) )
-            // InternalSedml.g:1234:4: (lv_id_4_0= RULE_STRING )
+            // InternalSedml.g:1233:3: ( (lv_id_4_0= RULE_ID ) )
+            // InternalSedml.g:1234:4: (lv_id_4_0= RULE_ID )
             {
-            // InternalSedml.g:1234:4: (lv_id_4_0= RULE_STRING )
-            // InternalSedml.g:1235:5: lv_id_4_0= RULE_STRING
+            // InternalSedml.g:1234:4: (lv_id_4_0= RULE_ID )
+            // InternalSedml.g:1235:5: lv_id_4_0= RULE_ID
             {
-            lv_id_4_0=(Token)match(input,RULE_STRING,FOLLOW_35); 
+            lv_id_4_0=(Token)match(input,RULE_ID,FOLLOW_36); 
 
-            					newLeafNode(lv_id_4_0, grammarAccess.getCurveAccess().getIdSTRINGTerminalRuleCall_4_0());
+            					newLeafNode(lv_id_4_0, grammarAccess.getCurveAccess().getIdIDTerminalRuleCall_4_0());
             				
 
             					if (current==null) {
@@ -2626,7 +2648,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             						current,
             						"id",
             						lv_id_4_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						"org.eclipse.xtext.common.Terminals.ID");
             				
 
             }
@@ -2638,7 +2660,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getCurveAccess().getLogXKeyword_5());
             		
-            otherlv_6=(Token)match(input,16,FOLLOW_13); 
+            otherlv_6=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_6, grammarAccess.getCurveAccess().getColonKeyword_6());
             		
@@ -2648,7 +2670,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:1260:4: (lv_logX_7_0= RULE_STRING )
             // InternalSedml.g:1261:5: lv_logX_7_0= RULE_STRING
             {
-            lv_logX_7_0=(Token)match(input,RULE_STRING,FOLLOW_36); 
+            lv_logX_7_0=(Token)match(input,RULE_STRING,FOLLOW_37); 
 
             					newLeafNode(lv_logX_7_0, grammarAccess.getCurveAccess().getLogXSTRINGTerminalRuleCall_7_0());
             				
@@ -2672,7 +2694,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_8, grammarAccess.getCurveAccess().getLogYKeyword_8());
             		
-            otherlv_9=(Token)match(input,16,FOLLOW_13); 
+            otherlv_9=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_9, grammarAccess.getCurveAccess().getColonKeyword_9());
             		
@@ -2682,7 +2704,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:1286:4: (lv_logY_10_0= RULE_STRING )
             // InternalSedml.g:1287:5: lv_logY_10_0= RULE_STRING
             {
-            lv_logY_10_0=(Token)match(input,RULE_STRING,FOLLOW_37); 
+            lv_logY_10_0=(Token)match(input,RULE_STRING,FOLLOW_38); 
 
             					newLeafNode(lv_logY_10_0, grammarAccess.getCurveAccess().getLogYSTRINGTerminalRuleCall_10_0());
             				
@@ -2706,7 +2728,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_11, grammarAccess.getCurveAccess().getXDataReferenceKeyword_11());
             		
-            otherlv_12=(Token)match(input,16,FOLLOW_13); 
+            otherlv_12=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_12, grammarAccess.getCurveAccess().getColonKeyword_12());
             		
@@ -2716,7 +2738,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:1312:4: (lv_xDataReference_13_0= RULE_STRING )
             // InternalSedml.g:1313:5: lv_xDataReference_13_0= RULE_STRING
             {
-            lv_xDataReference_13_0=(Token)match(input,RULE_STRING,FOLLOW_38); 
+            lv_xDataReference_13_0=(Token)match(input,RULE_STRING,FOLLOW_39); 
 
             					newLeafNode(lv_xDataReference_13_0, grammarAccess.getCurveAccess().getXDataReferenceSTRINGTerminalRuleCall_13_0());
             				
@@ -2740,7 +2762,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_14, grammarAccess.getCurveAccess().getYDataReferenceKeyword_14());
             		
-            otherlv_15=(Token)match(input,16,FOLLOW_13); 
+            otherlv_15=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_15, grammarAccess.getCurveAccess().getColonKeyword_15());
             		
@@ -2750,7 +2772,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:1338:4: (lv_yDataReference_16_0= RULE_STRING )
             // InternalSedml.g:1339:5: lv_yDataReference_16_0= RULE_STRING
             {
-            lv_yDataReference_16_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
+            lv_yDataReference_16_0=(Token)match(input,RULE_STRING,FOLLOW_18); 
 
             					newLeafNode(lv_yDataReference_16_0, grammarAccess.getCurveAccess().getYDataReferenceSTRINGTerminalRuleCall_16_0());
             				
@@ -2857,22 +2879,22 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_0, grammarAccess.getListOfSimulationsAccess().getListOfSimulationsKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_39); 
+            otherlv_1=(Token)match(input,12,FOLLOW_40); 
 
             			newLeafNode(otherlv_1, grammarAccess.getListOfSimulationsAccess().getLeftCurlyBracketKeyword_1());
             		
             // InternalSedml.g:1386:3: ( (lv_uniformTimeCourse_2_0= ruleuniformTimeCourse ) )*
-            loop7:
+            loop9:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-                if ( (LA7_0==42) ) {
-                    alt7=1;
+                if ( (LA9_0==42) ) {
+                    alt9=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt9) {
             	case 1 :
             	    // InternalSedml.g:1387:4: (lv_uniformTimeCourse_2_0= ruleuniformTimeCourse )
             	    {
@@ -2882,7 +2904,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             	    					newCompositeNode(grammarAccess.getListOfSimulationsAccess().getUniformTimeCourseUniformTimeCourseParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_39);
+            	    pushFollow(FOLLOW_40);
             	    lv_uniformTimeCourse_2_0=ruleuniformTimeCourse();
 
             	    state._fsp--;
@@ -2906,7 +2928,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop9;
                 }
             } while (true);
 
@@ -2973,7 +2995,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleuniformTimeCourse"
-    // InternalSedml.g:1420:1: ruleuniformTimeCourse returns [EObject current=null] : (otherlv_0= 'uniformtimecourse' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'initialTime' otherlv_6= ':' ( (lv_initialTime_7_0= RULE_INT ) ) otherlv_8= 'outputStartTime' otherlv_9= ':' ( (lv_outputStartTime_10_0= RULE_INT ) ) otherlv_11= 'outputEndTime' otherlv_12= ':' ( (lv_outputEndTime_13_0= RULE_INT ) ) otherlv_14= 'numberOfPoints' otherlv_15= ':' ( (lv_numberOfPoints_16_0= RULE_INT ) ) ( (lv_algorithm_17_0= rulealgorithm ) ) otherlv_18= '}' ) ;
+    // InternalSedml.g:1420:1: ruleuniformTimeCourse returns [EObject current=null] : (otherlv_0= 'uniformtimecourse' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'initialTime' otherlv_6= ':' ( (lv_initialTime_7_0= RULE_INT ) ) otherlv_8= 'outputStartTime' otherlv_9= ':' ( (lv_outputStartTime_10_0= RULE_INT ) ) otherlv_11= 'outputEndTime' otherlv_12= ':' ( (lv_outputEndTime_13_0= RULE_INT ) ) otherlv_14= 'numberOfPoints' otherlv_15= ':' ( (lv_numberOfPoints_16_0= RULE_INT ) ) ( (lv_algorithm_17_0= rulealgorithm ) ) otherlv_18= '}' ) ;
     public final EObject ruleuniformTimeCourse() throws RecognitionException {
         EObject current = null;
 
@@ -3002,11 +3024,11 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSedml.g:1426:2: ( (otherlv_0= 'uniformtimecourse' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'initialTime' otherlv_6= ':' ( (lv_initialTime_7_0= RULE_INT ) ) otherlv_8= 'outputStartTime' otherlv_9= ':' ( (lv_outputStartTime_10_0= RULE_INT ) ) otherlv_11= 'outputEndTime' otherlv_12= ':' ( (lv_outputEndTime_13_0= RULE_INT ) ) otherlv_14= 'numberOfPoints' otherlv_15= ':' ( (lv_numberOfPoints_16_0= RULE_INT ) ) ( (lv_algorithm_17_0= rulealgorithm ) ) otherlv_18= '}' ) )
-            // InternalSedml.g:1427:2: (otherlv_0= 'uniformtimecourse' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'initialTime' otherlv_6= ':' ( (lv_initialTime_7_0= RULE_INT ) ) otherlv_8= 'outputStartTime' otherlv_9= ':' ( (lv_outputStartTime_10_0= RULE_INT ) ) otherlv_11= 'outputEndTime' otherlv_12= ':' ( (lv_outputEndTime_13_0= RULE_INT ) ) otherlv_14= 'numberOfPoints' otherlv_15= ':' ( (lv_numberOfPoints_16_0= RULE_INT ) ) ( (lv_algorithm_17_0= rulealgorithm ) ) otherlv_18= '}' )
+            // InternalSedml.g:1426:2: ( (otherlv_0= 'uniformtimecourse' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'initialTime' otherlv_6= ':' ( (lv_initialTime_7_0= RULE_INT ) ) otherlv_8= 'outputStartTime' otherlv_9= ':' ( (lv_outputStartTime_10_0= RULE_INT ) ) otherlv_11= 'outputEndTime' otherlv_12= ':' ( (lv_outputEndTime_13_0= RULE_INT ) ) otherlv_14= 'numberOfPoints' otherlv_15= ':' ( (lv_numberOfPoints_16_0= RULE_INT ) ) ( (lv_algorithm_17_0= rulealgorithm ) ) otherlv_18= '}' ) )
+            // InternalSedml.g:1427:2: (otherlv_0= 'uniformtimecourse' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'initialTime' otherlv_6= ':' ( (lv_initialTime_7_0= RULE_INT ) ) otherlv_8= 'outputStartTime' otherlv_9= ':' ( (lv_outputStartTime_10_0= RULE_INT ) ) otherlv_11= 'outputEndTime' otherlv_12= ':' ( (lv_outputEndTime_13_0= RULE_INT ) ) otherlv_14= 'numberOfPoints' otherlv_15= ':' ( (lv_numberOfPoints_16_0= RULE_INT ) ) ( (lv_algorithm_17_0= rulealgorithm ) ) otherlv_18= '}' )
             {
-            // InternalSedml.g:1427:2: (otherlv_0= 'uniformtimecourse' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'initialTime' otherlv_6= ':' ( (lv_initialTime_7_0= RULE_INT ) ) otherlv_8= 'outputStartTime' otherlv_9= ':' ( (lv_outputStartTime_10_0= RULE_INT ) ) otherlv_11= 'outputEndTime' otherlv_12= ':' ( (lv_outputEndTime_13_0= RULE_INT ) ) otherlv_14= 'numberOfPoints' otherlv_15= ':' ( (lv_numberOfPoints_16_0= RULE_INT ) ) ( (lv_algorithm_17_0= rulealgorithm ) ) otherlv_18= '}' )
-            // InternalSedml.g:1428:3: otherlv_0= 'uniformtimecourse' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_STRING ) ) otherlv_5= 'initialTime' otherlv_6= ':' ( (lv_initialTime_7_0= RULE_INT ) ) otherlv_8= 'outputStartTime' otherlv_9= ':' ( (lv_outputStartTime_10_0= RULE_INT ) ) otherlv_11= 'outputEndTime' otherlv_12= ':' ( (lv_outputEndTime_13_0= RULE_INT ) ) otherlv_14= 'numberOfPoints' otherlv_15= ':' ( (lv_numberOfPoints_16_0= RULE_INT ) ) ( (lv_algorithm_17_0= rulealgorithm ) ) otherlv_18= '}'
+            // InternalSedml.g:1427:2: (otherlv_0= 'uniformtimecourse' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'initialTime' otherlv_6= ':' ( (lv_initialTime_7_0= RULE_INT ) ) otherlv_8= 'outputStartTime' otherlv_9= ':' ( (lv_outputStartTime_10_0= RULE_INT ) ) otherlv_11= 'outputEndTime' otherlv_12= ':' ( (lv_outputEndTime_13_0= RULE_INT ) ) otherlv_14= 'numberOfPoints' otherlv_15= ':' ( (lv_numberOfPoints_16_0= RULE_INT ) ) ( (lv_algorithm_17_0= rulealgorithm ) ) otherlv_18= '}' )
+            // InternalSedml.g:1428:3: otherlv_0= 'uniformtimecourse' otherlv_1= '{' otherlv_2= 'id' otherlv_3= ':' ( (lv_id_4_0= RULE_ID ) ) otherlv_5= 'initialTime' otherlv_6= ':' ( (lv_initialTime_7_0= RULE_INT ) ) otherlv_8= 'outputStartTime' otherlv_9= ':' ( (lv_outputStartTime_10_0= RULE_INT ) ) otherlv_11= 'outputEndTime' otherlv_12= ':' ( (lv_outputEndTime_13_0= RULE_INT ) ) otherlv_14= 'numberOfPoints' otherlv_15= ':' ( (lv_numberOfPoints_16_0= RULE_INT ) ) ( (lv_algorithm_17_0= rulealgorithm ) ) otherlv_18= '}'
             {
             otherlv_0=(Token)match(input,42,FOLLOW_9); 
 
@@ -3024,15 +3046,15 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getUniformTimeCourseAccess().getColonKeyword_3());
             		
-            // InternalSedml.g:1444:3: ( (lv_id_4_0= RULE_STRING ) )
-            // InternalSedml.g:1445:4: (lv_id_4_0= RULE_STRING )
+            // InternalSedml.g:1444:3: ( (lv_id_4_0= RULE_ID ) )
+            // InternalSedml.g:1445:4: (lv_id_4_0= RULE_ID )
             {
-            // InternalSedml.g:1445:4: (lv_id_4_0= RULE_STRING )
-            // InternalSedml.g:1446:5: lv_id_4_0= RULE_STRING
+            // InternalSedml.g:1445:4: (lv_id_4_0= RULE_ID )
+            // InternalSedml.g:1446:5: lv_id_4_0= RULE_ID
             {
-            lv_id_4_0=(Token)match(input,RULE_STRING,FOLLOW_40); 
+            lv_id_4_0=(Token)match(input,RULE_ID,FOLLOW_41); 
 
-            					newLeafNode(lv_id_4_0, grammarAccess.getUniformTimeCourseAccess().getIdSTRINGTerminalRuleCall_4_0());
+            					newLeafNode(lv_id_4_0, grammarAccess.getUniformTimeCourseAccess().getIdIDTerminalRuleCall_4_0());
             				
 
             					if (current==null) {
@@ -3042,7 +3064,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             						current,
             						"id",
             						lv_id_4_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						"org.eclipse.xtext.common.Terminals.ID");
             				
 
             }
@@ -3064,7 +3086,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:1471:4: (lv_initialTime_7_0= RULE_INT )
             // InternalSedml.g:1472:5: lv_initialTime_7_0= RULE_INT
             {
-            lv_initialTime_7_0=(Token)match(input,RULE_INT,FOLLOW_41); 
+            lv_initialTime_7_0=(Token)match(input,RULE_INT,FOLLOW_42); 
 
             					newLeafNode(lv_initialTime_7_0, grammarAccess.getUniformTimeCourseAccess().getInitialTimeINTTerminalRuleCall_7_0());
             				
@@ -3098,7 +3120,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:1497:4: (lv_outputStartTime_10_0= RULE_INT )
             // InternalSedml.g:1498:5: lv_outputStartTime_10_0= RULE_INT
             {
-            lv_outputStartTime_10_0=(Token)match(input,RULE_INT,FOLLOW_42); 
+            lv_outputStartTime_10_0=(Token)match(input,RULE_INT,FOLLOW_43); 
 
             					newLeafNode(lv_outputStartTime_10_0, grammarAccess.getUniformTimeCourseAccess().getOutputStartTimeINTTerminalRuleCall_10_0());
             				
@@ -3132,7 +3154,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:1523:4: (lv_outputEndTime_13_0= RULE_INT )
             // InternalSedml.g:1524:5: lv_outputEndTime_13_0= RULE_INT
             {
-            lv_outputEndTime_13_0=(Token)match(input,RULE_INT,FOLLOW_43); 
+            lv_outputEndTime_13_0=(Token)match(input,RULE_INT,FOLLOW_44); 
 
             					newLeafNode(lv_outputEndTime_13_0, grammarAccess.getUniformTimeCourseAccess().getOutputEndTimeINTTerminalRuleCall_13_0());
             				
@@ -3166,7 +3188,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:1549:4: (lv_numberOfPoints_16_0= RULE_INT )
             // InternalSedml.g:1550:5: lv_numberOfPoints_16_0= RULE_INT
             {
-            lv_numberOfPoints_16_0=(Token)match(input,RULE_INT,FOLLOW_44); 
+            lv_numberOfPoints_16_0=(Token)match(input,RULE_INT,FOLLOW_45); 
 
             					newLeafNode(lv_numberOfPoints_16_0, grammarAccess.getUniformTimeCourseAccess().getNumberOfPointsINTTerminalRuleCall_16_0());
             				
@@ -3195,7 +3217,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getUniformTimeCourseAccess().getAlgorithmAlgorithmParserRuleCall_17_0());
             				
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_18);
             lv_algorithm_17_0=rulealgorithm();
 
             state._fsp--;
@@ -3305,7 +3327,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_0, grammarAccess.getAlgorithmAccess().getAlgorithmKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_45); 
+            otherlv_1=(Token)match(input,12,FOLLOW_46); 
 
             			newLeafNode(otherlv_1, grammarAccess.getAlgorithmAccess().getLeftCurlyBracketKeyword_1());
             		
@@ -3313,7 +3335,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getAlgorithmAccess().getKisaoIDKeyword_2());
             		
-            otherlv_3=(Token)match(input,16,FOLLOW_13); 
+            otherlv_3=(Token)match(input,16,FOLLOW_15); 
 
             			newLeafNode(otherlv_3, grammarAccess.getAlgorithmAccess().getColonKeyword_3());
             		
@@ -3323,7 +3345,7 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
             // InternalSedml.g:1625:4: (lv_kisaoID_4_0= RULE_STRING )
             // InternalSedml.g:1626:5: lv_kisaoID_4_0= RULE_STRING
             {
-            lv_kisaoID_4_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
+            lv_kisaoID_4_0=(Token)match(input,RULE_STRING,FOLLOW_18); 
 
             					newLeafNode(lv_kisaoID_4_0, grammarAccess.getAlgorithmAccess().getKisaoIDSTRINGTerminalRuleCall_4_0());
             				
@@ -3378,8 +3400,8 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000020000000000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000006000L});
@@ -3387,36 +3409,37 @@ public class InternalSedmlParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000202000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000002002000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000080202000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000080002000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000402000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000008002000L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000400002000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000001000002000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000040000002000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000102000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000400002000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000001000002000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000040000002000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0001000000000000L});
 
 }

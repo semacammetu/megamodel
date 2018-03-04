@@ -223,6 +223,144 @@ public interface SedmlPackage extends EPackage
   int MODEL_FEATURE_COUNT = 4;
 
   /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl <em>data Generator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getdataGenerator()
+   * @generated
+   */
+  int DATA_GENERATOR = 3;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_GENERATOR__ID = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_GENERATOR__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>List Of Variables</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_GENERATOR__LIST_OF_VARIABLES = 2;
+
+  /**
+   * The feature id for the '<em><b>Math</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_GENERATOR__MATH = 3;
+
+  /**
+   * The number of structural features of the '<em>data Generator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_GENERATOR_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfVariablesImpl <em>list Of Variables</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfVariablesImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfVariables()
+   * @generated
+   */
+  int LIST_OF_VARIABLES = 4;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_VARIABLES__VARIABLE = 0;
+
+  /**
+   * The number of structural features of the '<em>list Of Variables</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_VARIABLES_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.variableImpl <em>variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.variableImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getvariable()
+   * @generated
+   */
+  int VARIABLE = 5;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__ID = 0;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__TARGET = 1;
+
+  /**
+   * The feature id for the '<em><b>Task Reference</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__TASK_REFERENCE = 2;
+
+  /**
+   * The feature id for the '<em><b>Symbol</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__SYMBOL = 3;
+
+  /**
+   * The number of structural features of the '<em>variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_FEATURE_COUNT = 4;
+
+  /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfTasksImpl <em>list Of Tasks</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -230,7 +368,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfTasks()
    * @generated
    */
-  int LIST_OF_TASKS = 3;
+  int LIST_OF_TASKS = 6;
 
   /**
    * The feature id for the '<em><b>Task</b></em>' containment reference list.
@@ -258,7 +396,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#gettask()
    * @generated
    */
-  int TASK = 4;
+  int TASK = 7;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -313,7 +451,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfDataGenerators()
    * @generated
    */
-  int LIST_OF_DATA_GENERATORS = 5;
+  int LIST_OF_DATA_GENERATORS = 8;
 
   /**
    * The feature id for the '<em><b>Datagenerator</b></em>' containment reference list.
@@ -332,144 +470,6 @@ public interface SedmlPackage extends EPackage
    * @ordered
    */
   int LIST_OF_DATA_GENERATORS_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl <em>data Generator</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getdataGenerator()
-   * @generated
-   */
-  int DATA_GENERATOR = 6;
-
-  /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_GENERATOR__ID = 0;
-
-  /**
-   * The feature id for the '<em><b>List Of Variables</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_GENERATOR__LIST_OF_VARIABLES = 1;
-
-  /**
-   * The feature id for the '<em><b>Math</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_GENERATOR__MATH = 2;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_GENERATOR__NAME = 3;
-
-  /**
-   * The number of structural features of the '<em>data Generator</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA_GENERATOR_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfVariablesImpl <em>list Of Variables</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfVariablesImpl
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfVariables()
-   * @generated
-   */
-  int LIST_OF_VARIABLES = 7;
-
-  /**
-   * The feature id for the '<em><b>Variable</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LIST_OF_VARIABLES__VARIABLE = 0;
-
-  /**
-   * The number of structural features of the '<em>list Of Variables</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LIST_OF_VARIABLES_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.variableImpl <em>variable</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.variableImpl
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getvariable()
-   * @generated
-   */
-  int VARIABLE = 8;
-
-  /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE__ID = 0;
-
-  /**
-   * The feature id for the '<em><b>Target</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE__TARGET = 1;
-
-  /**
-   * The feature id for the '<em><b>Task Reference</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE__TASK_REFERENCE = 2;
-
-  /**
-   * The feature id for the '<em><b>Symbol</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE__SYMBOL = 3;
-
-  /**
-   * The number of structural features of the '<em>variable</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.mathImpl <em>math</em>}' class.
@@ -958,6 +958,135 @@ public interface SedmlPackage extends EPackage
   EAttribute getmodel_Name();
 
   /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator <em>data Generator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>data Generator</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator
+   * @generated
+   */
+  EClass getdataGenerator();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getId()
+   * @see #getdataGenerator()
+   * @generated
+   */
+  EAttribute getdataGenerator_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getName()
+   * @see #getdataGenerator()
+   * @generated
+   */
+  EAttribute getdataGenerator_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getListOfVariables <em>List Of Variables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Variables</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getListOfVariables()
+   * @see #getdataGenerator()
+   * @generated
+   */
+  EReference getdataGenerator_ListOfVariables();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getMath <em>Math</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Math</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getMath()
+   * @see #getdataGenerator()
+   * @generated
+   */
+  EReference getdataGenerator_Math();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfVariables <em>list Of Variables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>list Of Variables</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfVariables
+   * @generated
+   */
+  EClass getlistOfVariables();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfVariables#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Variable</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfVariables#getVariable()
+   * @see #getlistOfVariables()
+   * @generated
+   */
+  EReference getlistOfVariables_Variable();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable <em>variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>variable</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.variable
+   * @generated
+   */
+  EClass getvariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getId()
+   * @see #getvariable()
+   * @generated
+   */
+  EAttribute getvariable_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Target</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getTarget()
+   * @see #getvariable()
+   * @generated
+   */
+  EAttribute getvariable_Target();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getTaskReference <em>Task Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Task Reference</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getTaskReference()
+   * @see #getvariable()
+   * @generated
+   */
+  EReference getvariable_TaskReference();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getSymbol <em>Symbol</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Symbol</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getSymbol()
+   * @see #getvariable()
+   * @generated
+   */
+  EAttribute getvariable_Symbol();
+
+  /**
    * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfTasks <em>list Of Tasks</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1052,135 +1181,6 @@ public interface SedmlPackage extends EPackage
    * @generated
    */
   EReference getlistOfDataGenerators_Datagenerator();
-
-  /**
-   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator <em>data Generator</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>data Generator</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator
-   * @generated
-   */
-  EClass getdataGenerator();
-
-  /**
-   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getId <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getId()
-   * @see #getdataGenerator()
-   * @generated
-   */
-  EAttribute getdataGenerator_Id();
-
-  /**
-   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getListOfVariables <em>List Of Variables</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>List Of Variables</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getListOfVariables()
-   * @see #getdataGenerator()
-   * @generated
-   */
-  EReference getdataGenerator_ListOfVariables();
-
-  /**
-   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getMath <em>Math</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Math</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getMath()
-   * @see #getdataGenerator()
-   * @generated
-   */
-  EReference getdataGenerator_Math();
-
-  /**
-   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getName()
-   * @see #getdataGenerator()
-   * @generated
-   */
-  EAttribute getdataGenerator_Name();
-
-  /**
-   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfVariables <em>list Of Variables</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>list Of Variables</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfVariables
-   * @generated
-   */
-  EClass getlistOfVariables();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfVariables#getVariable <em>Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Variable</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfVariables#getVariable()
-   * @see #getlistOfVariables()
-   * @generated
-   */
-  EReference getlistOfVariables_Variable();
-
-  /**
-   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable <em>variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>variable</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.variable
-   * @generated
-   */
-  EClass getvariable();
-
-  /**
-   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getId <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getId()
-   * @see #getvariable()
-   * @generated
-   */
-  EAttribute getvariable_Id();
-
-  /**
-   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getTarget <em>Target</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Target</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getTarget()
-   * @see #getvariable()
-   * @generated
-   */
-  EAttribute getvariable_Target();
-
-  /**
-   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getTaskReference <em>Task Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Task Reference</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getTaskReference()
-   * @see #getvariable()
-   * @generated
-   */
-  EReference getvariable_TaskReference();
-
-  /**
-   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getSymbol <em>Symbol</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Symbol</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getSymbol()
-   * @see #getvariable()
-   * @generated
-   */
-  EAttribute getvariable_Symbol();
 
   /**
    * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.math <em>math</em>}'.
@@ -1621,6 +1621,108 @@ public interface SedmlPackage extends EPackage
     EAttribute MODEL__NAME = eINSTANCE.getmodel_Name();
 
     /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl <em>data Generator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getdataGenerator()
+     * @generated
+     */
+    EClass DATA_GENERATOR = eINSTANCE.getdataGenerator();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_GENERATOR__ID = eINSTANCE.getdataGenerator_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_GENERATOR__NAME = eINSTANCE.getdataGenerator_Name();
+
+    /**
+     * The meta object literal for the '<em><b>List Of Variables</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_GENERATOR__LIST_OF_VARIABLES = eINSTANCE.getdataGenerator_ListOfVariables();
+
+    /**
+     * The meta object literal for the '<em><b>Math</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_GENERATOR__MATH = eINSTANCE.getdataGenerator_Math();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfVariablesImpl <em>list Of Variables</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfVariablesImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfVariables()
+     * @generated
+     */
+    EClass LIST_OF_VARIABLES = eINSTANCE.getlistOfVariables();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_OF_VARIABLES__VARIABLE = eINSTANCE.getlistOfVariables_Variable();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.variableImpl <em>variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.variableImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getvariable()
+     * @generated
+     */
+    EClass VARIABLE = eINSTANCE.getvariable();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE__ID = eINSTANCE.getvariable_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE__TARGET = eINSTANCE.getvariable_Target();
+
+    /**
+     * The meta object literal for the '<em><b>Task Reference</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE__TASK_REFERENCE = eINSTANCE.getvariable_TaskReference();
+
+    /**
+     * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE__SYMBOL = eINSTANCE.getvariable_Symbol();
+
+    /**
      * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfTasksImpl <em>list Of Tasks</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1697,108 +1799,6 @@ public interface SedmlPackage extends EPackage
      * @generated
      */
     EReference LIST_OF_DATA_GENERATORS__DATAGENERATOR = eINSTANCE.getlistOfDataGenerators_Datagenerator();
-
-    /**
-     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl <em>data Generator</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl
-     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getdataGenerator()
-     * @generated
-     */
-    EClass DATA_GENERATOR = eINSTANCE.getdataGenerator();
-
-    /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DATA_GENERATOR__ID = eINSTANCE.getdataGenerator_Id();
-
-    /**
-     * The meta object literal for the '<em><b>List Of Variables</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DATA_GENERATOR__LIST_OF_VARIABLES = eINSTANCE.getdataGenerator_ListOfVariables();
-
-    /**
-     * The meta object literal for the '<em><b>Math</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DATA_GENERATOR__MATH = eINSTANCE.getdataGenerator_Math();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DATA_GENERATOR__NAME = eINSTANCE.getdataGenerator_Name();
-
-    /**
-     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfVariablesImpl <em>list Of Variables</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfVariablesImpl
-     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfVariables()
-     * @generated
-     */
-    EClass LIST_OF_VARIABLES = eINSTANCE.getlistOfVariables();
-
-    /**
-     * The meta object literal for the '<em><b>Variable</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LIST_OF_VARIABLES__VARIABLE = eINSTANCE.getlistOfVariables_Variable();
-
-    /**
-     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.variableImpl <em>variable</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.variableImpl
-     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getvariable()
-     * @generated
-     */
-    EClass VARIABLE = eINSTANCE.getvariable();
-
-    /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE__ID = eINSTANCE.getvariable_Id();
-
-    /**
-     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE__TARGET = eINSTANCE.getvariable_Target();
-
-    /**
-     * The meta object literal for the '<em><b>Task Reference</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VARIABLE__TASK_REFERENCE = eINSTANCE.getvariable_TaskReference();
-
-    /**
-     * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE__SYMBOL = eINSTANCE.getvariable_Symbol();
 
     /**
      * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.mathImpl <em>math</em>}' class.

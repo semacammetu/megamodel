@@ -51,33 +51,6 @@ public interface SedmlFactory extends EFactory
   model createmodel();
 
   /**
-   * Returns a new object of class '<em>list Of Tasks</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>list Of Tasks</em>'.
-   * @generated
-   */
-  listOfTasks createlistOfTasks();
-
-  /**
-   * Returns a new object of class '<em>task</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>task</em>'.
-   * @generated
-   */
-  task createtask();
-
-  /**
-   * Returns a new object of class '<em>list Of Data Generators</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>list Of Data Generators</em>'.
-   * @generated
-   */
-  listOfDataGenerators createlistOfDataGenerators();
-
-  /**
    * Returns a new object of class '<em>data Generator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,6 +76,33 @@ public interface SedmlFactory extends EFactory
    * @generated
    */
   variable createvariable();
+
+  /**
+   * Returns a new object of class '<em>list Of Tasks</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>list Of Tasks</em>'.
+   * @generated
+   */
+  listOfTasks createlistOfTasks();
+
+  /**
+   * Returns a new object of class '<em>task</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>task</em>'.
+   * @generated
+   */
+  task createtask();
+
+  /**
+   * Returns a new object of class '<em>list Of Data Generators</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>list Of Data Generators</em>'.
+   * @generated
+   */
+  listOfDataGenerators createlistOfDataGenerators();
 
   /**
    * Returns a new object of class '<em>math</em>'.

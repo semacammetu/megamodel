@@ -91,21 +91,6 @@ public class SedmlAdapterFactory extends AdapterFactoryImpl
         return createmodelAdapter();
       }
       @Override
-      public Adapter caselistOfTasks(listOfTasks object)
-      {
-        return createlistOfTasksAdapter();
-      }
-      @Override
-      public Adapter casetask(task object)
-      {
-        return createtaskAdapter();
-      }
-      @Override
-      public Adapter caselistOfDataGenerators(listOfDataGenerators object)
-      {
-        return createlistOfDataGeneratorsAdapter();
-      }
-      @Override
       public Adapter casedataGenerator(dataGenerator object)
       {
         return createdataGeneratorAdapter();
@@ -119,6 +104,21 @@ public class SedmlAdapterFactory extends AdapterFactoryImpl
       public Adapter casevariable(variable object)
       {
         return createvariableAdapter();
+      }
+      @Override
+      public Adapter caselistOfTasks(listOfTasks object)
+      {
+        return createlistOfTasksAdapter();
+      }
+      @Override
+      public Adapter casetask(task object)
+      {
+        return createtaskAdapter();
+      }
+      @Override
+      public Adapter caselistOfDataGenerators(listOfDataGenerators object)
+      {
+        return createlistOfDataGeneratorsAdapter();
       }
       @Override
       public Adapter casemath(math object)
@@ -228,51 +228,6 @@ public class SedmlAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfTasks <em>list Of Tasks</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfTasks
-   * @generated
-   */
-  public Adapter createlistOfTasksAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.task <em>task</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.task
-   * @generated
-   */
-  public Adapter createtaskAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataGenerators <em>list Of Data Generators</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataGenerators
-   * @generated
-   */
-  public Adapter createlistOfDataGeneratorsAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator <em>data Generator</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -313,6 +268,51 @@ public class SedmlAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createvariableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfTasks <em>list Of Tasks</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfTasks
+   * @generated
+   */
+  public Adapter createlistOfTasksAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.task <em>task</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.task
+   * @generated
+   */
+  public Adapter createtaskAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataGenerators <em>list Of Data Generators</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataGenerators
+   * @generated
+   */
+  public Adapter createlistOfDataGeneratorsAdapter()
   {
     return null;
   }
