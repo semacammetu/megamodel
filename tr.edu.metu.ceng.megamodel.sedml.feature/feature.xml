@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="tr.edu.metu.ceng.megamodel.sedml.feature"
+	label="Sedml Feature "
+	version="1.0.0.qualifier">
+	<plugin
+			id="tr.edu.metu.ceng.megamodel.sedml"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="tr.edu.metu.ceng.megamodel.sedml.ide"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="tr.edu.metu.ceng.megamodel.sedml.ui"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+</feature>

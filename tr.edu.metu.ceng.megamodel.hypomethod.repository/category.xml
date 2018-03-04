@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+	<feature id="tr.edu.metu.ceng.megamodel.hypomethod.feature" version="0.0.0">
+		<category name="main"/>
+	</feature>
+	<feature id="tr.edu.metu.ceng.megamodel.hypomethod.feature.source" version="0.0.0">
+		<category name="main.source"/>
+	</feature>
+	<category-def name="main" label="HypoMethod"/>
+	<category-def name="main.source" label="HypoMethod (Sources)"/>
+</site>

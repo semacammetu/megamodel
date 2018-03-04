@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="tr.edu.metu.ceng.megamodel.hypomethod.feature"
+	label="HypoMethod Feature "
+	version="1.0.0.qualifier">
+	<plugin
+			id="tr.edu.metu.ceng.megamodel.hypomethod"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="tr.edu.metu.ceng.megamodel.hypomethod.ide"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="tr.edu.metu.ceng.megamodel.hypomethod.ui"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+</feature>

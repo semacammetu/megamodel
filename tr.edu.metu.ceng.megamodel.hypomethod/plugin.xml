@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.ceng.metu.edu.tr/~e1774785/megamodel/hypomethod"
+			class = "tr.edu.metu.ceng.megamodel.hypomethod.hypoMethod.HypoMethodPackage"
+			genModel = "model/generated/HypoMethod.genmodel" />
+	</extension>
+</plugin>

@@ -1,0 +1,117 @@
+grammar tr.edu.metu.ceng.megamodel.sedml.Sedml with org.eclipse.xtext.common.Terminals
+
+generate sedml "http://www.ceng.metu.edu.tr/~e1774785/megamodel/sedml"
+
+sedML:
+	version=INT level=INT (listOfSimulations=listOfSimulations)  listOfModels=listOfModels listOfTasks=listOfTasks  listOfDataGenerators=listOfDataGenerators  listOfOutputs=listOfOutputs;
+
+listOfModels:
+	'listOfModels' 
+	'{'
+	(model+=model)*
+	'}';
+
+model:
+	'model' '{'
+	'id' ':' (id=STRING)
+	'language' ':' (language=STRING)
+	'source' ':' (source=STRING)
+	'name' ':' (name=STRING)
+	'}';
+
+listOfTasks:
+	'listOfTasks' 
+	'{'
+	(task+=task)*
+	'}';
+
+task:
+	'task' '{'
+	'id' ':' (id=STRING)
+	'modelReference' ':' (modelReference=model)
+	'simulationReference' ':' (simulationReference=uniformTimeCourse)
+	'name' ':' (name=STRING)
+	'}';
+
+listOfDataGenerators:
+	'listOfDataGenerators' 
+	'{'
+	(datagenerator+=dataGenerator)*
+	'}';
+
+dataGenerator:
+	'dataGenerator' '{'
+	'id' ':' (id=STRING)
+	(listOfVariables=listOfVariables)
+	(math=math)
+	'name' ':' (name=STRING)
+	'}';
+	
+listOfVariables:
+	'listOfDataVariables' 
+	'{'
+	(variable+=variable)*
+	'}';
+
+variable:
+	'variable' '{'
+	'id' ':' (id=STRING)
+	'target' ':' (target=STRING)
+	'taskReference' ':' (taskReference=task)
+	'symbol' ':' (symbol=STRING)
+	'}';
+
+math:
+	'math' '{'
+	'xlms' ':' (xlms=STRING)
+	'}';
+
+listOfOutputs:
+	'listOfOutputs' 
+	'{'
+	(plot2D+=plot2D)*
+	'}';
+
+plot2D:
+	'plot2D' '{'
+	'id' ':' (id=STRING)
+	'name' ':' (name=STRING)
+	(listOfCurves=listOfCurves)	
+	'}';
+
+listOfCurves:
+'listOfCurves' 
+	'{'
+	(curve+=curve)*
+	'}';
+
+curve:
+	'curve' '{'
+	'id' ':' (id=STRING)
+	'logX' ':' (logX=STRING)
+	'logY' ':' (logY=STRING)
+	'xDataReference' ':' (xDataReference=STRING)
+	'yDataReference' ':' (yDataReference=STRING)
+	'}';
+
+listOfSimulations:
+	'listOfSimulations' 
+	'{'
+	(uniformTimeCourse+=uniformTimeCourse)*
+	'}';
+
+uniformTimeCourse:
+	'uniformtimecourse' '{'
+	'id' ':' (id=STRING)
+	'initialTime' ':' (initialTime=INT)
+	'outputStartTime' ':' (outputStartTime=INT)
+	'outputEndTime' ':' (outputEndTime=INT)
+	'numberOfPoints' ':' (numberOfPoints=INT)
+	(algorithm=algorithm)
+	'}';
+
+algorithm:
+	'algorithm' '{'
+	'kisaoID' ':' (kisaoID=STRING)
+	'}';
+
