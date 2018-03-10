@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.ceng.metu.edu.tr/~e1774785/megamodel/hypomethod" >
+  <modelSection modName="str1234">
+    <mechanisms mechanismName="str1234">
+      <LHS agent1="str1234" agent="str1234" />
+      <condition gd="str1234" condition1="str1234" link="str1234" condition2="str1234" />
+      <RHS agent1="str1234" agent="str1234" />
+    </mechanisms>
+    <events eventName="str1234" event="str1234" />
+    <parameters factorName="str1234" factorType="QUALITATIVE" factorType1="str1234">
+      <factorValue fVal="str1234" function="str1234" value="str1234" fvalue="str1234" />
+      <factorProperties pName="str1234">
+        <pVal fVal="str1234" function="str1234" value="str1234" fvalue="str1234" />
+      </factorProperties>
+    </parameters>
+  </modelSection>
+  <goals objOfStudy="str1234" purpose="str1234" focus="str1234" viewPoint="str1234" context="str1234" />
+  <hypothesis>
+    <mechHypothesis mName="str1234" mechanisticHypothesis="str1234">
+      <assoMech />
+    </mechHypothesis>
+    <evidences eName="str1234" objOfStudy="str1234">
+      <query />
+    </evidences>
+    <coherenceLinks coherence="EXPLAIN">
+      <hyp>str1234</hyp>
+      <evi>str1234</evi>
+    </coherenceLinks>
+    <relHypothesis />
+  </hypothesis>
+  <experiment expName="str1234">
+    <expDesign designType="FULLFACTORIAL" constraint="str1234">
+      <iteration iterations="123" />
+      <variables>
+        <independentVariables>
+          <variables facName="str1234" l="str1234" l1="HIGH" l2="HIGH" start1="str1234" end1="str1234" />
+        </independentVariables>
+        <controlVariables controlName="str1234" controlType="QUALITATIVE">
+          <controlValue fVal="str1234" function="str1234" value="str1234" fvalue="str1234" />
+        </controlVariables>
+        <dependentVariables>
+          <responseName responseName="str1234" responseType="SIMPLE" />
+        </dependentVariables>
+      </variables>
+    </expDesign>
+    <perfMeasure expectedResponse="str1234" er="str1234" std="str1234" />
+  </experiment>
+</Model>
+

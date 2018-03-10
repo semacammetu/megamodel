@@ -1,0 +1,40 @@
+model ISHC{
+	mechanism M1 = inflammatoryAgent + Kupffercells [ inflammatoryAgent > inflammatorythreshold ] -> Cytokines 
+	mechanism M2 = inflammatoryAgent + Kupffercells [ noOfCytokine > cytokineThreshold ] -> Cytokines 
+	event inflammation = 'void ishc.model.KupfferCell.handleInflammation()' 
+	parameter LPS = Solute with properties { 
+		tag : LPS , 
+		bindable : true , 
+		bolusRatio : 1.0 , 
+		pExitMedia : 0.1 , 
+		pExitCell : 1.0 , 
+		bindProb : 0.25 , 
+		bindCycles : 1 , 
+		numProps : 8 , 
+		membraneCrossing : true , 
+		bileRatio : 0.5 , 
+		core2Rim : 0.50 , 
+		metProbStart : 0.3 , 
+		metProbFinish : 0.3 , 
+		metabolites : 'LPS-Metabolite_A' , 
+		inflammatory : true , 
+		pDegrade : 0.0
+	} 
+	parameter forwardBias = DISCRETE with values { 0.5 }
+}
+goal{
+	object of study : 'Immune system influence on hepatic cytochrome P450 regulation' 
+	purpose : 'Explain / characterize' 
+	focus : 'the reason for changes in downstream drug metabolism and hepatotoxicity' 
+	view point : 'based on the response of hepatic cytochrome P450- regulating mechanisms' 
+	context : 'when health and/or therapeutic interventions change.'
+}
+hypotheses {
+	mechanistic hypotheses { H1 : M1 occurs before M2 } 
+	evidence { E1 : inflammation occurs after inflammatoryAgent > inflammatoryAgentThreshold 
+		activation weight : 0.5 E2 : inflammation is absent after cytokine < cytokineThreshold activation weight : 0.5
+	} 
+	coherence model { 
+		EXPLAIN ( H1 ) ( E1 ) DATA ( Experiment1 ) ( E1 E2 )
+	}
+}
