@@ -11,6 +11,7 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.emf.ecore,
  org.eclipse.xtext.xbase.lib,
  org.antlr.runtime,
+ org.eclipse.xtext.xbase.idea;resolution:=optional,
  org.eclipse.xtext.util,
  org.eclipse.xtend.lib,
  org.eclipse.emf.common

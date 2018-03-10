@@ -7,6 +7,10 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import tr.edu.metu.ceng.megamodel.hypomethod.hypoMethod.Factor
+import tr.edu.metu.ceng.megamodel.hypomethod.hypoMethod.Goals
+import tr.edu.metu.ceng.megamodel.hypomethod.hypoMethod.Model
+import tr.edu.metu.ceng.megamodel.hypomethod.hypoMethod.ModelSection
 
 /**
  * Generates code from your model files on save.
@@ -14,12 +18,101 @@ import org.eclipse.xtext.generator.IGeneratorContext
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class HypoMethodGenerator extends AbstractGenerator {
-
-	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
-	}
+ 
+    override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+        println("HypoMethodGenerator::doGenerate");
+        for (model : resource.allContents.toIterable.filter(Model)) {
+        	fsa.generateFile(
+                "sedml.xml",
+                model.generateXml)
+        }
+    }
+ 	
+    def generateXml(Model model) ''' 
+    	<?xml version="1.0" encoding="utf-8"?>
+    	<sedML xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.ceng.metu.edu.tr/~e1774785/megamodel/sedml"  level="1" version="1">
+    	<listOfSimulations>
+    		    	«var simCounter = 1»
+    		       	«FOR expOnt : model.eContents»       			
+    		       	        «IF expOnt instanceof Goals»       	        	
+    		       	            «generateSimulation(expOnt, simCounter++)»
+    		       	        «ENDIF»       		
+    		       	«ENDFOR»
+    	</listOfSimulations>    	
+    	<listOfModels>
+    		    	«var modelCounter = 1»
+    		       	«FOR expOnt : model.eContents»       			
+    		       	        «IF expOnt instanceof Goals»       	        	
+    		       	            «generateModel(expOnt, modelCounter++)»
+    		       	        «ENDIF»       		
+    		       	«ENDFOR»
+    	</listOfModels>    	
+    	<listOfTasks>    
+			    	«var taskCounter = 1»
+			       	«FOR expOnt : model.eContents»       			
+			       	        «IF expOnt instanceof Goals»       	        	
+			       	            «generateTask(expOnt, taskCounter++)»
+			       	        «ENDIF»       		
+			       	«ENDFOR»     	    	
+    	</listOfTasks>    	    	
+    	<listOfDataGenerators>
+	    	    	«var dataGeneratorCounter = 1»
+	    	       	«FOR expOnt : model.eContents»       			
+	    	       	        «IF expOnt instanceof ModelSection» 
+	    	       	        	         	«FOR factor :expOnt.parameters» 	
+	    	       	        	         		            «generateDataGenerator(factor, dataGeneratorCounter++)»
+	    	       	        	            «ENDFOR»
+	    	       	        «ENDIF»       		
+	    	       	«ENDFOR»  	
+    	</listOfDataGenerators>    	
+    	<listOfOutputs>
+    		    	«var outputCounter = 1»
+    		       	«FOR expOnt : model.eContents»       			
+    		       	        «IF expOnt instanceof Goals»       	        	
+    		       	            «generateOutput(expOnt, outputCounter++)»
+    		       	        «ENDIF»       		
+    		       	«ENDFOR»
+    	</listOfOutputs>
+    	</sedML>
+    
+    '''
+    
+    def generateModel(Goals g, int modelCounter) '''
+        <model id="Model«modelCounter»" name="«g.objOfStudy»"        
+        language="urn:sedml:language:sbml.level-2.version-3" 
+        source="urn:miriam:biomodels.db:BIOMD0000000012">
+         </model>
+    '''
+    
+    
+    def generateSimulation(Goals g, int simCounter) '''
+        <uniformTimeCourse id="Simulation«simCounter»" initialTime="0" outputStartTime="0" 
+«««        outputEndTime="1000" numberOfPoints="1000"
+		>
+      		<algorithm kisaoID="KISAO:0000088">
+         </uniformTimeCourse>
+    '''
+ 	
+    def generateTask(Goals g, int goalCounter) '''
+        <task id="Task«goalCounter»" name="«g.objOfStudy»"
+«««         modelReference="model2" simulationReference="simulation1"
+         />
+    '''
+    
+        def generateDataGenerator(Factor f, int dataGeneratorCounter) '''
+        <dataGenerator id="DataGenerator«dataGeneratorCounter»" name="«f.factorName»">
+        			 <listOfVariables>
+        			  «FOR prop : f.factorProperties»       			
+        			     	<variable id="«prop.PName»" taskReference="task1" target="«prop.PVal»" /> 		       	             		
+        		      «ENDFOR»       
+       				 </listOfVariables>        
+        </dataGenerator>
+    '''
+        def generateOutput(Goals g, int outputCounter) '''
+        <plot2D id="Plot2D«outputCounter»" name="«g.objOfStudy»">
+        			<listOfCurves>
+«««        				<curve id="c1" logX="false" logY="false" xDataReference="timeDG" yDataReference="LaCI" />        			
+        			</listOfCurves>
+         </plot2D>
+    '''
 }

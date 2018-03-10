@@ -6,7 +6,6 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: tr.edu.metu.ceng.megamodel.sedml.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: tr.edu.metu.ceng.megamodel.sedml,
- tr.edu.metu.ceng.megamodel.simexp,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
  org.antlr.runtime

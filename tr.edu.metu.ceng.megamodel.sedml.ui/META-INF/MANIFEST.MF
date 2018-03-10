@@ -7,7 +7,6 @@ Bundle-SymbolicName: tr.edu.metu.ceng.megamodel.sedml.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: tr.edu.metu.ceng.megamodel.sedml,
  tr.edu.metu.ceng.megamodel.sedml.ide,
- tr.edu.metu.ceng.megamodel.simexp,
  org.eclipse.xtext.ui,
  org.eclipse.xtext.ui.shared,
  org.eclipse.xtext.ui.codetemplates.ui,

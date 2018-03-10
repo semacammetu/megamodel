@@ -7,7 +7,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-SymbolicName: tr.edu.metu.ceng.megamodel.sedml;singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: tr.edu.metu.ceng.megamodel.simexp,
+Require-Bundle: 
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.5.0",
