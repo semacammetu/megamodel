@@ -14,12 +14,23 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.CoherenceLink;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Condition;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Dispersed;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Evidence;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.MechHypothesis;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Query1;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Query2;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Query3;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Simultaneous;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.algorithm;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.curve;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.hypothesis;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfCurves;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataGenerators;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfHypotheses;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfModels;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfOutputs;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSimulations;
@@ -48,6 +59,40 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SedmlPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case SedmlPackage.COHERENCE_LINK:
+				sequence_CoherenceLink(context, (CoherenceLink) semanticObject); 
+				return; 
+			case SedmlPackage.CONDITION:
+				if (rule == grammarAccess.getConditionRule()) {
+					sequence_Condition(context, (Condition) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getTemporalPatternRule()) {
+					sequence_Condition_TemporalPattern(context, (Condition) semanticObject); 
+					return; 
+				}
+				else break;
+			case SedmlPackage.DISPERSED:
+				sequence_Dispersed(context, (Dispersed) semanticObject); 
+				return; 
+			case SedmlPackage.EVIDENCE:
+				sequence_Evidence(context, (Evidence) semanticObject); 
+				return; 
+			case SedmlPackage.MECH_HYPOTHESIS:
+				sequence_MechHypothesis(context, (MechHypothesis) semanticObject); 
+				return; 
+			case SedmlPackage.QUERY1:
+				sequence_Query1(context, (Query1) semanticObject); 
+				return; 
+			case SedmlPackage.QUERY2:
+				sequence_Query2(context, (Query2) semanticObject); 
+				return; 
+			case SedmlPackage.QUERY3:
+				sequence_Query3(context, (Query3) semanticObject); 
+				return; 
+			case SedmlPackage.SIMULTANEOUS:
+				sequence_Simultaneous(context, (Simultaneous) semanticObject); 
+				return; 
 			case SedmlPackage.ALGORITHM:
 				sequence_algorithm(context, (algorithm) semanticObject); 
 				return; 
@@ -57,11 +102,17 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case SedmlPackage.DATA_GENERATOR:
 				sequence_dataGenerator(context, (dataGenerator) semanticObject); 
 				return; 
+			case SedmlPackage.HYPOTHESIS:
+				sequence_hypothesis(context, (hypothesis) semanticObject); 
+				return; 
 			case SedmlPackage.LIST_OF_CURVES:
 				sequence_listOfCurves(context, (listOfCurves) semanticObject); 
 				return; 
 			case SedmlPackage.LIST_OF_DATA_GENERATORS:
 				sequence_listOfDataGenerators(context, (listOfDataGenerators) semanticObject); 
+				return; 
+			case SedmlPackage.LIST_OF_HYPOTHESES:
+				sequence_listOfHypotheses(context, (listOfHypotheses) semanticObject); 
 				return; 
 			case SedmlPackage.LIST_OF_MODELS:
 				sequence_listOfModels(context, (listOfModels) semanticObject); 
@@ -103,6 +154,167 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     CoherenceLink returns CoherenceLink
+	 *
+	 * Constraint:
+	 *     (coherence=Coherence hyp+=ID* evi+=ID*)
+	 */
+	protected void sequence_CoherenceLink(ISerializationContext context, CoherenceLink semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Condition returns Condition
+	 *
+	 * Constraint:
+	 *     (condition=Event lo=LinkOperators? e=Event? exp1=Expression? v=rangeValue?)
+	 */
+	protected void sequence_Condition(ISerializationContext context, Condition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TemporalPattern returns Condition
+	 *
+	 * Constraint:
+	 *     (
+	 *         condition=Event 
+	 *         lo=LinkOperators? 
+	 *         e=Event? 
+	 *         exp1=Expression? 
+	 *         v=rangeValue? 
+	 *         l2+=Links* 
+	 *         exp+=Expression* 
+	 *         (op1+=Temporal | op2+=Logical)* 
+	 *         l3=Links?
+	 *     )
+	 */
+	protected void sequence_Condition_TemporalPattern(ISerializationContext context, Condition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Event returns Dispersed
+	 *     Dispersed returns Dispersed
+	 *
+	 * Constraint:
+	 *     disp+=Re+
+	 */
+	protected void sequence_Dispersed(ISerializationContext context, Dispersed semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Evidence returns Evidence
+	 *
+	 * Constraint:
+	 *     (eName=ID query+=TemporalPattern* objOfStudy=rangeValue)
+	 */
+	protected void sequence_Evidence(ISerializationContext context, Evidence semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MechHypothesis returns MechHypothesis
+	 *
+	 * Constraint:
+	 *     (mName=ID assoMech+=TemporalPattern* mechanisticHypothesis=ID?)
+	 */
+	protected void sequence_MechHypothesis(ISerializationContext context, MechHypothesis semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RelationalQuery returns Query1
+	 *     Query1 returns Query1
+	 *
+	 * Constraint:
+	 *     (
+	 *         factor=ID? 
+	 *         control=ID? 
+	 *         x=rangeValue? 
+	 *         (start1=rangeValue end1=rangeValue)? 
+	 *         response=ID 
+	 *         y=rangeValue? 
+	 *         (start2=rangeValue end2=rangeValue)?
+	 *     )
+	 */
+	protected void sequence_Query1(ISerializationContext context, Query1 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RelationalQuery returns Query2
+	 *     Query2 returns Query2
+	 *
+	 * Constraint:
+	 *     (
+	 *         function1=Function? 
+	 *         response1=ID? 
+	 *         factor1=ID? 
+	 *         function2=Function? 
+	 *         response2=ID? 
+	 *         factor2=ID?
+	 *     )
+	 */
+	protected void sequence_Query2(ISerializationContext context, Query2 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RelationalQuery returns Query3
+	 *     Query3 returns Query3
+	 *
+	 * Constraint:
+	 *     (
+	 *         (factor1=ID | control1=ID | Level2=Levels | x2=rangeValue)* 
+	 *         (response1=ID Level4=Levels? x4=rangeValue?)* 
+	 *         (
+	 *             level=Levels 
+	 *             factor=ID? 
+	 *             control=ID? 
+	 *             response=ID? 
+	 *             start1=rangeValue 
+	 *             end1=rangeValue
+	 *         )*
+	 *     )
+	 */
+	protected void sequence_Query3(ISerializationContext context, Query3 semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Event returns Simultaneous
+	 *     Simultaneous returns Simultaneous
+	 *
+	 * Constraint:
+	 *     (sim1=Re (log+=Logical sim2+=Re)*)
+	 */
+	protected void sequence_Simultaneous(ISerializationContext context, Simultaneous semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -166,6 +378,18 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     hypothesis returns hypothesis
+	 *
+	 * Constraint:
+	 *     (mechHypothesis+=MechHypothesis* evidences+=Evidence* coherenceLinks+=CoherenceLink* relHypothesis+=RelationalQuery*)
+	 */
+	protected void sequence_hypothesis(ISerializationContext context, hypothesis semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     listOfCurves returns listOfCurves
 	 *
 	 * Constraint:
@@ -184,6 +408,18 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     datagenerator+=dataGenerator+
 	 */
 	protected void sequence_listOfDataGenerators(ISerializationContext context, listOfDataGenerators semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     listOfHypotheses returns listOfHypotheses
+	 *
+	 * Constraint:
+	 *     hypothesis+=hypothesis+
+	 */
+	protected void sequence_listOfHypotheses(ISerializationContext context, listOfHypotheses semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -325,6 +561,7 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         version=INT 
 	 *         level=INT 
+	 *         listOfHypotheses=listOfHypotheses 
 	 *         listOfSimulations=listOfSimulations 
 	 *         listOfModels=listOfModels 
 	 *         listOfTasks=listOfTasks 
@@ -338,6 +575,8 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.SED_ML__VERSION));
 			if (transientValues.isValueTransient(semanticObject, SedmlPackage.Literals.SED_ML__LEVEL) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.SED_ML__LEVEL));
+			if (transientValues.isValueTransient(semanticObject, SedmlPackage.Literals.SED_ML__LIST_OF_HYPOTHESES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.SED_ML__LIST_OF_HYPOTHESES));
 			if (transientValues.isValueTransient(semanticObject, SedmlPackage.Literals.SED_ML__LIST_OF_SIMULATIONS) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SedmlPackage.Literals.SED_ML__LIST_OF_SIMULATIONS));
 			if (transientValues.isValueTransient(semanticObject, SedmlPackage.Literals.SED_ML__LIST_OF_MODELS) == ValueTransient.YES)
@@ -352,11 +591,12 @@ public class SedmlSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSedMLAccess().getVersionINTTerminalRuleCall_0_0(), semanticObject.getVersion());
 		feeder.accept(grammarAccess.getSedMLAccess().getLevelINTTerminalRuleCall_1_0(), semanticObject.getLevel());
-		feeder.accept(grammarAccess.getSedMLAccess().getListOfSimulationsListOfSimulationsParserRuleCall_2_0(), semanticObject.getListOfSimulations());
-		feeder.accept(grammarAccess.getSedMLAccess().getListOfModelsListOfModelsParserRuleCall_3_0(), semanticObject.getListOfModels());
-		feeder.accept(grammarAccess.getSedMLAccess().getListOfTasksListOfTasksParserRuleCall_4_0(), semanticObject.getListOfTasks());
-		feeder.accept(grammarAccess.getSedMLAccess().getListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_5_0(), semanticObject.getListOfDataGenerators());
-		feeder.accept(grammarAccess.getSedMLAccess().getListOfOutputsListOfOutputsParserRuleCall_6_0(), semanticObject.getListOfOutputs());
+		feeder.accept(grammarAccess.getSedMLAccess().getListOfHypothesesListOfHypothesesParserRuleCall_2_0(), semanticObject.getListOfHypotheses());
+		feeder.accept(grammarAccess.getSedMLAccess().getListOfSimulationsListOfSimulationsParserRuleCall_3_0(), semanticObject.getListOfSimulations());
+		feeder.accept(grammarAccess.getSedMLAccess().getListOfModelsListOfModelsParserRuleCall_4_0(), semanticObject.getListOfModels());
+		feeder.accept(grammarAccess.getSedMLAccess().getListOfTasksListOfTasksParserRuleCall_5_0(), semanticObject.getListOfTasks());
+		feeder.accept(grammarAccess.getSedMLAccess().getListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_6_0(), semanticObject.getListOfDataGenerators());
+		feeder.accept(grammarAccess.getSedMLAccess().getListOfOutputsListOfOutputsParserRuleCall_7_0(), semanticObject.getListOfOutputs());
 		feeder.finish();
 	}
 	

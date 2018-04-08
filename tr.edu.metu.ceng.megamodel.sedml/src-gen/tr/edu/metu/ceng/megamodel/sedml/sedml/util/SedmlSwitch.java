@@ -80,6 +80,110 @@ public class SedmlSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SedmlPackage.LIST_OF_HYPOTHESES:
+      {
+        listOfHypotheses listOfHypotheses = (listOfHypotheses)theEObject;
+        T result = caselistOfHypotheses(listOfHypotheses);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.HYPOTHESIS:
+      {
+        hypothesis hypothesis = (hypothesis)theEObject;
+        T result = casehypothesis(hypothesis);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.RELATIONAL_QUERY:
+      {
+        RelationalQuery relationalQuery = (RelationalQuery)theEObject;
+        T result = caseRelationalQuery(relationalQuery);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.QUERY1:
+      {
+        Query1 query1 = (Query1)theEObject;
+        T result = caseQuery1(query1);
+        if (result == null) result = caseRelationalQuery(query1);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.QUERY2:
+      {
+        Query2 query2 = (Query2)theEObject;
+        T result = caseQuery2(query2);
+        if (result == null) result = caseRelationalQuery(query2);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.QUERY3:
+      {
+        Query3 query3 = (Query3)theEObject;
+        T result = caseQuery3(query3);
+        if (result == null) result = caseRelationalQuery(query3);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.COHERENCE_LINK:
+      {
+        CoherenceLink coherenceLink = (CoherenceLink)theEObject;
+        T result = caseCoherenceLink(coherenceLink);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.MECH_HYPOTHESIS:
+      {
+        MechHypothesis mechHypothesis = (MechHypothesis)theEObject;
+        T result = caseMechHypothesis(mechHypothesis);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.EVIDENCE:
+      {
+        Evidence evidence = (Evidence)theEObject;
+        T result = caseEvidence(evidence);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.TEMPORAL_PATTERN:
+      {
+        TemporalPattern temporalPattern = (TemporalPattern)theEObject;
+        T result = caseTemporalPattern(temporalPattern);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.CONDITION:
+      {
+        Condition condition = (Condition)theEObject;
+        T result = caseCondition(condition);
+        if (result == null) result = caseTemporalPattern(condition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.EVENT:
+      {
+        Event event = (Event)theEObject;
+        T result = caseEvent(event);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.SIMULTANEOUS:
+      {
+        Simultaneous simultaneous = (Simultaneous)theEObject;
+        T result = caseSimultaneous(simultaneous);
+        if (result == null) result = caseEvent(simultaneous);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.DISPERSED:
+      {
+        Dispersed dispersed = (Dispersed)theEObject;
+        T result = caseDispersed(dispersed);
+        if (result == null) result = caseEvent(dispersed);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SedmlPackage.LIST_OF_MODELS:
       {
         listOfModels listOfModels = (listOfModels)theEObject;
@@ -208,6 +312,230 @@ public class SedmlSwitch<T> extends Switch<T>
    * @generated
    */
   public T casesedML(sedML object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>list Of Hypotheses</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>list Of Hypotheses</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselistOfHypotheses(listOfHypotheses object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>hypothesis</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>hypothesis</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casehypothesis(hypothesis object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Relational Query</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Relational Query</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRelationalQuery(RelationalQuery object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Query1</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Query1</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQuery1(Query1 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Query2</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Query2</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQuery2(Query2 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Query3</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Query3</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQuery3(Query3 object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Coherence Link</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Coherence Link</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCoherenceLink(CoherenceLink object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Mech Hypothesis</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Mech Hypothesis</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMechHypothesis(MechHypothesis object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Evidence</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Evidence</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEvidence(Evidence object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Temporal Pattern</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Temporal Pattern</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTemporalPattern(TemporalPattern object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Condition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCondition(Condition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Event</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Event</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEvent(Event object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Simultaneous</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Simultaneous</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSimultaneous(Simultaneous object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Dispersed</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Dispersed</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDispersed(Dispersed object)
   {
     return null;
   }

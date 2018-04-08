@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getVersion <em>Version</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getLevel <em>Level</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfHypotheses <em>List Of Hypotheses</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfSimulations <em>List Of Simulations</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfModels <em>List Of Models</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfTasks <em>List Of Tasks</em>}</li>
@@ -80,6 +81,32 @@ public interface sedML extends EObject
    * @generated
    */
   void setLevel(int value);
+
+  /**
+   * Returns the value of the '<em><b>List Of Hypotheses</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>List Of Hypotheses</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>List Of Hypotheses</em>' containment reference.
+   * @see #setListOfHypotheses(listOfHypotheses)
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getsedML_ListOfHypotheses()
+   * @model containment="true"
+   * @generated
+   */
+  listOfHypotheses getListOfHypotheses();
+
+  /**
+   * Sets the value of the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfHypotheses <em>List Of Hypotheses</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>List Of Hypotheses</em>' containment reference.
+   * @see #getListOfHypotheses()
+   * @generated
+   */
+  void setListOfHypotheses(listOfHypotheses value);
 
   /**
    * Returns the value of the '<em><b>List Of Simulations</b></em>' containment reference.

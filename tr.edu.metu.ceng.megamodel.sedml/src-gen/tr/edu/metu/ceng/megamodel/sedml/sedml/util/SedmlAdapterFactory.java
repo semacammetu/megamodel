@@ -81,6 +81,76 @@ public class SedmlAdapterFactory extends AdapterFactoryImpl
         return createsedMLAdapter();
       }
       @Override
+      public Adapter caselistOfHypotheses(listOfHypotheses object)
+      {
+        return createlistOfHypothesesAdapter();
+      }
+      @Override
+      public Adapter casehypothesis(hypothesis object)
+      {
+        return createhypothesisAdapter();
+      }
+      @Override
+      public Adapter caseRelationalQuery(RelationalQuery object)
+      {
+        return createRelationalQueryAdapter();
+      }
+      @Override
+      public Adapter caseQuery1(Query1 object)
+      {
+        return createQuery1Adapter();
+      }
+      @Override
+      public Adapter caseQuery2(Query2 object)
+      {
+        return createQuery2Adapter();
+      }
+      @Override
+      public Adapter caseQuery3(Query3 object)
+      {
+        return createQuery3Adapter();
+      }
+      @Override
+      public Adapter caseCoherenceLink(CoherenceLink object)
+      {
+        return createCoherenceLinkAdapter();
+      }
+      @Override
+      public Adapter caseMechHypothesis(MechHypothesis object)
+      {
+        return createMechHypothesisAdapter();
+      }
+      @Override
+      public Adapter caseEvidence(Evidence object)
+      {
+        return createEvidenceAdapter();
+      }
+      @Override
+      public Adapter caseTemporalPattern(TemporalPattern object)
+      {
+        return createTemporalPatternAdapter();
+      }
+      @Override
+      public Adapter caseCondition(Condition object)
+      {
+        return createConditionAdapter();
+      }
+      @Override
+      public Adapter caseEvent(Event object)
+      {
+        return createEventAdapter();
+      }
+      @Override
+      public Adapter caseSimultaneous(Simultaneous object)
+      {
+        return createSimultaneousAdapter();
+      }
+      @Override
+      public Adapter caseDispersed(Dispersed object)
+      {
+        return createDispersedAdapter();
+      }
+      @Override
       public Adapter caselistOfModels(listOfModels object)
       {
         return createlistOfModelsAdapter();
@@ -193,6 +263,216 @@ public class SedmlAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createsedMLAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfHypotheses <em>list Of Hypotheses</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfHypotheses
+   * @generated
+   */
+  public Adapter createlistOfHypothesesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.hypothesis <em>hypothesis</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.hypothesis
+   * @generated
+   */
+  public Adapter createhypothesisAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.RelationalQuery <em>Relational Query</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.RelationalQuery
+   * @generated
+   */
+  public Adapter createRelationalQueryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Query1 <em>Query1</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.Query1
+   * @generated
+   */
+  public Adapter createQuery1Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Query2 <em>Query2</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.Query2
+   * @generated
+   */
+  public Adapter createQuery2Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Query3 <em>Query3</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.Query3
+   * @generated
+   */
+  public Adapter createQuery3Adapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.CoherenceLink <em>Coherence Link</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.CoherenceLink
+   * @generated
+   */
+  public Adapter createCoherenceLinkAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.MechHypothesis <em>Mech Hypothesis</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.MechHypothesis
+   * @generated
+   */
+  public Adapter createMechHypothesisAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Evidence <em>Evidence</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.Evidence
+   * @generated
+   */
+  public Adapter createEvidenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.TemporalPattern <em>Temporal Pattern</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.TemporalPattern
+   * @generated
+   */
+  public Adapter createTemporalPatternAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Condition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.Condition
+   * @generated
+   */
+  public Adapter createConditionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Event <em>Event</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.Event
+   * @generated
+   */
+  public Adapter createEventAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Simultaneous <em>Simultaneous</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.Simultaneous
+   * @generated
+   */
+  public Adapter createSimultaneousAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Dispersed <em>Dispersed</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.Dispersed
+   * @generated
+   */
+  public Adapter createDispersedAdapter()
   {
     return null;
   }

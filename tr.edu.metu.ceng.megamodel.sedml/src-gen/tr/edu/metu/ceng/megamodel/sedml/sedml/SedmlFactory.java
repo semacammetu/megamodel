@@ -33,6 +33,132 @@ public interface SedmlFactory extends EFactory
   sedML createsedML();
 
   /**
+   * Returns a new object of class '<em>list Of Hypotheses</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>list Of Hypotheses</em>'.
+   * @generated
+   */
+  listOfHypotheses createlistOfHypotheses();
+
+  /**
+   * Returns a new object of class '<em>hypothesis</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>hypothesis</em>'.
+   * @generated
+   */
+  hypothesis createhypothesis();
+
+  /**
+   * Returns a new object of class '<em>Relational Query</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Relational Query</em>'.
+   * @generated
+   */
+  RelationalQuery createRelationalQuery();
+
+  /**
+   * Returns a new object of class '<em>Query1</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Query1</em>'.
+   * @generated
+   */
+  Query1 createQuery1();
+
+  /**
+   * Returns a new object of class '<em>Query2</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Query2</em>'.
+   * @generated
+   */
+  Query2 createQuery2();
+
+  /**
+   * Returns a new object of class '<em>Query3</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Query3</em>'.
+   * @generated
+   */
+  Query3 createQuery3();
+
+  /**
+   * Returns a new object of class '<em>Coherence Link</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Coherence Link</em>'.
+   * @generated
+   */
+  CoherenceLink createCoherenceLink();
+
+  /**
+   * Returns a new object of class '<em>Mech Hypothesis</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Mech Hypothesis</em>'.
+   * @generated
+   */
+  MechHypothesis createMechHypothesis();
+
+  /**
+   * Returns a new object of class '<em>Evidence</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Evidence</em>'.
+   * @generated
+   */
+  Evidence createEvidence();
+
+  /**
+   * Returns a new object of class '<em>Temporal Pattern</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Temporal Pattern</em>'.
+   * @generated
+   */
+  TemporalPattern createTemporalPattern();
+
+  /**
+   * Returns a new object of class '<em>Condition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Condition</em>'.
+   * @generated
+   */
+  Condition createCondition();
+
+  /**
+   * Returns a new object of class '<em>Event</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Event</em>'.
+   * @generated
+   */
+  Event createEvent();
+
+  /**
+   * Returns a new object of class '<em>Simultaneous</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simultaneous</em>'.
+   * @generated
+   */
+  Simultaneous createSimultaneous();
+
+  /**
+   * Returns a new object of class '<em>Dispersed</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dispersed</em>'.
+   * @generated
+   */
+  Dispersed createDispersed();
+
+  /**
    * Returns a new object of class '<em>list Of Models</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -6,7 +6,10 @@ package tr.edu.metu.ceng.megamodel.sedml.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.EnumLiteralDeclaration;
+import org.eclipse.xtext.EnumRule;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -15,6 +18,7 @@ import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
 import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
+import org.eclipse.xtext.service.AbstractElementFinder.AbstractEnumRuleElementFinder;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
 
@@ -28,24 +32,26 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVersionINTTerminalRuleCall_0_0 = (RuleCall)cVersionAssignment_0.eContents().get(0);
 		private final Assignment cLevelAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cLevelINTTerminalRuleCall_1_0 = (RuleCall)cLevelAssignment_1.eContents().get(0);
-		private final Assignment cListOfSimulationsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cListOfSimulationsListOfSimulationsParserRuleCall_2_0 = (RuleCall)cListOfSimulationsAssignment_2.eContents().get(0);
-		private final Assignment cListOfModelsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cListOfModelsListOfModelsParserRuleCall_3_0 = (RuleCall)cListOfModelsAssignment_3.eContents().get(0);
-		private final Assignment cListOfTasksAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cListOfTasksListOfTasksParserRuleCall_4_0 = (RuleCall)cListOfTasksAssignment_4.eContents().get(0);
-		private final Assignment cListOfDataGeneratorsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_5_0 = (RuleCall)cListOfDataGeneratorsAssignment_5.eContents().get(0);
-		private final Assignment cListOfOutputsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cListOfOutputsListOfOutputsParserRuleCall_6_0 = (RuleCall)cListOfOutputsAssignment_6.eContents().get(0);
+		private final Assignment cListOfHypothesesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cListOfHypothesesListOfHypothesesParserRuleCall_2_0 = (RuleCall)cListOfHypothesesAssignment_2.eContents().get(0);
+		private final Assignment cListOfSimulationsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cListOfSimulationsListOfSimulationsParserRuleCall_3_0 = (RuleCall)cListOfSimulationsAssignment_3.eContents().get(0);
+		private final Assignment cListOfModelsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cListOfModelsListOfModelsParserRuleCall_4_0 = (RuleCall)cListOfModelsAssignment_4.eContents().get(0);
+		private final Assignment cListOfTasksAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cListOfTasksListOfTasksParserRuleCall_5_0 = (RuleCall)cListOfTasksAssignment_5.eContents().get(0);
+		private final Assignment cListOfDataGeneratorsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_6_0 = (RuleCall)cListOfDataGeneratorsAssignment_6.eContents().get(0);
+		private final Assignment cListOfOutputsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cListOfOutputsListOfOutputsParserRuleCall_7_0 = (RuleCall)cListOfOutputsAssignment_7.eContents().get(0);
 		
 		//sedML:
-		//	version=INT level=INT listOfSimulations=listOfSimulations listOfModels=listOfModels listOfTasks=listOfTasks
-		//	listOfDataGenerators=listOfDataGenerators listOfOutputs=listOfOutputs;
+		//	version=INT level=INT listOfHypotheses=listOfHypotheses listOfSimulations=listOfSimulations listOfModels=listOfModels
+		//	listOfTasks=listOfTasks listOfDataGenerators=listOfDataGenerators listOfOutputs=listOfOutputs;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//version=INT level=INT listOfSimulations=listOfSimulations listOfModels=listOfModels listOfTasks=listOfTasks
-		//listOfDataGenerators=listOfDataGenerators listOfOutputs=listOfOutputs
+		//version=INT level=INT listOfHypotheses=listOfHypotheses listOfSimulations=listOfSimulations listOfModels=listOfModels
+		//listOfTasks=listOfTasks listOfDataGenerators=listOfDataGenerators listOfOutputs=listOfOutputs
 		public Group getGroup() { return cGroup; }
 		
 		//version=INT
@@ -60,35 +66,1071 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getLevelINTTerminalRuleCall_1_0() { return cLevelINTTerminalRuleCall_1_0; }
 		
+		//listOfHypotheses=listOfHypotheses
+		public Assignment getListOfHypothesesAssignment_2() { return cListOfHypothesesAssignment_2; }
+		
+		//listOfHypotheses
+		public RuleCall getListOfHypothesesListOfHypothesesParserRuleCall_2_0() { return cListOfHypothesesListOfHypothesesParserRuleCall_2_0; }
+		
 		//listOfSimulations=listOfSimulations
-		public Assignment getListOfSimulationsAssignment_2() { return cListOfSimulationsAssignment_2; }
+		public Assignment getListOfSimulationsAssignment_3() { return cListOfSimulationsAssignment_3; }
 		
 		//listOfSimulations
-		public RuleCall getListOfSimulationsListOfSimulationsParserRuleCall_2_0() { return cListOfSimulationsListOfSimulationsParserRuleCall_2_0; }
+		public RuleCall getListOfSimulationsListOfSimulationsParserRuleCall_3_0() { return cListOfSimulationsListOfSimulationsParserRuleCall_3_0; }
 		
 		//listOfModels=listOfModels
-		public Assignment getListOfModelsAssignment_3() { return cListOfModelsAssignment_3; }
+		public Assignment getListOfModelsAssignment_4() { return cListOfModelsAssignment_4; }
 		
 		//listOfModels
-		public RuleCall getListOfModelsListOfModelsParserRuleCall_3_0() { return cListOfModelsListOfModelsParserRuleCall_3_0; }
+		public RuleCall getListOfModelsListOfModelsParserRuleCall_4_0() { return cListOfModelsListOfModelsParserRuleCall_4_0; }
 		
 		//listOfTasks=listOfTasks
-		public Assignment getListOfTasksAssignment_4() { return cListOfTasksAssignment_4; }
+		public Assignment getListOfTasksAssignment_5() { return cListOfTasksAssignment_5; }
 		
 		//listOfTasks
-		public RuleCall getListOfTasksListOfTasksParserRuleCall_4_0() { return cListOfTasksListOfTasksParserRuleCall_4_0; }
+		public RuleCall getListOfTasksListOfTasksParserRuleCall_5_0() { return cListOfTasksListOfTasksParserRuleCall_5_0; }
 		
 		//listOfDataGenerators=listOfDataGenerators
-		public Assignment getListOfDataGeneratorsAssignment_5() { return cListOfDataGeneratorsAssignment_5; }
+		public Assignment getListOfDataGeneratorsAssignment_6() { return cListOfDataGeneratorsAssignment_6; }
 		
 		//listOfDataGenerators
-		public RuleCall getListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_5_0() { return cListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_5_0; }
+		public RuleCall getListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_6_0() { return cListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_6_0; }
 		
 		//listOfOutputs=listOfOutputs
-		public Assignment getListOfOutputsAssignment_6() { return cListOfOutputsAssignment_6; }
+		public Assignment getListOfOutputsAssignment_7() { return cListOfOutputsAssignment_7; }
 		
 		//listOfOutputs
-		public RuleCall getListOfOutputsListOfOutputsParserRuleCall_6_0() { return cListOfOutputsListOfOutputsParserRuleCall_6_0; }
+		public RuleCall getListOfOutputsListOfOutputsParserRuleCall_7_0() { return cListOfOutputsListOfOutputsParserRuleCall_7_0; }
+	}
+	public class ListOfHypothesesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfHypotheses");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cListOfHypothesesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cHypothesisAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cHypothesisHypothesisParserRuleCall_2_0 = (RuleCall)cHypothesisAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//listOfHypotheses:
+		//	'listOfHypotheses' '{' hypothesis+=hypothesis* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'listOfHypotheses' '{' hypothesis+=hypothesis* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'listOfHypotheses'
+		public Keyword getListOfHypothesesKeyword_0() { return cListOfHypothesesKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//hypothesis+=hypothesis*
+		public Assignment getHypothesisAssignment_2() { return cHypothesisAssignment_2; }
+		
+		//hypothesis
+		public RuleCall getHypothesisHypothesisParserRuleCall_2_0() { return cHypothesisHypothesisParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class HypothesisElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.hypothesis");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHypothesesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cMechanisticKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cHypothesesKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Assignment cMechHypothesisAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
+		private final RuleCall cMechHypothesisMechHypothesisParserRuleCall_2_3_0 = (RuleCall)cMechHypothesisAssignment_2_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cEvidenceKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cEvidencesAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cEvidencesEvidenceParserRuleCall_3_2_0 = (RuleCall)cEvidencesAssignment_3_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCoherenceKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cModelKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		private final Assignment cCoherenceLinksAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
+		private final RuleCall cCoherenceLinksCoherenceLinkParserRuleCall_4_3_0 = (RuleCall)cCoherenceLinksAssignment_4_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cRelationalKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cHypothesesKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Assignment cRelHypothesisAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
+		private final RuleCall cRelHypothesisRelationalQueryParserRuleCall_5_3_0 = (RuleCall)cRelHypothesisAssignment_5_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//hypothesis:
+		//	'hypotheses' '{' ('mechanistic' 'hypotheses' '{' mechHypothesis+=MechHypothesis* '}')? ('evidence' '{'
+		//	evidences+=Evidence* '}')? ('coherence' 'model' '{' coherenceLinks+=CoherenceLink* '}')? ('relational' 'hypotheses'
+		//	'{' relHypothesis+=RelationalQuery* '}')? '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'hypotheses' '{' ('mechanistic' 'hypotheses' '{' mechHypothesis+=MechHypothesis* '}')? ('evidence' '{'
+		//evidences+=Evidence* '}')? ('coherence' 'model' '{' coherenceLinks+=CoherenceLink* '}')? ('relational' 'hypotheses'
+		//'{' relHypothesis+=RelationalQuery* '}')? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'hypotheses'
+		public Keyword getHypothesesKeyword_0() { return cHypothesesKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//('mechanistic' 'hypotheses' '{' mechHypothesis+=MechHypothesis* '}')?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'mechanistic'
+		public Keyword getMechanisticKeyword_2_0() { return cMechanisticKeyword_2_0; }
+		
+		//'hypotheses'
+		public Keyword getHypothesesKeyword_2_1() { return cHypothesesKeyword_2_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_2() { return cLeftCurlyBracketKeyword_2_2; }
+		
+		//mechHypothesis+=MechHypothesis*
+		public Assignment getMechHypothesisAssignment_2_3() { return cMechHypothesisAssignment_2_3; }
+		
+		//MechHypothesis
+		public RuleCall getMechHypothesisMechHypothesisParserRuleCall_2_3_0() { return cMechHypothesisMechHypothesisParserRuleCall_2_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_4() { return cRightCurlyBracketKeyword_2_4; }
+		
+		//('evidence' '{' evidences+=Evidence* '}')?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'evidence'
+		public Keyword getEvidenceKeyword_3_0() { return cEvidenceKeyword_3_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3_1() { return cLeftCurlyBracketKeyword_3_1; }
+		
+		//evidences+=Evidence*
+		public Assignment getEvidencesAssignment_3_2() { return cEvidencesAssignment_3_2; }
+		
+		//Evidence
+		public RuleCall getEvidencesEvidenceParserRuleCall_3_2_0() { return cEvidencesEvidenceParserRuleCall_3_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3_3() { return cRightCurlyBracketKeyword_3_3; }
+		
+		//('coherence' 'model' '{' coherenceLinks+=CoherenceLink* '}')?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'coherence'
+		public Keyword getCoherenceKeyword_4_0() { return cCoherenceKeyword_4_0; }
+		
+		//'model'
+		public Keyword getModelKeyword_4_1() { return cModelKeyword_4_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4_2() { return cLeftCurlyBracketKeyword_4_2; }
+		
+		//coherenceLinks+=CoherenceLink*
+		public Assignment getCoherenceLinksAssignment_4_3() { return cCoherenceLinksAssignment_4_3; }
+		
+		//CoherenceLink
+		public RuleCall getCoherenceLinksCoherenceLinkParserRuleCall_4_3_0() { return cCoherenceLinksCoherenceLinkParserRuleCall_4_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
+		
+		//('relational' 'hypotheses' '{' relHypothesis+=RelationalQuery* '}')?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'relational'
+		public Keyword getRelationalKeyword_5_0() { return cRelationalKeyword_5_0; }
+		
+		//'hypotheses'
+		public Keyword getHypothesesKeyword_5_1() { return cHypothesesKeyword_5_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_5_2() { return cLeftCurlyBracketKeyword_5_2; }
+		
+		//relHypothesis+=RelationalQuery*
+		public Assignment getRelHypothesisAssignment_5_3() { return cRelHypothesisAssignment_5_3; }
+		
+		//RelationalQuery
+		public RuleCall getRelHypothesisRelationalQueryParserRuleCall_5_3_0() { return cRelHypothesisRelationalQueryParserRuleCall_5_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5_4() { return cRightCurlyBracketKeyword_5_4; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+	public class RelationalQueryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.RelationalQuery");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cQuery1ParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cQuery2ParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cQuery3ParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//RelationalQuery:
+		//	Query1 | Query2 | Query3;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Query1 | Query2 | Query3
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Query1
+		public RuleCall getQuery1ParserRuleCall_0() { return cQuery1ParserRuleCall_0; }
+		
+		//Query2
+		public RuleCall getQuery2ParserRuleCall_1() { return cQuery2ParserRuleCall_1; }
+		
+		//Query3
+		public RuleCall getQuery3ParserRuleCall_2() { return cQuery3ParserRuleCall_2; }
+	}
+	public class Query1Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Query1");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIfKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cFactorAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFactorIDTerminalRuleCall_1_0 = (RuleCall)cFactorAssignment_1.eContents().get(0);
+		private final Assignment cControlAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cControlIDTerminalRuleCall_2_0 = (RuleCall)cControlAssignment_2.eContents().get(0);
+		private final Keyword cIsKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cXAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cXRangeValueTerminalRuleCall_4_0 = (RuleCall)cXAssignment_4.eContents().get(0);
+		private final Keyword cAddedKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cRemovedKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cInTheRangeKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cStart1Assignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cStart1RangeValueTerminalRuleCall_7_1_0 = (RuleCall)cStart1Assignment_7_1.eContents().get(0);
+		private final Keyword cToKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
+		private final Assignment cEnd1Assignment_7_3 = (Assignment)cGroup_7.eContents().get(3);
+		private final RuleCall cEnd1RangeValueTerminalRuleCall_7_3_0 = (RuleCall)cEnd1Assignment_7_3.eContents().get(0);
+		private final Keyword cThenKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cResponseAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cResponseIDTerminalRuleCall_9_0 = (RuleCall)cResponseAssignment_9.eContents().get(0);
+		private final Keyword cIsKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cYAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cYRangeValueTerminalRuleCall_11_0 = (RuleCall)cYAssignment_11.eContents().get(0);
+		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
+		private final Keyword cInTheRangeKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Assignment cStart2Assignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
+		private final RuleCall cStart2RangeValueTerminalRuleCall_12_1_0 = (RuleCall)cStart2Assignment_12_1.eContents().get(0);
+		private final Keyword cToKeyword_12_2 = (Keyword)cGroup_12.eContents().get(2);
+		private final Assignment cEnd2Assignment_12_3 = (Assignment)cGroup_12.eContents().get(3);
+		private final RuleCall cEnd2RangeValueTerminalRuleCall_12_3_0 = (RuleCall)cEnd2Assignment_12_3.eContents().get(0);
+		
+		//Query1:
+		//	'if' factor=ID? control=ID? 'is' x=rangeValue? 'added'? 'removed'? ('in the range' start1=rangeValue 'to'
+		//	end1=rangeValue)? 'then' response=ID 'is' y=rangeValue? ('in the range' start2=rangeValue 'to' end2=rangeValue)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'if' factor=ID? control=ID? 'is' x=rangeValue? 'added'? 'removed'? ('in the range' start1=rangeValue 'to'
+		//end1=rangeValue)? 'then' response=ID 'is' y=rangeValue? ('in the range' start2=rangeValue 'to' end2=rangeValue)?
+		public Group getGroup() { return cGroup; }
+		
+		//'if'
+		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
+		
+		//factor=ID?
+		public Assignment getFactorAssignment_1() { return cFactorAssignment_1; }
+		
+		//ID
+		public RuleCall getFactorIDTerminalRuleCall_1_0() { return cFactorIDTerminalRuleCall_1_0; }
+		
+		//control=ID?
+		public Assignment getControlAssignment_2() { return cControlAssignment_2; }
+		
+		//ID
+		public RuleCall getControlIDTerminalRuleCall_2_0() { return cControlIDTerminalRuleCall_2_0; }
+		
+		//'is'
+		public Keyword getIsKeyword_3() { return cIsKeyword_3; }
+		
+		//x=rangeValue?
+		public Assignment getXAssignment_4() { return cXAssignment_4; }
+		
+		//rangeValue
+		public RuleCall getXRangeValueTerminalRuleCall_4_0() { return cXRangeValueTerminalRuleCall_4_0; }
+		
+		//'added'?
+		public Keyword getAddedKeyword_5() { return cAddedKeyword_5; }
+		
+		//'removed'?
+		public Keyword getRemovedKeyword_6() { return cRemovedKeyword_6; }
+		
+		//('in the range' start1=rangeValue 'to' end1=rangeValue)?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'in the range'
+		public Keyword getInTheRangeKeyword_7_0() { return cInTheRangeKeyword_7_0; }
+		
+		//start1=rangeValue
+		public Assignment getStart1Assignment_7_1() { return cStart1Assignment_7_1; }
+		
+		//rangeValue
+		public RuleCall getStart1RangeValueTerminalRuleCall_7_1_0() { return cStart1RangeValueTerminalRuleCall_7_1_0; }
+		
+		//'to'
+		public Keyword getToKeyword_7_2() { return cToKeyword_7_2; }
+		
+		//end1=rangeValue
+		public Assignment getEnd1Assignment_7_3() { return cEnd1Assignment_7_3; }
+		
+		//rangeValue
+		public RuleCall getEnd1RangeValueTerminalRuleCall_7_3_0() { return cEnd1RangeValueTerminalRuleCall_7_3_0; }
+		
+		//'then'
+		public Keyword getThenKeyword_8() { return cThenKeyword_8; }
+		
+		//response=ID
+		public Assignment getResponseAssignment_9() { return cResponseAssignment_9; }
+		
+		//ID
+		public RuleCall getResponseIDTerminalRuleCall_9_0() { return cResponseIDTerminalRuleCall_9_0; }
+		
+		//'is'
+		public Keyword getIsKeyword_10() { return cIsKeyword_10; }
+		
+		//y=rangeValue?
+		public Assignment getYAssignment_11() { return cYAssignment_11; }
+		
+		//rangeValue
+		public RuleCall getYRangeValueTerminalRuleCall_11_0() { return cYRangeValueTerminalRuleCall_11_0; }
+		
+		//('in the range' start2=rangeValue 'to' end2=rangeValue)?
+		public Group getGroup_12() { return cGroup_12; }
+		
+		//'in the range'
+		public Keyword getInTheRangeKeyword_12_0() { return cInTheRangeKeyword_12_0; }
+		
+		//start2=rangeValue
+		public Assignment getStart2Assignment_12_1() { return cStart2Assignment_12_1; }
+		
+		//rangeValue
+		public RuleCall getStart2RangeValueTerminalRuleCall_12_1_0() { return cStart2RangeValueTerminalRuleCall_12_1_0; }
+		
+		//'to'
+		public Keyword getToKeyword_12_2() { return cToKeyword_12_2; }
+		
+		//end2=rangeValue
+		public Assignment getEnd2Assignment_12_3() { return cEnd2Assignment_12_3; }
+		
+		//rangeValue
+		public RuleCall getEnd2RangeValueTerminalRuleCall_12_3_0() { return cEnd2RangeValueTerminalRuleCall_12_3_0; }
+	}
+	public class Query2Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Query2");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCompareKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cFunction1Assignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFunction1FunctionEnumRuleCall_1_0 = (RuleCall)cFunction1Assignment_1.eContents().get(0);
+		private final Assignment cResponse1Assignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cResponse1IDTerminalRuleCall_2_0 = (RuleCall)cResponse1Assignment_2.eContents().get(0);
+		private final Assignment cFactor1Assignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFactor1IDTerminalRuleCall_3_0 = (RuleCall)cFactor1Assignment_3.eContents().get(0);
+		private final Keyword cAndKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cFunction2Assignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cFunction2FunctionEnumRuleCall_5_0 = (RuleCall)cFunction2Assignment_5.eContents().get(0);
+		private final Assignment cResponse2Assignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cResponse2IDTerminalRuleCall_6_0 = (RuleCall)cResponse2Assignment_6.eContents().get(0);
+		private final Assignment cFactor2Assignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cFactor2IDTerminalRuleCall_7_0 = (RuleCall)cFactor2Assignment_7.eContents().get(0);
+		
+		//Query2:
+		//	'compare' function1=Function? response1=ID? factor1=ID? 'and' function2=Function? response2=ID? factor2=ID?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'compare' function1=Function? response1=ID? factor1=ID? 'and' function2=Function? response2=ID? factor2=ID?
+		public Group getGroup() { return cGroup; }
+		
+		//'compare'
+		public Keyword getCompareKeyword_0() { return cCompareKeyword_0; }
+		
+		//function1=Function?
+		public Assignment getFunction1Assignment_1() { return cFunction1Assignment_1; }
+		
+		//Function
+		public RuleCall getFunction1FunctionEnumRuleCall_1_0() { return cFunction1FunctionEnumRuleCall_1_0; }
+		
+		//response1=ID?
+		public Assignment getResponse1Assignment_2() { return cResponse1Assignment_2; }
+		
+		//ID
+		public RuleCall getResponse1IDTerminalRuleCall_2_0() { return cResponse1IDTerminalRuleCall_2_0; }
+		
+		//factor1=ID?
+		public Assignment getFactor1Assignment_3() { return cFactor1Assignment_3; }
+		
+		//ID
+		public RuleCall getFactor1IDTerminalRuleCall_3_0() { return cFactor1IDTerminalRuleCall_3_0; }
+		
+		//'and'
+		public Keyword getAndKeyword_4() { return cAndKeyword_4; }
+		
+		//function2=Function?
+		public Assignment getFunction2Assignment_5() { return cFunction2Assignment_5; }
+		
+		//Function
+		public RuleCall getFunction2FunctionEnumRuleCall_5_0() { return cFunction2FunctionEnumRuleCall_5_0; }
+		
+		//response2=ID?
+		public Assignment getResponse2Assignment_6() { return cResponse2Assignment_6; }
+		
+		//ID
+		public RuleCall getResponse2IDTerminalRuleCall_6_0() { return cResponse2IDTerminalRuleCall_6_0; }
+		
+		//factor2=ID?
+		public Assignment getFactor2Assignment_7() { return cFactor2Assignment_7; }
+		
+		//ID
+		public RuleCall getFactor2IDTerminalRuleCall_7_0() { return cFactor2IDTerminalRuleCall_7_0; }
+	}
+	public class Query3Elements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Query3");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIfKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cFactor1Assignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cFactor1IDTerminalRuleCall_1_0_0 = (RuleCall)cFactor1Assignment_1_0.eContents().get(0);
+		private final Assignment cControl1Assignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cControl1IDTerminalRuleCall_1_1_0 = (RuleCall)cControl1Assignment_1_1.eContents().get(0);
+		private final Keyword cIsKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Group cGroup_1_3 = (Group)cGroup_1.eContents().get(3);
+		private final Keyword cAtKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
+		private final Keyword cLevelKeyword_1_3_1 = (Keyword)cGroup_1_3.eContents().get(1);
+		private final Assignment cLevel2Assignment_1_3_2 = (Assignment)cGroup_1_3.eContents().get(2);
+		private final RuleCall cLevel2LevelsEnumRuleCall_1_3_2_0 = (RuleCall)cLevel2Assignment_1_3_2.eContents().get(0);
+		private final Assignment cX2Assignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
+		private final RuleCall cX2RangeValueTerminalRuleCall_1_4_0 = (RuleCall)cX2Assignment_1_4.eContents().get(0);
+		private final Keyword cAndKeyword_1_5 = (Keyword)cGroup_1.eContents().get(5);
+		private final Keyword cThenKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cResponse1Assignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cResponse1IDTerminalRuleCall_3_0_0 = (RuleCall)cResponse1Assignment_3_0.eContents().get(0);
+		private final Keyword cIsKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
+		private final Keyword cAtKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+		private final Keyword cLevelKeyword_3_2_1 = (Keyword)cGroup_3_2.eContents().get(1);
+		private final Assignment cLevel4Assignment_3_2_2 = (Assignment)cGroup_3_2.eContents().get(2);
+		private final RuleCall cLevel4LevelsEnumRuleCall_3_2_2_0 = (RuleCall)cLevel4Assignment_3_2_2.eContents().get(0);
+		private final Assignment cX4Assignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
+		private final RuleCall cX4RangeValueTerminalRuleCall_3_3_0 = (RuleCall)cX4Assignment_3_3.eContents().get(0);
+		private final Keyword cAndKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
+		private final Keyword cWhereKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Assignment cLevelAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
+		private final RuleCall cLevelLevelsEnumRuleCall_5_0_0 = (RuleCall)cLevelAssignment_5_0.eContents().get(0);
+		private final Keyword cForKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cFactorAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cFactorIDTerminalRuleCall_5_2_0 = (RuleCall)cFactorAssignment_5_2.eContents().get(0);
+		private final Assignment cControlAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
+		private final RuleCall cControlIDTerminalRuleCall_5_3_0 = (RuleCall)cControlAssignment_5_3.eContents().get(0);
+		private final Assignment cResponseAssignment_5_4 = (Assignment)cGroup_5.eContents().get(4);
+		private final RuleCall cResponseIDTerminalRuleCall_5_4_0 = (RuleCall)cResponseAssignment_5_4.eContents().get(0);
+		private final Keyword cIsKeyword_5_5 = (Keyword)cGroup_5.eContents().get(5);
+		private final Keyword cInTheRangeKeyword_5_6 = (Keyword)cGroup_5.eContents().get(6);
+		private final Assignment cStart1Assignment_5_7 = (Assignment)cGroup_5.eContents().get(7);
+		private final RuleCall cStart1RangeValueTerminalRuleCall_5_7_0 = (RuleCall)cStart1Assignment_5_7.eContents().get(0);
+		private final Keyword cToKeyword_5_8 = (Keyword)cGroup_5.eContents().get(8);
+		private final Assignment cEnd1Assignment_5_9 = (Assignment)cGroup_5.eContents().get(9);
+		private final RuleCall cEnd1RangeValueTerminalRuleCall_5_9_0 = (RuleCall)cEnd1Assignment_5_9.eContents().get(0);
+		
+		//Query3:
+		//	'if' (factor1=ID? control1=ID? 'is' ('at' 'level' Level2=Levels)? x2=rangeValue? 'and'?)* 'then' (response1=ID 'is'
+		//	('at' 'level' Level4=Levels)? x4=rangeValue? 'and'?)* 'where' (level=Levels 'for' factor=ID? control=ID? response=ID?
+		//	'is' 'in the range' start1=rangeValue 'to' end1=rangeValue)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'if' (factor1=ID? control1=ID? 'is' ('at' 'level' Level2=Levels)? x2=rangeValue? 'and'?)* 'then' (response1=ID 'is'
+		//('at' 'level' Level4=Levels)? x4=rangeValue? 'and'?)* 'where' (level=Levels 'for' factor=ID? control=ID? response=ID?
+		//'is' 'in the range' start1=rangeValue 'to' end1=rangeValue)*
+		public Group getGroup() { return cGroup; }
+		
+		//'if'
+		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
+		
+		//(factor1=ID? control1=ID? 'is' ('at' 'level' Level2=Levels)? x2=rangeValue? 'and'?)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//factor1=ID?
+		public Assignment getFactor1Assignment_1_0() { return cFactor1Assignment_1_0; }
+		
+		//ID
+		public RuleCall getFactor1IDTerminalRuleCall_1_0_0() { return cFactor1IDTerminalRuleCall_1_0_0; }
+		
+		//control1=ID?
+		public Assignment getControl1Assignment_1_1() { return cControl1Assignment_1_1; }
+		
+		//ID
+		public RuleCall getControl1IDTerminalRuleCall_1_1_0() { return cControl1IDTerminalRuleCall_1_1_0; }
+		
+		//'is'
+		public Keyword getIsKeyword_1_2() { return cIsKeyword_1_2; }
+		
+		//('at' 'level' Level2=Levels)?
+		public Group getGroup_1_3() { return cGroup_1_3; }
+		
+		//'at'
+		public Keyword getAtKeyword_1_3_0() { return cAtKeyword_1_3_0; }
+		
+		//'level'
+		public Keyword getLevelKeyword_1_3_1() { return cLevelKeyword_1_3_1; }
+		
+		//Level2=Levels
+		public Assignment getLevel2Assignment_1_3_2() { return cLevel2Assignment_1_3_2; }
+		
+		//Levels
+		public RuleCall getLevel2LevelsEnumRuleCall_1_3_2_0() { return cLevel2LevelsEnumRuleCall_1_3_2_0; }
+		
+		//x2=rangeValue?
+		public Assignment getX2Assignment_1_4() { return cX2Assignment_1_4; }
+		
+		//rangeValue
+		public RuleCall getX2RangeValueTerminalRuleCall_1_4_0() { return cX2RangeValueTerminalRuleCall_1_4_0; }
+		
+		//'and'?
+		public Keyword getAndKeyword_1_5() { return cAndKeyword_1_5; }
+		
+		//'then'
+		public Keyword getThenKeyword_2() { return cThenKeyword_2; }
+		
+		//(response1=ID 'is' ('at' 'level' Level4=Levels)? x4=rangeValue? 'and'?)*
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//response1=ID
+		public Assignment getResponse1Assignment_3_0() { return cResponse1Assignment_3_0; }
+		
+		//ID
+		public RuleCall getResponse1IDTerminalRuleCall_3_0_0() { return cResponse1IDTerminalRuleCall_3_0_0; }
+		
+		//'is'
+		public Keyword getIsKeyword_3_1() { return cIsKeyword_3_1; }
+		
+		//('at' 'level' Level4=Levels)?
+		public Group getGroup_3_2() { return cGroup_3_2; }
+		
+		//'at'
+		public Keyword getAtKeyword_3_2_0() { return cAtKeyword_3_2_0; }
+		
+		//'level'
+		public Keyword getLevelKeyword_3_2_1() { return cLevelKeyword_3_2_1; }
+		
+		//Level4=Levels
+		public Assignment getLevel4Assignment_3_2_2() { return cLevel4Assignment_3_2_2; }
+		
+		//Levels
+		public RuleCall getLevel4LevelsEnumRuleCall_3_2_2_0() { return cLevel4LevelsEnumRuleCall_3_2_2_0; }
+		
+		//x4=rangeValue?
+		public Assignment getX4Assignment_3_3() { return cX4Assignment_3_3; }
+		
+		//rangeValue
+		public RuleCall getX4RangeValueTerminalRuleCall_3_3_0() { return cX4RangeValueTerminalRuleCall_3_3_0; }
+		
+		//'and'?
+		public Keyword getAndKeyword_3_4() { return cAndKeyword_3_4; }
+		
+		//'where'
+		public Keyword getWhereKeyword_4() { return cWhereKeyword_4; }
+		
+		//(level=Levels 'for' factor=ID? control=ID? response=ID? 'is' 'in the range' start1=rangeValue 'to' end1=rangeValue)*
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//level=Levels
+		public Assignment getLevelAssignment_5_0() { return cLevelAssignment_5_0; }
+		
+		//Levels
+		public RuleCall getLevelLevelsEnumRuleCall_5_0_0() { return cLevelLevelsEnumRuleCall_5_0_0; }
+		
+		//'for'
+		public Keyword getForKeyword_5_1() { return cForKeyword_5_1; }
+		
+		//factor=ID?
+		public Assignment getFactorAssignment_5_2() { return cFactorAssignment_5_2; }
+		
+		//ID
+		public RuleCall getFactorIDTerminalRuleCall_5_2_0() { return cFactorIDTerminalRuleCall_5_2_0; }
+		
+		//control=ID?
+		public Assignment getControlAssignment_5_3() { return cControlAssignment_5_3; }
+		
+		//ID
+		public RuleCall getControlIDTerminalRuleCall_5_3_0() { return cControlIDTerminalRuleCall_5_3_0; }
+		
+		//response=ID?
+		public Assignment getResponseAssignment_5_4() { return cResponseAssignment_5_4; }
+		
+		//ID
+		public RuleCall getResponseIDTerminalRuleCall_5_4_0() { return cResponseIDTerminalRuleCall_5_4_0; }
+		
+		//'is'
+		public Keyword getIsKeyword_5_5() { return cIsKeyword_5_5; }
+		
+		//'in the range'
+		public Keyword getInTheRangeKeyword_5_6() { return cInTheRangeKeyword_5_6; }
+		
+		//start1=rangeValue
+		public Assignment getStart1Assignment_5_7() { return cStart1Assignment_5_7; }
+		
+		//rangeValue
+		public RuleCall getStart1RangeValueTerminalRuleCall_5_7_0() { return cStart1RangeValueTerminalRuleCall_5_7_0; }
+		
+		//'to'
+		public Keyword getToKeyword_5_8() { return cToKeyword_5_8; }
+		
+		//end1=rangeValue
+		public Assignment getEnd1Assignment_5_9() { return cEnd1Assignment_5_9; }
+		
+		//rangeValue
+		public RuleCall getEnd1RangeValueTerminalRuleCall_5_9_0() { return cEnd1RangeValueTerminalRuleCall_5_9_0; }
+	}
+	public class CoherenceLinkElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.CoherenceLink");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cCoherenceAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cCoherenceCoherenceEnumRuleCall_0_0 = (RuleCall)cCoherenceAssignment_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cHypAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cHypIDTerminalRuleCall_2_0 = (RuleCall)cHypAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cEviAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cEviIDTerminalRuleCall_5_0 = (RuleCall)cEviAssignment_5.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//CoherenceLink:
+		//	coherence=Coherence '(' hyp+=ID* ')' '(' evi+=ID* ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//coherence=Coherence '(' hyp+=ID* ')' '(' evi+=ID* ')'
+		public Group getGroup() { return cGroup; }
+		
+		//coherence=Coherence
+		public Assignment getCoherenceAssignment_0() { return cCoherenceAssignment_0; }
+		
+		//Coherence
+		public RuleCall getCoherenceCoherenceEnumRuleCall_0_0() { return cCoherenceCoherenceEnumRuleCall_0_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//hyp+=ID*
+		public Assignment getHypAssignment_2() { return cHypAssignment_2; }
+		
+		//ID
+		public RuleCall getHypIDTerminalRuleCall_2_0() { return cHypIDTerminalRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
+		
+		//evi+=ID*
+		public Assignment getEviAssignment_5() { return cEviAssignment_5; }
+		
+		//ID
+		public RuleCall getEviIDTerminalRuleCall_5_0() { return cEviIDTerminalRuleCall_5_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
+	}
+	public class MechHypothesisElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.MechHypothesis");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cMNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cMNameIDTerminalRuleCall_0_0 = (RuleCall)cMNameAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cAssoMechAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cAssoMechTemporalPatternParserRuleCall_2_0 = (RuleCall)cAssoMechAssignment_2.eContents().get(0);
+		private final Assignment cMechanisticHypothesisAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cMechanisticHypothesisIDTerminalRuleCall_3_0 = (RuleCall)cMechanisticHypothesisAssignment_3.eContents().get(0);
+		
+		//MechHypothesis:
+		//	mName=ID ':' assoMech+=TemporalPattern* mechanisticHypothesis=ID?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//mName=ID ':' assoMech+=TemporalPattern* mechanisticHypothesis=ID?
+		public Group getGroup() { return cGroup; }
+		
+		//mName=ID
+		public Assignment getMNameAssignment_0() { return cMNameAssignment_0; }
+		
+		//ID
+		public RuleCall getMNameIDTerminalRuleCall_0_0() { return cMNameIDTerminalRuleCall_0_0; }
+		
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//assoMech+=TemporalPattern*
+		public Assignment getAssoMechAssignment_2() { return cAssoMechAssignment_2; }
+		
+		//TemporalPattern
+		public RuleCall getAssoMechTemporalPatternParserRuleCall_2_0() { return cAssoMechTemporalPatternParserRuleCall_2_0; }
+		
+		//mechanisticHypothesis=ID?
+		public Assignment getMechanisticHypothesisAssignment_3() { return cMechanisticHypothesisAssignment_3; }
+		
+		//ID
+		public RuleCall getMechanisticHypothesisIDTerminalRuleCall_3_0() { return cMechanisticHypothesisIDTerminalRuleCall_3_0; }
+	}
+	public class EvidenceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Evidence");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cENameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cENameIDTerminalRuleCall_0_0 = (RuleCall)cENameAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cQueryAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cQueryTemporalPatternParserRuleCall_2_0 = (RuleCall)cQueryAssignment_2.eContents().get(0);
+		private final Keyword cActivationKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cWeightKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cObjOfStudyAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cObjOfStudyRangeValueTerminalRuleCall_6_0 = (RuleCall)cObjOfStudyAssignment_6.eContents().get(0);
+		
+		//Evidence:
+		//	eName=ID ':' query+=TemporalPattern* 'activation' 'weight' ':' objOfStudy=rangeValue;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//eName=ID ':' query+=TemporalPattern* 'activation' 'weight' ':' objOfStudy=rangeValue
+		public Group getGroup() { return cGroup; }
+		
+		//eName=ID
+		public Assignment getENameAssignment_0() { return cENameAssignment_0; }
+		
+		//ID
+		public RuleCall getENameIDTerminalRuleCall_0_0() { return cENameIDTerminalRuleCall_0_0; }
+		
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//query+=TemporalPattern*
+		public Assignment getQueryAssignment_2() { return cQueryAssignment_2; }
+		
+		//TemporalPattern
+		public RuleCall getQueryTemporalPatternParserRuleCall_2_0() { return cQueryTemporalPatternParserRuleCall_2_0; }
+		
+		//'activation'
+		public Keyword getActivationKeyword_3() { return cActivationKeyword_3; }
+		
+		//'weight'
+		public Keyword getWeightKeyword_4() { return cWeightKeyword_4; }
+		
+		//':'
+		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
+		
+		//objOfStudy=rangeValue
+		public Assignment getObjOfStudyAssignment_6() { return cObjOfStudyAssignment_6; }
+		
+		//rangeValue
+		public RuleCall getObjOfStudyRangeValueTerminalRuleCall_6_0() { return cObjOfStudyRangeValueTerminalRuleCall_6_0; }
+	}
+	public class TemporalPatternElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.TemporalPattern");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cConditionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cL2Assignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cL2LinksEnumRuleCall_1_0 = (RuleCall)cL2Assignment_1.eContents().get(0);
+		private final Assignment cExpAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpExpressionEnumRuleCall_2_0 = (RuleCall)cExpAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Assignment cOp1Assignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cOp1TemporalEnumRuleCall_3_0_0 = (RuleCall)cOp1Assignment_3_0.eContents().get(0);
+		private final Assignment cOp2Assignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final RuleCall cOp2LogicalEnumRuleCall_3_1_0 = (RuleCall)cOp2Assignment_3_1.eContents().get(0);
+		private final Assignment cL3Assignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cL3LinksEnumRuleCall_4_0 = (RuleCall)cL3Assignment_4.eContents().get(0);
+		
+		//TemporalPattern:
+		//	Condition l2+=Links* exp+=Expression* (op1+=Temporal | op2+=Logical)* l3=Links?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Condition l2+=Links* exp+=Expression* (op1+=Temporal | op2+=Logical)* l3=Links?
+		public Group getGroup() { return cGroup; }
+		
+		//Condition
+		public RuleCall getConditionParserRuleCall_0() { return cConditionParserRuleCall_0; }
+		
+		//l2+=Links*
+		public Assignment getL2Assignment_1() { return cL2Assignment_1; }
+		
+		//Links
+		public RuleCall getL2LinksEnumRuleCall_1_0() { return cL2LinksEnumRuleCall_1_0; }
+		
+		//exp+=Expression*
+		public Assignment getExpAssignment_2() { return cExpAssignment_2; }
+		
+		//Expression
+		public RuleCall getExpExpressionEnumRuleCall_2_0() { return cExpExpressionEnumRuleCall_2_0; }
+		
+		//(op1+=Temporal | op2+=Logical)*
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		
+		//op1+=Temporal
+		public Assignment getOp1Assignment_3_0() { return cOp1Assignment_3_0; }
+		
+		//Temporal
+		public RuleCall getOp1TemporalEnumRuleCall_3_0_0() { return cOp1TemporalEnumRuleCall_3_0_0; }
+		
+		//op2+=Logical
+		public Assignment getOp2Assignment_3_1() { return cOp2Assignment_3_1; }
+		
+		//Logical
+		public RuleCall getOp2LogicalEnumRuleCall_3_1_0() { return cOp2LogicalEnumRuleCall_3_1_0; }
+		
+		//l3=Links?
+		public Assignment getL3Assignment_4() { return cL3Assignment_4; }
+		
+		//Links
+		public RuleCall getL3LinksEnumRuleCall_4_0() { return cL3LinksEnumRuleCall_4_0; }
+	}
+	public class ConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Condition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cConditionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cConditionEventParserRuleCall_0_0 = (RuleCall)cConditionAssignment_0.eContents().get(0);
+		private final Assignment cLoAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLoLinkOperatorsParserRuleCall_1_0 = (RuleCall)cLoAssignment_1.eContents().get(0);
+		private final Assignment cEAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cEEventParserRuleCall_2_0 = (RuleCall)cEAssignment_2.eContents().get(0);
+		private final Assignment cExp1Assignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cExp1ExpressionEnumRuleCall_3_0 = (RuleCall)cExp1Assignment_3.eContents().get(0);
+		private final Assignment cVAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cVRangeValueTerminalRuleCall_4_0 = (RuleCall)cVAssignment_4.eContents().get(0);
+		
+		//Condition:
+		//	condition=Event lo=LinkOperators? e=Event? exp1=Expression? v=rangeValue?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//condition=Event lo=LinkOperators? e=Event? exp1=Expression? v=rangeValue?
+		public Group getGroup() { return cGroup; }
+		
+		//condition=Event
+		public Assignment getConditionAssignment_0() { return cConditionAssignment_0; }
+		
+		//Event
+		public RuleCall getConditionEventParserRuleCall_0_0() { return cConditionEventParserRuleCall_0_0; }
+		
+		//lo=LinkOperators?
+		public Assignment getLoAssignment_1() { return cLoAssignment_1; }
+		
+		//LinkOperators
+		public RuleCall getLoLinkOperatorsParserRuleCall_1_0() { return cLoLinkOperatorsParserRuleCall_1_0; }
+		
+		//e=Event?
+		public Assignment getEAssignment_2() { return cEAssignment_2; }
+		
+		//Event
+		public RuleCall getEEventParserRuleCall_2_0() { return cEEventParserRuleCall_2_0; }
+		
+		//exp1=Expression?
+		public Assignment getExp1Assignment_3() { return cExp1Assignment_3; }
+		
+		//Expression
+		public RuleCall getExp1ExpressionEnumRuleCall_3_0() { return cExp1ExpressionEnumRuleCall_3_0; }
+		
+		//v=rangeValue?
+		public Assignment getVAssignment_4() { return cVAssignment_4; }
+		
+		//rangeValue
+		public RuleCall getVRangeValueTerminalRuleCall_4_0() { return cVRangeValueTerminalRuleCall_4_0; }
+	}
+	public class LinkOperatorsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.LinkOperators");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cPlusSignKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cAsteriskKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cSolidusKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cPercentSignKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cSpaceEqualsSignSpaceKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cSpaceEqualsSignEqualsSignSpaceKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cAmpersandAmpersandKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
+		private final Keyword cVerticalLineVerticalLineKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
+		private final Keyword cLessThanSignKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
+		private final Keyword cLessThanSignEqualsSignKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
+		private final Keyword cGreaterThanSignKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
+		private final Keyword cGreaterThanSignEqualsSignKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
+		private final Keyword cExclamationMarkKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
+		private final Keyword cExclamationMarkEqualsSignKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
+		
+		//LinkOperators:
+		//	'+' | '-' | '*' | '/' | '%' | ' = ' | ' == ' | '&&' | '||' | '<' | '<=' | '>' | '>=' | '!' | '!=';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'+' | '-' | '*' | '/' | '%' | ' = ' | ' == ' | '&&' | '||' | '<' | '<=' | '>' | '>=' | '!' | '!='
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'+'
+		public Keyword getPlusSignKeyword_0() { return cPlusSignKeyword_0; }
+		
+		//'-'
+		public Keyword getHyphenMinusKeyword_1() { return cHyphenMinusKeyword_1; }
+		
+		//'*'
+		public Keyword getAsteriskKeyword_2() { return cAsteriskKeyword_2; }
+		
+		//'/'
+		public Keyword getSolidusKeyword_3() { return cSolidusKeyword_3; }
+		
+		//'%'
+		public Keyword getPercentSignKeyword_4() { return cPercentSignKeyword_4; }
+		
+		//' = '
+		public Keyword getSpaceEqualsSignSpaceKeyword_5() { return cSpaceEqualsSignSpaceKeyword_5; }
+		
+		//' == '
+		public Keyword getSpaceEqualsSignEqualsSignSpaceKeyword_6() { return cSpaceEqualsSignEqualsSignSpaceKeyword_6; }
+		
+		//'&&'
+		public Keyword getAmpersandAmpersandKeyword_7() { return cAmpersandAmpersandKeyword_7; }
+		
+		//'||'
+		public Keyword getVerticalLineVerticalLineKeyword_8() { return cVerticalLineVerticalLineKeyword_8; }
+		
+		//'<'
+		public Keyword getLessThanSignKeyword_9() { return cLessThanSignKeyword_9; }
+		
+		//'<='
+		public Keyword getLessThanSignEqualsSignKeyword_10() { return cLessThanSignEqualsSignKeyword_10; }
+		
+		//'>'
+		public Keyword getGreaterThanSignKeyword_11() { return cGreaterThanSignKeyword_11; }
+		
+		//'>='
+		public Keyword getGreaterThanSignEqualsSignKeyword_12() { return cGreaterThanSignEqualsSignKeyword_12; }
+		
+		//'!'
+		public Keyword getExclamationMarkKeyword_13() { return cExclamationMarkKeyword_13; }
+		
+		//'!='
+		public Keyword getExclamationMarkEqualsSignKeyword_14() { return cExclamationMarkEqualsSignKeyword_14; }
+	}
+	public class EventElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Event");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDispersedParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSimultaneousParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Event:
+		//	Dispersed | Simultaneous;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Dispersed | Simultaneous
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Dispersed
+		public RuleCall getDispersedParserRuleCall_0() { return cDispersedParserRuleCall_0; }
+		
+		//Simultaneous
+		public RuleCall getSimultaneousParserRuleCall_1() { return cSimultaneousParserRuleCall_1; }
+	}
+	public class SimultaneousElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Simultaneous");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSim1Assignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSim1ReParserRuleCall_1_0 = (RuleCall)cSim1Assignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Assignment cLogAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cLogLogicalEnumRuleCall_2_0_0 = (RuleCall)cLogAssignment_2_0.eContents().get(0);
+		private final Assignment cSim2Assignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cSim2ReParserRuleCall_2_1_0 = (RuleCall)cSim2Assignment_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Simultaneous:
+		//	'[' sim1=Re (log+=Logical sim2+=Re)* ']';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'[' sim1=Re (log+=Logical sim2+=Re)* ']'
+		public Group getGroup() { return cGroup; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
+		
+		//sim1=Re
+		public Assignment getSim1Assignment_1() { return cSim1Assignment_1; }
+		
+		//Re
+		public RuleCall getSim1ReParserRuleCall_1_0() { return cSim1ReParserRuleCall_1_0; }
+		
+		//(log+=Logical sim2+=Re)*
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//log+=Logical
+		public Assignment getLogAssignment_2_0() { return cLogAssignment_2_0; }
+		
+		//Logical
+		public RuleCall getLogLogicalEnumRuleCall_2_0_0() { return cLogLogicalEnumRuleCall_2_0_0; }
+		
+		//sim2+=Re
+		public Assignment getSim2Assignment_2_1() { return cSim2Assignment_2_1; }
+		
+		//Re
+		public RuleCall getSim2ReParserRuleCall_2_1_0() { return cSim2ReParserRuleCall_2_1_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
+	}
+	public class DispersedElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Dispersed");
+		private final Assignment cDispAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cDispReParserRuleCall_0 = (RuleCall)cDispAssignment.eContents().get(0);
+		
+		//Dispersed:
+		//	disp+=Re+;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//disp+=Re+
+		public Assignment getDispAssignment() { return cDispAssignment; }
+		
+		//Re
+		public RuleCall getDispReParserRuleCall_0() { return cDispReParserRuleCall_0; }
+	}
+	public class ReElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Re");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_1_1_0 = (RuleCall)cGroup_1_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1_1 = (RuleCall)cGroup_1_1.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		
+		//Re:
+		//	ID ('(' (ID ID)? ')')?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID ('(' (ID ID)? ')')?
+		public Group getGroup() { return cGroup; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		
+		//('(' (ID ID)? ')')?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
+		
+		//(ID ID)?
+		public Group getGroup_1_1() { return cGroup_1_1; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1_0() { return cIDTerminalRuleCall_1_1_0; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1_1() { return cIDTerminalRuleCall_1_1_1; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
 	}
 	public class ListOfModelsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfModels");
@@ -1003,8 +2045,397 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	
+	public class FunctionElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Function");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cMINEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cMINMINKeyword_0_0 = (Keyword)cMINEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cMAXEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cMAXMAXKeyword_1_0 = (Keyword)cMAXEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cEXPEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cEXPEXPKeyword_2_0 = (Keyword)cEXPEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cINVERSEEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cINVERSEINVERSEKeyword_3_0 = (Keyword)cINVERSEEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cSINEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cSINSINKeyword_4_0 = (Keyword)cSINEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cCOSEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cCOSCOSKeyword_5_0 = (Keyword)cCOSEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cTANEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cTANTANKeyword_6_0 = (Keyword)cTANEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cFACTORIALEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cFACTORIALFACTORIALKeyword_7_0 = (Keyword)cFACTORIALEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cLOGEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cLOGLOGKeyword_8_0 = (Keyword)cLOGEnumLiteralDeclaration_8.eContents().get(0);
+		
+		//enum Function:
+		//	MIN | MAX | EXP | INVERSE | SIN | COS | TAN | FACTORIAL | LOG;
+		public EnumRule getRule() { return rule; }
+		
+		//MIN | MAX | EXP | INVERSE | SIN | COS | TAN | FACTORIAL | LOG
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//MIN
+		public EnumLiteralDeclaration getMINEnumLiteralDeclaration_0() { return cMINEnumLiteralDeclaration_0; }
+		
+		//"MIN"
+		public Keyword getMINMINKeyword_0_0() { return cMINMINKeyword_0_0; }
+		
+		//MAX
+		public EnumLiteralDeclaration getMAXEnumLiteralDeclaration_1() { return cMAXEnumLiteralDeclaration_1; }
+		
+		//"MAX"
+		public Keyword getMAXMAXKeyword_1_0() { return cMAXMAXKeyword_1_0; }
+		
+		//EXP
+		public EnumLiteralDeclaration getEXPEnumLiteralDeclaration_2() { return cEXPEnumLiteralDeclaration_2; }
+		
+		//"EXP"
+		public Keyword getEXPEXPKeyword_2_0() { return cEXPEXPKeyword_2_0; }
+		
+		//INVERSE
+		public EnumLiteralDeclaration getINVERSEEnumLiteralDeclaration_3() { return cINVERSEEnumLiteralDeclaration_3; }
+		
+		//"INVERSE"
+		public Keyword getINVERSEINVERSEKeyword_3_0() { return cINVERSEINVERSEKeyword_3_0; }
+		
+		//SIN
+		public EnumLiteralDeclaration getSINEnumLiteralDeclaration_4() { return cSINEnumLiteralDeclaration_4; }
+		
+		//"SIN"
+		public Keyword getSINSINKeyword_4_0() { return cSINSINKeyword_4_0; }
+		
+		//COS
+		public EnumLiteralDeclaration getCOSEnumLiteralDeclaration_5() { return cCOSEnumLiteralDeclaration_5; }
+		
+		//"COS"
+		public Keyword getCOSCOSKeyword_5_0() { return cCOSCOSKeyword_5_0; }
+		
+		//TAN
+		public EnumLiteralDeclaration getTANEnumLiteralDeclaration_6() { return cTANEnumLiteralDeclaration_6; }
+		
+		//"TAN"
+		public Keyword getTANTANKeyword_6_0() { return cTANTANKeyword_6_0; }
+		
+		//FACTORIAL
+		public EnumLiteralDeclaration getFACTORIALEnumLiteralDeclaration_7() { return cFACTORIALEnumLiteralDeclaration_7; }
+		
+		//"FACTORIAL"
+		public Keyword getFACTORIALFACTORIALKeyword_7_0() { return cFACTORIALFACTORIALKeyword_7_0; }
+		
+		//LOG
+		public EnumLiteralDeclaration getLOGEnumLiteralDeclaration_8() { return cLOGEnumLiteralDeclaration_8; }
+		
+		//"LOG"
+		public Keyword getLOGLOGKeyword_8_0() { return cLOGLOGKeyword_8_0; }
+	}
+	public class LevelsElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Levels");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cHIGHEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cHIGHHIGHKeyword_0_0 = (Keyword)cHIGHEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cMEDIUMEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cMEDIUMMEDIUMKeyword_1_0 = (Keyword)cMEDIUMEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cLOWEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cLOWLOWKeyword_2_0 = (Keyword)cLOWEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum Levels:
+		//	HIGH | MEDIUM | LOW;
+		public EnumRule getRule() { return rule; }
+		
+		//HIGH | MEDIUM | LOW
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//HIGH
+		public EnumLiteralDeclaration getHIGHEnumLiteralDeclaration_0() { return cHIGHEnumLiteralDeclaration_0; }
+		
+		//"HIGH"
+		public Keyword getHIGHHIGHKeyword_0_0() { return cHIGHHIGHKeyword_0_0; }
+		
+		//MEDIUM
+		public EnumLiteralDeclaration getMEDIUMEnumLiteralDeclaration_1() { return cMEDIUMEnumLiteralDeclaration_1; }
+		
+		//"MEDIUM"
+		public Keyword getMEDIUMMEDIUMKeyword_1_0() { return cMEDIUMMEDIUMKeyword_1_0; }
+		
+		//LOW
+		public EnumLiteralDeclaration getLOWEnumLiteralDeclaration_2() { return cLOWEnumLiteralDeclaration_2; }
+		
+		//"LOW"
+		public Keyword getLOWLOWKeyword_2_0() { return cLOWLOWKeyword_2_0; }
+	}
+	public class ExpressionElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Expression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cTRUEEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cTRUETRUEKeyword_0_0 = (Keyword)cTRUEEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cFALSEEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cFALSEFALSEKeyword_1_0 = (Keyword)cFALSEEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum Expression:
+		//	TRUE | FALSE;
+		public EnumRule getRule() { return rule; }
+		
+		//TRUE | FALSE
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//TRUE
+		public EnumLiteralDeclaration getTRUEEnumLiteralDeclaration_0() { return cTRUEEnumLiteralDeclaration_0; }
+		
+		//"TRUE"
+		public Keyword getTRUETRUEKeyword_0_0() { return cTRUETRUEKeyword_0_0; }
+		
+		//FALSE
+		public EnumLiteralDeclaration getFALSEEnumLiteralDeclaration_1() { return cFALSEEnumLiteralDeclaration_1; }
+		
+		//"FALSE"
+		public Keyword getFALSEFALSEKeyword_1_0() { return cFALSEFALSEKeyword_1_0; }
+	}
+	public class LinksElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Links");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cIsEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cIsIsKeyword_0_0 = (Keyword)cIsEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cOccursEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cOccursOccursKeyword_1_0 = (Keyword)cOccursEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cToEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cToToKeyword_2_0 = (Keyword)cToEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cInEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cInInKeyword_3_0 = (Keyword)cInEnumLiteralDeclaration_3.eContents().get(0);
+		
+		//enum Links:
+		//	is | occurs | to | in;
+		public EnumRule getRule() { return rule; }
+		
+		//is | occurs | to | in
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//is
+		public EnumLiteralDeclaration getIsEnumLiteralDeclaration_0() { return cIsEnumLiteralDeclaration_0; }
+		
+		//"is"
+		public Keyword getIsIsKeyword_0_0() { return cIsIsKeyword_0_0; }
+		
+		//occurs
+		public EnumLiteralDeclaration getOccursEnumLiteralDeclaration_1() { return cOccursEnumLiteralDeclaration_1; }
+		
+		//"occurs"
+		public Keyword getOccursOccursKeyword_1_0() { return cOccursOccursKeyword_1_0; }
+		
+		//to
+		public EnumLiteralDeclaration getToEnumLiteralDeclaration_2() { return cToEnumLiteralDeclaration_2; }
+		
+		//"to"
+		public Keyword getToToKeyword_2_0() { return cToToKeyword_2_0; }
+		
+		//in
+		public EnumLiteralDeclaration getInEnumLiteralDeclaration_3() { return cInEnumLiteralDeclaration_3; }
+		
+		//"in"
+		public Keyword getInInKeyword_3_0() { return cInInKeyword_3_0; }
+	}
+	public class TemporalElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Temporal");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cPrecedesEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cPrecedesPrecedesKeyword_0_0 = (Keyword)cPrecedesEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cBetweenEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cBetweenBetweenKeyword_1_0 = (Keyword)cBetweenEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cEventuallyEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cEventuallyEventuallyKeyword_2_0 = (Keyword)cEventuallyEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cAlwaysEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cAlwaysAlwaysKeyword_3_0 = (Keyword)cAlwaysEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cBeforeEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cBeforeBeforeKeyword_4_0 = (Keyword)cBeforeEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cAfterEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cAfterAfterKeyword_5_0 = (Keyword)cAfterEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cUntilEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cUntilUntilKeyword_6_0 = (Keyword)cUntilEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cNeverEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cNeverNeverKeyword_7_0 = (Keyword)cNeverEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cLeadsEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cLeadsLeadsKeyword_8_0 = (Keyword)cLeadsEnumLiteralDeclaration_8.eContents().get(0);
+		private final EnumLiteralDeclaration cAbsentEnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
+		private final Keyword cAbsentAbsentKeyword_9_0 = (Keyword)cAbsentEnumLiteralDeclaration_9.eContents().get(0);
+		private final EnumLiteralDeclaration cExistsEnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
+		private final Keyword cExistsExistsKeyword_10_0 = (Keyword)cExistsEnumLiteralDeclaration_10.eContents().get(0);
+		
+		//enum Temporal:
+		//	precedes | between | eventually | always | before | after | until | never | leads | absent | exists;
+		public EnumRule getRule() { return rule; }
+		
+		//precedes | between | eventually | always | before | after | until | never | leads | absent | exists
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//precedes
+		public EnumLiteralDeclaration getPrecedesEnumLiteralDeclaration_0() { return cPrecedesEnumLiteralDeclaration_0; }
+		
+		//"precedes"
+		public Keyword getPrecedesPrecedesKeyword_0_0() { return cPrecedesPrecedesKeyword_0_0; }
+		
+		//between
+		public EnumLiteralDeclaration getBetweenEnumLiteralDeclaration_1() { return cBetweenEnumLiteralDeclaration_1; }
+		
+		//"between"
+		public Keyword getBetweenBetweenKeyword_1_0() { return cBetweenBetweenKeyword_1_0; }
+		
+		//eventually
+		public EnumLiteralDeclaration getEventuallyEnumLiteralDeclaration_2() { return cEventuallyEnumLiteralDeclaration_2; }
+		
+		//"eventually"
+		public Keyword getEventuallyEventuallyKeyword_2_0() { return cEventuallyEventuallyKeyword_2_0; }
+		
+		//always
+		public EnumLiteralDeclaration getAlwaysEnumLiteralDeclaration_3() { return cAlwaysEnumLiteralDeclaration_3; }
+		
+		//"always"
+		public Keyword getAlwaysAlwaysKeyword_3_0() { return cAlwaysAlwaysKeyword_3_0; }
+		
+		//before
+		public EnumLiteralDeclaration getBeforeEnumLiteralDeclaration_4() { return cBeforeEnumLiteralDeclaration_4; }
+		
+		//"before"
+		public Keyword getBeforeBeforeKeyword_4_0() { return cBeforeBeforeKeyword_4_0; }
+		
+		//after
+		public EnumLiteralDeclaration getAfterEnumLiteralDeclaration_5() { return cAfterEnumLiteralDeclaration_5; }
+		
+		//"after"
+		public Keyword getAfterAfterKeyword_5_0() { return cAfterAfterKeyword_5_0; }
+		
+		//until
+		public EnumLiteralDeclaration getUntilEnumLiteralDeclaration_6() { return cUntilEnumLiteralDeclaration_6; }
+		
+		//"until"
+		public Keyword getUntilUntilKeyword_6_0() { return cUntilUntilKeyword_6_0; }
+		
+		//never
+		public EnumLiteralDeclaration getNeverEnumLiteralDeclaration_7() { return cNeverEnumLiteralDeclaration_7; }
+		
+		//"never"
+		public Keyword getNeverNeverKeyword_7_0() { return cNeverNeverKeyword_7_0; }
+		
+		//leads
+		public EnumLiteralDeclaration getLeadsEnumLiteralDeclaration_8() { return cLeadsEnumLiteralDeclaration_8; }
+		
+		//"leads"
+		public Keyword getLeadsLeadsKeyword_8_0() { return cLeadsLeadsKeyword_8_0; }
+		
+		//absent
+		public EnumLiteralDeclaration getAbsentEnumLiteralDeclaration_9() { return cAbsentEnumLiteralDeclaration_9; }
+		
+		//"absent"
+		public Keyword getAbsentAbsentKeyword_9_0() { return cAbsentAbsentKeyword_9_0; }
+		
+		//exists
+		public EnumLiteralDeclaration getExistsEnumLiteralDeclaration_10() { return cExistsEnumLiteralDeclaration_10; }
+		
+		//"exists"
+		public Keyword getExistsExistsKeyword_10_0() { return cExistsExistsKeyword_10_0; }
+	}
+	public class LogicalElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Logical");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cAndEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cAndAndKeyword_0_0 = (Keyword)cAndEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cOrEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cOrOrKeyword_1_0 = (Keyword)cOrEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cNotEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cNotNotKeyword_2_0 = (Keyword)cNotEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum Logical:
+		//	and | or | not;
+		public EnumRule getRule() { return rule; }
+		
+		//and | or | not
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//and
+		public EnumLiteralDeclaration getAndEnumLiteralDeclaration_0() { return cAndEnumLiteralDeclaration_0; }
+		
+		//"and"
+		public Keyword getAndAndKeyword_0_0() { return cAndAndKeyword_0_0; }
+		
+		//or
+		public EnumLiteralDeclaration getOrEnumLiteralDeclaration_1() { return cOrEnumLiteralDeclaration_1; }
+		
+		//"or"
+		public Keyword getOrOrKeyword_1_0() { return cOrOrKeyword_1_0; }
+		
+		//not
+		public EnumLiteralDeclaration getNotEnumLiteralDeclaration_2() { return cNotEnumLiteralDeclaration_2; }
+		
+		//"not"
+		public Keyword getNotNotKeyword_2_0() { return cNotNotKeyword_2_0; }
+	}
+	public class CoherenceElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.Coherence");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cEXPLAINEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cEXPLAINEXPLAINKeyword_0_0 = (Keyword)cEXPLAINEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cANALOGOUSEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cANALOGOUSANALOGOUSKeyword_1_0 = (Keyword)cANALOGOUSEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cDATAEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cDATADATAKeyword_2_0 = (Keyword)cDATAEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cCONTRADICTEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cCONTRADICTCONTRADICTKeyword_3_0 = (Keyword)cCONTRADICTEnumLiteralDeclaration_3.eContents().get(0);
+		
+		//enum Coherence:
+		//	EXPLAIN | ANALOGOUS | DATA | CONTRADICT;
+		public EnumRule getRule() { return rule; }
+		
+		//EXPLAIN | ANALOGOUS | DATA | CONTRADICT
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//EXPLAIN
+		public EnumLiteralDeclaration getEXPLAINEnumLiteralDeclaration_0() { return cEXPLAINEnumLiteralDeclaration_0; }
+		
+		//"EXPLAIN"
+		public Keyword getEXPLAINEXPLAINKeyword_0_0() { return cEXPLAINEXPLAINKeyword_0_0; }
+		
+		//ANALOGOUS
+		public EnumLiteralDeclaration getANALOGOUSEnumLiteralDeclaration_1() { return cANALOGOUSEnumLiteralDeclaration_1; }
+		
+		//"ANALOGOUS"
+		public Keyword getANALOGOUSANALOGOUSKeyword_1_0() { return cANALOGOUSANALOGOUSKeyword_1_0; }
+		
+		//DATA
+		public EnumLiteralDeclaration getDATAEnumLiteralDeclaration_2() { return cDATAEnumLiteralDeclaration_2; }
+		
+		//"DATA"
+		public Keyword getDATADATAKeyword_2_0() { return cDATADATAKeyword_2_0; }
+		
+		//CONTRADICT
+		public EnumLiteralDeclaration getCONTRADICTEnumLiteralDeclaration_3() { return cCONTRADICTEnumLiteralDeclaration_3; }
+		
+		//"CONTRADICT"
+		public Keyword getCONTRADICTCONTRADICTKeyword_3_0() { return cCONTRADICTCONTRADICTKeyword_3_0; }
+	}
 	
 	private final SedMLElements pSedML;
+	private final ListOfHypothesesElements pListOfHypotheses;
+	private final HypothesisElements pHypothesis;
+	private final RelationalQueryElements pRelationalQuery;
+	private final Query1Elements pQuery1;
+	private final Query2Elements pQuery2;
+	private final FunctionElements eFunction;
+	private final TerminalRule tRangeValue;
+	private final LevelsElements eLevels;
+	private final Query3Elements pQuery3;
+	private final CoherenceLinkElements pCoherenceLink;
+	private final MechHypothesisElements pMechHypothesis;
+	private final EvidenceElements pEvidence;
+	private final TemporalPatternElements pTemporalPattern;
+	private final ConditionElements pCondition;
+	private final ExpressionElements eExpression;
+	private final LinkOperatorsElements pLinkOperators;
+	private final EventElements pEvent;
+	private final SimultaneousElements pSimultaneous;
+	private final DispersedElements pDispersed;
+	private final ReElements pRe;
+	private final LinksElements eLinks;
+	private final TemporalElements eTemporal;
+	private final LogicalElements eLogical;
+	private final CoherenceElements eCoherence;
 	private final ListOfModelsElements pListOfModels;
 	private final ModelElements pModel;
 	private final DataGeneratorElements pDataGenerator;
@@ -1032,6 +2463,30 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pSedML = new SedMLElements();
+		this.pListOfHypotheses = new ListOfHypothesesElements();
+		this.pHypothesis = new HypothesisElements();
+		this.pRelationalQuery = new RelationalQueryElements();
+		this.pQuery1 = new Query1Elements();
+		this.pQuery2 = new Query2Elements();
+		this.eFunction = new FunctionElements();
+		this.tRangeValue = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.rangeValue");
+		this.eLevels = new LevelsElements();
+		this.pQuery3 = new Query3Elements();
+		this.pCoherenceLink = new CoherenceLinkElements();
+		this.pMechHypothesis = new MechHypothesisElements();
+		this.pEvidence = new EvidenceElements();
+		this.pTemporalPattern = new TemporalPatternElements();
+		this.pCondition = new ConditionElements();
+		this.eExpression = new ExpressionElements();
+		this.pLinkOperators = new LinkOperatorsElements();
+		this.pEvent = new EventElements();
+		this.pSimultaneous = new SimultaneousElements();
+		this.pDispersed = new DispersedElements();
+		this.pRe = new ReElements();
+		this.eLinks = new LinksElements();
+		this.eTemporal = new TemporalElements();
+		this.eLogical = new LogicalElements();
+		this.eCoherence = new CoherenceElements();
 		this.pListOfModels = new ListOfModelsElements();
 		this.pModel = new ModelElements();
 		this.pDataGenerator = new DataGeneratorElements();
@@ -1078,14 +2533,255 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//sedML:
-	//	version=INT level=INT listOfSimulations=listOfSimulations listOfModels=listOfModels listOfTasks=listOfTasks
-	//	listOfDataGenerators=listOfDataGenerators listOfOutputs=listOfOutputs;
+	//	version=INT level=INT listOfHypotheses=listOfHypotheses listOfSimulations=listOfSimulations listOfModels=listOfModels
+	//	listOfTasks=listOfTasks listOfDataGenerators=listOfDataGenerators listOfOutputs=listOfOutputs;
 	public SedMLElements getSedMLAccess() {
 		return pSedML;
 	}
 	
 	public ParserRule getSedMLRule() {
 		return getSedMLAccess().getRule();
+	}
+	
+	//listOfHypotheses:
+	//	'listOfHypotheses' '{' hypothesis+=hypothesis* '}';
+	public ListOfHypothesesElements getListOfHypothesesAccess() {
+		return pListOfHypotheses;
+	}
+	
+	public ParserRule getListOfHypothesesRule() {
+		return getListOfHypothesesAccess().getRule();
+	}
+	
+	//hypothesis:
+	//	'hypotheses' '{' ('mechanistic' 'hypotheses' '{' mechHypothesis+=MechHypothesis* '}')? ('evidence' '{'
+	//	evidences+=Evidence* '}')? ('coherence' 'model' '{' coherenceLinks+=CoherenceLink* '}')? ('relational' 'hypotheses'
+	//	'{' relHypothesis+=RelationalQuery* '}')? '}';
+	public HypothesisElements getHypothesisAccess() {
+		return pHypothesis;
+	}
+	
+	public ParserRule getHypothesisRule() {
+		return getHypothesisAccess().getRule();
+	}
+	
+	//RelationalQuery:
+	//	Query1 | Query2 | Query3;
+	public RelationalQueryElements getRelationalQueryAccess() {
+		return pRelationalQuery;
+	}
+	
+	public ParserRule getRelationalQueryRule() {
+		return getRelationalQueryAccess().getRule();
+	}
+	
+	//Query1:
+	//	'if' factor=ID? control=ID? 'is' x=rangeValue? 'added'? 'removed'? ('in the range' start1=rangeValue 'to'
+	//	end1=rangeValue)? 'then' response=ID 'is' y=rangeValue? ('in the range' start2=rangeValue 'to' end2=rangeValue)?;
+	public Query1Elements getQuery1Access() {
+		return pQuery1;
+	}
+	
+	public ParserRule getQuery1Rule() {
+		return getQuery1Access().getRule();
+	}
+	
+	//Query2:
+	//	'compare' function1=Function? response1=ID? factor1=ID? 'and' function2=Function? response2=ID? factor2=ID?;
+	public Query2Elements getQuery2Access() {
+		return pQuery2;
+	}
+	
+	public ParserRule getQuery2Rule() {
+		return getQuery2Access().getRule();
+	}
+	
+	//enum Function:
+	//	MIN | MAX | EXP | INVERSE | SIN | COS | TAN | FACTORIAL | LOG;
+	public FunctionElements getFunctionAccess() {
+		return eFunction;
+	}
+	
+	public EnumRule getFunctionRule() {
+		return getFunctionAccess().getRule();
+	}
+	
+	//terminal rangeValue:
+	//	INT '.'? INT?;
+	public TerminalRule getRangeValueRule() {
+		return tRangeValue;
+	}
+	
+	//enum Levels:
+	//	HIGH | MEDIUM | LOW;
+	public LevelsElements getLevelsAccess() {
+		return eLevels;
+	}
+	
+	public EnumRule getLevelsRule() {
+		return getLevelsAccess().getRule();
+	}
+	
+	//Query3:
+	//	'if' (factor1=ID? control1=ID? 'is' ('at' 'level' Level2=Levels)? x2=rangeValue? 'and'?)* 'then' (response1=ID 'is'
+	//	('at' 'level' Level4=Levels)? x4=rangeValue? 'and'?)* 'where' (level=Levels 'for' factor=ID? control=ID? response=ID?
+	//	'is' 'in the range' start1=rangeValue 'to' end1=rangeValue)*;
+	public Query3Elements getQuery3Access() {
+		return pQuery3;
+	}
+	
+	public ParserRule getQuery3Rule() {
+		return getQuery3Access().getRule();
+	}
+	
+	//CoherenceLink:
+	//	coherence=Coherence '(' hyp+=ID* ')' '(' evi+=ID* ')';
+	public CoherenceLinkElements getCoherenceLinkAccess() {
+		return pCoherenceLink;
+	}
+	
+	public ParserRule getCoherenceLinkRule() {
+		return getCoherenceLinkAccess().getRule();
+	}
+	
+	//MechHypothesis:
+	//	mName=ID ':' assoMech+=TemporalPattern* mechanisticHypothesis=ID?;
+	public MechHypothesisElements getMechHypothesisAccess() {
+		return pMechHypothesis;
+	}
+	
+	public ParserRule getMechHypothesisRule() {
+		return getMechHypothesisAccess().getRule();
+	}
+	
+	//Evidence:
+	//	eName=ID ':' query+=TemporalPattern* 'activation' 'weight' ':' objOfStudy=rangeValue;
+	public EvidenceElements getEvidenceAccess() {
+		return pEvidence;
+	}
+	
+	public ParserRule getEvidenceRule() {
+		return getEvidenceAccess().getRule();
+	}
+	
+	//TemporalPattern:
+	//	Condition l2+=Links* exp+=Expression* (op1+=Temporal | op2+=Logical)* l3=Links?;
+	public TemporalPatternElements getTemporalPatternAccess() {
+		return pTemporalPattern;
+	}
+	
+	public ParserRule getTemporalPatternRule() {
+		return getTemporalPatternAccess().getRule();
+	}
+	
+	//Condition:
+	//	condition=Event lo=LinkOperators? e=Event? exp1=Expression? v=rangeValue?;
+	public ConditionElements getConditionAccess() {
+		return pCondition;
+	}
+	
+	public ParserRule getConditionRule() {
+		return getConditionAccess().getRule();
+	}
+	
+	//enum Expression:
+	//	TRUE | FALSE;
+	public ExpressionElements getExpressionAccess() {
+		return eExpression;
+	}
+	
+	public EnumRule getExpressionRule() {
+		return getExpressionAccess().getRule();
+	}
+	
+	//LinkOperators:
+	//	'+' | '-' | '*' | '/' | '%' | ' = ' | ' == ' | '&&' | '||' | '<' | '<=' | '>' | '>=' | '!' | '!=';
+	public LinkOperatorsElements getLinkOperatorsAccess() {
+		return pLinkOperators;
+	}
+	
+	public ParserRule getLinkOperatorsRule() {
+		return getLinkOperatorsAccess().getRule();
+	}
+	
+	//Event:
+	//	Dispersed | Simultaneous;
+	public EventElements getEventAccess() {
+		return pEvent;
+	}
+	
+	public ParserRule getEventRule() {
+		return getEventAccess().getRule();
+	}
+	
+	//Simultaneous:
+	//	'[' sim1=Re (log+=Logical sim2+=Re)* ']';
+	public SimultaneousElements getSimultaneousAccess() {
+		return pSimultaneous;
+	}
+	
+	public ParserRule getSimultaneousRule() {
+		return getSimultaneousAccess().getRule();
+	}
+	
+	//Dispersed:
+	//	disp+=Re+;
+	public DispersedElements getDispersedAccess() {
+		return pDispersed;
+	}
+	
+	public ParserRule getDispersedRule() {
+		return getDispersedAccess().getRule();
+	}
+	
+	//Re:
+	//	ID ('(' (ID ID)? ')')?;
+	public ReElements getReAccess() {
+		return pRe;
+	}
+	
+	public ParserRule getReRule() {
+		return getReAccess().getRule();
+	}
+	
+	//enum Links:
+	//	is | occurs | to | in;
+	public LinksElements getLinksAccess() {
+		return eLinks;
+	}
+	
+	public EnumRule getLinksRule() {
+		return getLinksAccess().getRule();
+	}
+	
+	//enum Temporal:
+	//	precedes | between | eventually | always | before | after | until | never | leads | absent | exists;
+	public TemporalElements getTemporalAccess() {
+		return eTemporal;
+	}
+	
+	public EnumRule getTemporalRule() {
+		return getTemporalAccess().getRule();
+	}
+	
+	//enum Logical:
+	//	and | or | not;
+	public LogicalElements getLogicalAccess() {
+		return eLogical;
+	}
+	
+	public EnumRule getLogicalRule() {
+		return getLogicalAccess().getRule();
+	}
+	
+	//enum Coherence:
+	//	EXPLAIN | ANALOGOUS | DATA | CONTRADICT;
+	public CoherenceElements getCoherenceAccess() {
+		return eCoherence;
+	}
+	
+	public EnumRule getCoherenceRule() {
+		return getCoherenceAccess().getRule();
 	}
 	
 	//listOfModels:

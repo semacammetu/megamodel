@@ -5,18 +5,40 @@ package tr.edu.metu.ceng.megamodel.sedml.sedml.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Coherence;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.CoherenceLink;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Condition;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Dispersed;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Event;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Evidence;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Expression;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Function;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Levels;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Links;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Logical;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.MechHypothesis;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Query1;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Query2;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Query3;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.RelationalQuery;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlFactory;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Simultaneous;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.Temporal;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.TemporalPattern;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.algorithm;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.curve;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.hypothesis;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfCurves;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataGenerators;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfHypotheses;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfModels;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfOutputs;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSimulations;
@@ -44,6 +66,104 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * @generated
    */
   private EClass sedMLEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listOfHypothesesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass hypothesisEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass relationalQueryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass query1EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass query2EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass query3EClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass coherenceLinkEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mechHypothesisEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass evidenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass temporalPatternEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass conditionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass eventEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass simultaneousEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dispersedEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -158,6 +278,55 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
   private EClass algorithmEClass = null;
 
   /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum functionEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum levelsEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum expressionEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum linksEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum temporalEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum logicalEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum coherenceEEnum = null;
+
+  /**
    * Creates an instance of the model <b>Package</b>, registered with
    * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
    * package URI value.
@@ -255,7 +424,7 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsedML_ListOfSimulations()
+  public EReference getsedML_ListOfHypotheses()
   {
     return (EReference)sedMLEClass.getEStructuralFeatures().get(2);
   }
@@ -265,7 +434,7 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsedML_ListOfModels()
+  public EReference getsedML_ListOfSimulations()
   {
     return (EReference)sedMLEClass.getEStructuralFeatures().get(3);
   }
@@ -275,7 +444,7 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsedML_ListOfTasks()
+  public EReference getsedML_ListOfModels()
   {
     return (EReference)sedMLEClass.getEStructuralFeatures().get(4);
   }
@@ -285,7 +454,7 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsedML_ListOfDataGenerators()
+  public EReference getsedML_ListOfTasks()
   {
     return (EReference)sedMLEClass.getEStructuralFeatures().get(5);
   }
@@ -295,9 +464,719 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsedML_ListOfOutputs()
+  public EReference getsedML_ListOfDataGenerators()
   {
     return (EReference)sedMLEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getsedML_ListOfOutputs()
+  {
+    return (EReference)sedMLEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getlistOfHypotheses()
+  {
+    return listOfHypothesesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getlistOfHypotheses_Hypothesis()
+  {
+    return (EReference)listOfHypothesesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass gethypothesis()
+  {
+    return hypothesisEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference gethypothesis_MechHypothesis()
+  {
+    return (EReference)hypothesisEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference gethypothesis_Evidences()
+  {
+    return (EReference)hypothesisEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference gethypothesis_CoherenceLinks()
+  {
+    return (EReference)hypothesisEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference gethypothesis_RelHypothesis()
+  {
+    return (EReference)hypothesisEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRelationalQuery()
+  {
+    return relationalQueryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getQuery1()
+  {
+    return query1EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery1_Factor()
+  {
+    return (EAttribute)query1EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery1_Control()
+  {
+    return (EAttribute)query1EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery1_X()
+  {
+    return (EAttribute)query1EClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery1_Start1()
+  {
+    return (EAttribute)query1EClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery1_End1()
+  {
+    return (EAttribute)query1EClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery1_Response()
+  {
+    return (EAttribute)query1EClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery1_Y()
+  {
+    return (EAttribute)query1EClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery1_Start2()
+  {
+    return (EAttribute)query1EClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery1_End2()
+  {
+    return (EAttribute)query1EClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getQuery2()
+  {
+    return query2EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery2_Function1()
+  {
+    return (EAttribute)query2EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery2_Response1()
+  {
+    return (EAttribute)query2EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery2_Factor1()
+  {
+    return (EAttribute)query2EClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery2_Function2()
+  {
+    return (EAttribute)query2EClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery2_Response2()
+  {
+    return (EAttribute)query2EClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery2_Factor2()
+  {
+    return (EAttribute)query2EClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getQuery3()
+  {
+    return query3EClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery3_Factor1()
+  {
+    return (EAttribute)query3EClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery3_Control1()
+  {
+    return (EAttribute)query3EClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery3_Level2()
+  {
+    return (EAttribute)query3EClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery3_X2()
+  {
+    return (EAttribute)query3EClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery3_Response1()
+  {
+    return (EAttribute)query3EClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery3_Level4()
+  {
+    return (EAttribute)query3EClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery3_X4()
+  {
+    return (EAttribute)query3EClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery3_Level()
+  {
+    return (EAttribute)query3EClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery3_Factor()
+  {
+    return (EAttribute)query3EClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery3_Control()
+  {
+    return (EAttribute)query3EClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery3_Response()
+  {
+    return (EAttribute)query3EClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery3_Start1()
+  {
+    return (EAttribute)query3EClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQuery3_End1()
+  {
+    return (EAttribute)query3EClass.getEStructuralFeatures().get(12);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCoherenceLink()
+  {
+    return coherenceLinkEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCoherenceLink_Coherence()
+  {
+    return (EAttribute)coherenceLinkEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCoherenceLink_Hyp()
+  {
+    return (EAttribute)coherenceLinkEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCoherenceLink_Evi()
+  {
+    return (EAttribute)coherenceLinkEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMechHypothesis()
+  {
+    return mechHypothesisEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMechHypothesis_MName()
+  {
+    return (EAttribute)mechHypothesisEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMechHypothesis_AssoMech()
+  {
+    return (EReference)mechHypothesisEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMechHypothesis_MechanisticHypothesis()
+  {
+    return (EAttribute)mechHypothesisEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEvidence()
+  {
+    return evidenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEvidence_EName()
+  {
+    return (EAttribute)evidenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEvidence_Query()
+  {
+    return (EReference)evidenceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEvidence_ObjOfStudy()
+  {
+    return (EAttribute)evidenceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTemporalPattern()
+  {
+    return temporalPatternEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCondition()
+  {
+    return conditionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCondition_L2()
+  {
+    return (EAttribute)conditionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCondition_Exp()
+  {
+    return (EAttribute)conditionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCondition_Op1()
+  {
+    return (EAttribute)conditionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCondition_Op2()
+  {
+    return (EAttribute)conditionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCondition_L3()
+  {
+    return (EAttribute)conditionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCondition_Condition()
+  {
+    return (EReference)conditionEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCondition_Lo()
+  {
+    return (EAttribute)conditionEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCondition_E()
+  {
+    return (EReference)conditionEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCondition_Exp1()
+  {
+    return (EAttribute)conditionEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCondition_V()
+  {
+    return (EAttribute)conditionEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEvent()
+  {
+    return eventEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSimultaneous()
+  {
+    return simultaneousEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSimultaneous_Sim1()
+  {
+    return (EAttribute)simultaneousEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSimultaneous_Log()
+  {
+    return (EAttribute)simultaneousEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSimultaneous_Sim2()
+  {
+    return (EAttribute)simultaneousEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDispersed()
+  {
+    return dispersedEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDispersed_Disp()
+  {
+    return (EAttribute)dispersedEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -855,6 +1734,76 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getFunction()
+  {
+    return functionEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getLevels()
+  {
+    return levelsEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getExpression()
+  {
+    return expressionEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getLinks()
+  {
+    return linksEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getTemporal()
+  {
+    return temporalEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getLogical()
+  {
+    return logicalEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getCoherence()
+  {
+    return coherenceEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SedmlFactory getSedmlFactory()
   {
     return (SedmlFactory)getEFactoryInstance();
@@ -883,11 +1832,96 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
     sedMLEClass = createEClass(SED_ML);
     createEAttribute(sedMLEClass, SED_ML__VERSION);
     createEAttribute(sedMLEClass, SED_ML__LEVEL);
+    createEReference(sedMLEClass, SED_ML__LIST_OF_HYPOTHESES);
     createEReference(sedMLEClass, SED_ML__LIST_OF_SIMULATIONS);
     createEReference(sedMLEClass, SED_ML__LIST_OF_MODELS);
     createEReference(sedMLEClass, SED_ML__LIST_OF_TASKS);
     createEReference(sedMLEClass, SED_ML__LIST_OF_DATA_GENERATORS);
     createEReference(sedMLEClass, SED_ML__LIST_OF_OUTPUTS);
+
+    listOfHypothesesEClass = createEClass(LIST_OF_HYPOTHESES);
+    createEReference(listOfHypothesesEClass, LIST_OF_HYPOTHESES__HYPOTHESIS);
+
+    hypothesisEClass = createEClass(HYPOTHESIS);
+    createEReference(hypothesisEClass, HYPOTHESIS__MECH_HYPOTHESIS);
+    createEReference(hypothesisEClass, HYPOTHESIS__EVIDENCES);
+    createEReference(hypothesisEClass, HYPOTHESIS__COHERENCE_LINKS);
+    createEReference(hypothesisEClass, HYPOTHESIS__REL_HYPOTHESIS);
+
+    relationalQueryEClass = createEClass(RELATIONAL_QUERY);
+
+    query1EClass = createEClass(QUERY1);
+    createEAttribute(query1EClass, QUERY1__FACTOR);
+    createEAttribute(query1EClass, QUERY1__CONTROL);
+    createEAttribute(query1EClass, QUERY1__X);
+    createEAttribute(query1EClass, QUERY1__START1);
+    createEAttribute(query1EClass, QUERY1__END1);
+    createEAttribute(query1EClass, QUERY1__RESPONSE);
+    createEAttribute(query1EClass, QUERY1__Y);
+    createEAttribute(query1EClass, QUERY1__START2);
+    createEAttribute(query1EClass, QUERY1__END2);
+
+    query2EClass = createEClass(QUERY2);
+    createEAttribute(query2EClass, QUERY2__FUNCTION1);
+    createEAttribute(query2EClass, QUERY2__RESPONSE1);
+    createEAttribute(query2EClass, QUERY2__FACTOR1);
+    createEAttribute(query2EClass, QUERY2__FUNCTION2);
+    createEAttribute(query2EClass, QUERY2__RESPONSE2);
+    createEAttribute(query2EClass, QUERY2__FACTOR2);
+
+    query3EClass = createEClass(QUERY3);
+    createEAttribute(query3EClass, QUERY3__FACTOR1);
+    createEAttribute(query3EClass, QUERY3__CONTROL1);
+    createEAttribute(query3EClass, QUERY3__LEVEL2);
+    createEAttribute(query3EClass, QUERY3__X2);
+    createEAttribute(query3EClass, QUERY3__RESPONSE1);
+    createEAttribute(query3EClass, QUERY3__LEVEL4);
+    createEAttribute(query3EClass, QUERY3__X4);
+    createEAttribute(query3EClass, QUERY3__LEVEL);
+    createEAttribute(query3EClass, QUERY3__FACTOR);
+    createEAttribute(query3EClass, QUERY3__CONTROL);
+    createEAttribute(query3EClass, QUERY3__RESPONSE);
+    createEAttribute(query3EClass, QUERY3__START1);
+    createEAttribute(query3EClass, QUERY3__END1);
+
+    coherenceLinkEClass = createEClass(COHERENCE_LINK);
+    createEAttribute(coherenceLinkEClass, COHERENCE_LINK__COHERENCE);
+    createEAttribute(coherenceLinkEClass, COHERENCE_LINK__HYP);
+    createEAttribute(coherenceLinkEClass, COHERENCE_LINK__EVI);
+
+    mechHypothesisEClass = createEClass(MECH_HYPOTHESIS);
+    createEAttribute(mechHypothesisEClass, MECH_HYPOTHESIS__MNAME);
+    createEReference(mechHypothesisEClass, MECH_HYPOTHESIS__ASSO_MECH);
+    createEAttribute(mechHypothesisEClass, MECH_HYPOTHESIS__MECHANISTIC_HYPOTHESIS);
+
+    evidenceEClass = createEClass(EVIDENCE);
+    createEAttribute(evidenceEClass, EVIDENCE__ENAME);
+    createEReference(evidenceEClass, EVIDENCE__QUERY);
+    createEAttribute(evidenceEClass, EVIDENCE__OBJ_OF_STUDY);
+
+    temporalPatternEClass = createEClass(TEMPORAL_PATTERN);
+
+    conditionEClass = createEClass(CONDITION);
+    createEAttribute(conditionEClass, CONDITION__L2);
+    createEAttribute(conditionEClass, CONDITION__EXP);
+    createEAttribute(conditionEClass, CONDITION__OP1);
+    createEAttribute(conditionEClass, CONDITION__OP2);
+    createEAttribute(conditionEClass, CONDITION__L3);
+    createEReference(conditionEClass, CONDITION__CONDITION);
+    createEAttribute(conditionEClass, CONDITION__LO);
+    createEReference(conditionEClass, CONDITION__E);
+    createEAttribute(conditionEClass, CONDITION__EXP1);
+    createEAttribute(conditionEClass, CONDITION__V);
+
+    eventEClass = createEClass(EVENT);
+
+    simultaneousEClass = createEClass(SIMULTANEOUS);
+    createEAttribute(simultaneousEClass, SIMULTANEOUS__SIM1);
+    createEAttribute(simultaneousEClass, SIMULTANEOUS__LOG);
+    createEAttribute(simultaneousEClass, SIMULTANEOUS__SIM2);
+
+    dispersedEClass = createEClass(DISPERSED);
+    createEAttribute(dispersedEClass, DISPERSED__DISP);
 
     listOfModelsEClass = createEClass(LIST_OF_MODELS);
     createEReference(listOfModelsEClass, LIST_OF_MODELS__MODEL);
@@ -959,6 +1993,15 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
 
     algorithmEClass = createEClass(ALGORITHM);
     createEAttribute(algorithmEClass, ALGORITHM__KISAO_ID);
+
+    // Create enums
+    functionEEnum = createEEnum(FUNCTION);
+    levelsEEnum = createEEnum(LEVELS);
+    expressionEEnum = createEEnum(EXPRESSION);
+    linksEEnum = createEEnum(LINKS);
+    temporalEEnum = createEEnum(TEMPORAL);
+    logicalEEnum = createEEnum(LOGICAL);
+    coherenceEEnum = createEEnum(COHERENCE);
   }
 
   /**
@@ -990,16 +2033,107 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    query1EClass.getESuperTypes().add(this.getRelationalQuery());
+    query2EClass.getESuperTypes().add(this.getRelationalQuery());
+    query3EClass.getESuperTypes().add(this.getRelationalQuery());
+    conditionEClass.getESuperTypes().add(this.getTemporalPattern());
+    simultaneousEClass.getESuperTypes().add(this.getEvent());
+    dispersedEClass.getESuperTypes().add(this.getEvent());
 
     // Initialize classes and features; add operations and parameters
     initEClass(sedMLEClass, sedML.class, "sedML", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getsedML_Version(), ecorePackage.getEInt(), "version", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getsedML_Level(), ecorePackage.getEInt(), "level", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getsedML_ListOfHypotheses(), this.getlistOfHypotheses(), null, "listOfHypotheses", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getsedML_ListOfSimulations(), this.getlistOfSimulations(), null, "listOfSimulations", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getsedML_ListOfModels(), this.getlistOfModels(), null, "listOfModels", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getsedML_ListOfTasks(), this.getlistOfTasks(), null, "listOfTasks", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getsedML_ListOfDataGenerators(), this.getlistOfDataGenerators(), null, "listOfDataGenerators", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getsedML_ListOfOutputs(), this.getlistOfOutputs(), null, "listOfOutputs", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listOfHypothesesEClass, listOfHypotheses.class, "listOfHypotheses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getlistOfHypotheses_Hypothesis(), this.gethypothesis(), null, "hypothesis", null, 0, -1, listOfHypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(hypothesisEClass, hypothesis.class, "hypothesis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(gethypothesis_MechHypothesis(), this.getMechHypothesis(), null, "mechHypothesis", null, 0, -1, hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(gethypothesis_Evidences(), this.getEvidence(), null, "evidences", null, 0, -1, hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(gethypothesis_CoherenceLinks(), this.getCoherenceLink(), null, "coherenceLinks", null, 0, -1, hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(gethypothesis_RelHypothesis(), this.getRelationalQuery(), null, "relHypothesis", null, 0, -1, hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(relationalQueryEClass, RelationalQuery.class, "RelationalQuery", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(query1EClass, Query1.class, "Query1", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQuery1_Factor(), ecorePackage.getEString(), "factor", null, 0, 1, Query1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery1_Control(), ecorePackage.getEString(), "control", null, 0, 1, Query1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery1_X(), ecorePackage.getEString(), "x", null, 0, 1, Query1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery1_Start1(), ecorePackage.getEString(), "start1", null, 0, 1, Query1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery1_End1(), ecorePackage.getEString(), "end1", null, 0, 1, Query1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery1_Response(), ecorePackage.getEString(), "response", null, 0, 1, Query1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery1_Y(), ecorePackage.getEString(), "y", null, 0, 1, Query1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery1_Start2(), ecorePackage.getEString(), "start2", null, 0, 1, Query1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery1_End2(), ecorePackage.getEString(), "end2", null, 0, 1, Query1.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(query2EClass, Query2.class, "Query2", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQuery2_Function1(), this.getFunction(), "function1", null, 0, 1, Query2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery2_Response1(), ecorePackage.getEString(), "response1", null, 0, 1, Query2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery2_Factor1(), ecorePackage.getEString(), "factor1", null, 0, 1, Query2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery2_Function2(), this.getFunction(), "function2", null, 0, 1, Query2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery2_Response2(), ecorePackage.getEString(), "response2", null, 0, 1, Query2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery2_Factor2(), ecorePackage.getEString(), "factor2", null, 0, 1, Query2.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(query3EClass, Query3.class, "Query3", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQuery3_Factor1(), ecorePackage.getEString(), "factor1", null, 0, 1, Query3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery3_Control1(), ecorePackage.getEString(), "control1", null, 0, 1, Query3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery3_Level2(), this.getLevels(), "Level2", null, 0, 1, Query3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery3_X2(), ecorePackage.getEString(), "x2", null, 0, 1, Query3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery3_Response1(), ecorePackage.getEString(), "response1", null, 0, 1, Query3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery3_Level4(), this.getLevels(), "Level4", null, 0, 1, Query3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery3_X4(), ecorePackage.getEString(), "x4", null, 0, 1, Query3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery3_Level(), this.getLevels(), "level", null, 0, 1, Query3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery3_Factor(), ecorePackage.getEString(), "factor", null, 0, 1, Query3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery3_Control(), ecorePackage.getEString(), "control", null, 0, 1, Query3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery3_Response(), ecorePackage.getEString(), "response", null, 0, 1, Query3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery3_Start1(), ecorePackage.getEString(), "start1", null, 0, 1, Query3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQuery3_End1(), ecorePackage.getEString(), "end1", null, 0, 1, Query3.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(coherenceLinkEClass, CoherenceLink.class, "CoherenceLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCoherenceLink_Coherence(), this.getCoherence(), "coherence", null, 0, 1, CoherenceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCoherenceLink_Hyp(), ecorePackage.getEString(), "hyp", null, 0, -1, CoherenceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCoherenceLink_Evi(), ecorePackage.getEString(), "evi", null, 0, -1, CoherenceLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mechHypothesisEClass, MechHypothesis.class, "MechHypothesis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMechHypothesis_MName(), ecorePackage.getEString(), "mName", null, 0, 1, MechHypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMechHypothesis_AssoMech(), this.getTemporalPattern(), null, "assoMech", null, 0, -1, MechHypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMechHypothesis_MechanisticHypothesis(), ecorePackage.getEString(), "mechanisticHypothesis", null, 0, 1, MechHypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(evidenceEClass, Evidence.class, "Evidence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEvidence_EName(), ecorePackage.getEString(), "eName", null, 0, 1, Evidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEvidence_Query(), this.getTemporalPattern(), null, "query", null, 0, -1, Evidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEvidence_ObjOfStudy(), ecorePackage.getEString(), "objOfStudy", null, 0, 1, Evidence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(temporalPatternEClass, TemporalPattern.class, "TemporalPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCondition_L2(), this.getLinks(), "l2", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_Exp(), this.getExpression(), "exp", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_Op1(), this.getTemporal(), "op1", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_Op2(), this.getLogical(), "op2", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_L3(), this.getLinks(), "l3", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCondition_Condition(), this.getEvent(), null, "condition", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_Lo(), ecorePackage.getEString(), "lo", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCondition_E(), this.getEvent(), null, "e", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_Exp1(), this.getExpression(), "exp1", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCondition_V(), ecorePackage.getEString(), "v", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(simultaneousEClass, Simultaneous.class, "Simultaneous", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSimultaneous_Sim1(), ecorePackage.getEString(), "sim1", null, 0, 1, Simultaneous.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimultaneous_Log(), this.getLogical(), "log", null, 0, -1, Simultaneous.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimultaneous_Sim2(), ecorePackage.getEString(), "sim2", null, 0, -1, Simultaneous.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dispersedEClass, Dispersed.class, "Dispersed", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDispersed_Disp(), ecorePackage.getEString(), "disp", null, 0, -1, Dispersed.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listOfModelsEClass, listOfModels.class, "listOfModels", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getlistOfModels_Model(), this.getmodel(), null, "model", null, 0, -1, listOfModels.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1071,6 +2205,57 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
 
     initEClass(algorithmEClass, algorithm.class, "algorithm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getalgorithm_KisaoID(), ecorePackage.getEString(), "kisaoID", null, 0, 1, algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(functionEEnum, Function.class, "Function");
+    addEEnumLiteral(functionEEnum, Function.MIN);
+    addEEnumLiteral(functionEEnum, Function.MAX);
+    addEEnumLiteral(functionEEnum, Function.EXP);
+    addEEnumLiteral(functionEEnum, Function.INVERSE);
+    addEEnumLiteral(functionEEnum, Function.SIN);
+    addEEnumLiteral(functionEEnum, Function.COS);
+    addEEnumLiteral(functionEEnum, Function.TAN);
+    addEEnumLiteral(functionEEnum, Function.FACTORIAL);
+    addEEnumLiteral(functionEEnum, Function.LOG);
+
+    initEEnum(levelsEEnum, Levels.class, "Levels");
+    addEEnumLiteral(levelsEEnum, Levels.HIGH);
+    addEEnumLiteral(levelsEEnum, Levels.MEDIUM);
+    addEEnumLiteral(levelsEEnum, Levels.LOW);
+
+    initEEnum(expressionEEnum, Expression.class, "Expression");
+    addEEnumLiteral(expressionEEnum, Expression.TRUE);
+    addEEnumLiteral(expressionEEnum, Expression.FALSE);
+
+    initEEnum(linksEEnum, Links.class, "Links");
+    addEEnumLiteral(linksEEnum, Links.IS);
+    addEEnumLiteral(linksEEnum, Links.OCCURS);
+    addEEnumLiteral(linksEEnum, Links.TO);
+    addEEnumLiteral(linksEEnum, Links.IN);
+
+    initEEnum(temporalEEnum, Temporal.class, "Temporal");
+    addEEnumLiteral(temporalEEnum, Temporal.PRECEDES);
+    addEEnumLiteral(temporalEEnum, Temporal.BETWEEN);
+    addEEnumLiteral(temporalEEnum, Temporal.EVENTUALLY);
+    addEEnumLiteral(temporalEEnum, Temporal.ALWAYS);
+    addEEnumLiteral(temporalEEnum, Temporal.BEFORE);
+    addEEnumLiteral(temporalEEnum, Temporal.AFTER);
+    addEEnumLiteral(temporalEEnum, Temporal.UNTIL);
+    addEEnumLiteral(temporalEEnum, Temporal.NEVER);
+    addEEnumLiteral(temporalEEnum, Temporal.LEADS);
+    addEEnumLiteral(temporalEEnum, Temporal.ABSENT);
+    addEEnumLiteral(temporalEEnum, Temporal.EXISTS);
+
+    initEEnum(logicalEEnum, Logical.class, "Logical");
+    addEEnumLiteral(logicalEEnum, Logical.AND);
+    addEEnumLiteral(logicalEEnum, Logical.OR);
+    addEEnumLiteral(logicalEEnum, Logical.NOT);
+
+    initEEnum(coherenceEEnum, Coherence.class, "Coherence");
+    addEEnumLiteral(coherenceEEnum, Coherence.EXPLAIN);
+    addEEnumLiteral(coherenceEEnum, Coherence.ANALOGOUS);
+    addEEnumLiteral(coherenceEEnum, Coherence.DATA);
+    addEEnumLiteral(coherenceEEnum, Coherence.CONTRADICT);
 
     // Create resource
     createResource(eNS_URI);

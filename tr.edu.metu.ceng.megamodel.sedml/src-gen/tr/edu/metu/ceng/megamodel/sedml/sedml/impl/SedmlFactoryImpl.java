@@ -4,6 +4,7 @@
 package tr.edu.metu.ceng.megamodel.sedml.sedml.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -66,6 +67,20 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
     switch (eClass.getClassifierID())
     {
       case SedmlPackage.SED_ML: return createsedML();
+      case SedmlPackage.LIST_OF_HYPOTHESES: return createlistOfHypotheses();
+      case SedmlPackage.HYPOTHESIS: return createhypothesis();
+      case SedmlPackage.RELATIONAL_QUERY: return createRelationalQuery();
+      case SedmlPackage.QUERY1: return createQuery1();
+      case SedmlPackage.QUERY2: return createQuery2();
+      case SedmlPackage.QUERY3: return createQuery3();
+      case SedmlPackage.COHERENCE_LINK: return createCoherenceLink();
+      case SedmlPackage.MECH_HYPOTHESIS: return createMechHypothesis();
+      case SedmlPackage.EVIDENCE: return createEvidence();
+      case SedmlPackage.TEMPORAL_PATTERN: return createTemporalPattern();
+      case SedmlPackage.CONDITION: return createCondition();
+      case SedmlPackage.EVENT: return createEvent();
+      case SedmlPackage.SIMULTANEOUS: return createSimultaneous();
+      case SedmlPackage.DISPERSED: return createDispersed();
       case SedmlPackage.LIST_OF_MODELS: return createlistOfModels();
       case SedmlPackage.MODEL: return createmodel();
       case SedmlPackage.DATA_GENERATOR: return createdataGenerator();
@@ -92,10 +107,222 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case SedmlPackage.FUNCTION:
+        return createFunctionFromString(eDataType, initialValue);
+      case SedmlPackage.LEVELS:
+        return createLevelsFromString(eDataType, initialValue);
+      case SedmlPackage.EXPRESSION:
+        return createExpressionFromString(eDataType, initialValue);
+      case SedmlPackage.LINKS:
+        return createLinksFromString(eDataType, initialValue);
+      case SedmlPackage.TEMPORAL:
+        return createTemporalFromString(eDataType, initialValue);
+      case SedmlPackage.LOGICAL:
+        return createLogicalFromString(eDataType, initialValue);
+      case SedmlPackage.COHERENCE:
+        return createCoherenceFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case SedmlPackage.FUNCTION:
+        return convertFunctionToString(eDataType, instanceValue);
+      case SedmlPackage.LEVELS:
+        return convertLevelsToString(eDataType, instanceValue);
+      case SedmlPackage.EXPRESSION:
+        return convertExpressionToString(eDataType, instanceValue);
+      case SedmlPackage.LINKS:
+        return convertLinksToString(eDataType, instanceValue);
+      case SedmlPackage.TEMPORAL:
+        return convertTemporalToString(eDataType, instanceValue);
+      case SedmlPackage.LOGICAL:
+        return convertLogicalToString(eDataType, instanceValue);
+      case SedmlPackage.COHERENCE:
+        return convertCoherenceToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public sedML createsedML()
   {
     sedMLImpl sedML = new sedMLImpl();
     return sedML;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public listOfHypotheses createlistOfHypotheses()
+  {
+    listOfHypothesesImpl listOfHypotheses = new listOfHypothesesImpl();
+    return listOfHypotheses;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public hypothesis createhypothesis()
+  {
+    hypothesisImpl hypothesis = new hypothesisImpl();
+    return hypothesis;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RelationalQuery createRelationalQuery()
+  {
+    RelationalQueryImpl relationalQuery = new RelationalQueryImpl();
+    return relationalQuery;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Query1 createQuery1()
+  {
+    Query1Impl query1 = new Query1Impl();
+    return query1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Query2 createQuery2()
+  {
+    Query2Impl query2 = new Query2Impl();
+    return query2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Query3 createQuery3()
+  {
+    Query3Impl query3 = new Query3Impl();
+    return query3;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CoherenceLink createCoherenceLink()
+  {
+    CoherenceLinkImpl coherenceLink = new CoherenceLinkImpl();
+    return coherenceLink;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MechHypothesis createMechHypothesis()
+  {
+    MechHypothesisImpl mechHypothesis = new MechHypothesisImpl();
+    return mechHypothesis;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Evidence createEvidence()
+  {
+    EvidenceImpl evidence = new EvidenceImpl();
+    return evidence;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TemporalPattern createTemporalPattern()
+  {
+    TemporalPatternImpl temporalPattern = new TemporalPatternImpl();
+    return temporalPattern;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Condition createCondition()
+  {
+    ConditionImpl condition = new ConditionImpl();
+    return condition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Event createEvent()
+  {
+    EventImpl event = new EventImpl();
+    return event;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Simultaneous createSimultaneous()
+  {
+    SimultaneousImpl simultaneous = new SimultaneousImpl();
+    return simultaneous;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Dispersed createDispersed()
+  {
+    DispersedImpl dispersed = new DispersedImpl();
+    return dispersed;
   }
 
   /**
@@ -272,6 +499,160 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
   {
     algorithmImpl algorithm = new algorithmImpl();
     return algorithm;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Function createFunctionFromString(EDataType eDataType, String initialValue)
+  {
+    Function result = Function.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertFunctionToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Levels createLevelsFromString(EDataType eDataType, String initialValue)
+  {
+    Levels result = Levels.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertLevelsToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression createExpressionFromString(EDataType eDataType, String initialValue)
+  {
+    Expression result = Expression.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertExpressionToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Links createLinksFromString(EDataType eDataType, String initialValue)
+  {
+    Links result = Links.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertLinksToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Temporal createTemporalFromString(EDataType eDataType, String initialValue)
+  {
+    Temporal result = Temporal.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTemporalToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Logical createLogicalFromString(EDataType eDataType, String initialValue)
+  {
+    Logical result = Logical.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertLogicalToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Coherence createCoherenceFromString(EDataType eDataType, String initialValue)
+  {
+    Coherence result = Coherence.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertCoherenceToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**
