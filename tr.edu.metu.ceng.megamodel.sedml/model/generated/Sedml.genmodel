@@ -6,14 +6,146 @@
     complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.13">
   <genPackages prefix="Sedml" basePackage="tr.edu.metu.ceng.megamodel.sedml" disposableProviderFactory="true"
       fileExtensions="sedml" ecorePackage="Sedml.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Sedml.ecore#//Function">
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Function/MIN"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Function/MAX"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Function/EXP"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Function/INVERSE"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Function/SIN"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Function/COS"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Function/TAN"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Function/FACTORIAL"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Function/LOG"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Sedml.ecore#//Levels">
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Levels/HIGH"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Levels/MEDIUM"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Levels/LOW"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Sedml.ecore#//Expression">
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Expression/TRUE"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Expression/FALSE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Sedml.ecore#//Links">
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Links/is"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Links/occurs"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Links/to"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Links/in"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Sedml.ecore#//Temporal">
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Temporal/precedes"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Temporal/between"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Temporal/eventually"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Temporal/always"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Temporal/before"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Temporal/after"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Temporal/until"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Temporal/never"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Temporal/leads"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Temporal/absent"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Temporal/exists"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Sedml.ecore#//Logical">
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Logical/and"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Logical/or"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Logical/not"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Sedml.ecore#//Coherence">
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Coherence/EXPLAIN"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Coherence/ANALOGOUS"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Coherence/DATA"/>
+      <genEnumLiterals ecoreEnumLiteral="Sedml.ecore#//Coherence/CONTRADICT"/>
+    </genEnums>
     <genClasses ecoreClass="Sedml.ecore#//sedML">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//sedML/version"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//sedML/level"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//sedML/listOfHypotheses"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//sedML/listOfSimulations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//sedML/listOfModels"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//sedML/listOfTasks"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//sedML/listOfDataGenerators"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//sedML/listOfOutputs"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//listOfHypotheses">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//listOfHypotheses/hypothesis"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//hypothesis">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//hypothesis/mechHypothesis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//hypothesis/evidences"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//hypothesis/coherenceLinks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//hypothesis/relHypothesis"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//RelationalQuery"/>
+    <genClasses ecoreClass="Sedml.ecore#//Query1">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query1/factor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query1/control"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query1/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query1/start1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query1/end1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query1/response"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query1/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query1/start2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query1/end2"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//Query2">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query2/function1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query2/response1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query2/factor1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query2/function2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query2/response2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query2/factor2"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//Query3">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query3/factor1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query3/control1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query3/Level2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query3/x2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query3/response1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query3/Level4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query3/x4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query3/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query3/factor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query3/control"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query3/response"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query3/start1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Query3/end1"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//CoherenceLink">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//CoherenceLink/coherence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//CoherenceLink/hyp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//CoherenceLink/evi"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//MechHypothesis">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//MechHypothesis/mName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//MechHypothesis/assoMech"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//MechHypothesis/mechanisticHypothesis"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//Evidence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Evidence/eName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//Evidence/query"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Evidence/objOfStudy"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//TemporalPattern"/>
+    <genClasses ecoreClass="Sedml.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Condition/l2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Condition/exp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Condition/op1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Condition/op2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Condition/l3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//Condition/condition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Condition/lo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//Condition/e"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Condition/exp1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Condition/v"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//Event"/>
+    <genClasses ecoreClass="Sedml.ecore#//Simultaneous">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Simultaneous/sim1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Simultaneous/log"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Simultaneous/sim2"/>
+    </genClasses>
+    <genClasses ecoreClass="Sedml.ecore#//Dispersed">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Sedml.ecore#//Dispersed/disp"/>
     </genClasses>
     <genClasses ecoreClass="Sedml.ecore#//listOfModels">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Sedml.ecore#//listOfModels/model"/>
