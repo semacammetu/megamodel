@@ -25,6 +25,321 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 	
+	public class SEDBaseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.SEDBase");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cParameterParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cVariableParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cSedMLParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cModelParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cDataDescriptionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cAbstractTaskParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cDataGeneratorParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cSimulationParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cChangeParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		
+		//SEDBase:
+		//	parameter | variable | sedML | model | dataDescription | abstractTask | dataGenerator | simulation | change;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//parameter | variable | sedML | model | dataDescription | abstractTask | dataGenerator | simulation | change
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//parameter
+		public RuleCall getParameterParserRuleCall_0() { return cParameterParserRuleCall_0; }
+		
+		//variable
+		public RuleCall getVariableParserRuleCall_1() { return cVariableParserRuleCall_1; }
+		
+		//sedML
+		public RuleCall getSedMLParserRuleCall_2() { return cSedMLParserRuleCall_2; }
+		
+		//model
+		public RuleCall getModelParserRuleCall_3() { return cModelParserRuleCall_3; }
+		
+		//dataDescription
+		public RuleCall getDataDescriptionParserRuleCall_4() { return cDataDescriptionParserRuleCall_4; }
+		
+		//abstractTask
+		public RuleCall getAbstractTaskParserRuleCall_5() { return cAbstractTaskParserRuleCall_5; }
+		
+		//dataGenerator
+		public RuleCall getDataGeneratorParserRuleCall_6() { return cDataGeneratorParserRuleCall_6; }
+		
+		//simulation
+		public RuleCall getSimulationParserRuleCall_7() { return cSimulationParserRuleCall_7; }
+		
+		//change
+		public RuleCall getChangeParserRuleCall_8() { return cChangeParserRuleCall_8; }
+	}
+	public class ChangeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.change");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cChangeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTargetAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTargetTargetParserRuleCall_2_0 = (RuleCall)cTargetAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//change:
+		//	'change' '{' target+=target* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'change' '{' target+=target* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'change'
+		public Keyword getChangeKeyword_0() { return cChangeKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//target+=target*
+		public Assignment getTargetAssignment_2() { return cTargetAssignment_2; }
+		
+		//target
+		public RuleCall getTargetTargetParserRuleCall_2_0() { return cTargetTargetParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class TargetElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.target");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cComputeChangeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cChangeAttributeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cAddXMLParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cChangeXMLParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cRemoveXMLParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		
+		//target:
+		//	computeChange | changeAttribute | addXML | changeXML | removeXML;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//computeChange | changeAttribute | addXML | changeXML | removeXML
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//computeChange
+		public RuleCall getComputeChangeParserRuleCall_0() { return cComputeChangeParserRuleCall_0; }
+		
+		//changeAttribute
+		public RuleCall getChangeAttributeParserRuleCall_1() { return cChangeAttributeParserRuleCall_1; }
+		
+		//addXML
+		public RuleCall getAddXMLParserRuleCall_2() { return cAddXMLParserRuleCall_2; }
+		
+		//changeXML
+		public RuleCall getChangeXMLParserRuleCall_3() { return cChangeXMLParserRuleCall_3; }
+		
+		//removeXML
+		public RuleCall getRemoveXMLParserRuleCall_4() { return cRemoveXMLParserRuleCall_4; }
+	}
+	public class RemoveXMLElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.removeXML");
+		private final Keyword cRemoveXMLKeyword = (Keyword)rule.eContents().get(1);
+		
+		//removeXML:
+		//	'removeXML';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'removeXML'
+		public Keyword getRemoveXMLKeyword() { return cRemoveXMLKeyword; }
+	}
+	public class ChangeAttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.changeAttribute");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cChangeAttributeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cNewValueKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cNewValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cNewValueSTRINGTerminalRuleCall_4_0 = (RuleCall)cNewValueAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//changeAttribute:
+		//	'changeAttribute' '{' 'newValue' ':' newValue=STRING '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'changeAttribute' '{' 'newValue' ':' newValue=STRING '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'changeAttribute'
+		public Keyword getChangeAttributeKeyword_0() { return cChangeAttributeKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'newValue'
+		public Keyword getNewValueKeyword_2() { return cNewValueKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//newValue=STRING
+		public Assignment getNewValueAssignment_4() { return cNewValueAssignment_4; }
+		
+		//STRING
+		public RuleCall getNewValueSTRINGTerminalRuleCall_4_0() { return cNewValueSTRINGTerminalRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class ComputeChangeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.computeChange");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cComputeChangeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cMathKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cMathAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cMathMathParserRuleCall_4_0 = (RuleCall)cMathAssignment_4.eContents().get(0);
+		private final Assignment cListOfVariablesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cListOfVariablesListOfVariablesParserRuleCall_5_0 = (RuleCall)cListOfVariablesAssignment_5.eContents().get(0);
+		private final Assignment cListOfParametersAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cListOfParametersListOfParametersParserRuleCall_6_0 = (RuleCall)cListOfParametersAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		//computeChange:
+		//	'computeChange' '{' 'math' ':' math=math listOfVariables=listOfVariables listOfParameters=listOfParameters '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'computeChange' '{' 'math' ':' math=math listOfVariables=listOfVariables listOfParameters=listOfParameters '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'computeChange'
+		public Keyword getComputeChangeKeyword_0() { return cComputeChangeKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'math'
+		public Keyword getMathKeyword_2() { return cMathKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//math=math
+		public Assignment getMathAssignment_4() { return cMathAssignment_4; }
+		
+		//math
+		public RuleCall getMathMathParserRuleCall_4_0() { return cMathMathParserRuleCall_4_0; }
+		
+		//listOfVariables=listOfVariables
+		public Assignment getListOfVariablesAssignment_5() { return cListOfVariablesAssignment_5; }
+		
+		//listOfVariables
+		public RuleCall getListOfVariablesListOfVariablesParserRuleCall_5_0() { return cListOfVariablesListOfVariablesParserRuleCall_5_0; }
+		
+		//listOfParameters=listOfParameters
+		public Assignment getListOfParametersAssignment_6() { return cListOfParametersAssignment_6; }
+		
+		//listOfParameters
+		public RuleCall getListOfParametersListOfParametersParserRuleCall_6_0() { return cListOfParametersListOfParametersParserRuleCall_6_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+	}
+	public class AddXMLElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.addXML");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAddXMLKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNewXMLAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNewXMLNewXMLParserRuleCall_2_0 = (RuleCall)cNewXMLAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//addXML:
+		//	'addXML' '{' newXML+=newXML* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'addXML' '{' newXML+=newXML* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'addXML'
+		public Keyword getAddXMLKeyword_0() { return cAddXMLKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//newXML+=newXML*
+		public Assignment getNewXMLAssignment_2() { return cNewXMLAssignment_2; }
+		
+		//newXML
+		public RuleCall getNewXMLNewXMLParserRuleCall_2_0() { return cNewXMLNewXMLParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class ChangeXMLElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.changeXML");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cChangeXMLKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNewXMLAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNewXMLNewXMLParserRuleCall_2_0 = (RuleCall)cNewXMLAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//changeXML:
+		//	'changeXML' '{' newXML+=newXML* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'changeXML' '{' newXML+=newXML* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'changeXML'
+		public Keyword getChangeXMLKeyword_0() { return cChangeXMLKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//newXML+=newXML*
+		public Assignment getNewXMLAssignment_2() { return cNewXMLAssignment_2; }
+		
+		//newXML
+		public RuleCall getNewXMLNewXMLParserRuleCall_2_0() { return cNewXMLNewXMLParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class NewXMLElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.newXML");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNewXMLKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cAnyXMLKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAnyXMLAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cAnyXMLSTRINGTerminalRuleCall_4_0 = (RuleCall)cAnyXMLAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//newXML:
+		//	'newXML' '{' 'anyXML' ':' anyXML=STRING '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'newXML' '{' 'anyXML' ':' anyXML=STRING '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'newXML'
+		public Keyword getNewXMLKeyword_0() { return cNewXMLKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'anyXML'
+		public Keyword getAnyXMLKeyword_2() { return cAnyXMLKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//anyXML=STRING
+		public Assignment getAnyXMLAssignment_4() { return cAnyXMLAssignment_4; }
+		
+		//STRING
+		public RuleCall getAnyXMLSTRINGTerminalRuleCall_4_0() { return cAnyXMLSTRINGTerminalRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
 	public class SedMLElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.sedML");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -34,24 +349,28 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLevelINTTerminalRuleCall_1_0 = (RuleCall)cLevelAssignment_1.eContents().get(0);
 		private final Assignment cListOfHypothesesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cListOfHypothesesListOfHypothesesParserRuleCall_2_0 = (RuleCall)cListOfHypothesesAssignment_2.eContents().get(0);
-		private final Assignment cListOfSimulationsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cListOfSimulationsListOfSimulationsParserRuleCall_3_0 = (RuleCall)cListOfSimulationsAssignment_3.eContents().get(0);
-		private final Assignment cListOfModelsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cListOfModelsListOfModelsParserRuleCall_4_0 = (RuleCall)cListOfModelsAssignment_4.eContents().get(0);
-		private final Assignment cListOfTasksAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cListOfTasksListOfTasksParserRuleCall_5_0 = (RuleCall)cListOfTasksAssignment_5.eContents().get(0);
-		private final Assignment cListOfDataGeneratorsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_6_0 = (RuleCall)cListOfDataGeneratorsAssignment_6.eContents().get(0);
-		private final Assignment cListOfOutputsAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cListOfOutputsListOfOutputsParserRuleCall_7_0 = (RuleCall)cListOfOutputsAssignment_7.eContents().get(0);
+		private final Assignment cListOfDataDescriptionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cListOfDataDescriptionsListOfDataDescriptionsParserRuleCall_3_0 = (RuleCall)cListOfDataDescriptionsAssignment_3.eContents().get(0);
+		private final Assignment cListOfSimulationsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cListOfSimulationsListOfSimulationsParserRuleCall_4_0 = (RuleCall)cListOfSimulationsAssignment_4.eContents().get(0);
+		private final Assignment cListOfModelsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cListOfModelsListOfModelsParserRuleCall_5_0 = (RuleCall)cListOfModelsAssignment_5.eContents().get(0);
+		private final Assignment cListOfTasksAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cListOfTasksListOfTasksParserRuleCall_6_0 = (RuleCall)cListOfTasksAssignment_6.eContents().get(0);
+		private final Assignment cListOfDataGeneratorsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_7_0 = (RuleCall)cListOfDataGeneratorsAssignment_7.eContents().get(0);
+		private final Assignment cListOfOutputsAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cListOfOutputsListOfOutputsParserRuleCall_8_0 = (RuleCall)cListOfOutputsAssignment_8.eContents().get(0);
 		
 		//sedML:
-		//	version=INT level=INT listOfHypotheses=listOfHypotheses listOfSimulations=listOfSimulations listOfModels=listOfModels
-		//	listOfTasks=listOfTasks listOfDataGenerators=listOfDataGenerators listOfOutputs=listOfOutputs;
+		//	version=INT level=INT listOfHypotheses=listOfHypotheses listOfDataDescriptions=listOfDataDescriptions
+		//	listOfSimulations=listOfSimulations listOfModels=listOfModels listOfTasks=listOfTasks
+		//	listOfDataGenerators=listOfDataGenerators listOfOutputs=listOfOutputs;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//version=INT level=INT listOfHypotheses=listOfHypotheses listOfSimulations=listOfSimulations listOfModels=listOfModels
-		//listOfTasks=listOfTasks listOfDataGenerators=listOfDataGenerators listOfOutputs=listOfOutputs
+		//version=INT level=INT listOfHypotheses=listOfHypotheses listOfDataDescriptions=listOfDataDescriptions
+		//listOfSimulations=listOfSimulations listOfModels=listOfModels listOfTasks=listOfTasks
+		//listOfDataGenerators=listOfDataGenerators listOfOutputs=listOfOutputs
 		public Group getGroup() { return cGroup; }
 		
 		//version=INT
@@ -72,35 +391,413 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		//listOfHypotheses
 		public RuleCall getListOfHypothesesListOfHypothesesParserRuleCall_2_0() { return cListOfHypothesesListOfHypothesesParserRuleCall_2_0; }
 		
+		//listOfDataDescriptions=listOfDataDescriptions
+		public Assignment getListOfDataDescriptionsAssignment_3() { return cListOfDataDescriptionsAssignment_3; }
+		
+		//listOfDataDescriptions
+		public RuleCall getListOfDataDescriptionsListOfDataDescriptionsParserRuleCall_3_0() { return cListOfDataDescriptionsListOfDataDescriptionsParserRuleCall_3_0; }
+		
 		//listOfSimulations=listOfSimulations
-		public Assignment getListOfSimulationsAssignment_3() { return cListOfSimulationsAssignment_3; }
+		public Assignment getListOfSimulationsAssignment_4() { return cListOfSimulationsAssignment_4; }
 		
 		//listOfSimulations
-		public RuleCall getListOfSimulationsListOfSimulationsParserRuleCall_3_0() { return cListOfSimulationsListOfSimulationsParserRuleCall_3_0; }
+		public RuleCall getListOfSimulationsListOfSimulationsParserRuleCall_4_0() { return cListOfSimulationsListOfSimulationsParserRuleCall_4_0; }
 		
 		//listOfModels=listOfModels
-		public Assignment getListOfModelsAssignment_4() { return cListOfModelsAssignment_4; }
+		public Assignment getListOfModelsAssignment_5() { return cListOfModelsAssignment_5; }
 		
 		//listOfModels
-		public RuleCall getListOfModelsListOfModelsParserRuleCall_4_0() { return cListOfModelsListOfModelsParserRuleCall_4_0; }
+		public RuleCall getListOfModelsListOfModelsParserRuleCall_5_0() { return cListOfModelsListOfModelsParserRuleCall_5_0; }
 		
 		//listOfTasks=listOfTasks
-		public Assignment getListOfTasksAssignment_5() { return cListOfTasksAssignment_5; }
+		public Assignment getListOfTasksAssignment_6() { return cListOfTasksAssignment_6; }
 		
 		//listOfTasks
-		public RuleCall getListOfTasksListOfTasksParserRuleCall_5_0() { return cListOfTasksListOfTasksParserRuleCall_5_0; }
+		public RuleCall getListOfTasksListOfTasksParserRuleCall_6_0() { return cListOfTasksListOfTasksParserRuleCall_6_0; }
 		
 		//listOfDataGenerators=listOfDataGenerators
-		public Assignment getListOfDataGeneratorsAssignment_6() { return cListOfDataGeneratorsAssignment_6; }
+		public Assignment getListOfDataGeneratorsAssignment_7() { return cListOfDataGeneratorsAssignment_7; }
 		
 		//listOfDataGenerators
-		public RuleCall getListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_6_0() { return cListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_6_0; }
+		public RuleCall getListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_7_0() { return cListOfDataGeneratorsListOfDataGeneratorsParserRuleCall_7_0; }
 		
 		//listOfOutputs=listOfOutputs
-		public Assignment getListOfOutputsAssignment_7() { return cListOfOutputsAssignment_7; }
+		public Assignment getListOfOutputsAssignment_8() { return cListOfOutputsAssignment_8; }
 		
 		//listOfOutputs
-		public RuleCall getListOfOutputsListOfOutputsParserRuleCall_7_0() { return cListOfOutputsListOfOutputsParserRuleCall_7_0; }
+		public RuleCall getListOfOutputsListOfOutputsParserRuleCall_8_0() { return cListOfOutputsListOfOutputsParserRuleCall_8_0; }
+	}
+	public class ListOfDataDescriptionsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfDataDescriptions");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cListOfDataDescriptionsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cDataDescriptionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDataDescriptionDataDescriptionParserRuleCall_2_0 = (RuleCall)cDataDescriptionAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//listOfDataDescriptions:
+		//	'listOfDataDescriptions' '{' dataDescription+=dataDescription* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'listOfDataDescriptions' '{' dataDescription+=dataDescription* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'listOfDataDescriptions'
+		public Keyword getListOfDataDescriptionsKeyword_0() { return cListOfDataDescriptionsKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//dataDescription+=dataDescription*
+		public Assignment getDataDescriptionAssignment_2() { return cDataDescriptionAssignment_2; }
+		
+		//dataDescription
+		public RuleCall getDataDescriptionDataDescriptionParserRuleCall_2_0() { return cDataDescriptionDataDescriptionParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class DataDescriptionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.dataDescription");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDataDescriptionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cIdKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cIdAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cIdIDTerminalRuleCall_4_0 = (RuleCall)cIdAssignment_4.eContents().get(0);
+		private final Keyword cNameKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cNameAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cNameSTRINGTerminalRuleCall_7_0 = (RuleCall)cNameAssignment_7.eContents().get(0);
+		private final Keyword cFormatKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cFormatAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cFormatSTRINGTerminalRuleCall_10_0 = (RuleCall)cFormatAssignment_10.eContents().get(0);
+		private final Keyword cSourceKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cColonKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cSourceAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cSourceSTRINGTerminalRuleCall_13_0 = (RuleCall)cSourceAssignment_13.eContents().get(0);
+		private final Assignment cListOfDataSourcesAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cListOfDataSourcesListOfDataSourcesParserRuleCall_14_0 = (RuleCall)cListOfDataSourcesAssignment_14.eContents().get(0);
+		private final Assignment cDimensionDescriptionAssignment_15 = (Assignment)cGroup.eContents().get(15);
+		private final RuleCall cDimensionDescriptionDimensionDescriptionParserRuleCall_15_0 = (RuleCall)cDimensionDescriptionAssignment_15.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		
+		//dataDescription:
+		//	'dataDescription' '{' 'id' ':' id=ID 'name' ':' name=STRING 'format' ':' format=STRING 'source' ':' source=STRING
+		//	listOfDataSources=listOfDataSources dimensionDescription=dimensionDescription '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'dataDescription' '{' 'id' ':' id=ID 'name' ':' name=STRING 'format' ':' format=STRING 'source' ':' source=STRING
+		//listOfDataSources=listOfDataSources dimensionDescription=dimensionDescription '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'dataDescription'
+		public Keyword getDataDescriptionKeyword_0() { return cDataDescriptionKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'id'
+		public Keyword getIdKeyword_2() { return cIdKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//id=ID
+		public Assignment getIdAssignment_4() { return cIdAssignment_4; }
+		
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_4_0() { return cIdIDTerminalRuleCall_4_0; }
+		
+		//'name'
+		public Keyword getNameKeyword_5() { return cNameKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_7() { return cNameAssignment_7; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_7_0() { return cNameSTRINGTerminalRuleCall_7_0; }
+		
+		//'format'
+		public Keyword getFormatKeyword_8() { return cFormatKeyword_8; }
+		
+		//':'
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
+		
+		//format=STRING
+		public Assignment getFormatAssignment_10() { return cFormatAssignment_10; }
+		
+		//STRING
+		public RuleCall getFormatSTRINGTerminalRuleCall_10_0() { return cFormatSTRINGTerminalRuleCall_10_0; }
+		
+		//'source'
+		public Keyword getSourceKeyword_11() { return cSourceKeyword_11; }
+		
+		//':'
+		public Keyword getColonKeyword_12() { return cColonKeyword_12; }
+		
+		//source=STRING
+		public Assignment getSourceAssignment_13() { return cSourceAssignment_13; }
+		
+		//STRING
+		public RuleCall getSourceSTRINGTerminalRuleCall_13_0() { return cSourceSTRINGTerminalRuleCall_13_0; }
+		
+		//listOfDataSources=listOfDataSources
+		public Assignment getListOfDataSourcesAssignment_14() { return cListOfDataSourcesAssignment_14; }
+		
+		//listOfDataSources
+		public RuleCall getListOfDataSourcesListOfDataSourcesParserRuleCall_14_0() { return cListOfDataSourcesListOfDataSourcesParserRuleCall_14_0; }
+		
+		//dimensionDescription=dimensionDescription
+		public Assignment getDimensionDescriptionAssignment_15() { return cDimensionDescriptionAssignment_15; }
+		
+		//dimensionDescription
+		public RuleCall getDimensionDescriptionDimensionDescriptionParserRuleCall_15_0() { return cDimensionDescriptionDimensionDescriptionParserRuleCall_15_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
+	}
+	public class DimensionDescriptionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.dimensionDescription");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDimensionDescriptionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cXmlnsKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cXmlnsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cXmlnsSTRINGTerminalRuleCall_4_0 = (RuleCall)cXmlnsAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//dimensionDescription:
+		//	'dimensionDescription' '{' 'xmlns' ':' xmlns=STRING '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'dimensionDescription' '{' 'xmlns' ':' xmlns=STRING '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'dimensionDescription'
+		public Keyword getDimensionDescriptionKeyword_0() { return cDimensionDescriptionKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'xmlns'
+		public Keyword getXmlnsKeyword_2() { return cXmlnsKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//xmlns=STRING
+		public Assignment getXmlnsAssignment_4() { return cXmlnsAssignment_4; }
+		
+		//STRING
+		public RuleCall getXmlnsSTRINGTerminalRuleCall_4_0() { return cXmlnsSTRINGTerminalRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class ListOfDataSourcesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfDataSources");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cListOfDataSourcesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cDataSourceAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDataSourceDataSourceParserRuleCall_2_0 = (RuleCall)cDataSourceAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//listOfDataSources:
+		//	'listOfDataSources' '{' dataSource+=dataSource* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'listOfDataSources' '{' dataSource+=dataSource* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'listOfDataSources'
+		public Keyword getListOfDataSourcesKeyword_0() { return cListOfDataSourcesKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//dataSource+=dataSource*
+		public Assignment getDataSourceAssignment_2() { return cDataSourceAssignment_2; }
+		
+		//dataSource
+		public RuleCall getDataSourceDataSourceParserRuleCall_2_0() { return cDataSourceDataSourceParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class DataSourceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.dataSource");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDataSourceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cIdKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cIdAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cIdIDTerminalRuleCall_4_0 = (RuleCall)cIdAssignment_4.eContents().get(0);
+		private final Keyword cNameKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cNameAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cNameSTRINGTerminalRuleCall_7_0 = (RuleCall)cNameAssignment_7.eContents().get(0);
+		private final Keyword cIndexSetKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cIndexSetAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cIndexSetSTRINGTerminalRuleCall_10_0 = (RuleCall)cIndexSetAssignment_10.eContents().get(0);
+		private final Assignment cListOfSlicesAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cListOfSlicesListOfDataSlicesParserRuleCall_11_0 = (RuleCall)cListOfSlicesAssignment_11.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		
+		//dataSource:
+		//	'dataSource' '{' 'id' ':' id=ID 'name' ':' name=STRING 'indexSet' ':' indexSet=STRING listOfSlices=listOfDataSlices
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'dataSource' '{' 'id' ':' id=ID 'name' ':' name=STRING 'indexSet' ':' indexSet=STRING listOfSlices=listOfDataSlices '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'dataSource'
+		public Keyword getDataSourceKeyword_0() { return cDataSourceKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'id'
+		public Keyword getIdKeyword_2() { return cIdKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//id=ID
+		public Assignment getIdAssignment_4() { return cIdAssignment_4; }
+		
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_4_0() { return cIdIDTerminalRuleCall_4_0; }
+		
+		//'name'
+		public Keyword getNameKeyword_5() { return cNameKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_7() { return cNameAssignment_7; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_7_0() { return cNameSTRINGTerminalRuleCall_7_0; }
+		
+		//'indexSet'
+		public Keyword getIndexSetKeyword_8() { return cIndexSetKeyword_8; }
+		
+		//':'
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
+		
+		//indexSet=STRING
+		public Assignment getIndexSetAssignment_10() { return cIndexSetAssignment_10; }
+		
+		//STRING
+		public RuleCall getIndexSetSTRINGTerminalRuleCall_10_0() { return cIndexSetSTRINGTerminalRuleCall_10_0; }
+		
+		//listOfSlices=listOfDataSlices
+		public Assignment getListOfSlicesAssignment_11() { return cListOfSlicesAssignment_11; }
+		
+		//listOfDataSlices
+		public RuleCall getListOfSlicesListOfDataSlicesParserRuleCall_11_0() { return cListOfSlicesListOfDataSlicesParserRuleCall_11_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
+	}
+	public class ListOfDataSlicesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfDataSlices");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cListOfDataSlicesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cSliceAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSliceSliceParserRuleCall_2_0 = (RuleCall)cSliceAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//listOfDataSlices:
+		//	'listOfDataSlices' '{' slice+=slice* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'listOfDataSlices' '{' slice+=slice* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'listOfDataSlices'
+		public Keyword getListOfDataSlicesKeyword_0() { return cListOfDataSlicesKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//slice+=slice*
+		public Assignment getSliceAssignment_2() { return cSliceAssignment_2; }
+		
+		//slice
+		public RuleCall getSliceSliceParserRuleCall_2_0() { return cSliceSliceParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class SliceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.slice");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSliceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cReferenceKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cReferenceidAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cReferenceidIDTerminalRuleCall_4_0 = (RuleCall)cReferenceidAssignment_4.eContents().get(0);
+		private final Keyword cValueKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cValueAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cValueSTRINGTerminalRuleCall_7_0 = (RuleCall)cValueAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		
+		//slice:
+		//	'slice' '{' 'reference' ':' referenceid=ID 'value' ':' value=STRING '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'slice' '{' 'reference' ':' referenceid=ID 'value' ':' value=STRING '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'slice'
+		public Keyword getSliceKeyword_0() { return cSliceKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'reference'
+		public Keyword getReferenceKeyword_2() { return cReferenceKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//referenceid=ID
+		public Assignment getReferenceidAssignment_4() { return cReferenceidAssignment_4; }
+		
+		//ID
+		public RuleCall getReferenceidIDTerminalRuleCall_4_0() { return cReferenceidIDTerminalRuleCall_4_0; }
+		
+		//'value'
+		public Keyword getValueKeyword_5() { return cValueKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_7() { return cValueAssignment_7; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_7_0() { return cValueSTRINGTerminalRuleCall_7_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class ListOfHypothesesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfHypotheses");
@@ -1184,13 +1881,17 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		private final Assignment cNameAssignment_13 = (Assignment)cGroup.eContents().get(13);
 		private final RuleCall cNameSTRINGTerminalRuleCall_13_0 = (RuleCall)cNameAssignment_13.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Assignment cListOfChangesAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cListOfChangesListOfChangesParserRuleCall_14_0 = (RuleCall)cListOfChangesAssignment_14.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		
 		//model:
-		//	'model' '{' 'id' ':' id=ID 'language' ':' language=STRING 'source' ':' source=STRING 'name' ':' name=STRING '}';
+		//	'model' '{' 'id' ':' id=ID 'language' ':' language=STRING 'source' ':' source=STRING 'name' ':' name=STRING
+		//	listOfChanges=listOfChanges? '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'model' '{' 'id' ':' id=ID 'language' ':' language=STRING 'source' ':' source=STRING 'name' ':' name=STRING '}'
+		//'model' '{' 'id' ':' id=ID 'language' ':' language=STRING 'source' ':' source=STRING 'name' ':' name=STRING
+		//listOfChanges=listOfChanges? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'model'
@@ -1247,8 +1948,45 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_13_0() { return cNameSTRINGTerminalRuleCall_13_0; }
 		
+		//listOfChanges=listOfChanges?
+		public Assignment getListOfChangesAssignment_14() { return cListOfChangesAssignment_14; }
+		
+		//listOfChanges
+		public RuleCall getListOfChangesListOfChangesParserRuleCall_14_0() { return cListOfChangesListOfChangesParserRuleCall_14_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
+		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
+	}
+	public class ListOfChangesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfChanges");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cListOfChangesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cChangeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cChangeChangeParserRuleCall_2_0 = (RuleCall)cChangeAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//listOfChanges:
+		//	'listOfChanges' '{' change+=change* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'listOfChanges' '{' change+=change* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'listOfChanges'
+		public Keyword getListOfChangesKeyword_0() { return cListOfChangesKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//change+=change*
+		public Assignment getChangeAssignment_2() { return cChangeAssignment_2; }
+		
+		//change
+		public RuleCall getChangeChangeParserRuleCall_2_0() { return cChangeChangeParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 	public class DataGeneratorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.dataGenerator");
@@ -1265,15 +2003,19 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameSTRINGTerminalRuleCall_7_0 = (RuleCall)cNameAssignment_7.eContents().get(0);
 		private final Assignment cListOfVariablesAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cListOfVariablesListOfVariablesParserRuleCall_8_0 = (RuleCall)cListOfVariablesAssignment_8.eContents().get(0);
-		private final Assignment cMathAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cMathMathParserRuleCall_9_0 = (RuleCall)cMathAssignment_9.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cListOfParametersAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cListOfParametersListOfParametersParserRuleCall_9_0 = (RuleCall)cListOfParametersAssignment_9.eContents().get(0);
+		private final Assignment cMathAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cMathMathParserRuleCall_10_0 = (RuleCall)cMathAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//dataGenerator:
-		//	'dataGenerator' '{' 'id' ':' id=ID 'name' ':' name=STRING listOfVariables=listOfVariables? math=math? '}';
+		//	'dataGenerator' '{' 'id' ':' id=ID 'name' ':' name=STRING listOfVariables=listOfVariables?
+		//	listOfParameters=listOfParameters? math=math? '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'dataGenerator' '{' 'id' ':' id=ID 'name' ':' name=STRING listOfVariables=listOfVariables? math=math? '}'
+		//'dataGenerator' '{' 'id' ':' id=ID 'name' ':' name=STRING listOfVariables=listOfVariables?
+		//listOfParameters=listOfParameters? math=math? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'dataGenerator'
@@ -1312,14 +2054,122 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		//listOfVariables
 		public RuleCall getListOfVariablesListOfVariablesParserRuleCall_8_0() { return cListOfVariablesListOfVariablesParserRuleCall_8_0; }
 		
+		//listOfParameters=listOfParameters?
+		public Assignment getListOfParametersAssignment_9() { return cListOfParametersAssignment_9; }
+		
+		//listOfParameters
+		public RuleCall getListOfParametersListOfParametersParserRuleCall_9_0() { return cListOfParametersListOfParametersParserRuleCall_9_0; }
+		
 		//math=math?
-		public Assignment getMathAssignment_9() { return cMathAssignment_9; }
+		public Assignment getMathAssignment_10() { return cMathAssignment_10; }
 		
 		//math
-		public RuleCall getMathMathParserRuleCall_9_0() { return cMathMathParserRuleCall_9_0; }
+		public RuleCall getMathMathParserRuleCall_10_0() { return cMathMathParserRuleCall_10_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+	}
+	public class ListOfParametersElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfParameters");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cListOfParametersKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cParameterAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cParameterParameterParserRuleCall_2_0 = (RuleCall)cParameterAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//listOfParameters:
+		//	'listOfParameters' '{' parameter+=parameter* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'listOfParameters' '{' parameter+=parameter* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'listOfParameters'
+		public Keyword getListOfParametersKeyword_0() { return cListOfParametersKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//parameter+=parameter*
+		public Assignment getParameterAssignment_2() { return cParameterAssignment_2; }
+		
+		//parameter
+		public RuleCall getParameterParameterParserRuleCall_2_0() { return cParameterParameterParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class ParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.parameter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cParameterKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cIdKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cIdAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cIdIDTerminalRuleCall_4_0 = (RuleCall)cIdAssignment_4.eContents().get(0);
+		private final Keyword cNameKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cNameAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cNameSTRINGTerminalRuleCall_7_0 = (RuleCall)cNameAssignment_7.eContents().get(0);
+		private final Keyword cValueKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cValueAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cValueDOUBLEParserRuleCall_10_0 = (RuleCall)cValueAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		
+		//parameter:
+		//	'parameter' '{' 'id' ':' id=ID 'name' ':' name=STRING 'value' ':' value=DOUBLE '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'parameter' '{' 'id' ':' id=ID 'name' ':' name=STRING 'value' ':' value=DOUBLE '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'parameter'
+		public Keyword getParameterKeyword_0() { return cParameterKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'id'
+		public Keyword getIdKeyword_2() { return cIdKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//id=ID
+		public Assignment getIdAssignment_4() { return cIdAssignment_4; }
+		
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_4_0() { return cIdIDTerminalRuleCall_4_0; }
+		
+		//'name'
+		public Keyword getNameKeyword_5() { return cNameKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_7() { return cNameAssignment_7; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_7_0() { return cNameSTRINGTerminalRuleCall_7_0; }
+		
+		//'value'
+		public Keyword getValueKeyword_8() { return cValueKeyword_8; }
+		
+		//':'
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
+		
+		//value=DOUBLE
+		public Assignment getValueAssignment_10() { return cValueAssignment_10; }
+		
+		//DOUBLE
+		public RuleCall getValueDOUBLEParserRuleCall_10_0() { return cValueDOUBLEParserRuleCall_10_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 	public class ListOfVariablesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfVariables");
@@ -1361,27 +2211,35 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cIdAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cIdIDTerminalRuleCall_4_0 = (RuleCall)cIdAssignment_4.eContents().get(0);
-		private final Keyword cTargetKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cNameKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cTargetAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cTargetSTRINGTerminalRuleCall_7_0 = (RuleCall)cTargetAssignment_7.eContents().get(0);
-		private final Keyword cTaskReferenceKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cNameAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cNameSTRINGTerminalRuleCall_7_0 = (RuleCall)cNameAssignment_7.eContents().get(0);
+		private final Keyword cTargetKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cTaskReferenceAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cTaskReferenceTaskParserRuleCall_10_0 = (RuleCall)cTaskReferenceAssignment_10.eContents().get(0);
-		private final Keyword cSymbolKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cTargetAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cTargetSTRINGTerminalRuleCall_10_0 = (RuleCall)cTargetAssignment_10.eContents().get(0);
+		private final Keyword cTaskReferenceKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Keyword cColonKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Assignment cSymbolAssignment_13 = (Assignment)cGroup.eContents().get(13);
-		private final RuleCall cSymbolSTRINGTerminalRuleCall_13_0 = (RuleCall)cSymbolAssignment_13.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Assignment cTaskReferenceAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cTaskReferenceTaskParserRuleCall_13_0 = (RuleCall)cTaskReferenceAssignment_13.eContents().get(0);
+		private final Keyword cModelReferenceKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cColonKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cModelReferenceAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cModelReferenceModelParserRuleCall_16_0 = (RuleCall)cModelReferenceAssignment_16.eContents().get(0);
+		private final Keyword cSymbolKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Keyword cColonKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Assignment cSymbolAssignment_19 = (Assignment)cGroup.eContents().get(19);
+		private final RuleCall cSymbolSTRINGTerminalRuleCall_19_0 = (RuleCall)cSymbolAssignment_19.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_20 = (Keyword)cGroup.eContents().get(20);
 		
 		//variable:
-		//	'variable' '{' 'id' ':' id=ID 'target' ':' target=STRING 'taskReference' ':' taskReference=task 'symbol' ':'
-		//	symbol=STRING '}';
+		//	'variable' '{' 'id' ':' id=ID 'name' ':' name=STRING 'target' ':' target=STRING 'taskReference' ':'
+		//	taskReference=task 'modelReference' ':' modelReference=model 'symbol' ':' symbol=STRING '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'variable' '{' 'id' ':' id=ID 'target' ':' target=STRING 'taskReference' ':' taskReference=task 'symbol' ':'
-		//symbol=STRING '}'
+		//'variable' '{' 'id' ':' id=ID 'name' ':' name=STRING 'target' ':' target=STRING 'taskReference' ':' taskReference=task
+		//'modelReference' ':' modelReference=model 'symbol' ':' symbol=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'variable'
@@ -1402,44 +2260,68 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIdIDTerminalRuleCall_4_0() { return cIdIDTerminalRuleCall_4_0; }
 		
-		//'target'
-		public Keyword getTargetKeyword_5() { return cTargetKeyword_5; }
+		//'name'
+		public Keyword getNameKeyword_5() { return cNameKeyword_5; }
 		
 		//':'
 		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
 		
-		//target=STRING
-		public Assignment getTargetAssignment_7() { return cTargetAssignment_7; }
+		//name=STRING
+		public Assignment getNameAssignment_7() { return cNameAssignment_7; }
 		
 		//STRING
-		public RuleCall getTargetSTRINGTerminalRuleCall_7_0() { return cTargetSTRINGTerminalRuleCall_7_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_7_0() { return cNameSTRINGTerminalRuleCall_7_0; }
 		
-		//'taskReference'
-		public Keyword getTaskReferenceKeyword_8() { return cTaskReferenceKeyword_8; }
+		//'target'
+		public Keyword getTargetKeyword_8() { return cTargetKeyword_8; }
 		
 		//':'
 		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
 		
-		//taskReference=task
-		public Assignment getTaskReferenceAssignment_10() { return cTaskReferenceAssignment_10; }
+		//target=STRING
+		public Assignment getTargetAssignment_10() { return cTargetAssignment_10; }
 		
-		//task
-		public RuleCall getTaskReferenceTaskParserRuleCall_10_0() { return cTaskReferenceTaskParserRuleCall_10_0; }
+		//STRING
+		public RuleCall getTargetSTRINGTerminalRuleCall_10_0() { return cTargetSTRINGTerminalRuleCall_10_0; }
 		
-		//'symbol'
-		public Keyword getSymbolKeyword_11() { return cSymbolKeyword_11; }
+		//'taskReference'
+		public Keyword getTaskReferenceKeyword_11() { return cTaskReferenceKeyword_11; }
 		
 		//':'
 		public Keyword getColonKeyword_12() { return cColonKeyword_12; }
 		
+		//taskReference=task
+		public Assignment getTaskReferenceAssignment_13() { return cTaskReferenceAssignment_13; }
+		
+		//task
+		public RuleCall getTaskReferenceTaskParserRuleCall_13_0() { return cTaskReferenceTaskParserRuleCall_13_0; }
+		
+		//'modelReference'
+		public Keyword getModelReferenceKeyword_14() { return cModelReferenceKeyword_14; }
+		
+		//':'
+		public Keyword getColonKeyword_15() { return cColonKeyword_15; }
+		
+		//modelReference=model
+		public Assignment getModelReferenceAssignment_16() { return cModelReferenceAssignment_16; }
+		
+		//model
+		public RuleCall getModelReferenceModelParserRuleCall_16_0() { return cModelReferenceModelParserRuleCall_16_0; }
+		
+		//'symbol'
+		public Keyword getSymbolKeyword_17() { return cSymbolKeyword_17; }
+		
+		//':'
+		public Keyword getColonKeyword_18() { return cColonKeyword_18; }
+		
 		//symbol=STRING
-		public Assignment getSymbolAssignment_13() { return cSymbolAssignment_13; }
+		public Assignment getSymbolAssignment_19() { return cSymbolAssignment_19; }
 		
 		//STRING
-		public RuleCall getSymbolSTRINGTerminalRuleCall_13_0() { return cSymbolSTRINGTerminalRuleCall_13_0; }
+		public RuleCall getSymbolSTRINGTerminalRuleCall_19_0() { return cSymbolSTRINGTerminalRuleCall_19_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
+		public Keyword getRightCurlyBracketKeyword_20() { return cRightCurlyBracketKeyword_20; }
 	}
 	public class ListOfTasksElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfTasks");
@@ -1448,13 +2330,15 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTaskAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTaskTaskParserRuleCall_2_0 = (RuleCall)cTaskAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRepeatedTaskAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cRepeatedTaskRepeatedTaskParserRuleCall_3_0 = (RuleCall)cRepeatedTaskAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//listOfTasks:
-		//	'listOfTasks' '{' task+=task* '}';
+		//	'listOfTasks' '{' task+=task* RepeatedTask+=repeatedTask* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'listOfTasks' '{' task+=task* '}'
+		//'listOfTasks' '{' task+=task* RepeatedTask+=repeatedTask* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'listOfTasks'
@@ -1469,8 +2353,466 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		//task
 		public RuleCall getTaskTaskParserRuleCall_2_0() { return cTaskTaskParserRuleCall_2_0; }
 		
+		//RepeatedTask+=repeatedTask*
+		public Assignment getRepeatedTaskAssignment_3() { return cRepeatedTaskAssignment_3; }
+		
+		//repeatedTask
+		public RuleCall getRepeatedTaskRepeatedTaskParserRuleCall_3_0() { return cRepeatedTaskRepeatedTaskParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class RepeatedTaskElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.repeatedTask");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cListOfRepeatedTasksKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cIdKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cIdAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cIdIDTerminalRuleCall_4_0 = (RuleCall)cIdAssignment_4.eContents().get(0);
+		private final Keyword cNameKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cNameAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cNameSTRINGTerminalRuleCall_7_0 = (RuleCall)cNameAssignment_7.eContents().get(0);
+		private final Assignment cSubTaskAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cSubTaskSubTaskParserRuleCall_8_0 = (RuleCall)cSubTaskAssignment_8.eContents().get(0);
+		private final Assignment cListOfRangesAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cListOfRangesListOfRangesParserRuleCall_9_0 = (RuleCall)cListOfRangesAssignment_9.eContents().get(0);
+		private final Assignment cListOfChangesAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cListOfChangesListOfChangesParserRuleCall_10_0 = (RuleCall)cListOfChangesAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		
+		//repeatedTask:
+		//	'listOfRepeatedTasks' '{' 'id' ':' id=ID 'name' ':' name=STRING subTask+=subTask* listOfRanges=listOfRanges
+		//	listOfChanges=listOfChanges? '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'listOfRepeatedTasks' '{' 'id' ':' id=ID 'name' ':' name=STRING subTask+=subTask* listOfRanges=listOfRanges
+		//listOfChanges=listOfChanges? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'listOfRepeatedTasks'
+		public Keyword getListOfRepeatedTasksKeyword_0() { return cListOfRepeatedTasksKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'id'
+		public Keyword getIdKeyword_2() { return cIdKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//id=ID
+		public Assignment getIdAssignment_4() { return cIdAssignment_4; }
+		
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_4_0() { return cIdIDTerminalRuleCall_4_0; }
+		
+		//'name'
+		public Keyword getNameKeyword_5() { return cNameKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_7() { return cNameAssignment_7; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_7_0() { return cNameSTRINGTerminalRuleCall_7_0; }
+		
+		//subTask+=subTask*
+		public Assignment getSubTaskAssignment_8() { return cSubTaskAssignment_8; }
+		
+		//subTask
+		public RuleCall getSubTaskSubTaskParserRuleCall_8_0() { return cSubTaskSubTaskParserRuleCall_8_0; }
+		
+		//listOfRanges=listOfRanges
+		public Assignment getListOfRangesAssignment_9() { return cListOfRangesAssignment_9; }
+		
+		//listOfRanges
+		public RuleCall getListOfRangesListOfRangesParserRuleCall_9_0() { return cListOfRangesListOfRangesParserRuleCall_9_0; }
+		
+		//listOfChanges=listOfChanges?
+		public Assignment getListOfChangesAssignment_10() { return cListOfChangesAssignment_10; }
+		
+		//listOfChanges
+		public RuleCall getListOfChangesListOfChangesParserRuleCall_10_0() { return cListOfChangesListOfChangesParserRuleCall_10_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+	}
+	public class ListOfRangesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfRanges");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cListOfRangesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cRangeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cRangeRangeParserRuleCall_2_0 = (RuleCall)cRangeAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//listOfRanges:
+		//	'listOfRanges' '{' range+=range* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'listOfRanges' '{' range+=range* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'listOfRanges'
+		public Keyword getListOfRangesKeyword_0() { return cListOfRangesKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//range+=range*
+		public Assignment getRangeAssignment_2() { return cRangeAssignment_2; }
+		
+		//range
+		public RuleCall getRangeRangeParserRuleCall_2_0() { return cRangeRangeParserRuleCall_2_0; }
+		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class RangeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.range");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cUniformRangeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cVectorRangeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final RuleCall cFunctionalRangeParserRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Keyword cIdKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Keyword cColonKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Assignment cIdAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
+		private final RuleCall cIdIDTerminalRuleCall_2_3_0 = (RuleCall)cIdAssignment_2_3.eContents().get(0);
+		
+		//range:
+		//	uniformRange | vectorRange | functionalRange 'id' ':' id=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//uniformRange | vectorRange | functionalRange 'id' ':' id=ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//uniformRange
+		public RuleCall getUniformRangeParserRuleCall_0() { return cUniformRangeParserRuleCall_0; }
+		
+		//vectorRange
+		public RuleCall getVectorRangeParserRuleCall_1() { return cVectorRangeParserRuleCall_1; }
+		
+		//functionalRange 'id' ':' id=ID
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//functionalRange
+		public RuleCall getFunctionalRangeParserRuleCall_2_0() { return cFunctionalRangeParserRuleCall_2_0; }
+		
+		//'id'
+		public Keyword getIdKeyword_2_1() { return cIdKeyword_2_1; }
+		
+		//':'
+		public Keyword getColonKeyword_2_2() { return cColonKeyword_2_2; }
+		
+		//id=ID
+		public Assignment getIdAssignment_2_3() { return cIdAssignment_2_3; }
+		
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_2_3_0() { return cIdIDTerminalRuleCall_2_3_0; }
+	}
+	public class UniformRangeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.uniformRange");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cUniformRangeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cStartKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cStartAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cStartDOUBLEParserRuleCall_4_0 = (RuleCall)cStartAssignment_4.eContents().get(0);
+		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cEndAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cEndDOUBLEParserRuleCall_7_0 = (RuleCall)cEndAssignment_7.eContents().get(0);
+		private final Keyword cEndKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cNumberOfPointsAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cNumberOfPointsINTTerminalRuleCall_10_0 = (RuleCall)cNumberOfPointsAssignment_10.eContents().get(0);
+		private final Keyword cTypeKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cColonKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cTypeAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cTypeSTRINGTerminalRuleCall_13_0 = (RuleCall)cTypeAssignment_13.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		
+		//uniformRange:
+		//	'uniformRange' '{' 'start' ':' start=DOUBLE 'end' ':' end=DOUBLE 'end' ':' numberOfPoints=INT 'type' ':' type=STRING
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'uniformRange' '{' 'start' ':' start=DOUBLE 'end' ':' end=DOUBLE 'end' ':' numberOfPoints=INT 'type' ':' type=STRING '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'uniformRange'
+		public Keyword getUniformRangeKeyword_0() { return cUniformRangeKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'start'
+		public Keyword getStartKeyword_2() { return cStartKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//start=DOUBLE
+		public Assignment getStartAssignment_4() { return cStartAssignment_4; }
+		
+		//DOUBLE
+		public RuleCall getStartDOUBLEParserRuleCall_4_0() { return cStartDOUBLEParserRuleCall_4_0; }
+		
+		//'end'
+		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		
+		//end=DOUBLE
+		public Assignment getEndAssignment_7() { return cEndAssignment_7; }
+		
+		//DOUBLE
+		public RuleCall getEndDOUBLEParserRuleCall_7_0() { return cEndDOUBLEParserRuleCall_7_0; }
+		
+		//'end'
+		public Keyword getEndKeyword_8() { return cEndKeyword_8; }
+		
+		//':'
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
+		
+		//numberOfPoints=INT
+		public Assignment getNumberOfPointsAssignment_10() { return cNumberOfPointsAssignment_10; }
+		
+		//INT
+		public RuleCall getNumberOfPointsINTTerminalRuleCall_10_0() { return cNumberOfPointsINTTerminalRuleCall_10_0; }
+		
+		//'type'
+		public Keyword getTypeKeyword_11() { return cTypeKeyword_11; }
+		
+		//':'
+		public Keyword getColonKeyword_12() { return cColonKeyword_12; }
+		
+		//type=STRING
+		public Assignment getTypeAssignment_13() { return cTypeAssignment_13; }
+		
+		//STRING
+		public RuleCall getTypeSTRINGTerminalRuleCall_13_0() { return cTypeSTRINGTerminalRuleCall_13_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
+	}
+	public class VectorRangeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.vectorRange");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cVectorRangeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//vectorRange:
+		//	'vectorRange' '{' value+=value* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'vectorRange' '{' value+=value* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'vectorRange'
+		public Keyword getVectorRangeKeyword_0() { return cVectorRangeKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//value+=value*
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//value
+		public RuleCall getValueValueParserRuleCall_2_0() { return cValueValueParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class ValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.value");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cValueKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cContentKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cContentAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cContentDOUBLEParserRuleCall_4_0 = (RuleCall)cContentAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//value:
+		//	'value' '{' 'content' ':' content=DOUBLE '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'value' '{' 'content' ':' content=DOUBLE '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'value'
+		public Keyword getValueKeyword_0() { return cValueKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'content'
+		public Keyword getContentKeyword_2() { return cContentKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//content=DOUBLE
+		public Assignment getContentAssignment_4() { return cContentAssignment_4; }
+		
+		//DOUBLE
+		public RuleCall getContentDOUBLEParserRuleCall_4_0() { return cContentDOUBLEParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class FunctionalRangeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.functionalRange");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFunctionalRangeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cRangeKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRangeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cRangeIDTerminalRuleCall_4_0 = (RuleCall)cRangeAssignment_4.eContents().get(0);
+		private final Assignment cListOfVariablesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cListOfVariablesListOfVariablesParserRuleCall_5_0 = (RuleCall)cListOfVariablesAssignment_5.eContents().get(0);
+		private final Assignment cListOfParametersAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cListOfParametersListOfParametersParserRuleCall_6_0 = (RuleCall)cListOfParametersAssignment_6.eContents().get(0);
+		private final Assignment cMathAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cMathMathParserRuleCall_7_0 = (RuleCall)cMathAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		
+		//functionalRange:
+		//	'functionalRange' '{' 'range' ':' range=ID listOfVariables=listOfVariables? listOfParameters=listOfParameters?
+		//	math=math? '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'functionalRange' '{' 'range' ':' range=ID listOfVariables=listOfVariables? listOfParameters=listOfParameters?
+		//math=math? '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'functionalRange'
+		public Keyword getFunctionalRangeKeyword_0() { return cFunctionalRangeKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'range'
+		public Keyword getRangeKeyword_2() { return cRangeKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//range=ID
+		public Assignment getRangeAssignment_4() { return cRangeAssignment_4; }
+		
+		//ID
+		public RuleCall getRangeIDTerminalRuleCall_4_0() { return cRangeIDTerminalRuleCall_4_0; }
+		
+		//listOfVariables=listOfVariables?
+		public Assignment getListOfVariablesAssignment_5() { return cListOfVariablesAssignment_5; }
+		
+		//listOfVariables
+		public RuleCall getListOfVariablesListOfVariablesParserRuleCall_5_0() { return cListOfVariablesListOfVariablesParserRuleCall_5_0; }
+		
+		//listOfParameters=listOfParameters?
+		public Assignment getListOfParametersAssignment_6() { return cListOfParametersAssignment_6; }
+		
+		//listOfParameters
+		public RuleCall getListOfParametersListOfParametersParserRuleCall_6_0() { return cListOfParametersListOfParametersParserRuleCall_6_0; }
+		
+		//math=math?
+		public Assignment getMathAssignment_7() { return cMathAssignment_7; }
+		
+		//math
+		public RuleCall getMathMathParserRuleCall_7_0() { return cMathMathParserRuleCall_7_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+	}
+	public class AbstractTaskElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.abstractTask");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cTaskParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cRepeatedTaskParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//abstractTask:
+		//	task | repeatedTask;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//task | repeatedTask
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//task
+		public RuleCall getTaskParserRuleCall_0() { return cTaskParserRuleCall_0; }
+		
+		//repeatedTask
+		public RuleCall getRepeatedTaskParserRuleCall_1() { return cRepeatedTaskParserRuleCall_1; }
+	}
+	public class SubTaskElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.subTask");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSubTaskKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cTaskKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cModelReferenceAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cModelReferenceModelParserRuleCall_4_0 = (RuleCall)cModelReferenceAssignment_4.eContents().get(0);
+		private final Keyword cOrderKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cOrderAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cOrderINTTerminalRuleCall_7_0 = (RuleCall)cOrderAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		
+		//subTask:
+		//	'subTask' '{' 'task' ':' modelReference=model 'order' ':' order=INT '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'subTask' '{' 'task' ':' modelReference=model 'order' ':' order=INT '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'subTask'
+		public Keyword getSubTaskKeyword_0() { return cSubTaskKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'task'
+		public Keyword getTaskKeyword_2() { return cTaskKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//modelReference=model
+		public Assignment getModelReferenceAssignment_4() { return cModelReferenceAssignment_4; }
+		
+		//model
+		public RuleCall getModelReferenceModelParserRuleCall_4_0() { return cModelReferenceModelParserRuleCall_4_0; }
+		
+		//'order'
+		public Keyword getOrderKeyword_5() { return cOrderKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		
+		//order=INT
+		public Assignment getOrderAssignment_7() { return cOrderAssignment_7; }
+		
+		//INT
+		public RuleCall getOrderINTTerminalRuleCall_7_0() { return cOrderINTTerminalRuleCall_7_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class TaskElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.task");
@@ -1636,15 +2978,15 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cListOfOutputsKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cPlot2DAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cPlot2DPlot2DParserRuleCall_2_0 = (RuleCall)cPlot2DAssignment_2.eContents().get(0);
+		private final Assignment cOutputAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cOutputOutputParserRuleCall_2_0 = (RuleCall)cOutputAssignment_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//listOfOutputs:
-		//	'listOfOutputs' '{' plot2D+=plot2D* '}';
+		//	'listOfOutputs' '{' output=output* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'listOfOutputs' '{' plot2D+=plot2D* '}'
+		//'listOfOutputs' '{' output=output* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'listOfOutputs'
@@ -1653,14 +2995,37 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//plot2D+=plot2D*
-		public Assignment getPlot2DAssignment_2() { return cPlot2DAssignment_2; }
+		//output=output*
+		public Assignment getOutputAssignment_2() { return cOutputAssignment_2; }
 		
-		//plot2D
-		public RuleCall getPlot2DPlot2DParserRuleCall_2_0() { return cPlot2DPlot2DParserRuleCall_2_0; }
+		//output
+		public RuleCall getOutputOutputParserRuleCall_2_0() { return cOutputOutputParserRuleCall_2_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class OutputElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.output");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cPlot2DParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cPlot3DParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cReportParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//output:
+		//	plot2D | plot3D | report;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//plot2D | plot3D | report
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//plot2D
+		public RuleCall getPlot2DParserRuleCall_0() { return cPlot2DParserRuleCall_0; }
+		
+		//plot3D
+		public RuleCall getPlot3DParserRuleCall_1() { return cPlot3DParserRuleCall_1; }
+		
+		//report
+		public RuleCall getReportParserRuleCall_2() { return cReportParserRuleCall_2; }
 	}
 	public class Plot2DElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.plot2D");
@@ -1724,6 +3089,339 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+	}
+	public class Plot3DElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.plot3D");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPlot3DKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cListOfSurfacesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cListOfSurfacesListOfSurfacesParserRuleCall_2_0 = (RuleCall)cListOfSurfacesAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//plot3D:
+		//	'plot3D' '{' listOfSurfaces=listOfSurfaces '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'plot3D' '{' listOfSurfaces=listOfSurfaces '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'plot3D'
+		public Keyword getPlot3DKeyword_0() { return cPlot3DKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//listOfSurfaces=listOfSurfaces
+		public Assignment getListOfSurfacesAssignment_2() { return cListOfSurfacesAssignment_2; }
+		
+		//listOfSurfaces
+		public RuleCall getListOfSurfacesListOfSurfacesParserRuleCall_2_0() { return cListOfSurfacesListOfSurfacesParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class ReportElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.report");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cReportKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cIdKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cIdAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cIdIDTerminalRuleCall_4_0 = (RuleCall)cIdAssignment_4.eContents().get(0);
+		private final Keyword cNameKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cNameAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cNameSTRINGTerminalRuleCall_7_0 = (RuleCall)cNameAssignment_7.eContents().get(0);
+		private final Assignment cListOfDataSetsAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cListOfDataSetsListOfDataSetsParserRuleCall_8_0 = (RuleCall)cListOfDataSetsAssignment_8.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		
+		//report:
+		//	'report' '{' 'id' ':' id=ID 'name' ':' name=STRING listOfDataSets=listOfDataSets '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'report' '{' 'id' ':' id=ID 'name' ':' name=STRING listOfDataSets=listOfDataSets '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'report'
+		public Keyword getReportKeyword_0() { return cReportKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'id'
+		public Keyword getIdKeyword_2() { return cIdKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//id=ID
+		public Assignment getIdAssignment_4() { return cIdAssignment_4; }
+		
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_4_0() { return cIdIDTerminalRuleCall_4_0; }
+		
+		//'name'
+		public Keyword getNameKeyword_5() { return cNameKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_7() { return cNameAssignment_7; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_7_0() { return cNameSTRINGTerminalRuleCall_7_0; }
+		
+		//listOfDataSets=listOfDataSets
+		public Assignment getListOfDataSetsAssignment_8() { return cListOfDataSetsAssignment_8; }
+		
+		//listOfDataSets
+		public RuleCall getListOfDataSetsListOfDataSetsParserRuleCall_8_0() { return cListOfDataSetsListOfDataSetsParserRuleCall_8_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+	}
+	public class ListOfDataSetsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfDataSets");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cListOfCurvesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cDataSetAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDataSetDataSetParserRuleCall_2_0 = (RuleCall)cDataSetAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//listOfDataSets:
+		//	'listOfCurves' '{' dataSet+=dataSet* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'listOfCurves' '{' dataSet+=dataSet* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'listOfCurves'
+		public Keyword getListOfCurvesKeyword_0() { return cListOfCurvesKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//dataSet+=dataSet*
+		public Assignment getDataSetAssignment_2() { return cDataSetAssignment_2; }
+		
+		//dataSet
+		public RuleCall getDataSetDataSetParserRuleCall_2_0() { return cDataSetDataSetParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class DataSetElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.dataSet");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDataSetKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLabelKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cLabelAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cLabelSTRINGTerminalRuleCall_4_0 = (RuleCall)cLabelAssignment_4.eContents().get(0);
+		private final Keyword cNameKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cNameAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cNameSTRINGTerminalRuleCall_7_0 = (RuleCall)cNameAssignment_7.eContents().get(0);
+		private final Keyword cDataReferenceKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cDataReferenceAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cDataReferenceSTRINGTerminalRuleCall_10_0 = (RuleCall)cDataReferenceAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		
+		//dataSet:
+		//	'dataSet' '{' 'label' ':' label=STRING 'name' ':' name=STRING 'dataReference' ':' dataReference=STRING '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'dataSet' '{' 'label' ':' label=STRING 'name' ':' name=STRING 'dataReference' ':' dataReference=STRING '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'dataSet'
+		public Keyword getDataSetKeyword_0() { return cDataSetKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'label'
+		public Keyword getLabelKeyword_2() { return cLabelKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//label=STRING
+		public Assignment getLabelAssignment_4() { return cLabelAssignment_4; }
+		
+		//STRING
+		public RuleCall getLabelSTRINGTerminalRuleCall_4_0() { return cLabelSTRINGTerminalRuleCall_4_0; }
+		
+		//'name'
+		public Keyword getNameKeyword_5() { return cNameKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_7() { return cNameAssignment_7; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_7_0() { return cNameSTRINGTerminalRuleCall_7_0; }
+		
+		//'dataReference'
+		public Keyword getDataReferenceKeyword_8() { return cDataReferenceKeyword_8; }
+		
+		//':'
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
+		
+		//dataReference=STRING
+		public Assignment getDataReferenceAssignment_10() { return cDataReferenceAssignment_10; }
+		
+		//STRING
+		public RuleCall getDataReferenceSTRINGTerminalRuleCall_10_0() { return cDataReferenceSTRINGTerminalRuleCall_10_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+	}
+	public class ListOfSurfacesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfSurfaces");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSurfaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cIdKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cIdAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cIdIDTerminalRuleCall_4_0 = (RuleCall)cIdAssignment_4.eContents().get(0);
+		private final Keyword cLogXKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cLogXAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cLogXSTRINGTerminalRuleCall_7_0 = (RuleCall)cLogXAssignment_7.eContents().get(0);
+		private final Keyword cLogYKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cLogYAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cLogYSTRINGTerminalRuleCall_10_0 = (RuleCall)cLogYAssignment_10.eContents().get(0);
+		private final Keyword cLogZKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cColonKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cLogZAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cLogZSTRINGTerminalRuleCall_13_0 = (RuleCall)cLogZAssignment_13.eContents().get(0);
+		private final Keyword cXDataReferenceKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cColonKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cXDataReferenceAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cXDataReferenceSTRINGTerminalRuleCall_16_0 = (RuleCall)cXDataReferenceAssignment_16.eContents().get(0);
+		private final Keyword cYDataReferenceKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Keyword cColonKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Assignment cYDataReferenceAssignment_19 = (Assignment)cGroup.eContents().get(19);
+		private final RuleCall cYDataReferenceSTRINGTerminalRuleCall_19_0 = (RuleCall)cYDataReferenceAssignment_19.eContents().get(0);
+		private final Keyword cZDataReferenceKeyword_20 = (Keyword)cGroup.eContents().get(20);
+		private final Keyword cColonKeyword_21 = (Keyword)cGroup.eContents().get(21);
+		private final Assignment cZDataReferenceAssignment_22 = (Assignment)cGroup.eContents().get(22);
+		private final RuleCall cZDataReferenceSTRINGTerminalRuleCall_22_0 = (RuleCall)cZDataReferenceAssignment_22.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_23 = (Keyword)cGroup.eContents().get(23);
+		
+		//listOfSurfaces:
+		//	'surface' '{' 'id' ':' id=ID 'logX' ':' logX=STRING 'logY' ':' logY=STRING 'logZ' ':' logZ=STRING 'xDataReference'
+		//	':' xDataReference=STRING 'yDataReference' ':' yDataReference=STRING 'zDataReference' ':' zDataReference=STRING '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'surface' '{' 'id' ':' id=ID 'logX' ':' logX=STRING 'logY' ':' logY=STRING 'logZ' ':' logZ=STRING 'xDataReference' ':'
+		//xDataReference=STRING 'yDataReference' ':' yDataReference=STRING 'zDataReference' ':' zDataReference=STRING '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'surface'
+		public Keyword getSurfaceKeyword_0() { return cSurfaceKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'id'
+		public Keyword getIdKeyword_2() { return cIdKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//id=ID
+		public Assignment getIdAssignment_4() { return cIdAssignment_4; }
+		
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_4_0() { return cIdIDTerminalRuleCall_4_0; }
+		
+		//'logX'
+		public Keyword getLogXKeyword_5() { return cLogXKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		
+		//logX=STRING
+		public Assignment getLogXAssignment_7() { return cLogXAssignment_7; }
+		
+		//STRING
+		public RuleCall getLogXSTRINGTerminalRuleCall_7_0() { return cLogXSTRINGTerminalRuleCall_7_0; }
+		
+		//'logY'
+		public Keyword getLogYKeyword_8() { return cLogYKeyword_8; }
+		
+		//':'
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
+		
+		//logY=STRING
+		public Assignment getLogYAssignment_10() { return cLogYAssignment_10; }
+		
+		//STRING
+		public RuleCall getLogYSTRINGTerminalRuleCall_10_0() { return cLogYSTRINGTerminalRuleCall_10_0; }
+		
+		//'logZ'
+		public Keyword getLogZKeyword_11() { return cLogZKeyword_11; }
+		
+		//':'
+		public Keyword getColonKeyword_12() { return cColonKeyword_12; }
+		
+		//logZ=STRING
+		public Assignment getLogZAssignment_13() { return cLogZAssignment_13; }
+		
+		//STRING
+		public RuleCall getLogZSTRINGTerminalRuleCall_13_0() { return cLogZSTRINGTerminalRuleCall_13_0; }
+		
+		//'xDataReference'
+		public Keyword getXDataReferenceKeyword_14() { return cXDataReferenceKeyword_14; }
+		
+		//':'
+		public Keyword getColonKeyword_15() { return cColonKeyword_15; }
+		
+		//xDataReference=STRING
+		public Assignment getXDataReferenceAssignment_16() { return cXDataReferenceAssignment_16; }
+		
+		//STRING
+		public RuleCall getXDataReferenceSTRINGTerminalRuleCall_16_0() { return cXDataReferenceSTRINGTerminalRuleCall_16_0; }
+		
+		//'yDataReference'
+		public Keyword getYDataReferenceKeyword_17() { return cYDataReferenceKeyword_17; }
+		
+		//':'
+		public Keyword getColonKeyword_18() { return cColonKeyword_18; }
+		
+		//yDataReference=STRING
+		public Assignment getYDataReferenceAssignment_19() { return cYDataReferenceAssignment_19; }
+		
+		//STRING
+		public RuleCall getYDataReferenceSTRINGTerminalRuleCall_19_0() { return cYDataReferenceSTRINGTerminalRuleCall_19_0; }
+		
+		//'zDataReference'
+		public Keyword getZDataReferenceKeyword_20() { return cZDataReferenceKeyword_20; }
+		
+		//':'
+		public Keyword getColonKeyword_21() { return cColonKeyword_21; }
+		
+		//zDataReference=STRING
+		public Assignment getZDataReferenceAssignment_22() { return cZDataReferenceAssignment_22; }
+		
+		//STRING
+		public RuleCall getZDataReferenceSTRINGTerminalRuleCall_22_0() { return cZDataReferenceSTRINGTerminalRuleCall_22_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_23() { return cRightCurlyBracketKeyword_23; }
 	}
 	public class ListOfCurvesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfCurves");
@@ -1866,15 +3564,15 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cListOfSimulationsKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cUniformTimeCourseAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cUniformTimeCourseUniformTimeCourseParserRuleCall_2_0 = (RuleCall)cUniformTimeCourseAssignment_2.eContents().get(0);
+		private final Assignment cSimulationAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSimulationSimulationParserRuleCall_2_0 = (RuleCall)cSimulationAssignment_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//listOfSimulations:
-		//	'listOfSimulations' '{' uniformTimeCourse+=uniformTimeCourse* '}';
+		//	'listOfSimulations' '{' simulation+=simulation* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'listOfSimulations' '{' uniformTimeCourse+=uniformTimeCourse* '}'
+		//'listOfSimulations' '{' simulation+=simulation* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'listOfSimulations'
@@ -1883,14 +3581,37 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
-		//uniformTimeCourse+=uniformTimeCourse*
-		public Assignment getUniformTimeCourseAssignment_2() { return cUniformTimeCourseAssignment_2; }
+		//simulation+=simulation*
+		public Assignment getSimulationAssignment_2() { return cSimulationAssignment_2; }
 		
-		//uniformTimeCourse
-		public RuleCall getUniformTimeCourseUniformTimeCourseParserRuleCall_2_0() { return cUniformTimeCourseUniformTimeCourseParserRuleCall_2_0; }
+		//simulation
+		public RuleCall getSimulationSimulationParserRuleCall_2_0() { return cSimulationSimulationParserRuleCall_2_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class SimulationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.simulation");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cOneStepParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSteadyStateParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cUniformTimeCourseParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//simulation:
+		//	oneStep | SteadyState | uniformTimeCourse;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//oneStep | SteadyState | uniformTimeCourse
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//oneStep
+		public RuleCall getOneStepParserRuleCall_0() { return cOneStepParserRuleCall_0; }
+		
+		//SteadyState
+		public RuleCall getSteadyStateParserRuleCall_1() { return cSteadyStateParserRuleCall_1; }
+		
+		//uniformTimeCourse
+		public RuleCall getUniformTimeCourseParserRuleCall_2() { return cUniformTimeCourseParserRuleCall_2; }
 	}
 	public class UniformTimeCourseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.uniformTimeCourse");
@@ -2005,6 +3726,87 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_18() { return cRightCurlyBracketKeyword_18; }
 	}
+	public class OneStepElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.oneStep");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOneStepKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cStepKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cStepAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cStepDOUBLEParserRuleCall_4_0 = (RuleCall)cStepAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//oneStep:
+		//	'oneStep' '{' 'step' ':' step=DOUBLE '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'oneStep' '{' 'step' ':' step=DOUBLE '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'oneStep'
+		public Keyword getOneStepKeyword_0() { return cOneStepKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'step'
+		public Keyword getStepKeyword_2() { return cStepKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//step=DOUBLE
+		public Assignment getStepAssignment_4() { return cStepAssignment_4; }
+		
+		//DOUBLE
+		public RuleCall getStepDOUBLEParserRuleCall_4_0() { return cStepDOUBLEParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class SteadyStateElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.SteadyState");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSteadyStateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//SteadyState:
+		//	'steadyState' '{' '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'steadyState' '{' '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'steadyState'
+		public Keyword getSteadyStateKeyword_0() { return cSteadyStateKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
+	}
+	public class DOUBLEElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.DOUBLE");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFullStopKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//DOUBLE:
+		//	'.'? INT?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'.'? INT?
+		public Group getGroup() { return cGroup; }
+		
+		//'.'?
+		public Keyword getFullStopKeyword_0() { return cFullStopKeyword_0; }
+		
+		//INT?
+		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+	}
 	public class AlgorithmElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.algorithm");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2014,13 +3816,15 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cKisaoIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cKisaoIDSTRINGTerminalRuleCall_4_0 = (RuleCall)cKisaoIDAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cListOfAlgorithmParametersAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cListOfAlgorithmParametersListOfAlgorithmParametersParserRuleCall_5_0 = (RuleCall)cListOfAlgorithmParametersAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//algorithm:
-		//	'algorithm' '{' 'kisaoID' ':' kisaoID=STRING '}';
+		//	'algorithm' '{' 'kisaoID' ':' kisaoID=STRING ListOfAlgorithmParameters=listOfAlgorithmParameters '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'algorithm' '{' 'kisaoID' ':' kisaoID=STRING '}'
+		//'algorithm' '{' 'kisaoID' ':' kisaoID=STRING ListOfAlgorithmParameters=listOfAlgorithmParameters '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'algorithm'
@@ -2041,8 +3845,100 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getKisaoIDSTRINGTerminalRuleCall_4_0() { return cKisaoIDSTRINGTerminalRuleCall_4_0; }
 		
+		//ListOfAlgorithmParameters=listOfAlgorithmParameters
+		public Assignment getListOfAlgorithmParametersAssignment_5() { return cListOfAlgorithmParametersAssignment_5; }
+		
+		//listOfAlgorithmParameters
+		public RuleCall getListOfAlgorithmParametersListOfAlgorithmParametersParserRuleCall_5_0() { return cListOfAlgorithmParametersListOfAlgorithmParametersParserRuleCall_5_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+	public class ListOfAlgorithmParametersElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.listOfAlgorithmParameters");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cListOfAlgorithmParametersKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cAlgorithmParameterAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cAlgorithmParameterAlgorithmParameterParserRuleCall_2_0 = (RuleCall)cAlgorithmParameterAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//listOfAlgorithmParameters:
+		//	'listOfAlgorithmParameters' '{' AlgorithmParameter+=algorithmParameter* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'listOfAlgorithmParameters' '{' AlgorithmParameter+=algorithmParameter* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'listOfAlgorithmParameters'
+		public Keyword getListOfAlgorithmParametersKeyword_0() { return cListOfAlgorithmParametersKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//AlgorithmParameter+=algorithmParameter*
+		public Assignment getAlgorithmParameterAssignment_2() { return cAlgorithmParameterAssignment_2; }
+		
+		//algorithmParameter
+		public RuleCall getAlgorithmParameterAlgorithmParameterParserRuleCall_2_0() { return cAlgorithmParameterAlgorithmParameterParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class AlgorithmParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tr.edu.metu.ceng.megamodel.sedml.Sedml.algorithmParameter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAlgorithmParameterKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cKisaoIDKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cKisaoIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cKisaoIDSTRINGTerminalRuleCall_4_0 = (RuleCall)cKisaoIDAssignment_4.eContents().get(0);
+		private final Keyword cValueKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cValueAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cValueDOUBLEParserRuleCall_7_0 = (RuleCall)cValueAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		
+		//algorithmParameter:
+		//	'algorithmParameter' '{' 'kisaoID' ':' kisaoID=STRING 'value' ':' value=DOUBLE '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'algorithmParameter' '{' 'kisaoID' ':' kisaoID=STRING 'value' ':' value=DOUBLE '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'algorithmParameter'
+		public Keyword getAlgorithmParameterKeyword_0() { return cAlgorithmParameterKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//'kisaoID'
+		public Keyword getKisaoIDKeyword_2() { return cKisaoIDKeyword_2; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//kisaoID=STRING
+		public Assignment getKisaoIDAssignment_4() { return cKisaoIDAssignment_4; }
+		
+		//STRING
+		public RuleCall getKisaoIDSTRINGTerminalRuleCall_4_0() { return cKisaoIDSTRINGTerminalRuleCall_4_0; }
+		
+		//'value'
+		public Keyword getValueKeyword_5() { return cValueKeyword_5; }
+		
+		//':'
+		public Keyword getColonKeyword_6() { return cColonKeyword_6; }
+		
+		//value=DOUBLE
+		public Assignment getValueAssignment_7() { return cValueAssignment_7; }
+		
+		//DOUBLE
+		public RuleCall getValueDOUBLEParserRuleCall_7_0() { return cValueDOUBLEParserRuleCall_7_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	
 	public class FunctionElements extends AbstractEnumRuleElementFinder {
@@ -2411,7 +4307,23 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getCONTRADICTCONTRADICTKeyword_3_0() { return cCONTRADICTCONTRADICTKeyword_3_0; }
 	}
 	
+	private final SEDBaseElements pSEDBase;
+	private final ChangeElements pChange;
+	private final TargetElements pTarget;
+	private final RemoveXMLElements pRemoveXML;
+	private final ChangeAttributeElements pChangeAttribute;
+	private final ComputeChangeElements pComputeChange;
+	private final AddXMLElements pAddXML;
+	private final ChangeXMLElements pChangeXML;
+	private final NewXMLElements pNewXML;
 	private final SedMLElements pSedML;
+	private final ListOfDataDescriptionsElements pListOfDataDescriptions;
+	private final DataDescriptionElements pDataDescription;
+	private final DimensionDescriptionElements pDimensionDescription;
+	private final ListOfDataSourcesElements pListOfDataSources;
+	private final DataSourceElements pDataSource;
+	private final ListOfDataSlicesElements pListOfDataSlices;
+	private final SliceElements pSlice;
 	private final ListOfHypothesesElements pListOfHypotheses;
 	private final HypothesisElements pHypothesis;
 	private final RelationalQueryElements pRelationalQuery;
@@ -2438,20 +4350,44 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 	private final CoherenceElements eCoherence;
 	private final ListOfModelsElements pListOfModels;
 	private final ModelElements pModel;
+	private final ListOfChangesElements pListOfChanges;
 	private final DataGeneratorElements pDataGenerator;
+	private final ListOfParametersElements pListOfParameters;
+	private final ParameterElements pParameter;
 	private final ListOfVariablesElements pListOfVariables;
 	private final VariableElements pVariable;
 	private final ListOfTasksElements pListOfTasks;
+	private final RepeatedTaskElements pRepeatedTask;
+	private final ListOfRangesElements pListOfRanges;
+	private final RangeElements pRange;
+	private final UniformRangeElements pUniformRange;
+	private final VectorRangeElements pVectorRange;
+	private final ValueElements pValue;
+	private final FunctionalRangeElements pFunctionalRange;
+	private final AbstractTaskElements pAbstractTask;
+	private final SubTaskElements pSubTask;
 	private final TaskElements pTask;
 	private final ListOfDataGeneratorsElements pListOfDataGenerators;
 	private final MathElements pMath;
 	private final ListOfOutputsElements pListOfOutputs;
+	private final OutputElements pOutput;
 	private final Plot2DElements pPlot2D;
+	private final Plot3DElements pPlot3D;
+	private final ReportElements pReport;
+	private final ListOfDataSetsElements pListOfDataSets;
+	private final DataSetElements pDataSet;
+	private final ListOfSurfacesElements pListOfSurfaces;
 	private final ListOfCurvesElements pListOfCurves;
 	private final CurveElements pCurve;
 	private final ListOfSimulationsElements pListOfSimulations;
+	private final SimulationElements pSimulation;
 	private final UniformTimeCourseElements pUniformTimeCourse;
+	private final OneStepElements pOneStep;
+	private final SteadyStateElements pSteadyState;
+	private final DOUBLEElements pDOUBLE;
 	private final AlgorithmElements pAlgorithm;
+	private final ListOfAlgorithmParametersElements pListOfAlgorithmParameters;
+	private final AlgorithmParameterElements pAlgorithmParameter;
 	
 	private final Grammar grammar;
 	
@@ -2462,7 +4398,23 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
+		this.pSEDBase = new SEDBaseElements();
+		this.pChange = new ChangeElements();
+		this.pTarget = new TargetElements();
+		this.pRemoveXML = new RemoveXMLElements();
+		this.pChangeAttribute = new ChangeAttributeElements();
+		this.pComputeChange = new ComputeChangeElements();
+		this.pAddXML = new AddXMLElements();
+		this.pChangeXML = new ChangeXMLElements();
+		this.pNewXML = new NewXMLElements();
 		this.pSedML = new SedMLElements();
+		this.pListOfDataDescriptions = new ListOfDataDescriptionsElements();
+		this.pDataDescription = new DataDescriptionElements();
+		this.pDimensionDescription = new DimensionDescriptionElements();
+		this.pListOfDataSources = new ListOfDataSourcesElements();
+		this.pDataSource = new DataSourceElements();
+		this.pListOfDataSlices = new ListOfDataSlicesElements();
+		this.pSlice = new SliceElements();
 		this.pListOfHypotheses = new ListOfHypothesesElements();
 		this.pHypothesis = new HypothesisElements();
 		this.pRelationalQuery = new RelationalQueryElements();
@@ -2489,20 +4441,44 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		this.eCoherence = new CoherenceElements();
 		this.pListOfModels = new ListOfModelsElements();
 		this.pModel = new ModelElements();
+		this.pListOfChanges = new ListOfChangesElements();
 		this.pDataGenerator = new DataGeneratorElements();
+		this.pListOfParameters = new ListOfParametersElements();
+		this.pParameter = new ParameterElements();
 		this.pListOfVariables = new ListOfVariablesElements();
 		this.pVariable = new VariableElements();
 		this.pListOfTasks = new ListOfTasksElements();
+		this.pRepeatedTask = new RepeatedTaskElements();
+		this.pListOfRanges = new ListOfRangesElements();
+		this.pRange = new RangeElements();
+		this.pUniformRange = new UniformRangeElements();
+		this.pVectorRange = new VectorRangeElements();
+		this.pValue = new ValueElements();
+		this.pFunctionalRange = new FunctionalRangeElements();
+		this.pAbstractTask = new AbstractTaskElements();
+		this.pSubTask = new SubTaskElements();
 		this.pTask = new TaskElements();
 		this.pListOfDataGenerators = new ListOfDataGeneratorsElements();
 		this.pMath = new MathElements();
 		this.pListOfOutputs = new ListOfOutputsElements();
+		this.pOutput = new OutputElements();
 		this.pPlot2D = new Plot2DElements();
+		this.pPlot3D = new Plot3DElements();
+		this.pReport = new ReportElements();
+		this.pListOfDataSets = new ListOfDataSetsElements();
+		this.pDataSet = new DataSetElements();
+		this.pListOfSurfaces = new ListOfSurfacesElements();
 		this.pListOfCurves = new ListOfCurvesElements();
 		this.pCurve = new CurveElements();
 		this.pListOfSimulations = new ListOfSimulationsElements();
+		this.pSimulation = new SimulationElements();
 		this.pUniformTimeCourse = new UniformTimeCourseElements();
+		this.pOneStep = new OneStepElements();
+		this.pSteadyState = new SteadyStateElements();
+		this.pDOUBLE = new DOUBLEElements();
 		this.pAlgorithm = new AlgorithmElements();
+		this.pListOfAlgorithmParameters = new ListOfAlgorithmParametersElements();
+		this.pAlgorithmParameter = new AlgorithmParameterElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -2532,15 +4508,178 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
+	//SEDBase:
+	//	parameter | variable | sedML | model | dataDescription | abstractTask | dataGenerator | simulation | change;
+	public SEDBaseElements getSEDBaseAccess() {
+		return pSEDBase;
+	}
+	
+	public ParserRule getSEDBaseRule() {
+		return getSEDBaseAccess().getRule();
+	}
+	
+	//change:
+	//	'change' '{' target+=target* '}';
+	public ChangeElements getChangeAccess() {
+		return pChange;
+	}
+	
+	public ParserRule getChangeRule() {
+		return getChangeAccess().getRule();
+	}
+	
+	//target:
+	//	computeChange | changeAttribute | addXML | changeXML | removeXML;
+	public TargetElements getTargetAccess() {
+		return pTarget;
+	}
+	
+	public ParserRule getTargetRule() {
+		return getTargetAccess().getRule();
+	}
+	
+	//removeXML:
+	//	'removeXML';
+	public RemoveXMLElements getRemoveXMLAccess() {
+		return pRemoveXML;
+	}
+	
+	public ParserRule getRemoveXMLRule() {
+		return getRemoveXMLAccess().getRule();
+	}
+	
+	//changeAttribute:
+	//	'changeAttribute' '{' 'newValue' ':' newValue=STRING '}';
+	public ChangeAttributeElements getChangeAttributeAccess() {
+		return pChangeAttribute;
+	}
+	
+	public ParserRule getChangeAttributeRule() {
+		return getChangeAttributeAccess().getRule();
+	}
+	
+	//computeChange:
+	//	'computeChange' '{' 'math' ':' math=math listOfVariables=listOfVariables listOfParameters=listOfParameters '}';
+	public ComputeChangeElements getComputeChangeAccess() {
+		return pComputeChange;
+	}
+	
+	public ParserRule getComputeChangeRule() {
+		return getComputeChangeAccess().getRule();
+	}
+	
+	//addXML:
+	//	'addXML' '{' newXML+=newXML* '}';
+	public AddXMLElements getAddXMLAccess() {
+		return pAddXML;
+	}
+	
+	public ParserRule getAddXMLRule() {
+		return getAddXMLAccess().getRule();
+	}
+	
+	//changeXML:
+	//	'changeXML' '{' newXML+=newXML* '}';
+	public ChangeXMLElements getChangeXMLAccess() {
+		return pChangeXML;
+	}
+	
+	public ParserRule getChangeXMLRule() {
+		return getChangeXMLAccess().getRule();
+	}
+	
+	//newXML:
+	//	'newXML' '{' 'anyXML' ':' anyXML=STRING '}';
+	public NewXMLElements getNewXMLAccess() {
+		return pNewXML;
+	}
+	
+	public ParserRule getNewXMLRule() {
+		return getNewXMLAccess().getRule();
+	}
+	
 	//sedML:
-	//	version=INT level=INT listOfHypotheses=listOfHypotheses listOfSimulations=listOfSimulations listOfModels=listOfModels
-	//	listOfTasks=listOfTasks listOfDataGenerators=listOfDataGenerators listOfOutputs=listOfOutputs;
+	//	version=INT level=INT listOfHypotheses=listOfHypotheses listOfDataDescriptions=listOfDataDescriptions
+	//	listOfSimulations=listOfSimulations listOfModels=listOfModels listOfTasks=listOfTasks
+	//	listOfDataGenerators=listOfDataGenerators listOfOutputs=listOfOutputs;
 	public SedMLElements getSedMLAccess() {
 		return pSedML;
 	}
 	
 	public ParserRule getSedMLRule() {
 		return getSedMLAccess().getRule();
+	}
+	
+	//listOfDataDescriptions:
+	//	'listOfDataDescriptions' '{' dataDescription+=dataDescription* '}';
+	public ListOfDataDescriptionsElements getListOfDataDescriptionsAccess() {
+		return pListOfDataDescriptions;
+	}
+	
+	public ParserRule getListOfDataDescriptionsRule() {
+		return getListOfDataDescriptionsAccess().getRule();
+	}
+	
+	//dataDescription:
+	//	'dataDescription' '{' 'id' ':' id=ID 'name' ':' name=STRING 'format' ':' format=STRING 'source' ':' source=STRING
+	//	listOfDataSources=listOfDataSources dimensionDescription=dimensionDescription '}';
+	public DataDescriptionElements getDataDescriptionAccess() {
+		return pDataDescription;
+	}
+	
+	public ParserRule getDataDescriptionRule() {
+		return getDataDescriptionAccess().getRule();
+	}
+	
+	//dimensionDescription:
+	//	'dimensionDescription' '{' 'xmlns' ':' xmlns=STRING '}';
+	public DimensionDescriptionElements getDimensionDescriptionAccess() {
+		return pDimensionDescription;
+	}
+	
+	public ParserRule getDimensionDescriptionRule() {
+		return getDimensionDescriptionAccess().getRule();
+	}
+	
+	//listOfDataSources:
+	//	'listOfDataSources' '{' dataSource+=dataSource* '}';
+	public ListOfDataSourcesElements getListOfDataSourcesAccess() {
+		return pListOfDataSources;
+	}
+	
+	public ParserRule getListOfDataSourcesRule() {
+		return getListOfDataSourcesAccess().getRule();
+	}
+	
+	//dataSource:
+	//	'dataSource' '{' 'id' ':' id=ID 'name' ':' name=STRING 'indexSet' ':' indexSet=STRING listOfSlices=listOfDataSlices
+	//	'}';
+	public DataSourceElements getDataSourceAccess() {
+		return pDataSource;
+	}
+	
+	public ParserRule getDataSourceRule() {
+		return getDataSourceAccess().getRule();
+	}
+	
+	//listOfDataSlices:
+	//	'listOfDataSlices' '{' slice+=slice* '}';
+	public ListOfDataSlicesElements getListOfDataSlicesAccess() {
+		return pListOfDataSlices;
+	}
+	
+	public ParserRule getListOfDataSlicesRule() {
+		return getListOfDataSlicesAccess().getRule();
+	}
+	
+	//slice:
+	//	'slice' '{' 'reference' ':' referenceid=ID 'value' ':' value=STRING '}';
+	public SliceElements getSliceAccess() {
+		return pSlice;
+	}
+	
+	public ParserRule getSliceRule() {
+		return getSliceAccess().getRule();
 	}
 	
 	//listOfHypotheses:
@@ -2795,7 +4934,8 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//model:
-	//	'model' '{' 'id' ':' id=ID 'language' ':' language=STRING 'source' ':' source=STRING 'name' ':' name=STRING '}';
+	//	'model' '{' 'id' ':' id=ID 'language' ':' language=STRING 'source' ':' source=STRING 'name' ':' name=STRING
+	//	listOfChanges=listOfChanges? '}';
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -2804,14 +4944,45 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 	
+	//listOfChanges:
+	//	'listOfChanges' '{' change+=change* '}';
+	public ListOfChangesElements getListOfChangesAccess() {
+		return pListOfChanges;
+	}
+	
+	public ParserRule getListOfChangesRule() {
+		return getListOfChangesAccess().getRule();
+	}
+	
 	//dataGenerator:
-	//	'dataGenerator' '{' 'id' ':' id=ID 'name' ':' name=STRING listOfVariables=listOfVariables? math=math? '}';
+	//	'dataGenerator' '{' 'id' ':' id=ID 'name' ':' name=STRING listOfVariables=listOfVariables?
+	//	listOfParameters=listOfParameters? math=math? '}';
 	public DataGeneratorElements getDataGeneratorAccess() {
 		return pDataGenerator;
 	}
 	
 	public ParserRule getDataGeneratorRule() {
 		return getDataGeneratorAccess().getRule();
+	}
+	
+	//listOfParameters:
+	//	'listOfParameters' '{' parameter+=parameter* '}';
+	public ListOfParametersElements getListOfParametersAccess() {
+		return pListOfParameters;
+	}
+	
+	public ParserRule getListOfParametersRule() {
+		return getListOfParametersAccess().getRule();
+	}
+	
+	//parameter:
+	//	'parameter' '{' 'id' ':' id=ID 'name' ':' name=STRING 'value' ':' value=DOUBLE '}';
+	public ParameterElements getParameterAccess() {
+		return pParameter;
+	}
+	
+	public ParserRule getParameterRule() {
+		return getParameterAccess().getRule();
 	}
 	
 	//listOfVariables:
@@ -2825,8 +4996,8 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//variable:
-	//	'variable' '{' 'id' ':' id=ID 'target' ':' target=STRING 'taskReference' ':' taskReference=task 'symbol' ':'
-	//	symbol=STRING '}';
+	//	'variable' '{' 'id' ':' id=ID 'name' ':' name=STRING 'target' ':' target=STRING 'taskReference' ':'
+	//	taskReference=task 'modelReference' ':' modelReference=model 'symbol' ':' symbol=STRING '}';
 	public VariableElements getVariableAccess() {
 		return pVariable;
 	}
@@ -2836,13 +5007,106 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//listOfTasks:
-	//	'listOfTasks' '{' task+=task* '}';
+	//	'listOfTasks' '{' task+=task* RepeatedTask+=repeatedTask* '}';
 	public ListOfTasksElements getListOfTasksAccess() {
 		return pListOfTasks;
 	}
 	
 	public ParserRule getListOfTasksRule() {
 		return getListOfTasksAccess().getRule();
+	}
+	
+	//repeatedTask:
+	//	'listOfRepeatedTasks' '{' 'id' ':' id=ID 'name' ':' name=STRING subTask+=subTask* listOfRanges=listOfRanges
+	//	listOfChanges=listOfChanges? '}';
+	public RepeatedTaskElements getRepeatedTaskAccess() {
+		return pRepeatedTask;
+	}
+	
+	public ParserRule getRepeatedTaskRule() {
+		return getRepeatedTaskAccess().getRule();
+	}
+	
+	//listOfRanges:
+	//	'listOfRanges' '{' range+=range* '}';
+	public ListOfRangesElements getListOfRangesAccess() {
+		return pListOfRanges;
+	}
+	
+	public ParserRule getListOfRangesRule() {
+		return getListOfRangesAccess().getRule();
+	}
+	
+	//range:
+	//	uniformRange | vectorRange | functionalRange 'id' ':' id=ID;
+	public RangeElements getRangeAccess() {
+		return pRange;
+	}
+	
+	public ParserRule getRangeRule() {
+		return getRangeAccess().getRule();
+	}
+	
+	//uniformRange:
+	//	'uniformRange' '{' 'start' ':' start=DOUBLE 'end' ':' end=DOUBLE 'end' ':' numberOfPoints=INT 'type' ':' type=STRING
+	//	'}';
+	public UniformRangeElements getUniformRangeAccess() {
+		return pUniformRange;
+	}
+	
+	public ParserRule getUniformRangeRule() {
+		return getUniformRangeAccess().getRule();
+	}
+	
+	//vectorRange:
+	//	'vectorRange' '{' value+=value* '}';
+	public VectorRangeElements getVectorRangeAccess() {
+		return pVectorRange;
+	}
+	
+	public ParserRule getVectorRangeRule() {
+		return getVectorRangeAccess().getRule();
+	}
+	
+	//value:
+	//	'value' '{' 'content' ':' content=DOUBLE '}';
+	public ValueElements getValueAccess() {
+		return pValue;
+	}
+	
+	public ParserRule getValueRule() {
+		return getValueAccess().getRule();
+	}
+	
+	//functionalRange:
+	//	'functionalRange' '{' 'range' ':' range=ID listOfVariables=listOfVariables? listOfParameters=listOfParameters?
+	//	math=math? '}';
+	public FunctionalRangeElements getFunctionalRangeAccess() {
+		return pFunctionalRange;
+	}
+	
+	public ParserRule getFunctionalRangeRule() {
+		return getFunctionalRangeAccess().getRule();
+	}
+	
+	//abstractTask:
+	//	task | repeatedTask;
+	public AbstractTaskElements getAbstractTaskAccess() {
+		return pAbstractTask;
+	}
+	
+	public ParserRule getAbstractTaskRule() {
+		return getAbstractTaskAccess().getRule();
+	}
+	
+	//subTask:
+	//	'subTask' '{' 'task' ':' modelReference=model 'order' ':' order=INT '}';
+	public SubTaskElements getSubTaskAccess() {
+		return pSubTask;
+	}
+	
+	public ParserRule getSubTaskRule() {
+		return getSubTaskAccess().getRule();
 	}
 	
 	//task:
@@ -2877,13 +5141,23 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//listOfOutputs:
-	//	'listOfOutputs' '{' plot2D+=plot2D* '}';
+	//	'listOfOutputs' '{' output=output* '}';
 	public ListOfOutputsElements getListOfOutputsAccess() {
 		return pListOfOutputs;
 	}
 	
 	public ParserRule getListOfOutputsRule() {
 		return getListOfOutputsAccess().getRule();
+	}
+	
+	//output:
+	//	plot2D | plot3D | report;
+	public OutputElements getOutputAccess() {
+		return pOutput;
+	}
+	
+	public ParserRule getOutputRule() {
+		return getOutputAccess().getRule();
 	}
 	
 	//plot2D:
@@ -2894,6 +5168,57 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getPlot2DRule() {
 		return getPlot2DAccess().getRule();
+	}
+	
+	//plot3D:
+	//	'plot3D' '{' listOfSurfaces=listOfSurfaces '}';
+	public Plot3DElements getPlot3DAccess() {
+		return pPlot3D;
+	}
+	
+	public ParserRule getPlot3DRule() {
+		return getPlot3DAccess().getRule();
+	}
+	
+	//report:
+	//	'report' '{' 'id' ':' id=ID 'name' ':' name=STRING listOfDataSets=listOfDataSets '}';
+	public ReportElements getReportAccess() {
+		return pReport;
+	}
+	
+	public ParserRule getReportRule() {
+		return getReportAccess().getRule();
+	}
+	
+	//listOfDataSets:
+	//	'listOfCurves' '{' dataSet+=dataSet* '}';
+	public ListOfDataSetsElements getListOfDataSetsAccess() {
+		return pListOfDataSets;
+	}
+	
+	public ParserRule getListOfDataSetsRule() {
+		return getListOfDataSetsAccess().getRule();
+	}
+	
+	//dataSet:
+	//	'dataSet' '{' 'label' ':' label=STRING 'name' ':' name=STRING 'dataReference' ':' dataReference=STRING '}';
+	public DataSetElements getDataSetAccess() {
+		return pDataSet;
+	}
+	
+	public ParserRule getDataSetRule() {
+		return getDataSetAccess().getRule();
+	}
+	
+	//listOfSurfaces:
+	//	'surface' '{' 'id' ':' id=ID 'logX' ':' logX=STRING 'logY' ':' logY=STRING 'logZ' ':' logZ=STRING 'xDataReference'
+	//	':' xDataReference=STRING 'yDataReference' ':' yDataReference=STRING 'zDataReference' ':' zDataReference=STRING '}';
+	public ListOfSurfacesElements getListOfSurfacesAccess() {
+		return pListOfSurfaces;
+	}
+	
+	public ParserRule getListOfSurfacesRule() {
+		return getListOfSurfacesAccess().getRule();
 	}
 	
 	//listOfCurves:
@@ -2918,13 +5243,23 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//listOfSimulations:
-	//	'listOfSimulations' '{' uniformTimeCourse+=uniformTimeCourse* '}';
+	//	'listOfSimulations' '{' simulation+=simulation* '}';
 	public ListOfSimulationsElements getListOfSimulationsAccess() {
 		return pListOfSimulations;
 	}
 	
 	public ParserRule getListOfSimulationsRule() {
 		return getListOfSimulationsAccess().getRule();
+	}
+	
+	//simulation:
+	//	oneStep | SteadyState | uniformTimeCourse;
+	public SimulationElements getSimulationAccess() {
+		return pSimulation;
+	}
+	
+	public ParserRule getSimulationRule() {
+		return getSimulationAccess().getRule();
 	}
 	
 	//uniformTimeCourse:
@@ -2938,14 +5273,64 @@ public class SedmlGrammarAccess extends AbstractGrammarElementFinder {
 		return getUniformTimeCourseAccess().getRule();
 	}
 	
+	//oneStep:
+	//	'oneStep' '{' 'step' ':' step=DOUBLE '}';
+	public OneStepElements getOneStepAccess() {
+		return pOneStep;
+	}
+	
+	public ParserRule getOneStepRule() {
+		return getOneStepAccess().getRule();
+	}
+	
+	//SteadyState:
+	//	'steadyState' '{' '}';
+	public SteadyStateElements getSteadyStateAccess() {
+		return pSteadyState;
+	}
+	
+	public ParserRule getSteadyStateRule() {
+		return getSteadyStateAccess().getRule();
+	}
+	
+	//DOUBLE:
+	//	'.'? INT?;
+	public DOUBLEElements getDOUBLEAccess() {
+		return pDOUBLE;
+	}
+	
+	public ParserRule getDOUBLERule() {
+		return getDOUBLEAccess().getRule();
+	}
+	
 	//algorithm:
-	//	'algorithm' '{' 'kisaoID' ':' kisaoID=STRING '}';
+	//	'algorithm' '{' 'kisaoID' ':' kisaoID=STRING ListOfAlgorithmParameters=listOfAlgorithmParameters '}';
 	public AlgorithmElements getAlgorithmAccess() {
 		return pAlgorithm;
 	}
 	
 	public ParserRule getAlgorithmRule() {
 		return getAlgorithmAccess().getRule();
+	}
+	
+	//listOfAlgorithmParameters:
+	//	'listOfAlgorithmParameters' '{' AlgorithmParameter+=algorithmParameter* '}';
+	public ListOfAlgorithmParametersElements getListOfAlgorithmParametersAccess() {
+		return pListOfAlgorithmParameters;
+	}
+	
+	public ParserRule getListOfAlgorithmParametersRule() {
+		return getListOfAlgorithmParametersAccess().getRule();
+	}
+	
+	//algorithmParameter:
+	//	'algorithmParameter' '{' 'kisaoID' ':' kisaoID=STRING 'value' ':' value=DOUBLE '}';
+	public AlgorithmParameterElements getAlgorithmParameterAccess() {
+		return pAlgorithmParameter;
+	}
+	
+	public ParserRule getAlgorithmParameterRule() {
+		return getAlgorithmParameterAccess().getRule();
 	}
 	
 	//terminal ID:

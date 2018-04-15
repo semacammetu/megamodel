@@ -4,13 +4,15 @@
 package tr.edu.metu.ceng.megamodel.sedml.sedml.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfChanges;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.model;
 
 /**
@@ -25,11 +27,12 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.model;
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.modelImpl#getLanguage <em>Language</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.modelImpl#getSource <em>Source</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.modelImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.modelImpl#getListOfChanges <em>List Of Changes</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class modelImpl extends MinimalEObjectImpl.Container implements model
+public class modelImpl extends SEDBaseImpl implements model
 {
   /**
    * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -110,6 +113,16 @@ public class modelImpl extends MinimalEObjectImpl.Container implements model
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getListOfChanges() <em>List Of Changes</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getListOfChanges()
+   * @generated
+   * @ordered
+   */
+  protected listOfChanges listOfChanges;
 
   /**
    * <!-- begin-user-doc -->
@@ -229,6 +242,70 @@ public class modelImpl extends MinimalEObjectImpl.Container implements model
    * <!-- end-user-doc -->
    * @generated
    */
+  public listOfChanges getListOfChanges()
+  {
+    return listOfChanges;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetListOfChanges(listOfChanges newListOfChanges, NotificationChain msgs)
+  {
+    listOfChanges oldListOfChanges = listOfChanges;
+    listOfChanges = newListOfChanges;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SedmlPackage.MODEL__LIST_OF_CHANGES, oldListOfChanges, newListOfChanges);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setListOfChanges(listOfChanges newListOfChanges)
+  {
+    if (newListOfChanges != listOfChanges)
+    {
+      NotificationChain msgs = null;
+      if (listOfChanges != null)
+        msgs = ((InternalEObject)listOfChanges).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SedmlPackage.MODEL__LIST_OF_CHANGES, null, msgs);
+      if (newListOfChanges != null)
+        msgs = ((InternalEObject)newListOfChanges).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SedmlPackage.MODEL__LIST_OF_CHANGES, null, msgs);
+      msgs = basicSetListOfChanges(newListOfChanges, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SedmlPackage.MODEL__LIST_OF_CHANGES, newListOfChanges, newListOfChanges));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SedmlPackage.MODEL__LIST_OF_CHANGES:
+        return basicSetListOfChanges(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -242,6 +319,8 @@ public class modelImpl extends MinimalEObjectImpl.Container implements model
         return getSource();
       case SedmlPackage.MODEL__NAME:
         return getName();
+      case SedmlPackage.MODEL__LIST_OF_CHANGES:
+        return getListOfChanges();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -267,6 +346,9 @@ public class modelImpl extends MinimalEObjectImpl.Container implements model
         return;
       case SedmlPackage.MODEL__NAME:
         setName((String)newValue);
+        return;
+      case SedmlPackage.MODEL__LIST_OF_CHANGES:
+        setListOfChanges((listOfChanges)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -294,6 +376,9 @@ public class modelImpl extends MinimalEObjectImpl.Container implements model
       case SedmlPackage.MODEL__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case SedmlPackage.MODEL__LIST_OF_CHANGES:
+        setListOfChanges((listOfChanges)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -316,6 +401,8 @@ public class modelImpl extends MinimalEObjectImpl.Container implements model
         return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
       case SedmlPackage.MODEL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SedmlPackage.MODEL__LIST_OF_CHANGES:
+        return listOfChanges != null;
     }
     return super.eIsSet(featureID);
   }

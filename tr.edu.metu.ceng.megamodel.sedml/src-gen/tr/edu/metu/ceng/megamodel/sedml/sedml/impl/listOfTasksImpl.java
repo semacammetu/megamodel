@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfTasks;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.repeatedTask;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.task;
 
 /**
@@ -30,6 +31,7 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.task;
  * </p>
  * <ul>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfTasksImpl#getTask <em>Task</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfTasksImpl#getRepeatedTask <em>Repeated Task</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +47,16 @@ public class listOfTasksImpl extends MinimalEObjectImpl.Container implements lis
    * @ordered
    */
   protected EList<task> task;
+
+  /**
+   * The cached value of the '{@link #getRepeatedTask() <em>Repeated Task</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRepeatedTask()
+   * @generated
+   * @ordered
+   */
+  protected EList<repeatedTask> repeatedTask;
 
   /**
    * <!-- begin-user-doc -->
@@ -86,6 +98,20 @@ public class listOfTasksImpl extends MinimalEObjectImpl.Container implements lis
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<repeatedTask> getRepeatedTask()
+  {
+    if (repeatedTask == null)
+    {
+      repeatedTask = new EObjectContainmentEList<repeatedTask>(repeatedTask.class, this, SedmlPackage.LIST_OF_TASKS__REPEATED_TASK);
+    }
+    return repeatedTask;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -93,6 +119,8 @@ public class listOfTasksImpl extends MinimalEObjectImpl.Container implements lis
     {
       case SedmlPackage.LIST_OF_TASKS__TASK:
         return ((InternalEList<?>)getTask()).basicRemove(otherEnd, msgs);
+      case SedmlPackage.LIST_OF_TASKS__REPEATED_TASK:
+        return ((InternalEList<?>)getRepeatedTask()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -109,6 +137,8 @@ public class listOfTasksImpl extends MinimalEObjectImpl.Container implements lis
     {
       case SedmlPackage.LIST_OF_TASKS__TASK:
         return getTask();
+      case SedmlPackage.LIST_OF_TASKS__REPEATED_TASK:
+        return getRepeatedTask();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -128,6 +158,10 @@ public class listOfTasksImpl extends MinimalEObjectImpl.Container implements lis
         getTask().clear();
         getTask().addAll((Collection<? extends task>)newValue);
         return;
+      case SedmlPackage.LIST_OF_TASKS__REPEATED_TASK:
+        getRepeatedTask().clear();
+        getRepeatedTask().addAll((Collection<? extends repeatedTask>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -145,6 +179,9 @@ public class listOfTasksImpl extends MinimalEObjectImpl.Container implements lis
       case SedmlPackage.LIST_OF_TASKS__TASK:
         getTask().clear();
         return;
+      case SedmlPackage.LIST_OF_TASKS__REPEATED_TASK:
+        getRepeatedTask().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -161,6 +198,8 @@ public class listOfTasksImpl extends MinimalEObjectImpl.Container implements lis
     {
       case SedmlPackage.LIST_OF_TASKS__TASK:
         return task != null && !task.isEmpty();
+      case SedmlPackage.LIST_OF_TASKS__REPEATED_TASK:
+        return repeatedTask != null && !repeatedTask.isEmpty();
     }
     return super.eIsSet(featureID);
   }

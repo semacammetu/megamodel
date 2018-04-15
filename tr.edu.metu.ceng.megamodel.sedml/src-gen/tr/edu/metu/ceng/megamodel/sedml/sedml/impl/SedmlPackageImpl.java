@@ -27,30 +27,67 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.Query1;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.Query2;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.Query3;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.RelationalQuery;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.SEDBase;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlFactory;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.Simultaneous;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.Temporal;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.TemporalPattern;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.abstractTask;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.addXML;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.algorithm;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.algorithmParameter;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.change;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.changeAttribute;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.changeXML;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.computeChange;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.curve;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.dataSet;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.dataSource;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.dimensionDescription;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.functionalRange;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.hypothesis;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfAlgorithmParameters;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfChanges;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfCurves;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataDescriptions;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataGenerators;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSets;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSlices;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSources;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfHypotheses;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfModels;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfOutputs;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfParameters;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfRanges;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSimulations;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfTasks;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfVariables;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.math;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.model;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.newXML;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.oneStep;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.output;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.parameter;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.plot2D;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.plot3D;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.range;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.repeatedTask;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.report;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.sedML;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.simulation;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.slice;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.subTask;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.target;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.task;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.uniformRange;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.uniformTimeCourse;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.value;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.variable;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.vectorRange;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,7 +102,112 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass sedBaseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass changeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass targetEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass changeAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass computeChangeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass addXMLEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass changeXMLEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass newXMLEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass sedMLEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listOfDataDescriptionsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataDescriptionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dimensionDescriptionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listOfDataSourcesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataSourceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listOfDataSlicesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sliceEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -184,7 +326,28 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass listOfChangesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass dataGeneratorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listOfParametersEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass parameterEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -206,6 +369,69 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * @generated
    */
   private EClass listOfTasksEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass repeatedTaskEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listOfRangesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rangeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass uniformRangeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass vectorRangeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass valueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass functionalRangeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass abstractTaskEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass subTaskEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -240,7 +466,49 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass outputEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass plot2DEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass plot3DEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass reportEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listOfDataSetsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataSetEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listOfSurfacesEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -268,6 +536,13 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass simulationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass uniformTimeCourseEClass = null;
 
   /**
@@ -275,7 +550,28 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass oneStepEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass algorithmEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listOfAlgorithmParametersEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass algorithmParameterEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -394,6 +690,166 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getSEDBase()
+  {
+    return sedBaseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getchange()
+  {
+    return changeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getchange_Target()
+  {
+    return (EReference)changeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass gettarget()
+  {
+    return targetEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getchangeAttribute()
+  {
+    return changeAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getchangeAttribute_NewValue()
+  {
+    return (EAttribute)changeAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getcomputeChange()
+  {
+    return computeChangeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getcomputeChange_Math()
+  {
+    return (EReference)computeChangeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getcomputeChange_ListOfVariables()
+  {
+    return (EReference)computeChangeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getcomputeChange_ListOfParameters()
+  {
+    return (EReference)computeChangeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getaddXML()
+  {
+    return addXMLEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getaddXML_NewXML()
+  {
+    return (EReference)addXMLEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getchangeXML()
+  {
+    return changeXMLEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getchangeXML_NewXML()
+  {
+    return (EReference)changeXMLEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getnewXML()
+  {
+    return newXMLEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getnewXML_AnyXML()
+  {
+    return (EAttribute)newXMLEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getsedML()
   {
     return sedMLEClass;
@@ -434,7 +890,7 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsedML_ListOfSimulations()
+  public EReference getsedML_ListOfDataDescriptions()
   {
     return (EReference)sedMLEClass.getEStructuralFeatures().get(3);
   }
@@ -444,7 +900,7 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsedML_ListOfModels()
+  public EReference getsedML_ListOfSimulations()
   {
     return (EReference)sedMLEClass.getEStructuralFeatures().get(4);
   }
@@ -454,7 +910,7 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsedML_ListOfTasks()
+  public EReference getsedML_ListOfModels()
   {
     return (EReference)sedMLEClass.getEStructuralFeatures().get(5);
   }
@@ -464,7 +920,7 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsedML_ListOfDataGenerators()
+  public EReference getsedML_ListOfTasks()
   {
     return (EReference)sedMLEClass.getEStructuralFeatures().get(6);
   }
@@ -474,9 +930,249 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsedML_ListOfOutputs()
+  public EReference getsedML_ListOfDataGenerators()
   {
     return (EReference)sedMLEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getsedML_ListOfOutputs()
+  {
+    return (EReference)sedMLEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getlistOfDataDescriptions()
+  {
+    return listOfDataDescriptionsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getlistOfDataDescriptions_DataDescription()
+  {
+    return (EReference)listOfDataDescriptionsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getdataDescription()
+  {
+    return dataDescriptionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getdataDescription_Id()
+  {
+    return (EAttribute)dataDescriptionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getdataDescription_Name()
+  {
+    return (EAttribute)dataDescriptionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getdataDescription_Format()
+  {
+    return (EAttribute)dataDescriptionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getdataDescription_Source()
+  {
+    return (EAttribute)dataDescriptionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getdataDescription_ListOfDataSources()
+  {
+    return (EReference)dataDescriptionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getdataDescription_DimensionDescription()
+  {
+    return (EReference)dataDescriptionEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getdimensionDescription()
+  {
+    return dimensionDescriptionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getdimensionDescription_Xmlns()
+  {
+    return (EAttribute)dimensionDescriptionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getlistOfDataSources()
+  {
+    return listOfDataSourcesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getlistOfDataSources_DataSource()
+  {
+    return (EReference)listOfDataSourcesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getdataSource()
+  {
+    return dataSourceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getdataSource_Id()
+  {
+    return (EAttribute)dataSourceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getdataSource_Name()
+  {
+    return (EAttribute)dataSourceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getdataSource_IndexSet()
+  {
+    return (EAttribute)dataSourceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getdataSource_ListOfSlices()
+  {
+    return (EReference)dataSourceEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getlistOfDataSlices()
+  {
+    return listOfDataSlicesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getlistOfDataSlices_Slice()
+  {
+    return (EReference)listOfDataSlicesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getslice()
+  {
+    return sliceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getslice_Referenceid()
+  {
+    return (EAttribute)sliceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getslice_Value()
+  {
+    return (EAttribute)sliceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1254,6 +1950,36 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getmodel_ListOfChanges()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getlistOfChanges()
+  {
+    return listOfChangesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getlistOfChanges_Change()
+  {
+    return (EReference)listOfChangesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getdataGenerator()
   {
     return dataGeneratorEClass;
@@ -1294,9 +2020,79 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getdataGenerator_Math()
+  public EReference getdataGenerator_ListOfParameters()
   {
     return (EReference)dataGeneratorEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getdataGenerator_Math()
+  {
+    return (EReference)dataGeneratorEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getlistOfParameters()
+  {
+    return listOfParametersEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getlistOfParameters_Parameter()
+  {
+    return (EReference)listOfParametersEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getparameter()
+  {
+    return parameterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getparameter_Id()
+  {
+    return (EAttribute)parameterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getparameter_Name()
+  {
+    return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getparameter_Value()
+  {
+    return (EAttribute)parameterEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1344,7 +2140,7 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getvariable_Target()
+  public EAttribute getvariable_Name()
   {
     return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
   }
@@ -1354,9 +2150,29 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getvariable_Target()
+  {
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getvariable_TaskReference()
   {
-    return (EReference)variableEClass.getEStructuralFeatures().get(2);
+    return (EReference)variableEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getvariable_ModelReference()
+  {
+    return (EReference)variableEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1366,7 +2182,7 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    */
   public EAttribute getvariable_Symbol()
   {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1394,6 +2210,296 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getlistOfTasks_RepeatedTask()
+  {
+    return (EReference)listOfTasksEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getrepeatedTask()
+  {
+    return repeatedTaskEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getrepeatedTask_SubTask()
+  {
+    return (EReference)repeatedTaskEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getrepeatedTask_ListOfRanges()
+  {
+    return (EReference)repeatedTaskEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getrepeatedTask_ListOfChanges()
+  {
+    return (EReference)repeatedTaskEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getlistOfRanges()
+  {
+    return listOfRangesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getlistOfRanges_Range()
+  {
+    return (EReference)listOfRangesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getrange()
+  {
+    return rangeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getuniformRange()
+  {
+    return uniformRangeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getuniformRange_Start()
+  {
+    return (EAttribute)uniformRangeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getuniformRange_End()
+  {
+    return (EAttribute)uniformRangeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getuniformRange_NumberOfPoints()
+  {
+    return (EAttribute)uniformRangeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getuniformRange_Type()
+  {
+    return (EAttribute)uniformRangeEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getvectorRange()
+  {
+    return vectorRangeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getvectorRange_Value()
+  {
+    return (EReference)vectorRangeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getvalue()
+  {
+    return valueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getvalue_Content()
+  {
+    return (EAttribute)valueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getfunctionalRange()
+  {
+    return functionalRangeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getfunctionalRange_Id()
+  {
+    return (EAttribute)functionalRangeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getfunctionalRange_Range()
+  {
+    return (EAttribute)functionalRangeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getfunctionalRange_ListOfVariables()
+  {
+    return (EReference)functionalRangeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getfunctionalRange_ListOfParameters()
+  {
+    return (EReference)functionalRangeEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getfunctionalRange_Math()
+  {
+    return (EReference)functionalRangeEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getabstractTask()
+  {
+    return abstractTaskEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getabstractTask_Id()
+  {
+    return (EAttribute)abstractTaskEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getabstractTask_Name()
+  {
+    return (EAttribute)abstractTaskEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getsubTask()
+  {
+    return subTaskEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getsubTask_ModelReference()
+  {
+    return (EReference)subTaskEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getsubTask_Order()
+  {
+    return (EAttribute)subTaskEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass gettask()
   {
     return taskEClass;
@@ -1404,19 +2510,9 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute gettask_Id()
-  {
-    return (EAttribute)taskEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference gettask_ModelReference()
   {
-    return (EReference)taskEClass.getEStructuralFeatures().get(1);
+    return (EReference)taskEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1426,17 +2522,7 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    */
   public EReference gettask_SimulationReference()
   {
-    return (EReference)taskEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute gettask_Name()
-  {
-    return (EAttribute)taskEClass.getEStructuralFeatures().get(3);
+    return (EReference)taskEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1494,9 +2580,19 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getlistOfOutputs_Plot2D()
+  public EReference getlistOfOutputs_Output()
   {
     return (EReference)listOfOutputsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getoutput()
+  {
+    return outputEClass;
   }
 
   /**
@@ -1537,6 +2633,206 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
   public EReference getplot2D_ListOfCurves()
   {
     return (EReference)plot2DEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getplot3D()
+  {
+    return plot3DEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getplot3D_ListOfSurfaces()
+  {
+    return (EReference)plot3DEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getreport()
+  {
+    return reportEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getreport_Id()
+  {
+    return (EAttribute)reportEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getreport_Name()
+  {
+    return (EAttribute)reportEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getreport_ListOfDataSets()
+  {
+    return (EReference)reportEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getlistOfDataSets()
+  {
+    return listOfDataSetsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getlistOfDataSets_DataSet()
+  {
+    return (EReference)listOfDataSetsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getdataSet()
+  {
+    return dataSetEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getdataSet_Label()
+  {
+    return (EAttribute)dataSetEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getdataSet_Name()
+  {
+    return (EAttribute)dataSetEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getdataSet_DataReference()
+  {
+    return (EAttribute)dataSetEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getlistOfSurfaces()
+  {
+    return listOfSurfacesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getlistOfSurfaces_Id()
+  {
+    return (EAttribute)listOfSurfacesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getlistOfSurfaces_LogX()
+  {
+    return (EAttribute)listOfSurfacesEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getlistOfSurfaces_LogY()
+  {
+    return (EAttribute)listOfSurfacesEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getlistOfSurfaces_LogZ()
+  {
+    return (EAttribute)listOfSurfacesEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getlistOfSurfaces_XDataReference()
+  {
+    return (EAttribute)listOfSurfacesEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getlistOfSurfaces_YDataReference()
+  {
+    return (EAttribute)listOfSurfacesEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getlistOfSurfaces_ZDataReference()
+  {
+    return (EAttribute)listOfSurfacesEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1634,9 +2930,19 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getlistOfSimulations_UniformTimeCourse()
+  public EReference getlistOfSimulations_Simulation()
   {
     return (EReference)listOfSimulationsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getsimulation()
+  {
+    return simulationEClass;
   }
 
   /**
@@ -1714,6 +3020,26 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getoneStep()
+  {
+    return oneStepEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getoneStep_Step()
+  {
+    return (EAttribute)oneStepEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getalgorithm()
   {
     return algorithmEClass;
@@ -1727,6 +3053,66 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
   public EAttribute getalgorithm_KisaoID()
   {
     return (EAttribute)algorithmEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getalgorithm_ListOfAlgorithmParameters()
+  {
+    return (EReference)algorithmEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getlistOfAlgorithmParameters()
+  {
+    return listOfAlgorithmParametersEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getlistOfAlgorithmParameters_AlgorithmParameter()
+  {
+    return (EReference)listOfAlgorithmParametersEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getalgorithmParameter()
+  {
+    return algorithmParameterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getalgorithmParameter_KisaoID()
+  {
+    return (EAttribute)algorithmParameterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getalgorithmParameter_Value()
+  {
+    return (EAttribute)algorithmParameterEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1829,15 +3215,70 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
     isCreated = true;
 
     // Create classes and their features
+    sedBaseEClass = createEClass(SED_BASE);
+
+    changeEClass = createEClass(CHANGE);
+    createEReference(changeEClass, CHANGE__TARGET);
+
+    targetEClass = createEClass(TARGET);
+
+    changeAttributeEClass = createEClass(CHANGE_ATTRIBUTE);
+    createEAttribute(changeAttributeEClass, CHANGE_ATTRIBUTE__NEW_VALUE);
+
+    computeChangeEClass = createEClass(COMPUTE_CHANGE);
+    createEReference(computeChangeEClass, COMPUTE_CHANGE__MATH);
+    createEReference(computeChangeEClass, COMPUTE_CHANGE__LIST_OF_VARIABLES);
+    createEReference(computeChangeEClass, COMPUTE_CHANGE__LIST_OF_PARAMETERS);
+
+    addXMLEClass = createEClass(ADD_XML);
+    createEReference(addXMLEClass, ADD_XML__NEW_XML);
+
+    changeXMLEClass = createEClass(CHANGE_XML);
+    createEReference(changeXMLEClass, CHANGE_XML__NEW_XML);
+
+    newXMLEClass = createEClass(NEW_XML);
+    createEAttribute(newXMLEClass, NEW_XML__ANY_XML);
+
     sedMLEClass = createEClass(SED_ML);
     createEAttribute(sedMLEClass, SED_ML__VERSION);
     createEAttribute(sedMLEClass, SED_ML__LEVEL);
     createEReference(sedMLEClass, SED_ML__LIST_OF_HYPOTHESES);
+    createEReference(sedMLEClass, SED_ML__LIST_OF_DATA_DESCRIPTIONS);
     createEReference(sedMLEClass, SED_ML__LIST_OF_SIMULATIONS);
     createEReference(sedMLEClass, SED_ML__LIST_OF_MODELS);
     createEReference(sedMLEClass, SED_ML__LIST_OF_TASKS);
     createEReference(sedMLEClass, SED_ML__LIST_OF_DATA_GENERATORS);
     createEReference(sedMLEClass, SED_ML__LIST_OF_OUTPUTS);
+
+    listOfDataDescriptionsEClass = createEClass(LIST_OF_DATA_DESCRIPTIONS);
+    createEReference(listOfDataDescriptionsEClass, LIST_OF_DATA_DESCRIPTIONS__DATA_DESCRIPTION);
+
+    dataDescriptionEClass = createEClass(DATA_DESCRIPTION);
+    createEAttribute(dataDescriptionEClass, DATA_DESCRIPTION__ID);
+    createEAttribute(dataDescriptionEClass, DATA_DESCRIPTION__NAME);
+    createEAttribute(dataDescriptionEClass, DATA_DESCRIPTION__FORMAT);
+    createEAttribute(dataDescriptionEClass, DATA_DESCRIPTION__SOURCE);
+    createEReference(dataDescriptionEClass, DATA_DESCRIPTION__LIST_OF_DATA_SOURCES);
+    createEReference(dataDescriptionEClass, DATA_DESCRIPTION__DIMENSION_DESCRIPTION);
+
+    dimensionDescriptionEClass = createEClass(DIMENSION_DESCRIPTION);
+    createEAttribute(dimensionDescriptionEClass, DIMENSION_DESCRIPTION__XMLNS);
+
+    listOfDataSourcesEClass = createEClass(LIST_OF_DATA_SOURCES);
+    createEReference(listOfDataSourcesEClass, LIST_OF_DATA_SOURCES__DATA_SOURCE);
+
+    dataSourceEClass = createEClass(DATA_SOURCE);
+    createEAttribute(dataSourceEClass, DATA_SOURCE__ID);
+    createEAttribute(dataSourceEClass, DATA_SOURCE__NAME);
+    createEAttribute(dataSourceEClass, DATA_SOURCE__INDEX_SET);
+    createEReference(dataSourceEClass, DATA_SOURCE__LIST_OF_SLICES);
+
+    listOfDataSlicesEClass = createEClass(LIST_OF_DATA_SLICES);
+    createEReference(listOfDataSlicesEClass, LIST_OF_DATA_SLICES__SLICE);
+
+    sliceEClass = createEClass(SLICE);
+    createEAttribute(sliceEClass, SLICE__REFERENCEID);
+    createEAttribute(sliceEClass, SLICE__VALUE);
 
     listOfHypothesesEClass = createEClass(LIST_OF_HYPOTHESES);
     createEReference(listOfHypothesesEClass, LIST_OF_HYPOTHESES__HYPOTHESIS);
@@ -1931,30 +3372,81 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
     createEAttribute(modelEClass, MODEL__LANGUAGE);
     createEAttribute(modelEClass, MODEL__SOURCE);
     createEAttribute(modelEClass, MODEL__NAME);
+    createEReference(modelEClass, MODEL__LIST_OF_CHANGES);
+
+    listOfChangesEClass = createEClass(LIST_OF_CHANGES);
+    createEReference(listOfChangesEClass, LIST_OF_CHANGES__CHANGE);
 
     dataGeneratorEClass = createEClass(DATA_GENERATOR);
     createEAttribute(dataGeneratorEClass, DATA_GENERATOR__ID);
     createEAttribute(dataGeneratorEClass, DATA_GENERATOR__NAME);
     createEReference(dataGeneratorEClass, DATA_GENERATOR__LIST_OF_VARIABLES);
+    createEReference(dataGeneratorEClass, DATA_GENERATOR__LIST_OF_PARAMETERS);
     createEReference(dataGeneratorEClass, DATA_GENERATOR__MATH);
+
+    listOfParametersEClass = createEClass(LIST_OF_PARAMETERS);
+    createEReference(listOfParametersEClass, LIST_OF_PARAMETERS__PARAMETER);
+
+    parameterEClass = createEClass(PARAMETER);
+    createEAttribute(parameterEClass, PARAMETER__ID);
+    createEAttribute(parameterEClass, PARAMETER__NAME);
+    createEAttribute(parameterEClass, PARAMETER__VALUE);
 
     listOfVariablesEClass = createEClass(LIST_OF_VARIABLES);
     createEReference(listOfVariablesEClass, LIST_OF_VARIABLES__VARIABLE);
 
     variableEClass = createEClass(VARIABLE);
     createEAttribute(variableEClass, VARIABLE__ID);
+    createEAttribute(variableEClass, VARIABLE__NAME);
     createEAttribute(variableEClass, VARIABLE__TARGET);
     createEReference(variableEClass, VARIABLE__TASK_REFERENCE);
+    createEReference(variableEClass, VARIABLE__MODEL_REFERENCE);
     createEAttribute(variableEClass, VARIABLE__SYMBOL);
 
     listOfTasksEClass = createEClass(LIST_OF_TASKS);
     createEReference(listOfTasksEClass, LIST_OF_TASKS__TASK);
+    createEReference(listOfTasksEClass, LIST_OF_TASKS__REPEATED_TASK);
+
+    repeatedTaskEClass = createEClass(REPEATED_TASK);
+    createEReference(repeatedTaskEClass, REPEATED_TASK__SUB_TASK);
+    createEReference(repeatedTaskEClass, REPEATED_TASK__LIST_OF_RANGES);
+    createEReference(repeatedTaskEClass, REPEATED_TASK__LIST_OF_CHANGES);
+
+    listOfRangesEClass = createEClass(LIST_OF_RANGES);
+    createEReference(listOfRangesEClass, LIST_OF_RANGES__RANGE);
+
+    rangeEClass = createEClass(RANGE);
+
+    uniformRangeEClass = createEClass(UNIFORM_RANGE);
+    createEAttribute(uniformRangeEClass, UNIFORM_RANGE__START);
+    createEAttribute(uniformRangeEClass, UNIFORM_RANGE__END);
+    createEAttribute(uniformRangeEClass, UNIFORM_RANGE__NUMBER_OF_POINTS);
+    createEAttribute(uniformRangeEClass, UNIFORM_RANGE__TYPE);
+
+    vectorRangeEClass = createEClass(VECTOR_RANGE);
+    createEReference(vectorRangeEClass, VECTOR_RANGE__VALUE);
+
+    valueEClass = createEClass(VALUE);
+    createEAttribute(valueEClass, VALUE__CONTENT);
+
+    functionalRangeEClass = createEClass(FUNCTIONAL_RANGE);
+    createEAttribute(functionalRangeEClass, FUNCTIONAL_RANGE__ID);
+    createEAttribute(functionalRangeEClass, FUNCTIONAL_RANGE__RANGE);
+    createEReference(functionalRangeEClass, FUNCTIONAL_RANGE__LIST_OF_VARIABLES);
+    createEReference(functionalRangeEClass, FUNCTIONAL_RANGE__LIST_OF_PARAMETERS);
+    createEReference(functionalRangeEClass, FUNCTIONAL_RANGE__MATH);
+
+    abstractTaskEClass = createEClass(ABSTRACT_TASK);
+    createEAttribute(abstractTaskEClass, ABSTRACT_TASK__ID);
+    createEAttribute(abstractTaskEClass, ABSTRACT_TASK__NAME);
+
+    subTaskEClass = createEClass(SUB_TASK);
+    createEReference(subTaskEClass, SUB_TASK__MODEL_REFERENCE);
+    createEAttribute(subTaskEClass, SUB_TASK__ORDER);
 
     taskEClass = createEClass(TASK);
-    createEAttribute(taskEClass, TASK__ID);
     createEReference(taskEClass, TASK__MODEL_REFERENCE);
     createEReference(taskEClass, TASK__SIMULATION_REFERENCE);
-    createEAttribute(taskEClass, TASK__NAME);
 
     listOfDataGeneratorsEClass = createEClass(LIST_OF_DATA_GENERATORS);
     createEReference(listOfDataGeneratorsEClass, LIST_OF_DATA_GENERATORS__DATAGENERATOR);
@@ -1963,12 +3455,39 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
     createEAttribute(mathEClass, MATH__XLMS);
 
     listOfOutputsEClass = createEClass(LIST_OF_OUTPUTS);
-    createEReference(listOfOutputsEClass, LIST_OF_OUTPUTS__PLOT2_D);
+    createEReference(listOfOutputsEClass, LIST_OF_OUTPUTS__OUTPUT);
+
+    outputEClass = createEClass(OUTPUT);
 
     plot2DEClass = createEClass(PLOT2_D);
     createEAttribute(plot2DEClass, PLOT2_D__ID);
     createEAttribute(plot2DEClass, PLOT2_D__NAME);
     createEReference(plot2DEClass, PLOT2_D__LIST_OF_CURVES);
+
+    plot3DEClass = createEClass(PLOT3_D);
+    createEReference(plot3DEClass, PLOT3_D__LIST_OF_SURFACES);
+
+    reportEClass = createEClass(REPORT);
+    createEAttribute(reportEClass, REPORT__ID);
+    createEAttribute(reportEClass, REPORT__NAME);
+    createEReference(reportEClass, REPORT__LIST_OF_DATA_SETS);
+
+    listOfDataSetsEClass = createEClass(LIST_OF_DATA_SETS);
+    createEReference(listOfDataSetsEClass, LIST_OF_DATA_SETS__DATA_SET);
+
+    dataSetEClass = createEClass(DATA_SET);
+    createEAttribute(dataSetEClass, DATA_SET__LABEL);
+    createEAttribute(dataSetEClass, DATA_SET__NAME);
+    createEAttribute(dataSetEClass, DATA_SET__DATA_REFERENCE);
+
+    listOfSurfacesEClass = createEClass(LIST_OF_SURFACES);
+    createEAttribute(listOfSurfacesEClass, LIST_OF_SURFACES__ID);
+    createEAttribute(listOfSurfacesEClass, LIST_OF_SURFACES__LOG_X);
+    createEAttribute(listOfSurfacesEClass, LIST_OF_SURFACES__LOG_Y);
+    createEAttribute(listOfSurfacesEClass, LIST_OF_SURFACES__LOG_Z);
+    createEAttribute(listOfSurfacesEClass, LIST_OF_SURFACES__XDATA_REFERENCE);
+    createEAttribute(listOfSurfacesEClass, LIST_OF_SURFACES__YDATA_REFERENCE);
+    createEAttribute(listOfSurfacesEClass, LIST_OF_SURFACES__ZDATA_REFERENCE);
 
     listOfCurvesEClass = createEClass(LIST_OF_CURVES);
     createEReference(listOfCurvesEClass, LIST_OF_CURVES__CURVE);
@@ -1981,7 +3500,9 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
     createEAttribute(curveEClass, CURVE__YDATA_REFERENCE);
 
     listOfSimulationsEClass = createEClass(LIST_OF_SIMULATIONS);
-    createEReference(listOfSimulationsEClass, LIST_OF_SIMULATIONS__UNIFORM_TIME_COURSE);
+    createEReference(listOfSimulationsEClass, LIST_OF_SIMULATIONS__SIMULATION);
+
+    simulationEClass = createEClass(SIMULATION);
 
     uniformTimeCourseEClass = createEClass(UNIFORM_TIME_COURSE);
     createEAttribute(uniformTimeCourseEClass, UNIFORM_TIME_COURSE__ID);
@@ -1991,8 +3512,19 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
     createEAttribute(uniformTimeCourseEClass, UNIFORM_TIME_COURSE__NUMBER_OF_POINTS);
     createEReference(uniformTimeCourseEClass, UNIFORM_TIME_COURSE__ALGORITHM);
 
+    oneStepEClass = createEClass(ONE_STEP);
+    createEAttribute(oneStepEClass, ONE_STEP__STEP);
+
     algorithmEClass = createEClass(ALGORITHM);
     createEAttribute(algorithmEClass, ALGORITHM__KISAO_ID);
+    createEReference(algorithmEClass, ALGORITHM__LIST_OF_ALGORITHM_PARAMETERS);
+
+    listOfAlgorithmParametersEClass = createEClass(LIST_OF_ALGORITHM_PARAMETERS);
+    createEReference(listOfAlgorithmParametersEClass, LIST_OF_ALGORITHM_PARAMETERS__ALGORITHM_PARAMETER);
+
+    algorithmParameterEClass = createEClass(ALGORITHM_PARAMETER);
+    createEAttribute(algorithmParameterEClass, ALGORITHM_PARAMETER__KISAO_ID);
+    createEAttribute(algorithmParameterEClass, ALGORITHM_PARAMETER__VALUE);
 
     // Create enums
     functionEEnum = createEEnum(FUNCTION);
@@ -2033,23 +3565,101 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    changeEClass.getESuperTypes().add(this.getSEDBase());
+    changeAttributeEClass.getESuperTypes().add(this.gettarget());
+    computeChangeEClass.getESuperTypes().add(this.gettarget());
+    addXMLEClass.getESuperTypes().add(this.gettarget());
+    changeXMLEClass.getESuperTypes().add(this.gettarget());
+    sedMLEClass.getESuperTypes().add(this.getSEDBase());
+    dataDescriptionEClass.getESuperTypes().add(this.getSEDBase());
     query1EClass.getESuperTypes().add(this.getRelationalQuery());
     query2EClass.getESuperTypes().add(this.getRelationalQuery());
     query3EClass.getESuperTypes().add(this.getRelationalQuery());
     conditionEClass.getESuperTypes().add(this.getTemporalPattern());
     simultaneousEClass.getESuperTypes().add(this.getEvent());
     dispersedEClass.getESuperTypes().add(this.getEvent());
+    modelEClass.getESuperTypes().add(this.getSEDBase());
+    dataGeneratorEClass.getESuperTypes().add(this.getSEDBase());
+    parameterEClass.getESuperTypes().add(this.getSEDBase());
+    variableEClass.getESuperTypes().add(this.getSEDBase());
+    repeatedTaskEClass.getESuperTypes().add(this.getabstractTask());
+    uniformRangeEClass.getESuperTypes().add(this.getrange());
+    vectorRangeEClass.getESuperTypes().add(this.getrange());
+    functionalRangeEClass.getESuperTypes().add(this.getrange());
+    abstractTaskEClass.getESuperTypes().add(this.getSEDBase());
+    taskEClass.getESuperTypes().add(this.getabstractTask());
+    plot2DEClass.getESuperTypes().add(this.getoutput());
+    plot3DEClass.getESuperTypes().add(this.getoutput());
+    reportEClass.getESuperTypes().add(this.getoutput());
+    simulationEClass.getESuperTypes().add(this.getSEDBase());
+    uniformTimeCourseEClass.getESuperTypes().add(this.getsimulation());
+    oneStepEClass.getESuperTypes().add(this.getsimulation());
 
     // Initialize classes and features; add operations and parameters
+    initEClass(sedBaseEClass, SEDBase.class, "SEDBase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(changeEClass, change.class, "change", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getchange_Target(), this.gettarget(), null, "target", null, 0, -1, change.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(targetEClass, target.class, "target", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(changeAttributeEClass, changeAttribute.class, "changeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getchangeAttribute_NewValue(), ecorePackage.getEString(), "newValue", null, 0, 1, changeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(computeChangeEClass, computeChange.class, "computeChange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getcomputeChange_Math(), this.getmath(), null, "math", null, 0, 1, computeChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getcomputeChange_ListOfVariables(), this.getlistOfVariables(), null, "listOfVariables", null, 0, 1, computeChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getcomputeChange_ListOfParameters(), this.getlistOfParameters(), null, "listOfParameters", null, 0, 1, computeChange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(addXMLEClass, addXML.class, "addXML", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getaddXML_NewXML(), this.getnewXML(), null, "newXML", null, 0, -1, addXML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(changeXMLEClass, changeXML.class, "changeXML", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getchangeXML_NewXML(), this.getnewXML(), null, "newXML", null, 0, -1, changeXML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(newXMLEClass, newXML.class, "newXML", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getnewXML_AnyXML(), ecorePackage.getEString(), "anyXML", null, 0, 1, newXML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(sedMLEClass, sedML.class, "sedML", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getsedML_Version(), ecorePackage.getEInt(), "version", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getsedML_Level(), ecorePackage.getEInt(), "level", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getsedML_ListOfHypotheses(), this.getlistOfHypotheses(), null, "listOfHypotheses", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getsedML_ListOfDataDescriptions(), this.getlistOfDataDescriptions(), null, "listOfDataDescriptions", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getsedML_ListOfSimulations(), this.getlistOfSimulations(), null, "listOfSimulations", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getsedML_ListOfModels(), this.getlistOfModels(), null, "listOfModels", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getsedML_ListOfTasks(), this.getlistOfTasks(), null, "listOfTasks", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getsedML_ListOfDataGenerators(), this.getlistOfDataGenerators(), null, "listOfDataGenerators", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getsedML_ListOfOutputs(), this.getlistOfOutputs(), null, "listOfOutputs", null, 0, 1, sedML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listOfDataDescriptionsEClass, listOfDataDescriptions.class, "listOfDataDescriptions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getlistOfDataDescriptions_DataDescription(), this.getdataDescription(), null, "dataDescription", null, 0, -1, listOfDataDescriptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataDescriptionEClass, dataDescription.class, "dataDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getdataDescription_Id(), ecorePackage.getEString(), "id", null, 0, 1, dataDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getdataDescription_Name(), ecorePackage.getEString(), "name", null, 0, 1, dataDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getdataDescription_Format(), ecorePackage.getEString(), "format", null, 0, 1, dataDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getdataDescription_Source(), ecorePackage.getEString(), "source", null, 0, 1, dataDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getdataDescription_ListOfDataSources(), this.getlistOfDataSources(), null, "listOfDataSources", null, 0, 1, dataDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getdataDescription_DimensionDescription(), this.getdimensionDescription(), null, "dimensionDescription", null, 0, 1, dataDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dimensionDescriptionEClass, dimensionDescription.class, "dimensionDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getdimensionDescription_Xmlns(), ecorePackage.getEString(), "xmlns", null, 0, 1, dimensionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listOfDataSourcesEClass, listOfDataSources.class, "listOfDataSources", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getlistOfDataSources_DataSource(), this.getdataSource(), null, "dataSource", null, 0, -1, listOfDataSources.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataSourceEClass, dataSource.class, "dataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getdataSource_Id(), ecorePackage.getEString(), "id", null, 0, 1, dataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getdataSource_Name(), ecorePackage.getEString(), "name", null, 0, 1, dataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getdataSource_IndexSet(), ecorePackage.getEString(), "indexSet", null, 0, 1, dataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getdataSource_ListOfSlices(), this.getlistOfDataSlices(), null, "listOfSlices", null, 0, 1, dataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listOfDataSlicesEClass, listOfDataSlices.class, "listOfDataSlices", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getlistOfDataSlices_Slice(), this.getslice(), null, "slice", null, 0, -1, listOfDataSlices.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sliceEClass, slice.class, "slice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getslice_Referenceid(), ecorePackage.getEString(), "referenceid", null, 0, 1, slice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getslice_Value(), ecorePackage.getEString(), "value", null, 0, 1, slice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listOfHypothesesEClass, listOfHypotheses.class, "listOfHypotheses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getlistOfHypotheses_Hypothesis(), this.gethypothesis(), null, "hypothesis", null, 0, -1, listOfHypotheses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2143,30 +3753,81 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
     initEAttribute(getmodel_Language(), ecorePackage.getEString(), "language", null, 0, 1, model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getmodel_Source(), ecorePackage.getEString(), "source", null, 0, 1, model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getmodel_Name(), ecorePackage.getEString(), "name", null, 0, 1, model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getmodel_ListOfChanges(), this.getlistOfChanges(), null, "listOfChanges", null, 0, 1, model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listOfChangesEClass, listOfChanges.class, "listOfChanges", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getlistOfChanges_Change(), this.getchange(), null, "change", null, 0, -1, listOfChanges.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataGeneratorEClass, dataGenerator.class, "dataGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getdataGenerator_Id(), ecorePackage.getEString(), "id", null, 0, 1, dataGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getdataGenerator_Name(), ecorePackage.getEString(), "name", null, 0, 1, dataGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getdataGenerator_ListOfVariables(), this.getlistOfVariables(), null, "listOfVariables", null, 0, 1, dataGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getdataGenerator_ListOfParameters(), this.getlistOfParameters(), null, "listOfParameters", null, 0, 1, dataGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getdataGenerator_Math(), this.getmath(), null, "math", null, 0, 1, dataGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listOfParametersEClass, listOfParameters.class, "listOfParameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getlistOfParameters_Parameter(), this.getparameter(), null, "parameter", null, 0, -1, listOfParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(parameterEClass, parameter.class, "parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getparameter_Id(), ecorePackage.getEString(), "id", null, 0, 1, parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getparameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getparameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listOfVariablesEClass, listOfVariables.class, "listOfVariables", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getlistOfVariables_Variable(), this.getvariable(), null, "variable", null, 0, -1, listOfVariables.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, variable.class, "variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getvariable_Id(), ecorePackage.getEString(), "id", null, 0, 1, variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getvariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getvariable_Target(), ecorePackage.getEString(), "target", null, 0, 1, variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getvariable_TaskReference(), this.gettask(), null, "taskReference", null, 0, 1, variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getvariable_ModelReference(), this.getmodel(), null, "modelReference", null, 0, 1, variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getvariable_Symbol(), ecorePackage.getEString(), "symbol", null, 0, 1, variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listOfTasksEClass, listOfTasks.class, "listOfTasks", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getlistOfTasks_Task(), this.gettask(), null, "task", null, 0, -1, listOfTasks.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getlistOfTasks_RepeatedTask(), this.getrepeatedTask(), null, "RepeatedTask", null, 0, -1, listOfTasks.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(repeatedTaskEClass, repeatedTask.class, "repeatedTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getrepeatedTask_SubTask(), this.getsubTask(), null, "subTask", null, 0, -1, repeatedTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getrepeatedTask_ListOfRanges(), this.getlistOfRanges(), null, "listOfRanges", null, 0, 1, repeatedTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getrepeatedTask_ListOfChanges(), this.getlistOfChanges(), null, "listOfChanges", null, 0, 1, repeatedTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listOfRangesEClass, listOfRanges.class, "listOfRanges", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getlistOfRanges_Range(), this.getrange(), null, "range", null, 0, -1, listOfRanges.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(rangeEClass, range.class, "range", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(uniformRangeEClass, uniformRange.class, "uniformRange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getuniformRange_Start(), ecorePackage.getEString(), "start", null, 0, 1, uniformRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getuniformRange_End(), ecorePackage.getEString(), "end", null, 0, 1, uniformRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getuniformRange_NumberOfPoints(), ecorePackage.getEInt(), "numberOfPoints", null, 0, 1, uniformRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getuniformRange_Type(), ecorePackage.getEString(), "type", null, 0, 1, uniformRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(vectorRangeEClass, vectorRange.class, "vectorRange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getvectorRange_Value(), this.getvalue(), null, "value", null, 0, -1, vectorRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(valueEClass, value.class, "value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getvalue_Content(), ecorePackage.getEString(), "content", null, 0, 1, value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(functionalRangeEClass, functionalRange.class, "functionalRange", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getfunctionalRange_Id(), ecorePackage.getEString(), "id", null, 0, 1, functionalRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getfunctionalRange_Range(), ecorePackage.getEString(), "range", null, 0, 1, functionalRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getfunctionalRange_ListOfVariables(), this.getlistOfVariables(), null, "listOfVariables", null, 0, 1, functionalRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getfunctionalRange_ListOfParameters(), this.getlistOfParameters(), null, "listOfParameters", null, 0, 1, functionalRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getfunctionalRange_Math(), this.getmath(), null, "math", null, 0, 1, functionalRange.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(abstractTaskEClass, abstractTask.class, "abstractTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getabstractTask_Id(), ecorePackage.getEString(), "id", null, 0, 1, abstractTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getabstractTask_Name(), ecorePackage.getEString(), "name", null, 0, 1, abstractTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(subTaskEClass, subTask.class, "subTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getsubTask_ModelReference(), this.getmodel(), null, "modelReference", null, 0, 1, subTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getsubTask_Order(), ecorePackage.getEInt(), "order", null, 0, 1, subTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(taskEClass, task.class, "task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(gettask_Id(), ecorePackage.getEString(), "id", null, 0, 1, task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(gettask_ModelReference(), this.getmodel(), null, "modelReference", null, 0, 1, task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(gettask_SimulationReference(), this.getuniformTimeCourse(), null, "simulationReference", null, 0, 1, task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(gettask_Name(), ecorePackage.getEString(), "name", null, 0, 1, task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listOfDataGeneratorsEClass, listOfDataGenerators.class, "listOfDataGenerators", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getlistOfDataGenerators_Datagenerator(), this.getdataGenerator(), null, "datagenerator", null, 0, -1, listOfDataGenerators.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2175,12 +3836,39 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
     initEAttribute(getmath_Xlms(), ecorePackage.getEString(), "xlms", null, 0, 1, math.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listOfOutputsEClass, listOfOutputs.class, "listOfOutputs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getlistOfOutputs_Plot2D(), this.getplot2D(), null, "plot2D", null, 0, -1, listOfOutputs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getlistOfOutputs_Output(), this.getoutput(), null, "output", null, 0, 1, listOfOutputs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(outputEClass, output.class, "output", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(plot2DEClass, plot2D.class, "plot2D", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getplot2D_Id(), ecorePackage.getEString(), "id", null, 0, 1, plot2D.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getplot2D_Name(), ecorePackage.getEString(), "name", null, 0, 1, plot2D.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getplot2D_ListOfCurves(), this.getlistOfCurves(), null, "listOfCurves", null, 0, 1, plot2D.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(plot3DEClass, plot3D.class, "plot3D", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getplot3D_ListOfSurfaces(), this.getlistOfSurfaces(), null, "listOfSurfaces", null, 0, 1, plot3D.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(reportEClass, report.class, "report", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getreport_Id(), ecorePackage.getEString(), "id", null, 0, 1, report.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getreport_Name(), ecorePackage.getEString(), "name", null, 0, 1, report.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getreport_ListOfDataSets(), this.getlistOfDataSets(), null, "listOfDataSets", null, 0, 1, report.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listOfDataSetsEClass, listOfDataSets.class, "listOfDataSets", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getlistOfDataSets_DataSet(), this.getdataSet(), null, "dataSet", null, 0, -1, listOfDataSets.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataSetEClass, dataSet.class, "dataSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getdataSet_Label(), ecorePackage.getEString(), "label", null, 0, 1, dataSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getdataSet_Name(), ecorePackage.getEString(), "name", null, 0, 1, dataSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getdataSet_DataReference(), ecorePackage.getEString(), "dataReference", null, 0, 1, dataSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listOfSurfacesEClass, listOfSurfaces.class, "listOfSurfaces", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getlistOfSurfaces_Id(), ecorePackage.getEString(), "id", null, 0, 1, listOfSurfaces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getlistOfSurfaces_LogX(), ecorePackage.getEString(), "logX", null, 0, 1, listOfSurfaces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getlistOfSurfaces_LogY(), ecorePackage.getEString(), "logY", null, 0, 1, listOfSurfaces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getlistOfSurfaces_LogZ(), ecorePackage.getEString(), "logZ", null, 0, 1, listOfSurfaces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getlistOfSurfaces_XDataReference(), ecorePackage.getEString(), "xDataReference", null, 0, 1, listOfSurfaces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getlistOfSurfaces_YDataReference(), ecorePackage.getEString(), "yDataReference", null, 0, 1, listOfSurfaces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getlistOfSurfaces_ZDataReference(), ecorePackage.getEString(), "zDataReference", null, 0, 1, listOfSurfaces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listOfCurvesEClass, listOfCurves.class, "listOfCurves", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getlistOfCurves_Curve(), this.getcurve(), null, "curve", null, 0, -1, listOfCurves.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2193,7 +3881,9 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
     initEAttribute(getcurve_YDataReference(), ecorePackage.getEString(), "yDataReference", null, 0, 1, curve.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listOfSimulationsEClass, listOfSimulations.class, "listOfSimulations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getlistOfSimulations_UniformTimeCourse(), this.getuniformTimeCourse(), null, "uniformTimeCourse", null, 0, -1, listOfSimulations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getlistOfSimulations_Simulation(), this.getsimulation(), null, "simulation", null, 0, -1, listOfSimulations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(simulationEClass, simulation.class, "simulation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(uniformTimeCourseEClass, uniformTimeCourse.class, "uniformTimeCourse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getuniformTimeCourse_Id(), ecorePackage.getEString(), "id", null, 0, 1, uniformTimeCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2203,8 +3893,19 @@ public class SedmlPackageImpl extends EPackageImpl implements SedmlPackage
     initEAttribute(getuniformTimeCourse_NumberOfPoints(), ecorePackage.getEInt(), "numberOfPoints", null, 0, 1, uniformTimeCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getuniformTimeCourse_Algorithm(), this.getalgorithm(), null, "algorithm", null, 0, 1, uniformTimeCourse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(oneStepEClass, oneStep.class, "oneStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getoneStep_Step(), ecorePackage.getEString(), "step", null, 0, 1, oneStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(algorithmEClass, algorithm.class, "algorithm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getalgorithm_KisaoID(), ecorePackage.getEString(), "kisaoID", null, 0, 1, algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getalgorithm_ListOfAlgorithmParameters(), this.getlistOfAlgorithmParameters(), null, "ListOfAlgorithmParameters", null, 0, 1, algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(listOfAlgorithmParametersEClass, listOfAlgorithmParameters.class, "listOfAlgorithmParameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getlistOfAlgorithmParameters_AlgorithmParameter(), this.getalgorithmParameter(), null, "AlgorithmParameter", null, 0, -1, listOfAlgorithmParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(algorithmParameterEClass, algorithmParameter.class, "algorithmParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getalgorithmParameter_KisaoID(), ecorePackage.getEString(), "kisaoID", null, 0, 1, algorithmParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getalgorithmParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, algorithmParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(functionEEnum, Function.class, "Function");

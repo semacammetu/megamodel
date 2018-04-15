@@ -3,7 +3,6 @@
  */
 package tr.edu.metu.ceng.megamodel.sedml.sedml;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface uniformTimeCourse extends EObject
+public interface uniformTimeCourse extends simulation
 {
   /**
    * Returns the value of the '<em><b>Id</b></em>' attribute.

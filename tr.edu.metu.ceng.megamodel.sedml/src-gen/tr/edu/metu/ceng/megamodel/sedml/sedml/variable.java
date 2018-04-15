@@ -3,7 +3,6 @@
  */
 package tr.edu.metu.ceng.megamodel.sedml.sedml;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,8 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getId <em>Id</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getName <em>Name</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getTarget <em>Target</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getTaskReference <em>Task Reference</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getModelReference <em>Model Reference</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getSymbol <em>Symbol</em>}</li>
  * </ul>
  *
@@ -24,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface variable extends EObject
+public interface variable extends SEDBase
 {
   /**
    * Returns the value of the '<em><b>Id</b></em>' attribute.
@@ -51,6 +52,32 @@ public interface variable extends EObject
    * @generated
    */
   void setId(String value);
+
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getvariable_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Target</b></em>' attribute.
@@ -103,6 +130,32 @@ public interface variable extends EObject
    * @generated
    */
   void setTaskReference(task value);
+
+  /**
+   * Returns the value of the '<em><b>Model Reference</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Model Reference</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Model Reference</em>' containment reference.
+   * @see #setModelReference(model)
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getvariable_ModelReference()
+   * @model containment="true"
+   * @generated
+   */
+  model getModelReference();
+
+  /**
+   * Sets the value of the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getModelReference <em>Model Reference</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Model Reference</em>' containment reference.
+   * @see #getModelReference()
+   * @generated
+   */
+  void setModelReference(model value);
 
   /**
    * Returns the value of the '<em><b>Symbol</b></em>' attribute.

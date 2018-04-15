@@ -10,10 +10,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfParameters;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfVariables;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.math;
 
@@ -28,12 +28,13 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.math;
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl#getId <em>Id</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl#getName <em>Name</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl#getListOfVariables <em>List Of Variables</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl#getListOfParameters <em>List Of Parameters</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl#getMath <em>Math</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements dataGenerator
+public class dataGeneratorImpl extends SEDBaseImpl implements dataGenerator
 {
   /**
    * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -84,6 +85,16 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
    * @ordered
    */
   protected listOfVariables listOfVariables;
+
+  /**
+   * The cached value of the '{@link #getListOfParameters() <em>List Of Parameters</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getListOfParameters()
+   * @generated
+   * @ordered
+   */
+  protected listOfParameters listOfParameters;
 
   /**
    * The cached value of the '{@link #getMath() <em>Math</em>}' containment reference.
@@ -215,6 +226,54 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
    * <!-- end-user-doc -->
    * @generated
    */
+  public listOfParameters getListOfParameters()
+  {
+    return listOfParameters;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetListOfParameters(listOfParameters newListOfParameters, NotificationChain msgs)
+  {
+    listOfParameters oldListOfParameters = listOfParameters;
+    listOfParameters = newListOfParameters;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SedmlPackage.DATA_GENERATOR__LIST_OF_PARAMETERS, oldListOfParameters, newListOfParameters);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setListOfParameters(listOfParameters newListOfParameters)
+  {
+    if (newListOfParameters != listOfParameters)
+    {
+      NotificationChain msgs = null;
+      if (listOfParameters != null)
+        msgs = ((InternalEObject)listOfParameters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SedmlPackage.DATA_GENERATOR__LIST_OF_PARAMETERS, null, msgs);
+      if (newListOfParameters != null)
+        msgs = ((InternalEObject)newListOfParameters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SedmlPackage.DATA_GENERATOR__LIST_OF_PARAMETERS, null, msgs);
+      msgs = basicSetListOfParameters(newListOfParameters, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SedmlPackage.DATA_GENERATOR__LIST_OF_PARAMETERS, newListOfParameters, newListOfParameters));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public math getMath()
   {
     return math;
@@ -270,6 +329,8 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
     {
       case SedmlPackage.DATA_GENERATOR__LIST_OF_VARIABLES:
         return basicSetListOfVariables(null, msgs);
+      case SedmlPackage.DATA_GENERATOR__LIST_OF_PARAMETERS:
+        return basicSetListOfParameters(null, msgs);
       case SedmlPackage.DATA_GENERATOR__MATH:
         return basicSetMath(null, msgs);
     }
@@ -292,6 +353,8 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
         return getName();
       case SedmlPackage.DATA_GENERATOR__LIST_OF_VARIABLES:
         return getListOfVariables();
+      case SedmlPackage.DATA_GENERATOR__LIST_OF_PARAMETERS:
+        return getListOfParameters();
       case SedmlPackage.DATA_GENERATOR__MATH:
         return getMath();
     }
@@ -316,6 +379,9 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
         return;
       case SedmlPackage.DATA_GENERATOR__LIST_OF_VARIABLES:
         setListOfVariables((listOfVariables)newValue);
+        return;
+      case SedmlPackage.DATA_GENERATOR__LIST_OF_PARAMETERS:
+        setListOfParameters((listOfParameters)newValue);
         return;
       case SedmlPackage.DATA_GENERATOR__MATH:
         setMath((math)newValue);
@@ -343,6 +409,9 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
       case SedmlPackage.DATA_GENERATOR__LIST_OF_VARIABLES:
         setListOfVariables((listOfVariables)null);
         return;
+      case SedmlPackage.DATA_GENERATOR__LIST_OF_PARAMETERS:
+        setListOfParameters((listOfParameters)null);
+        return;
       case SedmlPackage.DATA_GENERATOR__MATH:
         setMath((math)null);
         return;
@@ -366,6 +435,8 @@ public class dataGeneratorImpl extends MinimalEObjectImpl.Container implements d
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SedmlPackage.DATA_GENERATOR__LIST_OF_VARIABLES:
         return listOfVariables != null;
+      case SedmlPackage.DATA_GENERATOR__LIST_OF_PARAMETERS:
+        return listOfParameters != null;
       case SedmlPackage.DATA_GENERATOR__MATH:
         return math != null;
     }

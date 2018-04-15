@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfCurves;
@@ -31,7 +30,7 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.plot2D;
  *
  * @generated
  */
-public class plot2DImpl extends MinimalEObjectImpl.Container implements plot2D
+public class plot2DImpl extends outputImpl implements plot2D
 {
   /**
    * The default value of the '{@link #getId() <em>Id</em>}' attribute.

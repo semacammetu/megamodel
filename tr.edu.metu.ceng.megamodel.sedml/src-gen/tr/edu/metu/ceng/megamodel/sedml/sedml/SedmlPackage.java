@@ -59,6 +59,230 @@ public interface SedmlPackage extends EPackage
   SedmlPackage eINSTANCE = tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl.init();
 
   /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SEDBaseImpl <em>SED Base</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SEDBaseImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getSEDBase()
+   * @generated
+   */
+  int SED_BASE = 0;
+
+  /**
+   * The number of structural features of the '<em>SED Base</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SED_BASE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.changeImpl <em>change</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.changeImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getchange()
+   * @generated
+   */
+  int CHANGE = 1;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE__TARGET = SED_BASE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>change</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_FEATURE_COUNT = SED_BASE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.targetImpl <em>target</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.targetImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#gettarget()
+   * @generated
+   */
+  int TARGET = 2;
+
+  /**
+   * The number of structural features of the '<em>target</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TARGET_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.changeAttributeImpl <em>change Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.changeAttributeImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getchangeAttribute()
+   * @generated
+   */
+  int CHANGE_ATTRIBUTE = 3;
+
+  /**
+   * The feature id for the '<em><b>New Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_ATTRIBUTE__NEW_VALUE = TARGET_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>change Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_ATTRIBUTE_FEATURE_COUNT = TARGET_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.computeChangeImpl <em>compute Change</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.computeChangeImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getcomputeChange()
+   * @generated
+   */
+  int COMPUTE_CHANGE = 4;
+
+  /**
+   * The feature id for the '<em><b>Math</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPUTE_CHANGE__MATH = TARGET_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>List Of Variables</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPUTE_CHANGE__LIST_OF_VARIABLES = TARGET_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>List Of Parameters</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPUTE_CHANGE__LIST_OF_PARAMETERS = TARGET_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>compute Change</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPUTE_CHANGE_FEATURE_COUNT = TARGET_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.addXMLImpl <em>add XML</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.addXMLImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getaddXML()
+   * @generated
+   */
+  int ADD_XML = 5;
+
+  /**
+   * The feature id for the '<em><b>New XML</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD_XML__NEW_XML = TARGET_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>add XML</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD_XML_FEATURE_COUNT = TARGET_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.changeXMLImpl <em>change XML</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.changeXMLImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getchangeXML()
+   * @generated
+   */
+  int CHANGE_XML = 6;
+
+  /**
+   * The feature id for the '<em><b>New XML</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_XML__NEW_XML = TARGET_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>change XML</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHANGE_XML_FEATURE_COUNT = TARGET_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.newXMLImpl <em>new XML</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.newXMLImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getnewXML()
+   * @generated
+   */
+  int NEW_XML = 7;
+
+  /**
+   * The feature id for the '<em><b>Any XML</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEW_XML__ANY_XML = 0;
+
+  /**
+   * The number of structural features of the '<em>new XML</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEW_XML_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.sedMLImpl <em>sed ML</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -66,7 +290,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getsedML()
    * @generated
    */
-  int SED_ML = 0;
+  int SED_ML = 8;
 
   /**
    * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -75,7 +299,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SED_ML__VERSION = 0;
+  int SED_ML__VERSION = SED_BASE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Level</b></em>' attribute.
@@ -84,7 +308,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SED_ML__LEVEL = 1;
+  int SED_ML__LEVEL = SED_BASE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>List Of Hypotheses</b></em>' containment reference.
@@ -93,7 +317,16 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SED_ML__LIST_OF_HYPOTHESES = 2;
+  int SED_ML__LIST_OF_HYPOTHESES = SED_BASE_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>List Of Data Descriptions</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SED_ML__LIST_OF_DATA_DESCRIPTIONS = SED_BASE_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>List Of Simulations</b></em>' containment reference.
@@ -102,7 +335,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SED_ML__LIST_OF_SIMULATIONS = 3;
+  int SED_ML__LIST_OF_SIMULATIONS = SED_BASE_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>List Of Models</b></em>' containment reference.
@@ -111,7 +344,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SED_ML__LIST_OF_MODELS = 4;
+  int SED_ML__LIST_OF_MODELS = SED_BASE_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>List Of Tasks</b></em>' containment reference.
@@ -120,7 +353,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SED_ML__LIST_OF_TASKS = 5;
+  int SED_ML__LIST_OF_TASKS = SED_BASE_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>List Of Data Generators</b></em>' containment reference.
@@ -129,7 +362,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SED_ML__LIST_OF_DATA_GENERATORS = 6;
+  int SED_ML__LIST_OF_DATA_GENERATORS = SED_BASE_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>List Of Outputs</b></em>' containment reference.
@@ -138,7 +371,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SED_ML__LIST_OF_OUTPUTS = 7;
+  int SED_ML__LIST_OF_OUTPUTS = SED_BASE_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>sed ML</em>' class.
@@ -147,7 +380,284 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SED_ML_FEATURE_COUNT = 8;
+  int SED_ML_FEATURE_COUNT = SED_BASE_FEATURE_COUNT + 9;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataDescriptionsImpl <em>list Of Data Descriptions</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataDescriptionsImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfDataDescriptions()
+   * @generated
+   */
+  int LIST_OF_DATA_DESCRIPTIONS = 9;
+
+  /**
+   * The feature id for the '<em><b>Data Description</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_DATA_DESCRIPTIONS__DATA_DESCRIPTION = 0;
+
+  /**
+   * The number of structural features of the '<em>list Of Data Descriptions</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_DATA_DESCRIPTIONS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataDescriptionImpl <em>data Description</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataDescriptionImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getdataDescription()
+   * @generated
+   */
+  int DATA_DESCRIPTION = 10;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DESCRIPTION__ID = SED_BASE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DESCRIPTION__NAME = SED_BASE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Format</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DESCRIPTION__FORMAT = SED_BASE_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Source</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DESCRIPTION__SOURCE = SED_BASE_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>List Of Data Sources</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DESCRIPTION__LIST_OF_DATA_SOURCES = SED_BASE_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Dimension Description</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DESCRIPTION__DIMENSION_DESCRIPTION = SED_BASE_FEATURE_COUNT + 5;
+
+  /**
+   * The number of structural features of the '<em>data Description</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_DESCRIPTION_FEATURE_COUNT = SED_BASE_FEATURE_COUNT + 6;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dimensionDescriptionImpl <em>dimension Description</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dimensionDescriptionImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getdimensionDescription()
+   * @generated
+   */
+  int DIMENSION_DESCRIPTION = 11;
+
+  /**
+   * The feature id for the '<em><b>Xmlns</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIMENSION_DESCRIPTION__XMLNS = 0;
+
+  /**
+   * The number of structural features of the '<em>dimension Description</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIMENSION_DESCRIPTION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataSourcesImpl <em>list Of Data Sources</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataSourcesImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfDataSources()
+   * @generated
+   */
+  int LIST_OF_DATA_SOURCES = 12;
+
+  /**
+   * The feature id for the '<em><b>Data Source</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_DATA_SOURCES__DATA_SOURCE = 0;
+
+  /**
+   * The number of structural features of the '<em>list Of Data Sources</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_DATA_SOURCES_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataSourceImpl <em>data Source</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataSourceImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getdataSource()
+   * @generated
+   */
+  int DATA_SOURCE = 13;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_SOURCE__ID = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_SOURCE__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Index Set</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_SOURCE__INDEX_SET = 2;
+
+  /**
+   * The feature id for the '<em><b>List Of Slices</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_SOURCE__LIST_OF_SLICES = 3;
+
+  /**
+   * The number of structural features of the '<em>data Source</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_SOURCE_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataSlicesImpl <em>list Of Data Slices</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataSlicesImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfDataSlices()
+   * @generated
+   */
+  int LIST_OF_DATA_SLICES = 14;
+
+  /**
+   * The feature id for the '<em><b>Slice</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_DATA_SLICES__SLICE = 0;
+
+  /**
+   * The number of structural features of the '<em>list Of Data Slices</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_DATA_SLICES_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.sliceImpl <em>slice</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.sliceImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getslice()
+   * @generated
+   */
+  int SLICE = 15;
+
+  /**
+   * The feature id for the '<em><b>Referenceid</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLICE__REFERENCEID = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLICE__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>slice</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLICE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfHypothesesImpl <em>list Of Hypotheses</em>}' class.
@@ -157,7 +667,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfHypotheses()
    * @generated
    */
-  int LIST_OF_HYPOTHESES = 1;
+  int LIST_OF_HYPOTHESES = 16;
 
   /**
    * The feature id for the '<em><b>Hypothesis</b></em>' containment reference list.
@@ -185,7 +695,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#gethypothesis()
    * @generated
    */
-  int HYPOTHESIS = 2;
+  int HYPOTHESIS = 17;
 
   /**
    * The feature id for the '<em><b>Mech Hypothesis</b></em>' containment reference list.
@@ -240,7 +750,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getRelationalQuery()
    * @generated
    */
-  int RELATIONAL_QUERY = 3;
+  int RELATIONAL_QUERY = 18;
 
   /**
    * The number of structural features of the '<em>Relational Query</em>' class.
@@ -259,7 +769,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getQuery1()
    * @generated
    */
-  int QUERY1 = 4;
+  int QUERY1 = 19;
 
   /**
    * The feature id for the '<em><b>Factor</b></em>' attribute.
@@ -359,7 +869,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getQuery2()
    * @generated
    */
-  int QUERY2 = 5;
+  int QUERY2 = 20;
 
   /**
    * The feature id for the '<em><b>Function1</b></em>' attribute.
@@ -432,7 +942,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getQuery3()
    * @generated
    */
-  int QUERY3 = 6;
+  int QUERY3 = 21;
 
   /**
    * The feature id for the '<em><b>Factor1</b></em>' attribute.
@@ -568,7 +1078,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getCoherenceLink()
    * @generated
    */
-  int COHERENCE_LINK = 7;
+  int COHERENCE_LINK = 22;
 
   /**
    * The feature id for the '<em><b>Coherence</b></em>' attribute.
@@ -614,7 +1124,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getMechHypothesis()
    * @generated
    */
-  int MECH_HYPOTHESIS = 8;
+  int MECH_HYPOTHESIS = 23;
 
   /**
    * The feature id for the '<em><b>MName</b></em>' attribute.
@@ -660,7 +1170,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getEvidence()
    * @generated
    */
-  int EVIDENCE = 9;
+  int EVIDENCE = 24;
 
   /**
    * The feature id for the '<em><b>EName</b></em>' attribute.
@@ -706,7 +1216,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getTemporalPattern()
    * @generated
    */
-  int TEMPORAL_PATTERN = 10;
+  int TEMPORAL_PATTERN = 25;
 
   /**
    * The number of structural features of the '<em>Temporal Pattern</em>' class.
@@ -725,7 +1235,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getCondition()
    * @generated
    */
-  int CONDITION = 11;
+  int CONDITION = 26;
 
   /**
    * The feature id for the '<em><b>L2</b></em>' attribute list.
@@ -834,7 +1344,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getEvent()
    * @generated
    */
-  int EVENT = 12;
+  int EVENT = 27;
 
   /**
    * The number of structural features of the '<em>Event</em>' class.
@@ -853,7 +1363,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getSimultaneous()
    * @generated
    */
-  int SIMULTANEOUS = 13;
+  int SIMULTANEOUS = 28;
 
   /**
    * The feature id for the '<em><b>Sim1</b></em>' attribute.
@@ -899,7 +1409,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getDispersed()
    * @generated
    */
-  int DISPERSED = 14;
+  int DISPERSED = 29;
 
   /**
    * The feature id for the '<em><b>Disp</b></em>' attribute list.
@@ -927,7 +1437,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfModels()
    * @generated
    */
-  int LIST_OF_MODELS = 15;
+  int LIST_OF_MODELS = 30;
 
   /**
    * The feature id for the '<em><b>Model</b></em>' containment reference list.
@@ -955,7 +1465,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getmodel()
    * @generated
    */
-  int MODEL = 16;
+  int MODEL = 31;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -964,7 +1474,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__ID = 0;
+  int MODEL__ID = SED_BASE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Language</b></em>' attribute.
@@ -973,7 +1483,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__LANGUAGE = 1;
+  int MODEL__LANGUAGE = SED_BASE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' attribute.
@@ -982,7 +1492,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__SOURCE = 2;
+  int MODEL__SOURCE = SED_BASE_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -991,7 +1501,16 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__NAME = 3;
+  int MODEL__NAME = SED_BASE_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>List Of Changes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__LIST_OF_CHANGES = SED_BASE_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>model</em>' class.
@@ -1000,7 +1519,35 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 4;
+  int MODEL_FEATURE_COUNT = SED_BASE_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfChangesImpl <em>list Of Changes</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfChangesImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfChanges()
+   * @generated
+   */
+  int LIST_OF_CHANGES = 32;
+
+  /**
+   * The feature id for the '<em><b>Change</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_CHANGES__CHANGE = 0;
+
+  /**
+   * The number of structural features of the '<em>list Of Changes</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_CHANGES_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl <em>data Generator</em>}' class.
@@ -1010,7 +1557,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getdataGenerator()
    * @generated
    */
-  int DATA_GENERATOR = 17;
+  int DATA_GENERATOR = 33;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1019,7 +1566,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_GENERATOR__ID = 0;
+  int DATA_GENERATOR__ID = SED_BASE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1028,7 +1575,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_GENERATOR__NAME = 1;
+  int DATA_GENERATOR__NAME = SED_BASE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>List Of Variables</b></em>' containment reference.
@@ -1037,7 +1584,16 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_GENERATOR__LIST_OF_VARIABLES = 2;
+  int DATA_GENERATOR__LIST_OF_VARIABLES = SED_BASE_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>List Of Parameters</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_GENERATOR__LIST_OF_PARAMETERS = SED_BASE_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Math</b></em>' containment reference.
@@ -1046,7 +1602,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_GENERATOR__MATH = 3;
+  int DATA_GENERATOR__MATH = SED_BASE_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>data Generator</em>' class.
@@ -1055,7 +1611,81 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_GENERATOR_FEATURE_COUNT = 4;
+  int DATA_GENERATOR_FEATURE_COUNT = SED_BASE_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfParametersImpl <em>list Of Parameters</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfParametersImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfParameters()
+   * @generated
+   */
+  int LIST_OF_PARAMETERS = 34;
+
+  /**
+   * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_PARAMETERS__PARAMETER = 0;
+
+  /**
+   * The number of structural features of the '<em>list Of Parameters</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_PARAMETERS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.parameterImpl <em>parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.parameterImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getparameter()
+   * @generated
+   */
+  int PARAMETER = 35;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER__ID = SED_BASE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER__NAME = SED_BASE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER__VALUE = SED_BASE_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>parameter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER_FEATURE_COUNT = SED_BASE_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfVariablesImpl <em>list Of Variables</em>}' class.
@@ -1065,7 +1695,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfVariables()
    * @generated
    */
-  int LIST_OF_VARIABLES = 18;
+  int LIST_OF_VARIABLES = 36;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference list.
@@ -1093,7 +1723,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getvariable()
    * @generated
    */
-  int VARIABLE = 19;
+  int VARIABLE = 37;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1102,7 +1732,16 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE__ID = 0;
+  int VARIABLE__ID = SED_BASE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__NAME = SED_BASE_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' attribute.
@@ -1111,7 +1750,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE__TARGET = 1;
+  int VARIABLE__TARGET = SED_BASE_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Task Reference</b></em>' containment reference.
@@ -1120,7 +1759,16 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE__TASK_REFERENCE = 2;
+  int VARIABLE__TASK_REFERENCE = SED_BASE_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Model Reference</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__MODEL_REFERENCE = SED_BASE_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -1129,7 +1777,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE__SYMBOL = 3;
+  int VARIABLE__SYMBOL = SED_BASE_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>variable</em>' class.
@@ -1138,7 +1786,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_FEATURE_COUNT = 4;
+  int VARIABLE_FEATURE_COUNT = SED_BASE_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfTasksImpl <em>list Of Tasks</em>}' class.
@@ -1148,7 +1796,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfTasks()
    * @generated
    */
-  int LIST_OF_TASKS = 20;
+  int LIST_OF_TASKS = 38;
 
   /**
    * The feature id for the '<em><b>Task</b></em>' containment reference list.
@@ -1160,13 +1808,382 @@ public interface SedmlPackage extends EPackage
   int LIST_OF_TASKS__TASK = 0;
 
   /**
+   * The feature id for the '<em><b>Repeated Task</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_TASKS__REPEATED_TASK = 1;
+
+  /**
    * The number of structural features of the '<em>list Of Tasks</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_OF_TASKS_FEATURE_COUNT = 1;
+  int LIST_OF_TASKS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.abstractTaskImpl <em>abstract Task</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.abstractTaskImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getabstractTask()
+   * @generated
+   */
+  int ABSTRACT_TASK = 46;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_TASK__ID = SED_BASE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_TASK__NAME = SED_BASE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>abstract Task</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_TASK_FEATURE_COUNT = SED_BASE_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.repeatedTaskImpl <em>repeated Task</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.repeatedTaskImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getrepeatedTask()
+   * @generated
+   */
+  int REPEATED_TASK = 39;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPEATED_TASK__ID = ABSTRACT_TASK__ID;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPEATED_TASK__NAME = ABSTRACT_TASK__NAME;
+
+  /**
+   * The feature id for the '<em><b>Sub Task</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPEATED_TASK__SUB_TASK = ABSTRACT_TASK_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>List Of Ranges</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPEATED_TASK__LIST_OF_RANGES = ABSTRACT_TASK_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>List Of Changes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPEATED_TASK__LIST_OF_CHANGES = ABSTRACT_TASK_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>repeated Task</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPEATED_TASK_FEATURE_COUNT = ABSTRACT_TASK_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfRangesImpl <em>list Of Ranges</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfRangesImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfRanges()
+   * @generated
+   */
+  int LIST_OF_RANGES = 40;
+
+  /**
+   * The feature id for the '<em><b>Range</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_RANGES__RANGE = 0;
+
+  /**
+   * The number of structural features of the '<em>list Of Ranges</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_RANGES_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.rangeImpl <em>range</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.rangeImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getrange()
+   * @generated
+   */
+  int RANGE = 41;
+
+  /**
+   * The number of structural features of the '<em>range</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RANGE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.uniformRangeImpl <em>uniform Range</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.uniformRangeImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getuniformRange()
+   * @generated
+   */
+  int UNIFORM_RANGE = 42;
+
+  /**
+   * The feature id for the '<em><b>Start</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIFORM_RANGE__START = RANGE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>End</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIFORM_RANGE__END = RANGE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Number Of Points</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIFORM_RANGE__NUMBER_OF_POINTS = RANGE_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIFORM_RANGE__TYPE = RANGE_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>uniform Range</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIFORM_RANGE_FEATURE_COUNT = RANGE_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.vectorRangeImpl <em>vector Range</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.vectorRangeImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getvectorRange()
+   * @generated
+   */
+  int VECTOR_RANGE = 43;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VECTOR_RANGE__VALUE = RANGE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>vector Range</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VECTOR_RANGE_FEATURE_COUNT = RANGE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.valueImpl <em>value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.valueImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getvalue()
+   * @generated
+   */
+  int VALUE = 44;
+
+  /**
+   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUE__CONTENT = 0;
+
+  /**
+   * The number of structural features of the '<em>value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.functionalRangeImpl <em>functional Range</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.functionalRangeImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getfunctionalRange()
+   * @generated
+   */
+  int FUNCTIONAL_RANGE = 45;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTIONAL_RANGE__ID = RANGE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Range</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTIONAL_RANGE__RANGE = RANGE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>List Of Variables</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTIONAL_RANGE__LIST_OF_VARIABLES = RANGE_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>List Of Parameters</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTIONAL_RANGE__LIST_OF_PARAMETERS = RANGE_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Math</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTIONAL_RANGE__MATH = RANGE_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>functional Range</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTIONAL_RANGE_FEATURE_COUNT = RANGE_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.subTaskImpl <em>sub Task</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.subTaskImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getsubTask()
+   * @generated
+   */
+  int SUB_TASK = 47;
+
+  /**
+   * The feature id for the '<em><b>Model Reference</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_TASK__MODEL_REFERENCE = 0;
+
+  /**
+   * The feature id for the '<em><b>Order</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_TASK__ORDER = 1;
+
+  /**
+   * The number of structural features of the '<em>sub Task</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_TASK_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.taskImpl <em>task</em>}' class.
@@ -1176,7 +2193,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#gettask()
    * @generated
    */
-  int TASK = 21;
+  int TASK = 48;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1185,25 +2202,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__ID = 0;
-
-  /**
-   * The feature id for the '<em><b>Model Reference</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TASK__MODEL_REFERENCE = 1;
-
-  /**
-   * The feature id for the '<em><b>Simulation Reference</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TASK__SIMULATION_REFERENCE = 2;
+  int TASK__ID = ABSTRACT_TASK__ID;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1212,7 +2211,25 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__NAME = 3;
+  int TASK__NAME = ABSTRACT_TASK__NAME;
+
+  /**
+   * The feature id for the '<em><b>Model Reference</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TASK__MODEL_REFERENCE = ABSTRACT_TASK_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Simulation Reference</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TASK__SIMULATION_REFERENCE = ABSTRACT_TASK_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>task</em>' class.
@@ -1221,7 +2238,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK_FEATURE_COUNT = 4;
+  int TASK_FEATURE_COUNT = ABSTRACT_TASK_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataGeneratorsImpl <em>list Of Data Generators</em>}' class.
@@ -1231,7 +2248,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfDataGenerators()
    * @generated
    */
-  int LIST_OF_DATA_GENERATORS = 22;
+  int LIST_OF_DATA_GENERATORS = 49;
 
   /**
    * The feature id for the '<em><b>Datagenerator</b></em>' containment reference list.
@@ -1259,7 +2276,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getmath()
    * @generated
    */
-  int MATH = 23;
+  int MATH = 50;
 
   /**
    * The feature id for the '<em><b>Xlms</b></em>' attribute.
@@ -1287,16 +2304,16 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfOutputs()
    * @generated
    */
-  int LIST_OF_OUTPUTS = 24;
+  int LIST_OF_OUTPUTS = 51;
 
   /**
-   * The feature id for the '<em><b>Plot2 D</b></em>' containment reference list.
+   * The feature id for the '<em><b>Output</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_OF_OUTPUTS__PLOT2_D = 0;
+  int LIST_OF_OUTPUTS__OUTPUT = 0;
 
   /**
    * The number of structural features of the '<em>list Of Outputs</em>' class.
@@ -1308,6 +2325,25 @@ public interface SedmlPackage extends EPackage
   int LIST_OF_OUTPUTS_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.outputImpl <em>output</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.outputImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getoutput()
+   * @generated
+   */
+  int OUTPUT = 52;
+
+  /**
+   * The number of structural features of the '<em>output</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTPUT_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.plot2DImpl <em>plot2 D</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1315,7 +2351,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getplot2D()
    * @generated
    */
-  int PLOT2_D = 25;
+  int PLOT2_D = 53;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1324,7 +2360,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PLOT2_D__ID = 0;
+  int PLOT2_D__ID = OUTPUT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1333,7 +2369,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PLOT2_D__NAME = 1;
+  int PLOT2_D__NAME = OUTPUT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>List Of Curves</b></em>' containment reference.
@@ -1342,7 +2378,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PLOT2_D__LIST_OF_CURVES = 2;
+  int PLOT2_D__LIST_OF_CURVES = OUTPUT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>plot2 D</em>' class.
@@ -1351,7 +2387,237 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PLOT2_D_FEATURE_COUNT = 3;
+  int PLOT2_D_FEATURE_COUNT = OUTPUT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.plot3DImpl <em>plot3 D</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.plot3DImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getplot3D()
+   * @generated
+   */
+  int PLOT3_D = 54;
+
+  /**
+   * The feature id for the '<em><b>List Of Surfaces</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLOT3_D__LIST_OF_SURFACES = OUTPUT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>plot3 D</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLOT3_D_FEATURE_COUNT = OUTPUT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.reportImpl <em>report</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.reportImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getreport()
+   * @generated
+   */
+  int REPORT = 55;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPORT__ID = OUTPUT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPORT__NAME = OUTPUT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>List Of Data Sets</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPORT__LIST_OF_DATA_SETS = OUTPUT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>report</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPORT_FEATURE_COUNT = OUTPUT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataSetsImpl <em>list Of Data Sets</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataSetsImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfDataSets()
+   * @generated
+   */
+  int LIST_OF_DATA_SETS = 56;
+
+  /**
+   * The feature id for the '<em><b>Data Set</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_DATA_SETS__DATA_SET = 0;
+
+  /**
+   * The number of structural features of the '<em>list Of Data Sets</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_DATA_SETS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataSetImpl <em>data Set</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataSetImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getdataSet()
+   * @generated
+   */
+  int DATA_SET = 57;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_SET__LABEL = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_SET__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Data Reference</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_SET__DATA_REFERENCE = 2;
+
+  /**
+   * The number of structural features of the '<em>data Set</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_SET_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfSurfacesImpl <em>list Of Surfaces</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfSurfacesImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfSurfaces()
+   * @generated
+   */
+  int LIST_OF_SURFACES = 58;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_SURFACES__ID = 0;
+
+  /**
+   * The feature id for the '<em><b>Log X</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_SURFACES__LOG_X = 1;
+
+  /**
+   * The feature id for the '<em><b>Log Y</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_SURFACES__LOG_Y = 2;
+
+  /**
+   * The feature id for the '<em><b>Log Z</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_SURFACES__LOG_Z = 3;
+
+  /**
+   * The feature id for the '<em><b>XData Reference</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_SURFACES__XDATA_REFERENCE = 4;
+
+  /**
+   * The feature id for the '<em><b>YData Reference</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_SURFACES__YDATA_REFERENCE = 5;
+
+  /**
+   * The feature id for the '<em><b>ZData Reference</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_SURFACES__ZDATA_REFERENCE = 6;
+
+  /**
+   * The number of structural features of the '<em>list Of Surfaces</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_SURFACES_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfCurvesImpl <em>list Of Curves</em>}' class.
@@ -1361,7 +2627,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfCurves()
    * @generated
    */
-  int LIST_OF_CURVES = 26;
+  int LIST_OF_CURVES = 59;
 
   /**
    * The feature id for the '<em><b>Curve</b></em>' containment reference list.
@@ -1389,7 +2655,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getcurve()
    * @generated
    */
-  int CURVE = 27;
+  int CURVE = 60;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1453,16 +2719,16 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfSimulations()
    * @generated
    */
-  int LIST_OF_SIMULATIONS = 28;
+  int LIST_OF_SIMULATIONS = 61;
 
   /**
-   * The feature id for the '<em><b>Uniform Time Course</b></em>' containment reference list.
+   * The feature id for the '<em><b>Simulation</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_OF_SIMULATIONS__UNIFORM_TIME_COURSE = 0;
+  int LIST_OF_SIMULATIONS__SIMULATION = 0;
 
   /**
    * The number of structural features of the '<em>list Of Simulations</em>' class.
@@ -1474,6 +2740,25 @@ public interface SedmlPackage extends EPackage
   int LIST_OF_SIMULATIONS_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.simulationImpl <em>simulation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.simulationImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getsimulation()
+   * @generated
+   */
+  int SIMULATION = 62;
+
+  /**
+   * The number of structural features of the '<em>simulation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMULATION_FEATURE_COUNT = SED_BASE_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.uniformTimeCourseImpl <em>uniform Time Course</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1481,7 +2766,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getuniformTimeCourse()
    * @generated
    */
-  int UNIFORM_TIME_COURSE = 29;
+  int UNIFORM_TIME_COURSE = 63;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1490,7 +2775,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNIFORM_TIME_COURSE__ID = 0;
+  int UNIFORM_TIME_COURSE__ID = SIMULATION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Initial Time</b></em>' attribute.
@@ -1499,7 +2784,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNIFORM_TIME_COURSE__INITIAL_TIME = 1;
+  int UNIFORM_TIME_COURSE__INITIAL_TIME = SIMULATION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Output Start Time</b></em>' attribute.
@@ -1508,7 +2793,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNIFORM_TIME_COURSE__OUTPUT_START_TIME = 2;
+  int UNIFORM_TIME_COURSE__OUTPUT_START_TIME = SIMULATION_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Output End Time</b></em>' attribute.
@@ -1517,7 +2802,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNIFORM_TIME_COURSE__OUTPUT_END_TIME = 3;
+  int UNIFORM_TIME_COURSE__OUTPUT_END_TIME = SIMULATION_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Number Of Points</b></em>' attribute.
@@ -1526,7 +2811,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNIFORM_TIME_COURSE__NUMBER_OF_POINTS = 4;
+  int UNIFORM_TIME_COURSE__NUMBER_OF_POINTS = SIMULATION_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Algorithm</b></em>' containment reference.
@@ -1535,7 +2820,7 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNIFORM_TIME_COURSE__ALGORITHM = 5;
+  int UNIFORM_TIME_COURSE__ALGORITHM = SIMULATION_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>uniform Time Course</em>' class.
@@ -1544,7 +2829,35 @@ public interface SedmlPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNIFORM_TIME_COURSE_FEATURE_COUNT = 6;
+  int UNIFORM_TIME_COURSE_FEATURE_COUNT = SIMULATION_FEATURE_COUNT + 6;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.oneStepImpl <em>one Step</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.oneStepImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getoneStep()
+   * @generated
+   */
+  int ONE_STEP = 64;
+
+  /**
+   * The feature id for the '<em><b>Step</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ONE_STEP__STEP = SIMULATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>one Step</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ONE_STEP_FEATURE_COUNT = SIMULATION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.algorithmImpl <em>algorithm</em>}' class.
@@ -1554,7 +2867,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getalgorithm()
    * @generated
    */
-  int ALGORITHM = 30;
+  int ALGORITHM = 65;
 
   /**
    * The feature id for the '<em><b>Kisao ID</b></em>' attribute.
@@ -1566,13 +2879,87 @@ public interface SedmlPackage extends EPackage
   int ALGORITHM__KISAO_ID = 0;
 
   /**
+   * The feature id for the '<em><b>List Of Algorithm Parameters</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALGORITHM__LIST_OF_ALGORITHM_PARAMETERS = 1;
+
+  /**
    * The number of structural features of the '<em>algorithm</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ALGORITHM_FEATURE_COUNT = 1;
+  int ALGORITHM_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfAlgorithmParametersImpl <em>list Of Algorithm Parameters</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfAlgorithmParametersImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfAlgorithmParameters()
+   * @generated
+   */
+  int LIST_OF_ALGORITHM_PARAMETERS = 66;
+
+  /**
+   * The feature id for the '<em><b>Algorithm Parameter</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_ALGORITHM_PARAMETERS__ALGORITHM_PARAMETER = 0;
+
+  /**
+   * The number of structural features of the '<em>list Of Algorithm Parameters</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_OF_ALGORITHM_PARAMETERS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.algorithmParameterImpl <em>algorithm Parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.algorithmParameterImpl
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getalgorithmParameter()
+   * @generated
+   */
+  int ALGORITHM_PARAMETER = 67;
+
+  /**
+   * The feature id for the '<em><b>Kisao ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALGORITHM_PARAMETER__KISAO_ID = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALGORITHM_PARAMETER__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>algorithm Parameter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALGORITHM_PARAMETER_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Function <em>Function</em>}' enum.
@@ -1582,7 +2969,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getFunction()
    * @generated
    */
-  int FUNCTION = 31;
+  int FUNCTION = 68;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Levels <em>Levels</em>}' enum.
@@ -1592,7 +2979,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getLevels()
    * @generated
    */
-  int LEVELS = 32;
+  int LEVELS = 69;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Expression <em>Expression</em>}' enum.
@@ -1602,7 +2989,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 33;
+  int EXPRESSION = 70;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Links <em>Links</em>}' enum.
@@ -1612,7 +2999,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getLinks()
    * @generated
    */
-  int LINKS = 34;
+  int LINKS = 71;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Temporal <em>Temporal</em>}' enum.
@@ -1622,7 +3009,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getTemporal()
    * @generated
    */
-  int TEMPORAL = 35;
+  int TEMPORAL = 72;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Logical <em>Logical</em>}' enum.
@@ -1632,7 +3019,7 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getLogical()
    * @generated
    */
-  int LOGICAL = 36;
+  int LOGICAL = 73;
 
   /**
    * The meta object id for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Coherence <em>Coherence</em>}' enum.
@@ -1642,8 +3029,176 @@ public interface SedmlPackage extends EPackage
    * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getCoherence()
    * @generated
    */
-  int COHERENCE = 37;
+  int COHERENCE = 74;
 
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.SEDBase <em>SED Base</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SED Base</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SEDBase
+   * @generated
+   */
+  EClass getSEDBase();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.change <em>change</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>change</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.change
+   * @generated
+   */
+  EClass getchange();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.change#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Target</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.change#getTarget()
+   * @see #getchange()
+   * @generated
+   */
+  EReference getchange_Target();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.target <em>target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>target</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.target
+   * @generated
+   */
+  EClass gettarget();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.changeAttribute <em>change Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>change Attribute</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.changeAttribute
+   * @generated
+   */
+  EClass getchangeAttribute();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.changeAttribute#getNewValue <em>New Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>New Value</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.changeAttribute#getNewValue()
+   * @see #getchangeAttribute()
+   * @generated
+   */
+  EAttribute getchangeAttribute_NewValue();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.computeChange <em>compute Change</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>compute Change</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.computeChange
+   * @generated
+   */
+  EClass getcomputeChange();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.computeChange#getMath <em>Math</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Math</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.computeChange#getMath()
+   * @see #getcomputeChange()
+   * @generated
+   */
+  EReference getcomputeChange_Math();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.computeChange#getListOfVariables <em>List Of Variables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Variables</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.computeChange#getListOfVariables()
+   * @see #getcomputeChange()
+   * @generated
+   */
+  EReference getcomputeChange_ListOfVariables();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.computeChange#getListOfParameters <em>List Of Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Parameters</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.computeChange#getListOfParameters()
+   * @see #getcomputeChange()
+   * @generated
+   */
+  EReference getcomputeChange_ListOfParameters();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.addXML <em>add XML</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>add XML</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.addXML
+   * @generated
+   */
+  EClass getaddXML();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.addXML#getNewXML <em>New XML</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>New XML</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.addXML#getNewXML()
+   * @see #getaddXML()
+   * @generated
+   */
+  EReference getaddXML_NewXML();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.changeXML <em>change XML</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>change XML</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.changeXML
+   * @generated
+   */
+  EClass getchangeXML();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.changeXML#getNewXML <em>New XML</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>New XML</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.changeXML#getNewXML()
+   * @see #getchangeXML()
+   * @generated
+   */
+  EReference getchangeXML_NewXML();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.newXML <em>new XML</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>new XML</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.newXML
+   * @generated
+   */
+  EClass getnewXML();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.newXML#getAnyXML <em>Any XML</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Any XML</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.newXML#getAnyXML()
+   * @see #getnewXML()
+   * @generated
+   */
+  EAttribute getnewXML_AnyXML();
 
   /**
    * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML <em>sed ML</em>}'.
@@ -1687,6 +3242,17 @@ public interface SedmlPackage extends EPackage
    * @generated
    */
   EReference getsedML_ListOfHypotheses();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfDataDescriptions <em>List Of Data Descriptions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Data Descriptions</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfDataDescriptions()
+   * @see #getsedML()
+   * @generated
+   */
+  EReference getsedML_ListOfDataDescriptions();
 
   /**
    * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfSimulations <em>List Of Simulations</em>}'.
@@ -1742,6 +3308,252 @@ public interface SedmlPackage extends EPackage
    * @generated
    */
   EReference getsedML_ListOfOutputs();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataDescriptions <em>list Of Data Descriptions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>list Of Data Descriptions</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataDescriptions
+   * @generated
+   */
+  EClass getlistOfDataDescriptions();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataDescriptions#getDataDescription <em>Data Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Data Description</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataDescriptions#getDataDescription()
+   * @see #getlistOfDataDescriptions()
+   * @generated
+   */
+  EReference getlistOfDataDescriptions_DataDescription();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription <em>data Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>data Description</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription
+   * @generated
+   */
+  EClass getdataDescription();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription#getId()
+   * @see #getdataDescription()
+   * @generated
+   */
+  EAttribute getdataDescription_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription#getName()
+   * @see #getdataDescription()
+   * @generated
+   */
+  EAttribute getdataDescription_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription#getFormat <em>Format</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Format</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription#getFormat()
+   * @see #getdataDescription()
+   * @generated
+   */
+  EAttribute getdataDescription_Format();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription#getSource <em>Source</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Source</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription#getSource()
+   * @see #getdataDescription()
+   * @generated
+   */
+  EAttribute getdataDescription_Source();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription#getListOfDataSources <em>List Of Data Sources</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Data Sources</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription#getListOfDataSources()
+   * @see #getdataDescription()
+   * @generated
+   */
+  EReference getdataDescription_ListOfDataSources();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription#getDimensionDescription <em>Dimension Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Dimension Description</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataDescription#getDimensionDescription()
+   * @see #getdataDescription()
+   * @generated
+   */
+  EReference getdataDescription_DimensionDescription();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dimensionDescription <em>dimension Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>dimension Description</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dimensionDescription
+   * @generated
+   */
+  EClass getdimensionDescription();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dimensionDescription#getXmlns <em>Xmlns</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Xmlns</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dimensionDescription#getXmlns()
+   * @see #getdimensionDescription()
+   * @generated
+   */
+  EAttribute getdimensionDescription_Xmlns();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSources <em>list Of Data Sources</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>list Of Data Sources</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSources
+   * @generated
+   */
+  EClass getlistOfDataSources();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSources#getDataSource <em>Data Source</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Data Source</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSources#getDataSource()
+   * @see #getlistOfDataSources()
+   * @generated
+   */
+  EReference getlistOfDataSources_DataSource();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataSource <em>data Source</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>data Source</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataSource
+   * @generated
+   */
+  EClass getdataSource();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataSource#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataSource#getId()
+   * @see #getdataSource()
+   * @generated
+   */
+  EAttribute getdataSource_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataSource#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataSource#getName()
+   * @see #getdataSource()
+   * @generated
+   */
+  EAttribute getdataSource_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataSource#getIndexSet <em>Index Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Index Set</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataSource#getIndexSet()
+   * @see #getdataSource()
+   * @generated
+   */
+  EAttribute getdataSource_IndexSet();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataSource#getListOfSlices <em>List Of Slices</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Slices</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataSource#getListOfSlices()
+   * @see #getdataSource()
+   * @generated
+   */
+  EReference getdataSource_ListOfSlices();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSlices <em>list Of Data Slices</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>list Of Data Slices</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSlices
+   * @generated
+   */
+  EClass getlistOfDataSlices();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSlices#getSlice <em>Slice</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Slice</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSlices#getSlice()
+   * @see #getlistOfDataSlices()
+   * @generated
+   */
+  EReference getlistOfDataSlices_Slice();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.slice <em>slice</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>slice</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.slice
+   * @generated
+   */
+  EClass getslice();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.slice#getReferenceid <em>Referenceid</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Referenceid</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.slice#getReferenceid()
+   * @see #getslice()
+   * @generated
+   */
+  EAttribute getslice_Referenceid();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.slice#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.slice#getValue()
+   * @see #getslice()
+   * @generated
+   */
+  EAttribute getslice_Value();
 
   /**
    * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfHypotheses <em>list Of Hypotheses</em>}'.
@@ -2575,6 +4387,38 @@ public interface SedmlPackage extends EPackage
   EAttribute getmodel_Name();
 
   /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.model#getListOfChanges <em>List Of Changes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Changes</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.model#getListOfChanges()
+   * @see #getmodel()
+   * @generated
+   */
+  EReference getmodel_ListOfChanges();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfChanges <em>list Of Changes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>list Of Changes</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfChanges
+   * @generated
+   */
+  EClass getlistOfChanges();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfChanges#getChange <em>Change</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Change</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfChanges#getChange()
+   * @see #getlistOfChanges()
+   * @generated
+   */
+  EReference getlistOfChanges_Change();
+
+  /**
    * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator <em>data Generator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2618,6 +4462,17 @@ public interface SedmlPackage extends EPackage
   EReference getdataGenerator_ListOfVariables();
 
   /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getListOfParameters <em>List Of Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Parameters</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getListOfParameters()
+   * @see #getdataGenerator()
+   * @generated
+   */
+  EReference getdataGenerator_ListOfParameters();
+
+  /**
    * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getMath <em>Math</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2627,6 +4482,70 @@ public interface SedmlPackage extends EPackage
    * @generated
    */
   EReference getdataGenerator_Math();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfParameters <em>list Of Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>list Of Parameters</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfParameters
+   * @generated
+   */
+  EClass getlistOfParameters();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfParameters#getParameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parameter</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfParameters#getParameter()
+   * @see #getlistOfParameters()
+   * @generated
+   */
+  EReference getlistOfParameters_Parameter();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.parameter <em>parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>parameter</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.parameter
+   * @generated
+   */
+  EClass getparameter();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.parameter#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.parameter#getId()
+   * @see #getparameter()
+   * @generated
+   */
+  EAttribute getparameter_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.parameter#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.parameter#getName()
+   * @see #getparameter()
+   * @generated
+   */
+  EAttribute getparameter_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.parameter#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.parameter#getValue()
+   * @see #getparameter()
+   * @generated
+   */
+  EAttribute getparameter_Value();
 
   /**
    * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfVariables <em>list Of Variables</em>}'.
@@ -2671,6 +4590,17 @@ public interface SedmlPackage extends EPackage
   EAttribute getvariable_Id();
 
   /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getName()
+   * @see #getvariable()
+   * @generated
+   */
+  EAttribute getvariable_Name();
+
+  /**
    * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2691,6 +4621,17 @@ public interface SedmlPackage extends EPackage
    * @generated
    */
   EReference getvariable_TaskReference();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getModelReference <em>Model Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Model Reference</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getModelReference()
+   * @see #getvariable()
+   * @generated
+   */
+  EReference getvariable_ModelReference();
 
   /**
    * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.variable#getSymbol <em>Symbol</em>}'.
@@ -2725,6 +4666,316 @@ public interface SedmlPackage extends EPackage
   EReference getlistOfTasks_Task();
 
   /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfTasks#getRepeatedTask <em>Repeated Task</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Repeated Task</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfTasks#getRepeatedTask()
+   * @see #getlistOfTasks()
+   * @generated
+   */
+  EReference getlistOfTasks_RepeatedTask();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.repeatedTask <em>repeated Task</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>repeated Task</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.repeatedTask
+   * @generated
+   */
+  EClass getrepeatedTask();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.repeatedTask#getSubTask <em>Sub Task</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Sub Task</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.repeatedTask#getSubTask()
+   * @see #getrepeatedTask()
+   * @generated
+   */
+  EReference getrepeatedTask_SubTask();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.repeatedTask#getListOfRanges <em>List Of Ranges</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Ranges</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.repeatedTask#getListOfRanges()
+   * @see #getrepeatedTask()
+   * @generated
+   */
+  EReference getrepeatedTask_ListOfRanges();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.repeatedTask#getListOfChanges <em>List Of Changes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Changes</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.repeatedTask#getListOfChanges()
+   * @see #getrepeatedTask()
+   * @generated
+   */
+  EReference getrepeatedTask_ListOfChanges();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfRanges <em>list Of Ranges</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>list Of Ranges</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfRanges
+   * @generated
+   */
+  EClass getlistOfRanges();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfRanges#getRange <em>Range</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Range</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfRanges#getRange()
+   * @see #getlistOfRanges()
+   * @generated
+   */
+  EReference getlistOfRanges_Range();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.range <em>range</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>range</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.range
+   * @generated
+   */
+  EClass getrange();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.uniformRange <em>uniform Range</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>uniform Range</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.uniformRange
+   * @generated
+   */
+  EClass getuniformRange();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.uniformRange#getStart <em>Start</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Start</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.uniformRange#getStart()
+   * @see #getuniformRange()
+   * @generated
+   */
+  EAttribute getuniformRange_Start();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.uniformRange#getEnd <em>End</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>End</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.uniformRange#getEnd()
+   * @see #getuniformRange()
+   * @generated
+   */
+  EAttribute getuniformRange_End();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.uniformRange#getNumberOfPoints <em>Number Of Points</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Number Of Points</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.uniformRange#getNumberOfPoints()
+   * @see #getuniformRange()
+   * @generated
+   */
+  EAttribute getuniformRange_NumberOfPoints();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.uniformRange#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.uniformRange#getType()
+   * @see #getuniformRange()
+   * @generated
+   */
+  EAttribute getuniformRange_Type();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.vectorRange <em>vector Range</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>vector Range</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.vectorRange
+   * @generated
+   */
+  EClass getvectorRange();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.vectorRange#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Value</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.vectorRange#getValue()
+   * @see #getvectorRange()
+   * @generated
+   */
+  EReference getvectorRange_Value();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.value <em>value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>value</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.value
+   * @generated
+   */
+  EClass getvalue();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.value#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Content</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.value#getContent()
+   * @see #getvalue()
+   * @generated
+   */
+  EAttribute getvalue_Content();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.functionalRange <em>functional Range</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>functional Range</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.functionalRange
+   * @generated
+   */
+  EClass getfunctionalRange();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.functionalRange#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.functionalRange#getId()
+   * @see #getfunctionalRange()
+   * @generated
+   */
+  EAttribute getfunctionalRange_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.functionalRange#getRange <em>Range</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Range</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.functionalRange#getRange()
+   * @see #getfunctionalRange()
+   * @generated
+   */
+  EAttribute getfunctionalRange_Range();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.functionalRange#getListOfVariables <em>List Of Variables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Variables</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.functionalRange#getListOfVariables()
+   * @see #getfunctionalRange()
+   * @generated
+   */
+  EReference getfunctionalRange_ListOfVariables();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.functionalRange#getListOfParameters <em>List Of Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Parameters</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.functionalRange#getListOfParameters()
+   * @see #getfunctionalRange()
+   * @generated
+   */
+  EReference getfunctionalRange_ListOfParameters();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.functionalRange#getMath <em>Math</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Math</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.functionalRange#getMath()
+   * @see #getfunctionalRange()
+   * @generated
+   */
+  EReference getfunctionalRange_Math();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.abstractTask <em>abstract Task</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>abstract Task</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.abstractTask
+   * @generated
+   */
+  EClass getabstractTask();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.abstractTask#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.abstractTask#getId()
+   * @see #getabstractTask()
+   * @generated
+   */
+  EAttribute getabstractTask_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.abstractTask#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.abstractTask#getName()
+   * @see #getabstractTask()
+   * @generated
+   */
+  EAttribute getabstractTask_Name();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.subTask <em>sub Task</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>sub Task</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.subTask
+   * @generated
+   */
+  EClass getsubTask();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.subTask#getModelReference <em>Model Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Model Reference</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.subTask#getModelReference()
+   * @see #getsubTask()
+   * @generated
+   */
+  EReference getsubTask_ModelReference();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.subTask#getOrder <em>Order</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Order</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.subTask#getOrder()
+   * @see #getsubTask()
+   * @generated
+   */
+  EAttribute getsubTask_Order();
+
+  /**
    * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.task <em>task</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2733,17 +4984,6 @@ public interface SedmlPackage extends EPackage
    * @generated
    */
   EClass gettask();
-
-  /**
-   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.task#getId <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.task#getId()
-   * @see #gettask()
-   * @generated
-   */
-  EAttribute gettask_Id();
 
   /**
    * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.task#getModelReference <em>Model Reference</em>}'.
@@ -2766,17 +5006,6 @@ public interface SedmlPackage extends EPackage
    * @generated
    */
   EReference gettask_SimulationReference();
-
-  /**
-   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.task#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.task#getName()
-   * @see #gettask()
-   * @generated
-   */
-  EAttribute gettask_Name();
 
   /**
    * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataGenerators <em>list Of Data Generators</em>}'.
@@ -2831,15 +5060,25 @@ public interface SedmlPackage extends EPackage
   EClass getlistOfOutputs();
 
   /**
-   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfOutputs#getPlot2D <em>Plot2 D</em>}'.
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfOutputs#getOutput <em>Output</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Plot2 D</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfOutputs#getPlot2D()
+   * @return the meta object for the containment reference '<em>Output</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfOutputs#getOutput()
    * @see #getlistOfOutputs()
    * @generated
    */
-  EReference getlistOfOutputs_Plot2D();
+  EReference getlistOfOutputs_Output();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.output <em>output</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>output</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.output
+   * @generated
+   */
+  EClass getoutput();
 
   /**
    * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.plot2D <em>plot2 D</em>}'.
@@ -2883,6 +5122,221 @@ public interface SedmlPackage extends EPackage
    * @generated
    */
   EReference getplot2D_ListOfCurves();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.plot3D <em>plot3 D</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>plot3 D</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.plot3D
+   * @generated
+   */
+  EClass getplot3D();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.plot3D#getListOfSurfaces <em>List Of Surfaces</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Surfaces</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.plot3D#getListOfSurfaces()
+   * @see #getplot3D()
+   * @generated
+   */
+  EReference getplot3D_ListOfSurfaces();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.report <em>report</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>report</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.report
+   * @generated
+   */
+  EClass getreport();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.report#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.report#getId()
+   * @see #getreport()
+   * @generated
+   */
+  EAttribute getreport_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.report#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.report#getName()
+   * @see #getreport()
+   * @generated
+   */
+  EAttribute getreport_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.report#getListOfDataSets <em>List Of Data Sets</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Data Sets</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.report#getListOfDataSets()
+   * @see #getreport()
+   * @generated
+   */
+  EReference getreport_ListOfDataSets();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSets <em>list Of Data Sets</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>list Of Data Sets</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSets
+   * @generated
+   */
+  EClass getlistOfDataSets();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSets#getDataSet <em>Data Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Data Set</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataSets#getDataSet()
+   * @see #getlistOfDataSets()
+   * @generated
+   */
+  EReference getlistOfDataSets_DataSet();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataSet <em>data Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>data Set</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataSet
+   * @generated
+   */
+  EClass getdataSet();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataSet#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataSet#getLabel()
+   * @see #getdataSet()
+   * @generated
+   */
+  EAttribute getdataSet_Label();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataSet#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataSet#getName()
+   * @see #getdataSet()
+   * @generated
+   */
+  EAttribute getdataSet_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataSet#getDataReference <em>Data Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Data Reference</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.dataSet#getDataReference()
+   * @see #getdataSet()
+   * @generated
+   */
+  EAttribute getdataSet_DataReference();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces <em>list Of Surfaces</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>list Of Surfaces</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces
+   * @generated
+   */
+  EClass getlistOfSurfaces();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getId()
+   * @see #getlistOfSurfaces()
+   * @generated
+   */
+  EAttribute getlistOfSurfaces_Id();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getLogX <em>Log X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Log X</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getLogX()
+   * @see #getlistOfSurfaces()
+   * @generated
+   */
+  EAttribute getlistOfSurfaces_LogX();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getLogY <em>Log Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Log Y</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getLogY()
+   * @see #getlistOfSurfaces()
+   * @generated
+   */
+  EAttribute getlistOfSurfaces_LogY();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getLogZ <em>Log Z</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Log Z</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getLogZ()
+   * @see #getlistOfSurfaces()
+   * @generated
+   */
+  EAttribute getlistOfSurfaces_LogZ();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getXDataReference <em>XData Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>XData Reference</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getXDataReference()
+   * @see #getlistOfSurfaces()
+   * @generated
+   */
+  EAttribute getlistOfSurfaces_XDataReference();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getYDataReference <em>YData Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>YData Reference</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getYDataReference()
+   * @see #getlistOfSurfaces()
+   * @generated
+   */
+  EAttribute getlistOfSurfaces_YDataReference();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getZDataReference <em>ZData Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>ZData Reference</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSurfaces#getZDataReference()
+   * @see #getlistOfSurfaces()
+   * @generated
+   */
+  EAttribute getlistOfSurfaces_ZDataReference();
 
   /**
    * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfCurves <em>list Of Curves</em>}'.
@@ -2981,15 +5435,25 @@ public interface SedmlPackage extends EPackage
   EClass getlistOfSimulations();
 
   /**
-   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSimulations#getUniformTimeCourse <em>Uniform Time Course</em>}'.
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSimulations#getSimulation <em>Simulation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Uniform Time Course</em>'.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSimulations#getUniformTimeCourse()
+   * @return the meta object for the containment reference list '<em>Simulation</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSimulations#getSimulation()
    * @see #getlistOfSimulations()
    * @generated
    */
-  EReference getlistOfSimulations_UniformTimeCourse();
+  EReference getlistOfSimulations_Simulation();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.simulation <em>simulation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>simulation</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.simulation
+   * @generated
+   */
+  EClass getsimulation();
 
   /**
    * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.uniformTimeCourse <em>uniform Time Course</em>}'.
@@ -3068,6 +5532,27 @@ public interface SedmlPackage extends EPackage
   EReference getuniformTimeCourse_Algorithm();
 
   /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.oneStep <em>one Step</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>one Step</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.oneStep
+   * @generated
+   */
+  EClass getoneStep();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.oneStep#getStep <em>Step</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Step</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.oneStep#getStep()
+   * @see #getoneStep()
+   * @generated
+   */
+  EAttribute getoneStep_Step();
+
+  /**
    * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.algorithm <em>algorithm</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3087,6 +5572,70 @@ public interface SedmlPackage extends EPackage
    * @generated
    */
   EAttribute getalgorithm_KisaoID();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.algorithm#getListOfAlgorithmParameters <em>List Of Algorithm Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>List Of Algorithm Parameters</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.algorithm#getListOfAlgorithmParameters()
+   * @see #getalgorithm()
+   * @generated
+   */
+  EReference getalgorithm_ListOfAlgorithmParameters();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfAlgorithmParameters <em>list Of Algorithm Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>list Of Algorithm Parameters</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfAlgorithmParameters
+   * @generated
+   */
+  EClass getlistOfAlgorithmParameters();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfAlgorithmParameters#getAlgorithmParameter <em>Algorithm Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Algorithm Parameter</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.listOfAlgorithmParameters#getAlgorithmParameter()
+   * @see #getlistOfAlgorithmParameters()
+   * @generated
+   */
+  EReference getlistOfAlgorithmParameters_AlgorithmParameter();
+
+  /**
+   * Returns the meta object for class '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.algorithmParameter <em>algorithm Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>algorithm Parameter</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.algorithmParameter
+   * @generated
+   */
+  EClass getalgorithmParameter();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.algorithmParameter#getKisaoID <em>Kisao ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Kisao ID</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.algorithmParameter#getKisaoID()
+   * @see #getalgorithmParameter()
+   * @generated
+   */
+  EAttribute getalgorithmParameter_KisaoID();
+
+  /**
+   * Returns the meta object for the attribute '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.algorithmParameter#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.algorithmParameter#getValue()
+   * @see #getalgorithmParameter()
+   * @generated
+   */
+  EAttribute getalgorithmParameter_Value();
 
   /**
    * Returns the meta object for enum '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Function <em>Function</em>}'.
@@ -3182,6 +5731,150 @@ public interface SedmlPackage extends EPackage
   interface Literals
   {
     /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SEDBaseImpl <em>SED Base</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SEDBaseImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getSEDBase()
+     * @generated
+     */
+    EClass SED_BASE = eINSTANCE.getSEDBase();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.changeImpl <em>change</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.changeImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getchange()
+     * @generated
+     */
+    EClass CHANGE = eINSTANCE.getchange();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CHANGE__TARGET = eINSTANCE.getchange_Target();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.targetImpl <em>target</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.targetImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#gettarget()
+     * @generated
+     */
+    EClass TARGET = eINSTANCE.gettarget();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.changeAttributeImpl <em>change Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.changeAttributeImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getchangeAttribute()
+     * @generated
+     */
+    EClass CHANGE_ATTRIBUTE = eINSTANCE.getchangeAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>New Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHANGE_ATTRIBUTE__NEW_VALUE = eINSTANCE.getchangeAttribute_NewValue();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.computeChangeImpl <em>compute Change</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.computeChangeImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getcomputeChange()
+     * @generated
+     */
+    EClass COMPUTE_CHANGE = eINSTANCE.getcomputeChange();
+
+    /**
+     * The meta object literal for the '<em><b>Math</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPUTE_CHANGE__MATH = eINSTANCE.getcomputeChange_Math();
+
+    /**
+     * The meta object literal for the '<em><b>List Of Variables</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPUTE_CHANGE__LIST_OF_VARIABLES = eINSTANCE.getcomputeChange_ListOfVariables();
+
+    /**
+     * The meta object literal for the '<em><b>List Of Parameters</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPUTE_CHANGE__LIST_OF_PARAMETERS = eINSTANCE.getcomputeChange_ListOfParameters();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.addXMLImpl <em>add XML</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.addXMLImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getaddXML()
+     * @generated
+     */
+    EClass ADD_XML = eINSTANCE.getaddXML();
+
+    /**
+     * The meta object literal for the '<em><b>New XML</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADD_XML__NEW_XML = eINSTANCE.getaddXML_NewXML();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.changeXMLImpl <em>change XML</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.changeXMLImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getchangeXML()
+     * @generated
+     */
+    EClass CHANGE_XML = eINSTANCE.getchangeXML();
+
+    /**
+     * The meta object literal for the '<em><b>New XML</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CHANGE_XML__NEW_XML = eINSTANCE.getchangeXML_NewXML();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.newXMLImpl <em>new XML</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.newXMLImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getnewXML()
+     * @generated
+     */
+    EClass NEW_XML = eINSTANCE.getnewXML();
+
+    /**
+     * The meta object literal for the '<em><b>Any XML</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NEW_XML__ANY_XML = eINSTANCE.getnewXML_AnyXML();
+
+    /**
      * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.sedMLImpl <em>sed ML</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3214,6 +5907,14 @@ public interface SedmlPackage extends EPackage
      * @generated
      */
     EReference SED_ML__LIST_OF_HYPOTHESES = eINSTANCE.getsedML_ListOfHypotheses();
+
+    /**
+     * The meta object literal for the '<em><b>List Of Data Descriptions</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SED_ML__LIST_OF_DATA_DESCRIPTIONS = eINSTANCE.getsedML_ListOfDataDescriptions();
 
     /**
      * The meta object literal for the '<em><b>List Of Simulations</b></em>' containment reference feature.
@@ -3254,6 +5955,204 @@ public interface SedmlPackage extends EPackage
      * @generated
      */
     EReference SED_ML__LIST_OF_OUTPUTS = eINSTANCE.getsedML_ListOfOutputs();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataDescriptionsImpl <em>list Of Data Descriptions</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataDescriptionsImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfDataDescriptions()
+     * @generated
+     */
+    EClass LIST_OF_DATA_DESCRIPTIONS = eINSTANCE.getlistOfDataDescriptions();
+
+    /**
+     * The meta object literal for the '<em><b>Data Description</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_OF_DATA_DESCRIPTIONS__DATA_DESCRIPTION = eINSTANCE.getlistOfDataDescriptions_DataDescription();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataDescriptionImpl <em>data Description</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataDescriptionImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getdataDescription()
+     * @generated
+     */
+    EClass DATA_DESCRIPTION = eINSTANCE.getdataDescription();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_DESCRIPTION__ID = eINSTANCE.getdataDescription_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_DESCRIPTION__NAME = eINSTANCE.getdataDescription_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_DESCRIPTION__FORMAT = eINSTANCE.getdataDescription_Format();
+
+    /**
+     * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_DESCRIPTION__SOURCE = eINSTANCE.getdataDescription_Source();
+
+    /**
+     * The meta object literal for the '<em><b>List Of Data Sources</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_DESCRIPTION__LIST_OF_DATA_SOURCES = eINSTANCE.getdataDescription_ListOfDataSources();
+
+    /**
+     * The meta object literal for the '<em><b>Dimension Description</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_DESCRIPTION__DIMENSION_DESCRIPTION = eINSTANCE.getdataDescription_DimensionDescription();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dimensionDescriptionImpl <em>dimension Description</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dimensionDescriptionImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getdimensionDescription()
+     * @generated
+     */
+    EClass DIMENSION_DESCRIPTION = eINSTANCE.getdimensionDescription();
+
+    /**
+     * The meta object literal for the '<em><b>Xmlns</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIMENSION_DESCRIPTION__XMLNS = eINSTANCE.getdimensionDescription_Xmlns();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataSourcesImpl <em>list Of Data Sources</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataSourcesImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfDataSources()
+     * @generated
+     */
+    EClass LIST_OF_DATA_SOURCES = eINSTANCE.getlistOfDataSources();
+
+    /**
+     * The meta object literal for the '<em><b>Data Source</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_OF_DATA_SOURCES__DATA_SOURCE = eINSTANCE.getlistOfDataSources_DataSource();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataSourceImpl <em>data Source</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataSourceImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getdataSource()
+     * @generated
+     */
+    EClass DATA_SOURCE = eINSTANCE.getdataSource();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_SOURCE__ID = eINSTANCE.getdataSource_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_SOURCE__NAME = eINSTANCE.getdataSource_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Index Set</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_SOURCE__INDEX_SET = eINSTANCE.getdataSource_IndexSet();
+
+    /**
+     * The meta object literal for the '<em><b>List Of Slices</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_SOURCE__LIST_OF_SLICES = eINSTANCE.getdataSource_ListOfSlices();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataSlicesImpl <em>list Of Data Slices</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataSlicesImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfDataSlices()
+     * @generated
+     */
+    EClass LIST_OF_DATA_SLICES = eINSTANCE.getlistOfDataSlices();
+
+    /**
+     * The meta object literal for the '<em><b>Slice</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_OF_DATA_SLICES__SLICE = eINSTANCE.getlistOfDataSlices_Slice();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.sliceImpl <em>slice</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.sliceImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getslice()
+     * @generated
+     */
+    EClass SLICE = eINSTANCE.getslice();
+
+    /**
+     * The meta object literal for the '<em><b>Referenceid</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SLICE__REFERENCEID = eINSTANCE.getslice_Referenceid();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SLICE__VALUE = eINSTANCE.getslice_Value();
 
     /**
      * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfHypothesesImpl <em>list Of Hypotheses</em>}' class.
@@ -3904,6 +6803,32 @@ public interface SedmlPackage extends EPackage
     EAttribute MODEL__NAME = eINSTANCE.getmodel_Name();
 
     /**
+     * The meta object literal for the '<em><b>List Of Changes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__LIST_OF_CHANGES = eINSTANCE.getmodel_ListOfChanges();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfChangesImpl <em>list Of Changes</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfChangesImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfChanges()
+     * @generated
+     */
+    EClass LIST_OF_CHANGES = eINSTANCE.getlistOfChanges();
+
+    /**
+     * The meta object literal for the '<em><b>Change</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_OF_CHANGES__CHANGE = eINSTANCE.getlistOfChanges_Change();
+
+    /**
      * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataGeneratorImpl <em>data Generator</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3938,12 +6863,72 @@ public interface SedmlPackage extends EPackage
     EReference DATA_GENERATOR__LIST_OF_VARIABLES = eINSTANCE.getdataGenerator_ListOfVariables();
 
     /**
+     * The meta object literal for the '<em><b>List Of Parameters</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_GENERATOR__LIST_OF_PARAMETERS = eINSTANCE.getdataGenerator_ListOfParameters();
+
+    /**
      * The meta object literal for the '<em><b>Math</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference DATA_GENERATOR__MATH = eINSTANCE.getdataGenerator_Math();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfParametersImpl <em>list Of Parameters</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfParametersImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfParameters()
+     * @generated
+     */
+    EClass LIST_OF_PARAMETERS = eINSTANCE.getlistOfParameters();
+
+    /**
+     * The meta object literal for the '<em><b>Parameter</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_OF_PARAMETERS__PARAMETER = eINSTANCE.getlistOfParameters_Parameter();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.parameterImpl <em>parameter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.parameterImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getparameter()
+     * @generated
+     */
+    EClass PARAMETER = eINSTANCE.getparameter();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAMETER__ID = eINSTANCE.getparameter_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAMETER__NAME = eINSTANCE.getparameter_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAMETER__VALUE = eINSTANCE.getparameter_Value();
 
     /**
      * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfVariablesImpl <em>list Of Variables</em>}' class.
@@ -3982,6 +6967,14 @@ public interface SedmlPackage extends EPackage
     EAttribute VARIABLE__ID = eINSTANCE.getvariable_Id();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE__NAME = eINSTANCE.getvariable_Name();
+
+    /**
      * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3996,6 +6989,14 @@ public interface SedmlPackage extends EPackage
      * @generated
      */
     EReference VARIABLE__TASK_REFERENCE = eINSTANCE.getvariable_TaskReference();
+
+    /**
+     * The meta object literal for the '<em><b>Model Reference</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE__MODEL_REFERENCE = eINSTANCE.getvariable_ModelReference();
 
     /**
      * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
@@ -4024,6 +7025,256 @@ public interface SedmlPackage extends EPackage
     EReference LIST_OF_TASKS__TASK = eINSTANCE.getlistOfTasks_Task();
 
     /**
+     * The meta object literal for the '<em><b>Repeated Task</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_OF_TASKS__REPEATED_TASK = eINSTANCE.getlistOfTasks_RepeatedTask();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.repeatedTaskImpl <em>repeated Task</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.repeatedTaskImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getrepeatedTask()
+     * @generated
+     */
+    EClass REPEATED_TASK = eINSTANCE.getrepeatedTask();
+
+    /**
+     * The meta object literal for the '<em><b>Sub Task</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REPEATED_TASK__SUB_TASK = eINSTANCE.getrepeatedTask_SubTask();
+
+    /**
+     * The meta object literal for the '<em><b>List Of Ranges</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REPEATED_TASK__LIST_OF_RANGES = eINSTANCE.getrepeatedTask_ListOfRanges();
+
+    /**
+     * The meta object literal for the '<em><b>List Of Changes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REPEATED_TASK__LIST_OF_CHANGES = eINSTANCE.getrepeatedTask_ListOfChanges();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfRangesImpl <em>list Of Ranges</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfRangesImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfRanges()
+     * @generated
+     */
+    EClass LIST_OF_RANGES = eINSTANCE.getlistOfRanges();
+
+    /**
+     * The meta object literal for the '<em><b>Range</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_OF_RANGES__RANGE = eINSTANCE.getlistOfRanges_Range();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.rangeImpl <em>range</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.rangeImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getrange()
+     * @generated
+     */
+    EClass RANGE = eINSTANCE.getrange();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.uniformRangeImpl <em>uniform Range</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.uniformRangeImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getuniformRange()
+     * @generated
+     */
+    EClass UNIFORM_RANGE = eINSTANCE.getuniformRange();
+
+    /**
+     * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UNIFORM_RANGE__START = eINSTANCE.getuniformRange_Start();
+
+    /**
+     * The meta object literal for the '<em><b>End</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UNIFORM_RANGE__END = eINSTANCE.getuniformRange_End();
+
+    /**
+     * The meta object literal for the '<em><b>Number Of Points</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UNIFORM_RANGE__NUMBER_OF_POINTS = eINSTANCE.getuniformRange_NumberOfPoints();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UNIFORM_RANGE__TYPE = eINSTANCE.getuniformRange_Type();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.vectorRangeImpl <em>vector Range</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.vectorRangeImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getvectorRange()
+     * @generated
+     */
+    EClass VECTOR_RANGE = eINSTANCE.getvectorRange();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VECTOR_RANGE__VALUE = eINSTANCE.getvectorRange_Value();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.valueImpl <em>value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.valueImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getvalue()
+     * @generated
+     */
+    EClass VALUE = eINSTANCE.getvalue();
+
+    /**
+     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VALUE__CONTENT = eINSTANCE.getvalue_Content();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.functionalRangeImpl <em>functional Range</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.functionalRangeImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getfunctionalRange()
+     * @generated
+     */
+    EClass FUNCTIONAL_RANGE = eINSTANCE.getfunctionalRange();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTIONAL_RANGE__ID = eINSTANCE.getfunctionalRange_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Range</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTIONAL_RANGE__RANGE = eINSTANCE.getfunctionalRange_Range();
+
+    /**
+     * The meta object literal for the '<em><b>List Of Variables</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTIONAL_RANGE__LIST_OF_VARIABLES = eINSTANCE.getfunctionalRange_ListOfVariables();
+
+    /**
+     * The meta object literal for the '<em><b>List Of Parameters</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTIONAL_RANGE__LIST_OF_PARAMETERS = eINSTANCE.getfunctionalRange_ListOfParameters();
+
+    /**
+     * The meta object literal for the '<em><b>Math</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTIONAL_RANGE__MATH = eINSTANCE.getfunctionalRange_Math();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.abstractTaskImpl <em>abstract Task</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.abstractTaskImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getabstractTask()
+     * @generated
+     */
+    EClass ABSTRACT_TASK = eINSTANCE.getabstractTask();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ABSTRACT_TASK__ID = eINSTANCE.getabstractTask_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ABSTRACT_TASK__NAME = eINSTANCE.getabstractTask_Name();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.subTaskImpl <em>sub Task</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.subTaskImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getsubTask()
+     * @generated
+     */
+    EClass SUB_TASK = eINSTANCE.getsubTask();
+
+    /**
+     * The meta object literal for the '<em><b>Model Reference</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUB_TASK__MODEL_REFERENCE = eINSTANCE.getsubTask_ModelReference();
+
+    /**
+     * The meta object literal for the '<em><b>Order</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUB_TASK__ORDER = eINSTANCE.getsubTask_Order();
+
+    /**
      * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.taskImpl <em>task</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4032,14 +7283,6 @@ public interface SedmlPackage extends EPackage
      * @generated
      */
     EClass TASK = eINSTANCE.gettask();
-
-    /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TASK__ID = eINSTANCE.gettask_Id();
 
     /**
      * The meta object literal for the '<em><b>Model Reference</b></em>' containment reference feature.
@@ -4056,14 +7299,6 @@ public interface SedmlPackage extends EPackage
      * @generated
      */
     EReference TASK__SIMULATION_REFERENCE = eINSTANCE.gettask_SimulationReference();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TASK__NAME = eINSTANCE.gettask_Name();
 
     /**
      * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataGeneratorsImpl <em>list Of Data Generators</em>}' class.
@@ -4112,12 +7347,22 @@ public interface SedmlPackage extends EPackage
     EClass LIST_OF_OUTPUTS = eINSTANCE.getlistOfOutputs();
 
     /**
-     * The meta object literal for the '<em><b>Plot2 D</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Output</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LIST_OF_OUTPUTS__PLOT2_D = eINSTANCE.getlistOfOutputs_Plot2D();
+    EReference LIST_OF_OUTPUTS__OUTPUT = eINSTANCE.getlistOfOutputs_Output();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.outputImpl <em>output</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.outputImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getoutput()
+     * @generated
+     */
+    EClass OUTPUT = eINSTANCE.getoutput();
 
     /**
      * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.plot2DImpl <em>plot2 D</em>}' class.
@@ -4152,6 +7397,176 @@ public interface SedmlPackage extends EPackage
      * @generated
      */
     EReference PLOT2_D__LIST_OF_CURVES = eINSTANCE.getplot2D_ListOfCurves();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.plot3DImpl <em>plot3 D</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.plot3DImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getplot3D()
+     * @generated
+     */
+    EClass PLOT3_D = eINSTANCE.getplot3D();
+
+    /**
+     * The meta object literal for the '<em><b>List Of Surfaces</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PLOT3_D__LIST_OF_SURFACES = eINSTANCE.getplot3D_ListOfSurfaces();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.reportImpl <em>report</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.reportImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getreport()
+     * @generated
+     */
+    EClass REPORT = eINSTANCE.getreport();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REPORT__ID = eINSTANCE.getreport_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REPORT__NAME = eINSTANCE.getreport_Name();
+
+    /**
+     * The meta object literal for the '<em><b>List Of Data Sets</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REPORT__LIST_OF_DATA_SETS = eINSTANCE.getreport_ListOfDataSets();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataSetsImpl <em>list Of Data Sets</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfDataSetsImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfDataSets()
+     * @generated
+     */
+    EClass LIST_OF_DATA_SETS = eINSTANCE.getlistOfDataSets();
+
+    /**
+     * The meta object literal for the '<em><b>Data Set</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_OF_DATA_SETS__DATA_SET = eINSTANCE.getlistOfDataSets_DataSet();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataSetImpl <em>data Set</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.dataSetImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getdataSet()
+     * @generated
+     */
+    EClass DATA_SET = eINSTANCE.getdataSet();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_SET__LABEL = eINSTANCE.getdataSet_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_SET__NAME = eINSTANCE.getdataSet_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Data Reference</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_SET__DATA_REFERENCE = eINSTANCE.getdataSet_DataReference();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfSurfacesImpl <em>list Of Surfaces</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfSurfacesImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfSurfaces()
+     * @generated
+     */
+    EClass LIST_OF_SURFACES = eINSTANCE.getlistOfSurfaces();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIST_OF_SURFACES__ID = eINSTANCE.getlistOfSurfaces_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Log X</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIST_OF_SURFACES__LOG_X = eINSTANCE.getlistOfSurfaces_LogX();
+
+    /**
+     * The meta object literal for the '<em><b>Log Y</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIST_OF_SURFACES__LOG_Y = eINSTANCE.getlistOfSurfaces_LogY();
+
+    /**
+     * The meta object literal for the '<em><b>Log Z</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIST_OF_SURFACES__LOG_Z = eINSTANCE.getlistOfSurfaces_LogZ();
+
+    /**
+     * The meta object literal for the '<em><b>XData Reference</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIST_OF_SURFACES__XDATA_REFERENCE = eINSTANCE.getlistOfSurfaces_XDataReference();
+
+    /**
+     * The meta object literal for the '<em><b>YData Reference</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIST_OF_SURFACES__YDATA_REFERENCE = eINSTANCE.getlistOfSurfaces_YDataReference();
+
+    /**
+     * The meta object literal for the '<em><b>ZData Reference</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIST_OF_SURFACES__ZDATA_REFERENCE = eINSTANCE.getlistOfSurfaces_ZDataReference();
 
     /**
      * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfCurvesImpl <em>list Of Curves</em>}' class.
@@ -4232,12 +7647,22 @@ public interface SedmlPackage extends EPackage
     EClass LIST_OF_SIMULATIONS = eINSTANCE.getlistOfSimulations();
 
     /**
-     * The meta object literal for the '<em><b>Uniform Time Course</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Simulation</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LIST_OF_SIMULATIONS__UNIFORM_TIME_COURSE = eINSTANCE.getlistOfSimulations_UniformTimeCourse();
+    EReference LIST_OF_SIMULATIONS__SIMULATION = eINSTANCE.getlistOfSimulations_Simulation();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.simulationImpl <em>simulation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.simulationImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getsimulation()
+     * @generated
+     */
+    EClass SIMULATION = eINSTANCE.getsimulation();
 
     /**
      * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.uniformTimeCourseImpl <em>uniform Time Course</em>}' class.
@@ -4298,6 +7723,24 @@ public interface SedmlPackage extends EPackage
     EReference UNIFORM_TIME_COURSE__ALGORITHM = eINSTANCE.getuniformTimeCourse_Algorithm();
 
     /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.oneStepImpl <em>one Step</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.oneStepImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getoneStep()
+     * @generated
+     */
+    EClass ONE_STEP = eINSTANCE.getoneStep();
+
+    /**
+     * The meta object literal for the '<em><b>Step</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ONE_STEP__STEP = eINSTANCE.getoneStep_Step();
+
+    /**
      * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.algorithmImpl <em>algorithm</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4314,6 +7757,58 @@ public interface SedmlPackage extends EPackage
      * @generated
      */
     EAttribute ALGORITHM__KISAO_ID = eINSTANCE.getalgorithm_KisaoID();
+
+    /**
+     * The meta object literal for the '<em><b>List Of Algorithm Parameters</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ALGORITHM__LIST_OF_ALGORITHM_PARAMETERS = eINSTANCE.getalgorithm_ListOfAlgorithmParameters();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfAlgorithmParametersImpl <em>list Of Algorithm Parameters</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfAlgorithmParametersImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getlistOfAlgorithmParameters()
+     * @generated
+     */
+    EClass LIST_OF_ALGORITHM_PARAMETERS = eINSTANCE.getlistOfAlgorithmParameters();
+
+    /**
+     * The meta object literal for the '<em><b>Algorithm Parameter</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_OF_ALGORITHM_PARAMETERS__ALGORITHM_PARAMETER = eINSTANCE.getlistOfAlgorithmParameters_AlgorithmParameter();
+
+    /**
+     * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.algorithmParameterImpl <em>algorithm Parameter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.algorithmParameterImpl
+     * @see tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlPackageImpl#getalgorithmParameter()
+     * @generated
+     */
+    EClass ALGORITHM_PARAMETER = eINSTANCE.getalgorithmParameter();
+
+    /**
+     * The meta object literal for the '<em><b>Kisao ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ALGORITHM_PARAMETER__KISAO_ID = eINSTANCE.getalgorithmParameter_KisaoID();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ALGORITHM_PARAMETER__VALUE = eINSTANCE.getalgorithmParameter_Value();
 
     /**
      * The meta object literal for the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.Function <em>Function</em>}' enum.

@@ -3,7 +3,6 @@
  */
 package tr.edu.metu.ceng.megamodel.sedml.sedml;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,13 +17,14 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.model#getLanguage <em>Language</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.model#getSource <em>Source</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.model#getName <em>Name</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.model#getListOfChanges <em>List Of Changes</em>}</li>
  * </ul>
  *
  * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getmodel()
  * @model
  * @generated
  */
-public interface model extends EObject
+public interface model extends SEDBase
 {
   /**
    * Returns the value of the '<em><b>Id</b></em>' attribute.
@@ -129,5 +129,31 @@ public interface model extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>List Of Changes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>List Of Changes</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>List Of Changes</em>' containment reference.
+   * @see #setListOfChanges(listOfChanges)
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getmodel_ListOfChanges()
+   * @model containment="true"
+   * @generated
+   */
+  listOfChanges getListOfChanges();
+
+  /**
+   * Sets the value of the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.model#getListOfChanges <em>List Of Changes</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>List Of Changes</em>' containment reference.
+   * @see #getListOfChanges()
+   * @generated
+   */
+  void setListOfChanges(listOfChanges value);
 
 } // model

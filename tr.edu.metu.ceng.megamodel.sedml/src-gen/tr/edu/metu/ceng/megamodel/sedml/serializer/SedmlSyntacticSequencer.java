@@ -31,6 +31,8 @@ public class SedmlSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Query3___AndKeyword_1_5_q_IsKeyword_1_2__p;
 	protected AbstractElementAlias match_Query3___IsKeyword_1_2_AndKeyword_1_5_q__a;
 	protected AbstractElementAlias match_Query3___IsKeyword_1_2_AndKeyword_1_5_q__p;
+	protected AbstractElementAlias match_addXML_changeXML_target_RemoveXMLParserRuleCall_4_or___AddXMLKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3___or___ChangeXMLKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3__;
+	protected AbstractElementAlias match_change_simulation_SteadyStateParserRuleCall_1_or___ChangeKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3__;
 	protected AbstractElementAlias match_hypothesis___CoherenceKeyword_4_0_ModelKeyword_4_1_LeftCurlyBracketKeyword_4_2_RightCurlyBracketKeyword_4_4__q;
 	protected AbstractElementAlias match_hypothesis___EvidenceKeyword_3_0_LeftCurlyBracketKeyword_3_1_RightCurlyBracketKeyword_3_3__q;
 	protected AbstractElementAlias match_hypothesis___MechanisticKeyword_2_0_HypothesesKeyword_2_1_LeftCurlyBracketKeyword_2_2_RightCurlyBracketKeyword_2_4__q;
@@ -49,6 +51,8 @@ public class SedmlSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Query3___AndKeyword_1_5_q_IsKeyword_1_2__p = new GroupAlias(true, false, new TokenAlias(false, true, grammarAccess.getQuery3Access().getAndKeyword_1_5()), new TokenAlias(false, false, grammarAccess.getQuery3Access().getIsKeyword_1_2()));
 		match_Query3___IsKeyword_1_2_AndKeyword_1_5_q__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getQuery3Access().getIsKeyword_1_2()), new TokenAlias(false, true, grammarAccess.getQuery3Access().getAndKeyword_1_5()));
 		match_Query3___IsKeyword_1_2_AndKeyword_1_5_q__p = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getQuery3Access().getIsKeyword_1_2()), new TokenAlias(false, true, grammarAccess.getQuery3Access().getAndKeyword_1_5()));
+		match_addXML_changeXML_target_RemoveXMLParserRuleCall_4_or___AddXMLKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3___or___ChangeXMLKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAddXMLAccess().getAddXMLKeyword_0()), new TokenAlias(false, false, grammarAccess.getAddXMLAccess().getLeftCurlyBracketKeyword_1()), new TokenAlias(false, false, grammarAccess.getAddXMLAccess().getRightCurlyBracketKeyword_3())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getChangeXMLAccess().getChangeXMLKeyword_0()), new TokenAlias(false, false, grammarAccess.getChangeXMLAccess().getLeftCurlyBracketKeyword_1()), new TokenAlias(false, false, grammarAccess.getChangeXMLAccess().getRightCurlyBracketKeyword_3())), new TokenAlias(false, false, grammarAccess.getTargetAccess().getRemoveXMLParserRuleCall_4()));
+		match_change_simulation_SteadyStateParserRuleCall_1_or___ChangeKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getChangeAccess().getChangeKeyword_0()), new TokenAlias(false, false, grammarAccess.getChangeAccess().getLeftCurlyBracketKeyword_1()), new TokenAlias(false, false, grammarAccess.getChangeAccess().getRightCurlyBracketKeyword_3())), new TokenAlias(false, false, grammarAccess.getSimulationAccess().getSteadyStateParserRuleCall_1()));
 		match_hypothesis___CoherenceKeyword_4_0_ModelKeyword_4_1_LeftCurlyBracketKeyword_4_2_RightCurlyBracketKeyword_4_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHypothesisAccess().getCoherenceKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getHypothesisAccess().getModelKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getHypothesisAccess().getLeftCurlyBracketKeyword_4_2()), new TokenAlias(false, false, grammarAccess.getHypothesisAccess().getRightCurlyBracketKeyword_4_4()));
 		match_hypothesis___EvidenceKeyword_3_0_LeftCurlyBracketKeyword_3_1_RightCurlyBracketKeyword_3_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHypothesisAccess().getEvidenceKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getHypothesisAccess().getLeftCurlyBracketKeyword_3_1()), new TokenAlias(false, false, grammarAccess.getHypothesisAccess().getRightCurlyBracketKeyword_3_3()));
 		match_hypothesis___MechanisticKeyword_2_0_HypothesesKeyword_2_1_LeftCurlyBracketKeyword_2_2_RightCurlyBracketKeyword_2_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHypothesisAccess().getMechanisticKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getHypothesisAccess().getHypothesesKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getHypothesisAccess().getLeftCurlyBracketKeyword_2_2()), new TokenAlias(false, false, grammarAccess.getHypothesisAccess().getRightCurlyBracketKeyword_2_4()));
@@ -58,9 +62,33 @@ public class SedmlSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getSteadyStateRule())
+			return getSteadyStateToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getRemoveXMLRule())
+			return getremoveXMLToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * SteadyState:
+	 * 	'steadyState' '{' '}';
+	 */
+	protected String getSteadyStateToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "steadyState{}";
+	}
+	
+	/**
+	 * removeXML:
+	 * 	'removeXML'
+	 * ;
+	 */
+	protected String getremoveXMLToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "removeXML";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -86,6 +114,10 @@ public class SedmlSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Query3___IsKeyword_1_2_AndKeyword_1_5_q__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Query3___IsKeyword_1_2_AndKeyword_1_5_q__p.equals(syntax))
 				emit_Query3___IsKeyword_1_2_AndKeyword_1_5_q__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_addXML_changeXML_target_RemoveXMLParserRuleCall_4_or___AddXMLKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3___or___ChangeXMLKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3__.equals(syntax))
+				emit_addXML_changeXML_target_RemoveXMLParserRuleCall_4_or___AddXMLKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3___or___ChangeXMLKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_change_simulation_SteadyStateParserRuleCall_1_or___ChangeKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3__.equals(syntax))
+				emit_change_simulation_SteadyStateParserRuleCall_1_or___ChangeKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_hypothesis___CoherenceKeyword_4_0_ModelKeyword_4_1_LeftCurlyBracketKeyword_4_2_RightCurlyBracketKeyword_4_4__q.equals(syntax))
 				emit_hypothesis___CoherenceKeyword_4_0_ModelKeyword_4_1_LeftCurlyBracketKeyword_4_2_RightCurlyBracketKeyword_4_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_hypothesis___EvidenceKeyword_3_0_LeftCurlyBracketKeyword_3_1_RightCurlyBracketKeyword_3_3__q.equals(syntax))
@@ -258,6 +290,28 @@ public class SedmlSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     factor1=ID (ambiguity) factor1=ID
 	 */
 	protected void emit_Query3___IsKeyword_1_2_AndKeyword_1_5_q__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     removeXML | ('changeXML' '{' '}') | ('addXML' '{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_addXML_changeXML_target_RemoveXMLParserRuleCall_4_or___AddXMLKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3___or___ChangeXMLKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     SteadyState | ('change' '{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_change_simulation_SteadyStateParserRuleCall_1_or___ChangeKeyword_0_LeftCurlyBracketKeyword_1_RightCurlyBracketKeyword_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

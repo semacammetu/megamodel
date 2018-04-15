@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.model;
@@ -25,36 +24,14 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.uniformTimeCourse;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.taskImpl#getId <em>Id</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.taskImpl#getModelReference <em>Model Reference</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.taskImpl#getSimulationReference <em>Simulation Reference</em>}</li>
- *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.taskImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class taskImpl extends MinimalEObjectImpl.Container implements task
+public class taskImpl extends abstractTaskImpl implements task
 {
-  /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
-  protected static final String ID_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
-  protected String id = ID_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getModelReference() <em>Model Reference</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -76,26 +53,6 @@ public class taskImpl extends MinimalEObjectImpl.Container implements task
   protected uniformTimeCourse simulationReference;
 
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -114,29 +71,6 @@ public class taskImpl extends MinimalEObjectImpl.Container implements task
   protected EClass eStaticClass()
   {
     return SedmlPackage.Literals.TASK;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getId()
-  {
-    return id;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setId(String newId)
-  {
-    String oldId = id;
-    id = newId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SedmlPackage.TASK__ID, oldId, id));
   }
 
   /**
@@ -240,29 +174,6 @@ public class taskImpl extends MinimalEObjectImpl.Container implements task
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SedmlPackage.TASK__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -286,14 +197,10 @@ public class taskImpl extends MinimalEObjectImpl.Container implements task
   {
     switch (featureID)
     {
-      case SedmlPackage.TASK__ID:
-        return getId();
       case SedmlPackage.TASK__MODEL_REFERENCE:
         return getModelReference();
       case SedmlPackage.TASK__SIMULATION_REFERENCE:
         return getSimulationReference();
-      case SedmlPackage.TASK__NAME:
-        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -308,17 +215,11 @@ public class taskImpl extends MinimalEObjectImpl.Container implements task
   {
     switch (featureID)
     {
-      case SedmlPackage.TASK__ID:
-        setId((String)newValue);
-        return;
       case SedmlPackage.TASK__MODEL_REFERENCE:
         setModelReference((model)newValue);
         return;
       case SedmlPackage.TASK__SIMULATION_REFERENCE:
         setSimulationReference((uniformTimeCourse)newValue);
-        return;
-      case SedmlPackage.TASK__NAME:
-        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -334,17 +235,11 @@ public class taskImpl extends MinimalEObjectImpl.Container implements task
   {
     switch (featureID)
     {
-      case SedmlPackage.TASK__ID:
-        setId(ID_EDEFAULT);
-        return;
       case SedmlPackage.TASK__MODEL_REFERENCE:
         setModelReference((model)null);
         return;
       case SedmlPackage.TASK__SIMULATION_REFERENCE:
         setSimulationReference((uniformTimeCourse)null);
-        return;
-      case SedmlPackage.TASK__NAME:
-        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -360,35 +255,12 @@ public class taskImpl extends MinimalEObjectImpl.Container implements task
   {
     switch (featureID)
     {
-      case SedmlPackage.TASK__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
       case SedmlPackage.TASK__MODEL_REFERENCE:
         return modelReference != null;
       case SedmlPackage.TASK__SIMULATION_REFERENCE:
         return simulationReference != null;
-      case SedmlPackage.TASK__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (id: ");
-    result.append(id);
-    result.append(", name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //taskImpl

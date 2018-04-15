@@ -3,7 +3,6 @@
  */
 package tr.edu.metu.ceng.megamodel.sedml.sedml;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getId <em>Id</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getName <em>Name</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getListOfVariables <em>List Of Variables</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getListOfParameters <em>List Of Parameters</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getMath <em>Math</em>}</li>
  * </ul>
  *
@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface dataGenerator extends EObject
+public interface dataGenerator extends SEDBase
 {
   /**
    * Returns the value of the '<em><b>Id</b></em>' attribute.
@@ -103,6 +103,32 @@ public interface dataGenerator extends EObject
    * @generated
    */
   void setListOfVariables(listOfVariables value);
+
+  /**
+   * Returns the value of the '<em><b>List Of Parameters</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>List Of Parameters</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>List Of Parameters</em>' containment reference.
+   * @see #setListOfParameters(listOfParameters)
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getdataGenerator_ListOfParameters()
+   * @model containment="true"
+   * @generated
+   */
+  listOfParameters getListOfParameters();
+
+  /**
+   * Sets the value of the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.dataGenerator#getListOfParameters <em>List Of Parameters</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>List Of Parameters</em>' containment reference.
+   * @see #getListOfParameters()
+   * @generated
+   */
+  void setListOfParameters(listOfParameters value);
 
   /**
    * Returns the value of the '<em><b>Math</b></em>' containment reference.

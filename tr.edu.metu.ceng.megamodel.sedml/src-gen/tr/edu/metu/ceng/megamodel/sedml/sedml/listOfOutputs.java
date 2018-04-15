@@ -3,8 +3,6 @@
  */
 package tr.edu.metu.ceng.megamodel.sedml.sedml;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfOutputs#getPlot2D <em>Plot2 D</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfOutputs#getOutput <em>Output</em>}</li>
  * </ul>
  *
  * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getlistOfOutputs()
@@ -26,19 +24,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface listOfOutputs extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Plot2 D</b></em>' containment reference list.
-   * The list contents are of type {@link tr.edu.metu.ceng.megamodel.sedml.sedml.plot2D}.
+   * Returns the value of the '<em><b>Output</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Plot2 D</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Output</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Plot2 D</em>' containment reference list.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getlistOfOutputs_Plot2D()
+   * @return the value of the '<em>Output</em>' containment reference.
+   * @see #setOutput(output)
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getlistOfOutputs_Output()
    * @model containment="true"
    * @generated
    */
-  EList<plot2D> getPlot2D();
+  output getOutput();
+
+  /**
+   * Sets the value of the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfOutputs#getOutput <em>Output</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Output</em>' containment reference.
+   * @see #getOutput()
+   * @generated
+   */
+  void setOutput(output value);
 
 } // listOfOutputs

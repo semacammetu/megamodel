@@ -66,7 +66,22 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
   {
     switch (eClass.getClassifierID())
     {
+      case SedmlPackage.SED_BASE: return createSEDBase();
+      case SedmlPackage.CHANGE: return createchange();
+      case SedmlPackage.TARGET: return createtarget();
+      case SedmlPackage.CHANGE_ATTRIBUTE: return createchangeAttribute();
+      case SedmlPackage.COMPUTE_CHANGE: return createcomputeChange();
+      case SedmlPackage.ADD_XML: return createaddXML();
+      case SedmlPackage.CHANGE_XML: return createchangeXML();
+      case SedmlPackage.NEW_XML: return createnewXML();
       case SedmlPackage.SED_ML: return createsedML();
+      case SedmlPackage.LIST_OF_DATA_DESCRIPTIONS: return createlistOfDataDescriptions();
+      case SedmlPackage.DATA_DESCRIPTION: return createdataDescription();
+      case SedmlPackage.DIMENSION_DESCRIPTION: return createdimensionDescription();
+      case SedmlPackage.LIST_OF_DATA_SOURCES: return createlistOfDataSources();
+      case SedmlPackage.DATA_SOURCE: return createdataSource();
+      case SedmlPackage.LIST_OF_DATA_SLICES: return createlistOfDataSlices();
+      case SedmlPackage.SLICE: return createslice();
       case SedmlPackage.LIST_OF_HYPOTHESES: return createlistOfHypotheses();
       case SedmlPackage.HYPOTHESIS: return createhypothesis();
       case SedmlPackage.RELATIONAL_QUERY: return createRelationalQuery();
@@ -83,20 +98,42 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
       case SedmlPackage.DISPERSED: return createDispersed();
       case SedmlPackage.LIST_OF_MODELS: return createlistOfModels();
       case SedmlPackage.MODEL: return createmodel();
+      case SedmlPackage.LIST_OF_CHANGES: return createlistOfChanges();
       case SedmlPackage.DATA_GENERATOR: return createdataGenerator();
+      case SedmlPackage.LIST_OF_PARAMETERS: return createlistOfParameters();
+      case SedmlPackage.PARAMETER: return createparameter();
       case SedmlPackage.LIST_OF_VARIABLES: return createlistOfVariables();
       case SedmlPackage.VARIABLE: return createvariable();
       case SedmlPackage.LIST_OF_TASKS: return createlistOfTasks();
+      case SedmlPackage.REPEATED_TASK: return createrepeatedTask();
+      case SedmlPackage.LIST_OF_RANGES: return createlistOfRanges();
+      case SedmlPackage.RANGE: return createrange();
+      case SedmlPackage.UNIFORM_RANGE: return createuniformRange();
+      case SedmlPackage.VECTOR_RANGE: return createvectorRange();
+      case SedmlPackage.VALUE: return createvalue();
+      case SedmlPackage.FUNCTIONAL_RANGE: return createfunctionalRange();
+      case SedmlPackage.ABSTRACT_TASK: return createabstractTask();
+      case SedmlPackage.SUB_TASK: return createsubTask();
       case SedmlPackage.TASK: return createtask();
       case SedmlPackage.LIST_OF_DATA_GENERATORS: return createlistOfDataGenerators();
       case SedmlPackage.MATH: return createmath();
       case SedmlPackage.LIST_OF_OUTPUTS: return createlistOfOutputs();
+      case SedmlPackage.OUTPUT: return createoutput();
       case SedmlPackage.PLOT2_D: return createplot2D();
+      case SedmlPackage.PLOT3_D: return createplot3D();
+      case SedmlPackage.REPORT: return createreport();
+      case SedmlPackage.LIST_OF_DATA_SETS: return createlistOfDataSets();
+      case SedmlPackage.DATA_SET: return createdataSet();
+      case SedmlPackage.LIST_OF_SURFACES: return createlistOfSurfaces();
       case SedmlPackage.LIST_OF_CURVES: return createlistOfCurves();
       case SedmlPackage.CURVE: return createcurve();
       case SedmlPackage.LIST_OF_SIMULATIONS: return createlistOfSimulations();
+      case SedmlPackage.SIMULATION: return createsimulation();
       case SedmlPackage.UNIFORM_TIME_COURSE: return createuniformTimeCourse();
+      case SedmlPackage.ONE_STEP: return createoneStep();
       case SedmlPackage.ALGORITHM: return createalgorithm();
+      case SedmlPackage.LIST_OF_ALGORITHM_PARAMETERS: return createlistOfAlgorithmParameters();
+      case SedmlPackage.ALGORITHM_PARAMETER: return createalgorithmParameter();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -165,10 +202,175 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public SEDBase createSEDBase()
+  {
+    SEDBaseImpl sedBase = new SEDBaseImpl();
+    return sedBase;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public change createchange()
+  {
+    changeImpl change = new changeImpl();
+    return change;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public target createtarget()
+  {
+    targetImpl target = new targetImpl();
+    return target;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public changeAttribute createchangeAttribute()
+  {
+    changeAttributeImpl changeAttribute = new changeAttributeImpl();
+    return changeAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public computeChange createcomputeChange()
+  {
+    computeChangeImpl computeChange = new computeChangeImpl();
+    return computeChange;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public addXML createaddXML()
+  {
+    addXMLImpl addXML = new addXMLImpl();
+    return addXML;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public changeXML createchangeXML()
+  {
+    changeXMLImpl changeXML = new changeXMLImpl();
+    return changeXML;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public newXML createnewXML()
+  {
+    newXMLImpl newXML = new newXMLImpl();
+    return newXML;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public sedML createsedML()
   {
     sedMLImpl sedML = new sedMLImpl();
     return sedML;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public listOfDataDescriptions createlistOfDataDescriptions()
+  {
+    listOfDataDescriptionsImpl listOfDataDescriptions = new listOfDataDescriptionsImpl();
+    return listOfDataDescriptions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public dataDescription createdataDescription()
+  {
+    dataDescriptionImpl dataDescription = new dataDescriptionImpl();
+    return dataDescription;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public dimensionDescription createdimensionDescription()
+  {
+    dimensionDescriptionImpl dimensionDescription = new dimensionDescriptionImpl();
+    return dimensionDescription;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public listOfDataSources createlistOfDataSources()
+  {
+    listOfDataSourcesImpl listOfDataSources = new listOfDataSourcesImpl();
+    return listOfDataSources;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public dataSource createdataSource()
+  {
+    dataSourceImpl dataSource = new dataSourceImpl();
+    return dataSource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public listOfDataSlices createlistOfDataSlices()
+  {
+    listOfDataSlicesImpl listOfDataSlices = new listOfDataSlicesImpl();
+    return listOfDataSlices;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public slice createslice()
+  {
+    sliceImpl slice = new sliceImpl();
+    return slice;
   }
 
   /**
@@ -352,10 +554,43 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public listOfChanges createlistOfChanges()
+  {
+    listOfChangesImpl listOfChanges = new listOfChangesImpl();
+    return listOfChanges;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public dataGenerator createdataGenerator()
   {
     dataGeneratorImpl dataGenerator = new dataGeneratorImpl();
     return dataGenerator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public listOfParameters createlistOfParameters()
+  {
+    listOfParametersImpl listOfParameters = new listOfParametersImpl();
+    return listOfParameters;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public parameter createparameter()
+  {
+    parameterImpl parameter = new parameterImpl();
+    return parameter;
   }
 
   /**
@@ -389,6 +624,105 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
   {
     listOfTasksImpl listOfTasks = new listOfTasksImpl();
     return listOfTasks;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public repeatedTask createrepeatedTask()
+  {
+    repeatedTaskImpl repeatedTask = new repeatedTaskImpl();
+    return repeatedTask;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public listOfRanges createlistOfRanges()
+  {
+    listOfRangesImpl listOfRanges = new listOfRangesImpl();
+    return listOfRanges;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public range createrange()
+  {
+    rangeImpl range = new rangeImpl();
+    return range;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public uniformRange createuniformRange()
+  {
+    uniformRangeImpl uniformRange = new uniformRangeImpl();
+    return uniformRange;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public vectorRange createvectorRange()
+  {
+    vectorRangeImpl vectorRange = new vectorRangeImpl();
+    return vectorRange;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public value createvalue()
+  {
+    valueImpl value = new valueImpl();
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public functionalRange createfunctionalRange()
+  {
+    functionalRangeImpl functionalRange = new functionalRangeImpl();
+    return functionalRange;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public abstractTask createabstractTask()
+  {
+    abstractTaskImpl abstractTask = new abstractTaskImpl();
+    return abstractTask;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public subTask createsubTask()
+  {
+    subTaskImpl subTask = new subTaskImpl();
+    return subTask;
   }
 
   /**
@@ -440,10 +774,76 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public output createoutput()
+  {
+    outputImpl output = new outputImpl();
+    return output;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public plot2D createplot2D()
   {
     plot2DImpl plot2D = new plot2DImpl();
     return plot2D;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public plot3D createplot3D()
+  {
+    plot3DImpl plot3D = new plot3DImpl();
+    return plot3D;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public report createreport()
+  {
+    reportImpl report = new reportImpl();
+    return report;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public listOfDataSets createlistOfDataSets()
+  {
+    listOfDataSetsImpl listOfDataSets = new listOfDataSetsImpl();
+    return listOfDataSets;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public dataSet createdataSet()
+  {
+    dataSetImpl dataSet = new dataSetImpl();
+    return dataSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public listOfSurfaces createlistOfSurfaces()
+  {
+    listOfSurfacesImpl listOfSurfaces = new listOfSurfacesImpl();
+    return listOfSurfaces;
   }
 
   /**
@@ -484,6 +884,17 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public simulation createsimulation()
+  {
+    simulationImpl simulation = new simulationImpl();
+    return simulation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public uniformTimeCourse createuniformTimeCourse()
   {
     uniformTimeCourseImpl uniformTimeCourse = new uniformTimeCourseImpl();
@@ -495,10 +906,43 @@ public class SedmlFactoryImpl extends EFactoryImpl implements SedmlFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public oneStep createoneStep()
+  {
+    oneStepImpl oneStep = new oneStepImpl();
+    return oneStep;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public algorithm createalgorithm()
   {
     algorithmImpl algorithm = new algorithmImpl();
     return algorithm;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public listOfAlgorithmParameters createlistOfAlgorithmParameters()
+  {
+    listOfAlgorithmParametersImpl listOfAlgorithmParameters = new listOfAlgorithmParametersImpl();
+    return listOfAlgorithmParameters;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public algorithmParameter createalgorithmParameter()
+  {
+    algorithmParameterImpl algorithmParameter = new algorithmParameterImpl();
+    return algorithmParameter;
   }
 
   /**

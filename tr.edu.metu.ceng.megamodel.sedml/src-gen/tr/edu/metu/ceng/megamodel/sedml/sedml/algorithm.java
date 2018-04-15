@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.algorithm#getKisaoID <em>Kisao ID</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.algorithm#getListOfAlgorithmParameters <em>List Of Algorithm Parameters</em>}</li>
  * </ul>
  *
  * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getalgorithm()
@@ -48,5 +49,31 @@ public interface algorithm extends EObject
    * @generated
    */
   void setKisaoID(String value);
+
+  /**
+   * Returns the value of the '<em><b>List Of Algorithm Parameters</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>List Of Algorithm Parameters</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>List Of Algorithm Parameters</em>' containment reference.
+   * @see #setListOfAlgorithmParameters(listOfAlgorithmParameters)
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getalgorithm_ListOfAlgorithmParameters()
+   * @model containment="true"
+   * @generated
+   */
+  listOfAlgorithmParameters getListOfAlgorithmParameters();
+
+  /**
+   * Sets the value of the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.algorithm#getListOfAlgorithmParameters <em>List Of Algorithm Parameters</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>List Of Algorithm Parameters</em>' containment reference.
+   * @see #getListOfAlgorithmParameters()
+   * @generated
+   */
+  void setListOfAlgorithmParameters(listOfAlgorithmParameters value);
 
 } // algorithm

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfTasks#getTask <em>Task</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfTasks#getRepeatedTask <em>Repeated Task</em>}</li>
  * </ul>
  *
  * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getlistOfTasks()
@@ -40,5 +41,21 @@ public interface listOfTasks extends EObject
    * @generated
    */
   EList<task> getTask();
+
+  /**
+   * Returns the value of the '<em><b>Repeated Task</b></em>' containment reference list.
+   * The list contents are of type {@link tr.edu.metu.ceng.megamodel.sedml.sedml.repeatedTask}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Repeated Task</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Repeated Task</em>' containment reference list.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getlistOfTasks_RepeatedTask()
+   * @model containment="true"
+   * @generated
+   */
+  EList<repeatedTask> getRepeatedTask();
 
 } // listOfTasks

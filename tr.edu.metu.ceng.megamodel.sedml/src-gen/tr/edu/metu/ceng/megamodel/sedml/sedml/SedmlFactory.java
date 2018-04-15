@@ -24,6 +24,78 @@ public interface SedmlFactory extends EFactory
   SedmlFactory eINSTANCE = tr.edu.metu.ceng.megamodel.sedml.sedml.impl.SedmlFactoryImpl.init();
 
   /**
+   * Returns a new object of class '<em>SED Base</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SED Base</em>'.
+   * @generated
+   */
+  SEDBase createSEDBase();
+
+  /**
+   * Returns a new object of class '<em>change</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>change</em>'.
+   * @generated
+   */
+  change createchange();
+
+  /**
+   * Returns a new object of class '<em>target</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>target</em>'.
+   * @generated
+   */
+  target createtarget();
+
+  /**
+   * Returns a new object of class '<em>change Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>change Attribute</em>'.
+   * @generated
+   */
+  changeAttribute createchangeAttribute();
+
+  /**
+   * Returns a new object of class '<em>compute Change</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>compute Change</em>'.
+   * @generated
+   */
+  computeChange createcomputeChange();
+
+  /**
+   * Returns a new object of class '<em>add XML</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>add XML</em>'.
+   * @generated
+   */
+  addXML createaddXML();
+
+  /**
+   * Returns a new object of class '<em>change XML</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>change XML</em>'.
+   * @generated
+   */
+  changeXML createchangeXML();
+
+  /**
+   * Returns a new object of class '<em>new XML</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>new XML</em>'.
+   * @generated
+   */
+  newXML createnewXML();
+
+  /**
    * Returns a new object of class '<em>sed ML</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -31,6 +103,69 @@ public interface SedmlFactory extends EFactory
    * @generated
    */
   sedML createsedML();
+
+  /**
+   * Returns a new object of class '<em>list Of Data Descriptions</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>list Of Data Descriptions</em>'.
+   * @generated
+   */
+  listOfDataDescriptions createlistOfDataDescriptions();
+
+  /**
+   * Returns a new object of class '<em>data Description</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>data Description</em>'.
+   * @generated
+   */
+  dataDescription createdataDescription();
+
+  /**
+   * Returns a new object of class '<em>dimension Description</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>dimension Description</em>'.
+   * @generated
+   */
+  dimensionDescription createdimensionDescription();
+
+  /**
+   * Returns a new object of class '<em>list Of Data Sources</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>list Of Data Sources</em>'.
+   * @generated
+   */
+  listOfDataSources createlistOfDataSources();
+
+  /**
+   * Returns a new object of class '<em>data Source</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>data Source</em>'.
+   * @generated
+   */
+  dataSource createdataSource();
+
+  /**
+   * Returns a new object of class '<em>list Of Data Slices</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>list Of Data Slices</em>'.
+   * @generated
+   */
+  listOfDataSlices createlistOfDataSlices();
+
+  /**
+   * Returns a new object of class '<em>slice</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>slice</em>'.
+   * @generated
+   */
+  slice createslice();
 
   /**
    * Returns a new object of class '<em>list Of Hypotheses</em>'.
@@ -177,6 +312,15 @@ public interface SedmlFactory extends EFactory
   model createmodel();
 
   /**
+   * Returns a new object of class '<em>list Of Changes</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>list Of Changes</em>'.
+   * @generated
+   */
+  listOfChanges createlistOfChanges();
+
+  /**
    * Returns a new object of class '<em>data Generator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -184,6 +328,24 @@ public interface SedmlFactory extends EFactory
    * @generated
    */
   dataGenerator createdataGenerator();
+
+  /**
+   * Returns a new object of class '<em>list Of Parameters</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>list Of Parameters</em>'.
+   * @generated
+   */
+  listOfParameters createlistOfParameters();
+
+  /**
+   * Returns a new object of class '<em>parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>parameter</em>'.
+   * @generated
+   */
+  parameter createparameter();
 
   /**
    * Returns a new object of class '<em>list Of Variables</em>'.
@@ -211,6 +373,87 @@ public interface SedmlFactory extends EFactory
    * @generated
    */
   listOfTasks createlistOfTasks();
+
+  /**
+   * Returns a new object of class '<em>repeated Task</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>repeated Task</em>'.
+   * @generated
+   */
+  repeatedTask createrepeatedTask();
+
+  /**
+   * Returns a new object of class '<em>list Of Ranges</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>list Of Ranges</em>'.
+   * @generated
+   */
+  listOfRanges createlistOfRanges();
+
+  /**
+   * Returns a new object of class '<em>range</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>range</em>'.
+   * @generated
+   */
+  range createrange();
+
+  /**
+   * Returns a new object of class '<em>uniform Range</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>uniform Range</em>'.
+   * @generated
+   */
+  uniformRange createuniformRange();
+
+  /**
+   * Returns a new object of class '<em>vector Range</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>vector Range</em>'.
+   * @generated
+   */
+  vectorRange createvectorRange();
+
+  /**
+   * Returns a new object of class '<em>value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>value</em>'.
+   * @generated
+   */
+  value createvalue();
+
+  /**
+   * Returns a new object of class '<em>functional Range</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>functional Range</em>'.
+   * @generated
+   */
+  functionalRange createfunctionalRange();
+
+  /**
+   * Returns a new object of class '<em>abstract Task</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>abstract Task</em>'.
+   * @generated
+   */
+  abstractTask createabstractTask();
+
+  /**
+   * Returns a new object of class '<em>sub Task</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>sub Task</em>'.
+   * @generated
+   */
+  subTask createsubTask();
 
   /**
    * Returns a new object of class '<em>task</em>'.
@@ -249,6 +492,15 @@ public interface SedmlFactory extends EFactory
   listOfOutputs createlistOfOutputs();
 
   /**
+   * Returns a new object of class '<em>output</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>output</em>'.
+   * @generated
+   */
+  output createoutput();
+
+  /**
    * Returns a new object of class '<em>plot2 D</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -256,6 +508,51 @@ public interface SedmlFactory extends EFactory
    * @generated
    */
   plot2D createplot2D();
+
+  /**
+   * Returns a new object of class '<em>plot3 D</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>plot3 D</em>'.
+   * @generated
+   */
+  plot3D createplot3D();
+
+  /**
+   * Returns a new object of class '<em>report</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>report</em>'.
+   * @generated
+   */
+  report createreport();
+
+  /**
+   * Returns a new object of class '<em>list Of Data Sets</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>list Of Data Sets</em>'.
+   * @generated
+   */
+  listOfDataSets createlistOfDataSets();
+
+  /**
+   * Returns a new object of class '<em>data Set</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>data Set</em>'.
+   * @generated
+   */
+  dataSet createdataSet();
+
+  /**
+   * Returns a new object of class '<em>list Of Surfaces</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>list Of Surfaces</em>'.
+   * @generated
+   */
+  listOfSurfaces createlistOfSurfaces();
 
   /**
    * Returns a new object of class '<em>list Of Curves</em>'.
@@ -285,6 +582,15 @@ public interface SedmlFactory extends EFactory
   listOfSimulations createlistOfSimulations();
 
   /**
+   * Returns a new object of class '<em>simulation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>simulation</em>'.
+   * @generated
+   */
+  simulation createsimulation();
+
+  /**
    * Returns a new object of class '<em>uniform Time Course</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -294,6 +600,15 @@ public interface SedmlFactory extends EFactory
   uniformTimeCourse createuniformTimeCourse();
 
   /**
+   * Returns a new object of class '<em>one Step</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>one Step</em>'.
+   * @generated
+   */
+  oneStep createoneStep();
+
+  /**
    * Returns a new object of class '<em>algorithm</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -301,6 +616,24 @@ public interface SedmlFactory extends EFactory
    * @generated
    */
   algorithm createalgorithm();
+
+  /**
+   * Returns a new object of class '<em>list Of Algorithm Parameters</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>list Of Algorithm Parameters</em>'.
+   * @generated
+   */
+  listOfAlgorithmParameters createlistOfAlgorithmParameters();
+
+  /**
+   * Returns a new object of class '<em>algorithm Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>algorithm Parameter</em>'.
+   * @generated
+   */
+  algorithmParameter createalgorithmParameter();
 
   /**
    * Returns the package supported by this factory.

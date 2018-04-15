@@ -27,7 +27,7 @@ public class SedmlParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "sedML";
+		return "SEDBase";
 	}
 
 	public SedmlGrammarAccess getGrammarAccess() {

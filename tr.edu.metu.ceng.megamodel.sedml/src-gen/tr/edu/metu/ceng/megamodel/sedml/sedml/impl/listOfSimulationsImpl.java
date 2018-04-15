@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSimulations;
-import tr.edu.metu.ceng.megamodel.sedml.sedml.uniformTimeCourse;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.simulation;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.uniformTimeCourse;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfSimulationsImpl#getUniformTimeCourse <em>Uniform Time Course</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfSimulationsImpl#getSimulation <em>Simulation</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.uniformTimeCourse;
 public class listOfSimulationsImpl extends MinimalEObjectImpl.Container implements listOfSimulations
 {
   /**
-   * The cached value of the '{@link #getUniformTimeCourse() <em>Uniform Time Course</em>}' containment reference list.
+   * The cached value of the '{@link #getSimulation() <em>Simulation</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUniformTimeCourse()
+   * @see #getSimulation()
    * @generated
    * @ordered
    */
-  protected EList<uniformTimeCourse> uniformTimeCourse;
+  protected EList<simulation> simulation;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +72,13 @@ public class listOfSimulationsImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<uniformTimeCourse> getUniformTimeCourse()
+  public EList<simulation> getSimulation()
   {
-    if (uniformTimeCourse == null)
+    if (simulation == null)
     {
-      uniformTimeCourse = new EObjectContainmentEList<uniformTimeCourse>(uniformTimeCourse.class, this, SedmlPackage.LIST_OF_SIMULATIONS__UNIFORM_TIME_COURSE);
+      simulation = new EObjectContainmentEList<simulation>(simulation.class, this, SedmlPackage.LIST_OF_SIMULATIONS__SIMULATION);
     }
-    return uniformTimeCourse;
+    return simulation;
   }
 
   /**
@@ -91,8 +91,8 @@ public class listOfSimulationsImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SedmlPackage.LIST_OF_SIMULATIONS__UNIFORM_TIME_COURSE:
-        return ((InternalEList<?>)getUniformTimeCourse()).basicRemove(otherEnd, msgs);
+      case SedmlPackage.LIST_OF_SIMULATIONS__SIMULATION:
+        return ((InternalEList<?>)getSimulation()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +107,8 @@ public class listOfSimulationsImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SedmlPackage.LIST_OF_SIMULATIONS__UNIFORM_TIME_COURSE:
-        return getUniformTimeCourse();
+      case SedmlPackage.LIST_OF_SIMULATIONS__SIMULATION:
+        return getSimulation();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +124,9 @@ public class listOfSimulationsImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SedmlPackage.LIST_OF_SIMULATIONS__UNIFORM_TIME_COURSE:
-        getUniformTimeCourse().clear();
-        getUniformTimeCourse().addAll((Collection<? extends uniformTimeCourse>)newValue);
+      case SedmlPackage.LIST_OF_SIMULATIONS__SIMULATION:
+        getSimulation().clear();
+        getSimulation().addAll((Collection<? extends simulation>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +142,8 @@ public class listOfSimulationsImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SedmlPackage.LIST_OF_SIMULATIONS__UNIFORM_TIME_COURSE:
-        getUniformTimeCourse().clear();
+      case SedmlPackage.LIST_OF_SIMULATIONS__SIMULATION:
+        getSimulation().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,8 +159,8 @@ public class listOfSimulationsImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SedmlPackage.LIST_OF_SIMULATIONS__UNIFORM_TIME_COURSE:
-        return uniformTimeCourse != null && !uniformTimeCourse.isEmpty();
+      case SedmlPackage.LIST_OF_SIMULATIONS__SIMULATION:
+        return simulation != null && !simulation.isEmpty();
     }
     return super.eIsSet(featureID);
   }

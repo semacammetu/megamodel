@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSimulations#getUniformTimeCourse <em>Uniform Time Course</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.listOfSimulations#getSimulation <em>Simulation</em>}</li>
  * </ul>
  *
  * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getlistOfSimulations()
@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface listOfSimulations extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Uniform Time Course</b></em>' containment reference list.
-   * The list contents are of type {@link tr.edu.metu.ceng.megamodel.sedml.sedml.uniformTimeCourse}.
+   * Returns the value of the '<em><b>Simulation</b></em>' containment reference list.
+   * The list contents are of type {@link tr.edu.metu.ceng.megamodel.sedml.sedml.simulation}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Uniform Time Course</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Simulation</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Uniform Time Course</em>' containment reference list.
-   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getlistOfSimulations_UniformTimeCourse()
+   * @return the value of the '<em>Simulation</em>' containment reference list.
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getlistOfSimulations_Simulation()
    * @model containment="true"
    * @generated
    */
-  EList<uniformTimeCourse> getUniformTimeCourse();
+  EList<simulation> getSimulation();
 
 } // listOfSimulations

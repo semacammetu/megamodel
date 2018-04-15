@@ -3,7 +3,6 @@
  */
 package tr.edu.metu.ceng.megamodel.sedml.sedml;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getVersion <em>Version</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getLevel <em>Level</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfHypotheses <em>List Of Hypotheses</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfDataDescriptions <em>List Of Data Descriptions</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfSimulations <em>List Of Simulations</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfModels <em>List Of Models</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfTasks <em>List Of Tasks</em>}</li>
@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface sedML extends EObject
+public interface sedML extends SEDBase
 {
   /**
    * Returns the value of the '<em><b>Version</b></em>' attribute.
@@ -107,6 +107,32 @@ public interface sedML extends EObject
    * @generated
    */
   void setListOfHypotheses(listOfHypotheses value);
+
+  /**
+   * Returns the value of the '<em><b>List Of Data Descriptions</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>List Of Data Descriptions</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>List Of Data Descriptions</em>' containment reference.
+   * @see #setListOfDataDescriptions(listOfDataDescriptions)
+   * @see tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage#getsedML_ListOfDataDescriptions()
+   * @model containment="true"
+   * @generated
+   */
+  listOfDataDescriptions getListOfDataDescriptions();
+
+  /**
+   * Sets the value of the '{@link tr.edu.metu.ceng.megamodel.sedml.sedml.sedML#getListOfDataDescriptions <em>List Of Data Descriptions</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>List Of Data Descriptions</em>' containment reference.
+   * @see #getListOfDataDescriptions()
+   * @generated
+   */
+  void setListOfDataDescriptions(listOfDataDescriptions value);
 
   /**
    * Returns the value of the '<em><b>List Of Simulations</b></em>' containment reference.

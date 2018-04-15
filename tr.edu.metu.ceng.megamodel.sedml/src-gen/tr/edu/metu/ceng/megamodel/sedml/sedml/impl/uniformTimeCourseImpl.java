@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.algorithm;
@@ -34,7 +33,7 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.uniformTimeCourse;
  *
  * @generated
  */
-public class uniformTimeCourseImpl extends MinimalEObjectImpl.Container implements uniformTimeCourse
+public class uniformTimeCourseImpl extends simulationImpl implements uniformTimeCourse
 {
   /**
    * The default value of the '{@link #getId() <em>Id</em>}' attribute.

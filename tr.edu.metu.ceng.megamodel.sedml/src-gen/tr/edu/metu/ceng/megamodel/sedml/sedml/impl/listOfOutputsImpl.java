@@ -3,23 +3,18 @@
  */
 package tr.edu.metu.ceng.megamodel.sedml.sedml.impl;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfOutputs;
-import tr.edu.metu.ceng.megamodel.sedml.sedml.plot2D;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.output;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +24,7 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.plot2D;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfOutputsImpl#getPlot2D <em>Plot2 D</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.listOfOutputsImpl#getOutput <em>Output</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +32,14 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.plot2D;
 public class listOfOutputsImpl extends MinimalEObjectImpl.Container implements listOfOutputs
 {
   /**
-   * The cached value of the '{@link #getPlot2D() <em>Plot2 D</em>}' containment reference list.
+   * The cached value of the '{@link #getOutput() <em>Output</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPlot2D()
+   * @see #getOutput()
    * @generated
    * @ordered
    */
-  protected EList<plot2D> plot2D;
+  protected output output;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +67,47 @@ public class listOfOutputsImpl extends MinimalEObjectImpl.Container implements l
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<plot2D> getPlot2D()
+  public output getOutput()
   {
-    if (plot2D == null)
+    return output;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetOutput(output newOutput, NotificationChain msgs)
+  {
+    output oldOutput = output;
+    output = newOutput;
+    if (eNotificationRequired())
     {
-      plot2D = new EObjectContainmentEList<plot2D>(plot2D.class, this, SedmlPackage.LIST_OF_OUTPUTS__PLOT2_D);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SedmlPackage.LIST_OF_OUTPUTS__OUTPUT, oldOutput, newOutput);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return plot2D;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOutput(output newOutput)
+  {
+    if (newOutput != output)
+    {
+      NotificationChain msgs = null;
+      if (output != null)
+        msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SedmlPackage.LIST_OF_OUTPUTS__OUTPUT, null, msgs);
+      if (newOutput != null)
+        msgs = ((InternalEObject)newOutput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SedmlPackage.LIST_OF_OUTPUTS__OUTPUT, null, msgs);
+      msgs = basicSetOutput(newOutput, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SedmlPackage.LIST_OF_OUTPUTS__OUTPUT, newOutput, newOutput));
   }
 
   /**
@@ -91,8 +120,8 @@ public class listOfOutputsImpl extends MinimalEObjectImpl.Container implements l
   {
     switch (featureID)
     {
-      case SedmlPackage.LIST_OF_OUTPUTS__PLOT2_D:
-        return ((InternalEList<?>)getPlot2D()).basicRemove(otherEnd, msgs);
+      case SedmlPackage.LIST_OF_OUTPUTS__OUTPUT:
+        return basicSetOutput(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +136,8 @@ public class listOfOutputsImpl extends MinimalEObjectImpl.Container implements l
   {
     switch (featureID)
     {
-      case SedmlPackage.LIST_OF_OUTPUTS__PLOT2_D:
-        return getPlot2D();
+      case SedmlPackage.LIST_OF_OUTPUTS__OUTPUT:
+        return getOutput();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,15 +147,13 @@ public class listOfOutputsImpl extends MinimalEObjectImpl.Container implements l
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SedmlPackage.LIST_OF_OUTPUTS__PLOT2_D:
-        getPlot2D().clear();
-        getPlot2D().addAll((Collection<? extends plot2D>)newValue);
+      case SedmlPackage.LIST_OF_OUTPUTS__OUTPUT:
+        setOutput((output)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +169,8 @@ public class listOfOutputsImpl extends MinimalEObjectImpl.Container implements l
   {
     switch (featureID)
     {
-      case SedmlPackage.LIST_OF_OUTPUTS__PLOT2_D:
-        getPlot2D().clear();
+      case SedmlPackage.LIST_OF_OUTPUTS__OUTPUT:
+        setOutput((output)null);
         return;
     }
     super.eUnset(featureID);
@@ -159,8 +186,8 @@ public class listOfOutputsImpl extends MinimalEObjectImpl.Container implements l
   {
     switch (featureID)
     {
-      case SedmlPackage.LIST_OF_OUTPUTS__PLOT2_D:
-        return plot2D != null && !plot2D.isEmpty();
+      case SedmlPackage.LIST_OF_OUTPUTS__OUTPUT:
+        return output != null;
     }
     return super.eIsSet(featureID);
   }

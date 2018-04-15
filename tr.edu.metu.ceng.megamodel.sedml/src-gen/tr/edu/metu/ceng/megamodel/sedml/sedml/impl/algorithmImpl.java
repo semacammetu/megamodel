@@ -4,14 +4,17 @@
 package tr.edu.metu.ceng.megamodel.sedml.sedml.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.algorithm;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfAlgorithmParameters;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +25,7 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.algorithm;
  * </p>
  * <ul>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.algorithmImpl#getKisaoID <em>Kisao ID</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.algorithmImpl#getListOfAlgorithmParameters <em>List Of Algorithm Parameters</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +51,16 @@ public class algorithmImpl extends MinimalEObjectImpl.Container implements algor
    * @ordered
    */
   protected String kisaoID = KISAO_ID_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getListOfAlgorithmParameters() <em>List Of Algorithm Parameters</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getListOfAlgorithmParameters()
+   * @generated
+   * @ordered
+   */
+  protected listOfAlgorithmParameters listOfAlgorithmParameters;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,6 +111,70 @@ public class algorithmImpl extends MinimalEObjectImpl.Container implements algor
    * <!-- end-user-doc -->
    * @generated
    */
+  public listOfAlgorithmParameters getListOfAlgorithmParameters()
+  {
+    return listOfAlgorithmParameters;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetListOfAlgorithmParameters(listOfAlgorithmParameters newListOfAlgorithmParameters, NotificationChain msgs)
+  {
+    listOfAlgorithmParameters oldListOfAlgorithmParameters = listOfAlgorithmParameters;
+    listOfAlgorithmParameters = newListOfAlgorithmParameters;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SedmlPackage.ALGORITHM__LIST_OF_ALGORITHM_PARAMETERS, oldListOfAlgorithmParameters, newListOfAlgorithmParameters);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setListOfAlgorithmParameters(listOfAlgorithmParameters newListOfAlgorithmParameters)
+  {
+    if (newListOfAlgorithmParameters != listOfAlgorithmParameters)
+    {
+      NotificationChain msgs = null;
+      if (listOfAlgorithmParameters != null)
+        msgs = ((InternalEObject)listOfAlgorithmParameters).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SedmlPackage.ALGORITHM__LIST_OF_ALGORITHM_PARAMETERS, null, msgs);
+      if (newListOfAlgorithmParameters != null)
+        msgs = ((InternalEObject)newListOfAlgorithmParameters).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SedmlPackage.ALGORITHM__LIST_OF_ALGORITHM_PARAMETERS, null, msgs);
+      msgs = basicSetListOfAlgorithmParameters(newListOfAlgorithmParameters, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SedmlPackage.ALGORITHM__LIST_OF_ALGORITHM_PARAMETERS, newListOfAlgorithmParameters, newListOfAlgorithmParameters));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SedmlPackage.ALGORITHM__LIST_OF_ALGORITHM_PARAMETERS:
+        return basicSetListOfAlgorithmParameters(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -104,6 +182,8 @@ public class algorithmImpl extends MinimalEObjectImpl.Container implements algor
     {
       case SedmlPackage.ALGORITHM__KISAO_ID:
         return getKisaoID();
+      case SedmlPackage.ALGORITHM__LIST_OF_ALGORITHM_PARAMETERS:
+        return getListOfAlgorithmParameters();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,6 +200,9 @@ public class algorithmImpl extends MinimalEObjectImpl.Container implements algor
     {
       case SedmlPackage.ALGORITHM__KISAO_ID:
         setKisaoID((String)newValue);
+        return;
+      case SedmlPackage.ALGORITHM__LIST_OF_ALGORITHM_PARAMETERS:
+        setListOfAlgorithmParameters((listOfAlgorithmParameters)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,6 +221,9 @@ public class algorithmImpl extends MinimalEObjectImpl.Container implements algor
       case SedmlPackage.ALGORITHM__KISAO_ID:
         setKisaoID(KISAO_ID_EDEFAULT);
         return;
+      case SedmlPackage.ALGORITHM__LIST_OF_ALGORITHM_PARAMETERS:
+        setListOfAlgorithmParameters((listOfAlgorithmParameters)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -154,6 +240,8 @@ public class algorithmImpl extends MinimalEObjectImpl.Container implements algor
     {
       case SedmlPackage.ALGORITHM__KISAO_ID:
         return KISAO_ID_EDEFAULT == null ? kisaoID != null : !KISAO_ID_EDEFAULT.equals(kisaoID);
+      case SedmlPackage.ALGORITHM__LIST_OF_ALGORITHM_PARAMETERS:
+        return listOfAlgorithmParameters != null;
     }
     return super.eIsSet(featureID);
   }

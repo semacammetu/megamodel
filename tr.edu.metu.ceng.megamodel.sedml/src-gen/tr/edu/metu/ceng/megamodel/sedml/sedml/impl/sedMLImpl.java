@@ -10,9 +10,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tr.edu.metu.ceng.megamodel.sedml.sedml.SedmlPackage;
+import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataDescriptions;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfDataGenerators;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfHypotheses;
 import tr.edu.metu.ceng.megamodel.sedml.sedml.listOfModels;
@@ -32,6 +32,7 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.sedML;
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.sedMLImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.sedMLImpl#getLevel <em>Level</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.sedMLImpl#getListOfHypotheses <em>List Of Hypotheses</em>}</li>
+ *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.sedMLImpl#getListOfDataDescriptions <em>List Of Data Descriptions</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.sedMLImpl#getListOfSimulations <em>List Of Simulations</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.sedMLImpl#getListOfModels <em>List Of Models</em>}</li>
  *   <li>{@link tr.edu.metu.ceng.megamodel.sedml.sedml.impl.sedMLImpl#getListOfTasks <em>List Of Tasks</em>}</li>
@@ -41,7 +42,7 @@ import tr.edu.metu.ceng.megamodel.sedml.sedml.sedML;
  *
  * @generated
  */
-public class sedMLImpl extends MinimalEObjectImpl.Container implements sedML
+public class sedMLImpl extends SEDBaseImpl implements sedML
 {
   /**
    * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
@@ -92,6 +93,16 @@ public class sedMLImpl extends MinimalEObjectImpl.Container implements sedML
    * @ordered
    */
   protected listOfHypotheses listOfHypotheses;
+
+  /**
+   * The cached value of the '{@link #getListOfDataDescriptions() <em>List Of Data Descriptions</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getListOfDataDescriptions()
+   * @generated
+   * @ordered
+   */
+  protected listOfDataDescriptions listOfDataDescriptions;
 
   /**
    * The cached value of the '{@link #getListOfSimulations() <em>List Of Simulations</em>}' containment reference.
@@ -256,6 +267,54 @@ public class sedMLImpl extends MinimalEObjectImpl.Container implements sedML
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SedmlPackage.SED_ML__LIST_OF_HYPOTHESES, newListOfHypotheses, newListOfHypotheses));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public listOfDataDescriptions getListOfDataDescriptions()
+  {
+    return listOfDataDescriptions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetListOfDataDescriptions(listOfDataDescriptions newListOfDataDescriptions, NotificationChain msgs)
+  {
+    listOfDataDescriptions oldListOfDataDescriptions = listOfDataDescriptions;
+    listOfDataDescriptions = newListOfDataDescriptions;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SedmlPackage.SED_ML__LIST_OF_DATA_DESCRIPTIONS, oldListOfDataDescriptions, newListOfDataDescriptions);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setListOfDataDescriptions(listOfDataDescriptions newListOfDataDescriptions)
+  {
+    if (newListOfDataDescriptions != listOfDataDescriptions)
+    {
+      NotificationChain msgs = null;
+      if (listOfDataDescriptions != null)
+        msgs = ((InternalEObject)listOfDataDescriptions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SedmlPackage.SED_ML__LIST_OF_DATA_DESCRIPTIONS, null, msgs);
+      if (newListOfDataDescriptions != null)
+        msgs = ((InternalEObject)newListOfDataDescriptions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SedmlPackage.SED_ML__LIST_OF_DATA_DESCRIPTIONS, null, msgs);
+      msgs = basicSetListOfDataDescriptions(newListOfDataDescriptions, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SedmlPackage.SED_ML__LIST_OF_DATA_DESCRIPTIONS, newListOfDataDescriptions, newListOfDataDescriptions));
   }
 
   /**
@@ -510,6 +569,8 @@ public class sedMLImpl extends MinimalEObjectImpl.Container implements sedML
     {
       case SedmlPackage.SED_ML__LIST_OF_HYPOTHESES:
         return basicSetListOfHypotheses(null, msgs);
+      case SedmlPackage.SED_ML__LIST_OF_DATA_DESCRIPTIONS:
+        return basicSetListOfDataDescriptions(null, msgs);
       case SedmlPackage.SED_ML__LIST_OF_SIMULATIONS:
         return basicSetListOfSimulations(null, msgs);
       case SedmlPackage.SED_ML__LIST_OF_MODELS:
@@ -540,6 +601,8 @@ public class sedMLImpl extends MinimalEObjectImpl.Container implements sedML
         return getLevel();
       case SedmlPackage.SED_ML__LIST_OF_HYPOTHESES:
         return getListOfHypotheses();
+      case SedmlPackage.SED_ML__LIST_OF_DATA_DESCRIPTIONS:
+        return getListOfDataDescriptions();
       case SedmlPackage.SED_ML__LIST_OF_SIMULATIONS:
         return getListOfSimulations();
       case SedmlPackage.SED_ML__LIST_OF_MODELS:
@@ -572,6 +635,9 @@ public class sedMLImpl extends MinimalEObjectImpl.Container implements sedML
         return;
       case SedmlPackage.SED_ML__LIST_OF_HYPOTHESES:
         setListOfHypotheses((listOfHypotheses)newValue);
+        return;
+      case SedmlPackage.SED_ML__LIST_OF_DATA_DESCRIPTIONS:
+        setListOfDataDescriptions((listOfDataDescriptions)newValue);
         return;
       case SedmlPackage.SED_ML__LIST_OF_SIMULATIONS:
         setListOfSimulations((listOfSimulations)newValue);
@@ -611,6 +677,9 @@ public class sedMLImpl extends MinimalEObjectImpl.Container implements sedML
       case SedmlPackage.SED_ML__LIST_OF_HYPOTHESES:
         setListOfHypotheses((listOfHypotheses)null);
         return;
+      case SedmlPackage.SED_ML__LIST_OF_DATA_DESCRIPTIONS:
+        setListOfDataDescriptions((listOfDataDescriptions)null);
+        return;
       case SedmlPackage.SED_ML__LIST_OF_SIMULATIONS:
         setListOfSimulations((listOfSimulations)null);
         return;
@@ -646,6 +715,8 @@ public class sedMLImpl extends MinimalEObjectImpl.Container implements sedML
         return level != LEVEL_EDEFAULT;
       case SedmlPackage.SED_ML__LIST_OF_HYPOTHESES:
         return listOfHypotheses != null;
+      case SedmlPackage.SED_ML__LIST_OF_DATA_DESCRIPTIONS:
+        return listOfDataDescriptions != null;
       case SedmlPackage.SED_ML__LIST_OF_SIMULATIONS:
         return listOfSimulations != null;
       case SedmlPackage.SED_ML__LIST_OF_MODELS:

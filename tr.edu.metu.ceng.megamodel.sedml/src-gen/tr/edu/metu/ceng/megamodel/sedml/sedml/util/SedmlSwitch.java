@@ -73,10 +73,122 @@ public class SedmlSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+      case SedmlPackage.SED_BASE:
+      {
+        SEDBase sedBase = (SEDBase)theEObject;
+        T result = caseSEDBase(sedBase);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.CHANGE:
+      {
+        change change = (change)theEObject;
+        T result = casechange(change);
+        if (result == null) result = caseSEDBase(change);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.TARGET:
+      {
+        target target = (target)theEObject;
+        T result = casetarget(target);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.CHANGE_ATTRIBUTE:
+      {
+        changeAttribute changeAttribute = (changeAttribute)theEObject;
+        T result = casechangeAttribute(changeAttribute);
+        if (result == null) result = casetarget(changeAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.COMPUTE_CHANGE:
+      {
+        computeChange computeChange = (computeChange)theEObject;
+        T result = casecomputeChange(computeChange);
+        if (result == null) result = casetarget(computeChange);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.ADD_XML:
+      {
+        addXML addXML = (addXML)theEObject;
+        T result = caseaddXML(addXML);
+        if (result == null) result = casetarget(addXML);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.CHANGE_XML:
+      {
+        changeXML changeXML = (changeXML)theEObject;
+        T result = casechangeXML(changeXML);
+        if (result == null) result = casetarget(changeXML);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.NEW_XML:
+      {
+        newXML newXML = (newXML)theEObject;
+        T result = casenewXML(newXML);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SedmlPackage.SED_ML:
       {
         sedML sedML = (sedML)theEObject;
         T result = casesedML(sedML);
+        if (result == null) result = caseSEDBase(sedML);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.LIST_OF_DATA_DESCRIPTIONS:
+      {
+        listOfDataDescriptions listOfDataDescriptions = (listOfDataDescriptions)theEObject;
+        T result = caselistOfDataDescriptions(listOfDataDescriptions);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.DATA_DESCRIPTION:
+      {
+        dataDescription dataDescription = (dataDescription)theEObject;
+        T result = casedataDescription(dataDescription);
+        if (result == null) result = caseSEDBase(dataDescription);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.DIMENSION_DESCRIPTION:
+      {
+        dimensionDescription dimensionDescription = (dimensionDescription)theEObject;
+        T result = casedimensionDescription(dimensionDescription);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.LIST_OF_DATA_SOURCES:
+      {
+        listOfDataSources listOfDataSources = (listOfDataSources)theEObject;
+        T result = caselistOfDataSources(listOfDataSources);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.DATA_SOURCE:
+      {
+        dataSource dataSource = (dataSource)theEObject;
+        T result = casedataSource(dataSource);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.LIST_OF_DATA_SLICES:
+      {
+        listOfDataSlices listOfDataSlices = (listOfDataSlices)theEObject;
+        T result = caselistOfDataSlices(listOfDataSlices);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.SLICE:
+      {
+        slice slice = (slice)theEObject;
+        T result = caseslice(slice);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -195,6 +307,14 @@ public class SedmlSwitch<T> extends Switch<T>
       {
         model model = (model)theEObject;
         T result = casemodel(model);
+        if (result == null) result = caseSEDBase(model);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.LIST_OF_CHANGES:
+      {
+        listOfChanges listOfChanges = (listOfChanges)theEObject;
+        T result = caselistOfChanges(listOfChanges);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -202,6 +322,22 @@ public class SedmlSwitch<T> extends Switch<T>
       {
         dataGenerator dataGenerator = (dataGenerator)theEObject;
         T result = casedataGenerator(dataGenerator);
+        if (result == null) result = caseSEDBase(dataGenerator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.LIST_OF_PARAMETERS:
+      {
+        listOfParameters listOfParameters = (listOfParameters)theEObject;
+        T result = caselistOfParameters(listOfParameters);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.PARAMETER:
+      {
+        parameter parameter = (parameter)theEObject;
+        T result = caseparameter(parameter);
+        if (result == null) result = caseSEDBase(parameter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -216,6 +352,7 @@ public class SedmlSwitch<T> extends Switch<T>
       {
         variable variable = (variable)theEObject;
         T result = casevariable(variable);
+        if (result == null) result = caseSEDBase(variable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -226,10 +363,81 @@ public class SedmlSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SedmlPackage.REPEATED_TASK:
+      {
+        repeatedTask repeatedTask = (repeatedTask)theEObject;
+        T result = caserepeatedTask(repeatedTask);
+        if (result == null) result = caseabstractTask(repeatedTask);
+        if (result == null) result = caseSEDBase(repeatedTask);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.LIST_OF_RANGES:
+      {
+        listOfRanges listOfRanges = (listOfRanges)theEObject;
+        T result = caselistOfRanges(listOfRanges);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.RANGE:
+      {
+        range range = (range)theEObject;
+        T result = caserange(range);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.UNIFORM_RANGE:
+      {
+        uniformRange uniformRange = (uniformRange)theEObject;
+        T result = caseuniformRange(uniformRange);
+        if (result == null) result = caserange(uniformRange);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.VECTOR_RANGE:
+      {
+        vectorRange vectorRange = (vectorRange)theEObject;
+        T result = casevectorRange(vectorRange);
+        if (result == null) result = caserange(vectorRange);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.VALUE:
+      {
+        value value = (value)theEObject;
+        T result = casevalue(value);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.FUNCTIONAL_RANGE:
+      {
+        functionalRange functionalRange = (functionalRange)theEObject;
+        T result = casefunctionalRange(functionalRange);
+        if (result == null) result = caserange(functionalRange);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.ABSTRACT_TASK:
+      {
+        abstractTask abstractTask = (abstractTask)theEObject;
+        T result = caseabstractTask(abstractTask);
+        if (result == null) result = caseSEDBase(abstractTask);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.SUB_TASK:
+      {
+        subTask subTask = (subTask)theEObject;
+        T result = casesubTask(subTask);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SedmlPackage.TASK:
       {
         task task = (task)theEObject;
         T result = casetask(task);
+        if (result == null) result = caseabstractTask(task);
+        if (result == null) result = caseSEDBase(task);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -254,10 +462,55 @@ public class SedmlSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SedmlPackage.OUTPUT:
+      {
+        output output = (output)theEObject;
+        T result = caseoutput(output);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SedmlPackage.PLOT2_D:
       {
         plot2D plot2D = (plot2D)theEObject;
         T result = caseplot2D(plot2D);
+        if (result == null) result = caseoutput(plot2D);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.PLOT3_D:
+      {
+        plot3D plot3D = (plot3D)theEObject;
+        T result = caseplot3D(plot3D);
+        if (result == null) result = caseoutput(plot3D);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.REPORT:
+      {
+        report report = (report)theEObject;
+        T result = casereport(report);
+        if (result == null) result = caseoutput(report);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.LIST_OF_DATA_SETS:
+      {
+        listOfDataSets listOfDataSets = (listOfDataSets)theEObject;
+        T result = caselistOfDataSets(listOfDataSets);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.DATA_SET:
+      {
+        dataSet dataSet = (dataSet)theEObject;
+        T result = casedataSet(dataSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.LIST_OF_SURFACES:
+      {
+        listOfSurfaces listOfSurfaces = (listOfSurfaces)theEObject;
+        T result = caselistOfSurfaces(listOfSurfaces);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -282,10 +535,29 @@ public class SedmlSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SedmlPackage.SIMULATION:
+      {
+        simulation simulation = (simulation)theEObject;
+        T result = casesimulation(simulation);
+        if (result == null) result = caseSEDBase(simulation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SedmlPackage.UNIFORM_TIME_COURSE:
       {
         uniformTimeCourse uniformTimeCourse = (uniformTimeCourse)theEObject;
         T result = caseuniformTimeCourse(uniformTimeCourse);
+        if (result == null) result = casesimulation(uniformTimeCourse);
+        if (result == null) result = caseSEDBase(uniformTimeCourse);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.ONE_STEP:
+      {
+        oneStep oneStep = (oneStep)theEObject;
+        T result = caseoneStep(oneStep);
+        if (result == null) result = casesimulation(oneStep);
+        if (result == null) result = caseSEDBase(oneStep);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -296,8 +568,150 @@ public class SedmlSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SedmlPackage.LIST_OF_ALGORITHM_PARAMETERS:
+      {
+        listOfAlgorithmParameters listOfAlgorithmParameters = (listOfAlgorithmParameters)theEObject;
+        T result = caselistOfAlgorithmParameters(listOfAlgorithmParameters);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SedmlPackage.ALGORITHM_PARAMETER:
+      {
+        algorithmParameter algorithmParameter = (algorithmParameter)theEObject;
+        T result = casealgorithmParameter(algorithmParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SED Base</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SED Base</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSEDBase(SEDBase object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>change</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>change</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casechange(change object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>target</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>target</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetarget(target object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>change Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>change Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casechangeAttribute(changeAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>compute Change</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>compute Change</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casecomputeChange(computeChange object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>add XML</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>add XML</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseaddXML(addXML object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>change XML</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>change XML</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casechangeXML(changeXML object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>new XML</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>new XML</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casenewXML(newXML object)
+  {
+    return null;
   }
 
   /**
@@ -312,6 +726,118 @@ public class SedmlSwitch<T> extends Switch<T>
    * @generated
    */
   public T casesedML(sedML object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>list Of Data Descriptions</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>list Of Data Descriptions</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselistOfDataDescriptions(listOfDataDescriptions object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>data Description</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>data Description</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casedataDescription(dataDescription object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>dimension Description</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>dimension Description</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casedimensionDescription(dimensionDescription object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>list Of Data Sources</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>list Of Data Sources</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselistOfDataSources(listOfDataSources object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>data Source</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>data Source</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casedataSource(dataSource object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>list Of Data Slices</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>list Of Data Slices</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselistOfDataSlices(listOfDataSlices object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>slice</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>slice</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseslice(slice object)
   {
     return null;
   }
@@ -573,6 +1099,22 @@ public class SedmlSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>list Of Changes</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>list Of Changes</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselistOfChanges(listOfChanges object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>data Generator</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -584,6 +1126,38 @@ public class SedmlSwitch<T> extends Switch<T>
    * @generated
    */
   public T casedataGenerator(dataGenerator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>list Of Parameters</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>list Of Parameters</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselistOfParameters(listOfParameters object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseparameter(parameter object)
   {
     return null;
   }
@@ -632,6 +1206,150 @@ public class SedmlSwitch<T> extends Switch<T>
    * @generated
    */
   public T caselistOfTasks(listOfTasks object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>repeated Task</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>repeated Task</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caserepeatedTask(repeatedTask object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>list Of Ranges</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>list Of Ranges</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselistOfRanges(listOfRanges object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>range</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>range</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caserange(range object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>uniform Range</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>uniform Range</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseuniformRange(uniformRange object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>vector Range</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>vector Range</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casevectorRange(vectorRange object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casevalue(value object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>functional Range</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>functional Range</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casefunctionalRange(functionalRange object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>abstract Task</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>abstract Task</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseabstractTask(abstractTask object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>sub Task</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>sub Task</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casesubTask(subTask object)
   {
     return null;
   }
@@ -701,6 +1419,22 @@ public class SedmlSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>output</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>output</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseoutput(output object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>plot2 D</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -712,6 +1446,86 @@ public class SedmlSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseplot2D(plot2D object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>plot3 D</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>plot3 D</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseplot3D(plot3D object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>report</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>report</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casereport(report object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>list Of Data Sets</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>list Of Data Sets</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselistOfDataSets(listOfDataSets object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>data Set</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>data Set</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casedataSet(dataSet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>list Of Surfaces</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>list Of Surfaces</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselistOfSurfaces(listOfSurfaces object)
   {
     return null;
   }
@@ -765,6 +1579,22 @@ public class SedmlSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>simulation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>simulation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casesimulation(simulation object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>uniform Time Course</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -781,6 +1611,22 @@ public class SedmlSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>one Step</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>one Step</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseoneStep(oneStep object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>algorithm</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -792,6 +1638,38 @@ public class SedmlSwitch<T> extends Switch<T>
    * @generated
    */
   public T casealgorithm(algorithm object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>list Of Algorithm Parameters</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>list Of Algorithm Parameters</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caselistOfAlgorithmParameters(listOfAlgorithmParameters object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>algorithm Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>algorithm Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casealgorithmParameter(algorithmParameter object)
   {
     return null;
   }
