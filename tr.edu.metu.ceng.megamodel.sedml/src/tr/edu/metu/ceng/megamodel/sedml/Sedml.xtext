@@ -2,10 +2,110 @@ grammar tr.edu.metu.ceng.megamodel.sedml.Sedml with org.eclipse.xtext.common.Ter
 
 generate sedml "http://www.ceng.metu.edu.tr/~e1774785/megamodel/sedml"
 
+SEDBase:
+	parameter | variable | sedML | model | dataDescription | abstractTask | dataGenerator | simulation | change;
+
+change:
+	'change'
+	'{'
+	(target+=target)*
+	'}';
+
+target:
+	computeChange | changeAttribute | addXML | changeXML | removeXML;
+
+removeXML:
+	'removeXML'
+;
+
+changeAttribute:
+	'changeAttribute'
+	'{'
+	'newValue' ':' (newValue=STRING)
+	'}';
+
+computeChange:
+	'computeChange'
+	'{'
+	'math' ':' (math=math)
+	(listOfVariables=listOfVariables)
+	(listOfParameters=listOfParameters)
+	'}';
+
+addXML:
+	'addXML'
+	'{'
+	(newXML+=newXML)*
+	'}';
+
+changeXML:
+	'changeXML'
+	'{'
+	(newXML+=newXML)*
+	'}';
+
+newXML:
+	'newXML'
+	'{'
+	'anyXML' ':' (anyXML=STRING)
+	'}';
+
 sedML:
-	version=INT level=INT listOfHypotheses=listOfHypotheses (listOfSimulations=listOfSimulations)
+	version=INT level=INT listOfHypotheses=listOfHypotheses listOfDataDescriptions=listOfDataDescriptions
+	listOfSimulations=listOfSimulations
 	listOfModels=listOfModels listOfTasks=listOfTasks listOfDataGenerators=listOfDataGenerators
 	listOfOutputs=listOfOutputs;
+
+listOfDataDescriptions:
+	'listOfDataDescriptions'
+	'{'
+	(dataDescription+=dataDescription)*
+	'}';
+
+dataDescription:
+	'dataDescription'
+	'{'
+	'id' ':' (id=ID)
+	'name' ':' (name=STRING)
+	'format' ':' (format=STRING)
+	'source' ':' (source=STRING)
+	(listOfDataSources=listOfDataSources)
+	(dimensionDescription=dimensionDescription)
+	'}';
+
+dimensionDescription:
+	'dimensionDescription'
+	'{'
+	'xmlns' ':' (xmlns=STRING)
+	'}';
+
+listOfDataSources:
+	'listOfDataSources'
+	'{'
+	(dataSource+=dataSource)*
+	'}';
+
+dataSource:
+	'dataSource'
+	'{'
+	'id' ':' (id=ID)
+	'name' ':' (name=STRING)
+	'indexSet' ':' (indexSet=STRING)
+	(listOfSlices=listOfDataSlices)
+	'}';
+
+listOfDataSlices:
+	'listOfDataSlices'
+	'{'
+	(slice+=slice)*
+	'}';
+
+slice:
+	'slice'
+	'{'
+	'reference' ':' (referenceid=ID)
+	'value' ':' (value=STRING)
+	'}';
 
 listOfHypotheses:
 	'listOfHypotheses'
@@ -116,6 +216,13 @@ model:
 	'language' ':' (language=STRING)
 	'source' ':' (source=STRING)
 	'name' ':' (name=STRING)
+	(listOfChanges=listOfChanges)?
+	'}';
+
+listOfChanges:
+	'listOfChanges'
+	'{'
+	(change+=change)*
 	'}';
 
 dataGenerator:
@@ -123,94 +230,126 @@ dataGenerator:
 	'id' ':' (id=ID)
 	'name' ':' (name=STRING)
 	(listOfVariables=listOfVariables)?
+	(listOfParameters=listOfParameters)?
 	(math=math)?
 	'}';
 
+listOfParameters:
+	'listOfParameters' '{' (parameter+=parameter)* '}';
+
+parameter:
+	'parameter' '{' 'id' ':' (id=ID) 'name' ':' (name=STRING) 'value' ':' (value=DOUBLE) '}';
+
 listOfVariables:
-	'listOfDataVariables'
-	'{'
-	(variable+=variable)*
-	'}';
+	'listOfDataVariables' '{' (variable+=variable)* '}';
 
 variable:
-	'variable' '{'
-	'id' ':' (id=ID)
-	'target' ':' (target=STRING)
-	'taskReference' ':' (taskReference=task)
-	'symbol' ':' (symbol=STRING)
-	'}';
+	'variable' '{' 'id' ':' (id=ID) 'name' ':' (name=STRING) 'target' ':' (target=STRING) 'taskReference' ':'
+	(taskReference=task) 'modelReference' ':' (modelReference=model) 'symbol' ':'
+	(symbol=STRING) '}';
 
 listOfTasks:
-	'listOfTasks'
-	'{'
-	(task+=task)*
+	'listOfTasks' '{' (task+=task)* (RepeatedTask+=repeatedTask)* '}';
+
+repeatedTask:
+	'listOfRepeatedTasks' '{' 'id' ':' (id=ID) 'name' ':' (name=STRING) (subTask+=subTask)* (listOfRanges=listOfRanges) (listOfChanges=listOfChanges)?
 	'}';
+
+listOfRanges:
+	'listOfRanges' '{' (range+=range)* '}';
+
+range:
+	uniformRange | vectorRange | functionalRange
+	'id' ':' (id=ID);
+
+uniformRange:
+	'uniformRange' '{' 'start' ':' (start=DOUBLE) 'end' ':' (end=DOUBLE) 'end' ':' (numberOfPoints=INT) 'type' ':'
+	(type=STRING) '}';
+
+vectorRange:
+	'vectorRange' '{' (value+=value)* '}';
+
+value:
+	'value' '{' 'content' ':' (content=DOUBLE) '}';
+
+functionalRange:
+	'functionalRange' '{' 'range' ':' (range=ID) (listOfVariables=listOfVariables)?
+	(listOfParameters=listOfParameters)? (math=math)? '}';
+
+abstractTask:
+	task | repeatedTask;
+
+subTask:
+	'subTask' '{' 'task' ':' (modelReference=model) 'order' ':' (order=INT) '}';
 
 task:
-	'task' '{'
-	'id' ':' (id=ID)
-	'modelReference' ':' (modelReference=model)
-	'simulationReference' ':' (simulationReference=uniformTimeCourse)
-	'name' ':' (name=STRING)
-	'}';
+	'task' '{' 'id' ':' (id=ID) 'modelReference' ':' (modelReference=model) 'simulationReference' ':'
+	(simulationReference=uniformTimeCourse) 'name' ':' (name=STRING) '}';
 
 listOfDataGenerators:
-	'listOfDataGenerators'
-	'{'
-	(datagenerator+=dataGenerator)*
-	'}';
+	'listOfDataGenerators' '{' (datagenerator+=dataGenerator)* '}';
 
 math:
-	'math' '{'
-	'xlms' ':' (xlms=STRING)
-	'}';
+	'math' '{' 'xlms' ':' (xlms=STRING) '}';
 
 listOfOutputs:
-	'listOfOutputs'
-	'{'
-	(plot2D+=plot2D)*
-	'}';
+	'listOfOutputs' '{' (output=output)* '}';
+
+output:
+	plot2D | plot3D | report;
 
 plot2D:
-	'plot2D' '{'
-	'id' ':' (id=ID)
-	'name' ':' (name=STRING)
-	(listOfCurves=listOfCurves)
-	'}';
+	'plot2D' '{' 'id' ':' (id=ID) 'name' ':' (name=STRING) (listOfCurves=listOfCurves) '}';
+
+plot3D:
+	'plot3D' '{' listOfSurfaces=listOfSurfaces '}';
+
+report:
+	'report' '{' 'id' ':' (id=ID) 'name' ':' (name=STRING) (listOfDataSets=listOfDataSets) '}';
+
+listOfDataSets:
+	'listOfCurves' '{' (dataSet+=dataSet)* '}';
+
+dataSet:
+	'dataSet' '{' 'label' ':' (label=STRING) 'name' ':' (name=STRING) 'dataReference' ':' (dataReference=STRING) '}';
+
+listOfSurfaces:
+	'surface' '{' 'id' ':' (id=ID) 'logX' ':' (logX=STRING) 'logY' ':' (logY=STRING) 'logZ' ':' (logZ=STRING)
+	'xDataReference' ':' (xDataReference=STRING) 'yDataReference' ':' (yDataReference=STRING) 'zDataReference' ':'
+	(zDataReference=STRING) '}';
 
 listOfCurves:
-	'listOfCurves'
-	'{'
-	(curve+=curve)*
-	'}';
+	'listOfCurves' '{' (curve+=curve)* '}';
 
 curve:
-	'curve' '{'
-	'id' ':' (id=ID)
-	'logX' ':' (logX=STRING)
-	'logY' ':' (logY=STRING)
-	'xDataReference' ':' (xDataReference=STRING)
-	'yDataReference' ':' (yDataReference=STRING)
-	'}';
+	'curve' '{' 'id' ':' (id=ID) 'logX' ':' (logX=STRING) 'logY' ':' (logY=STRING) 'xDataReference' ':'
+	(xDataReference=STRING) 'yDataReference' ':' (yDataReference=STRING) '}';
 
 listOfSimulations:
-	'listOfSimulations'
-	'{'
-	(uniformTimeCourse+=uniformTimeCourse)*
-	'}';
+	'listOfSimulations' '{' (simulation+=simulation)* '}';
+
+simulation:
+	oneStep | SteadyState | uniformTimeCourse;
 
 uniformTimeCourse:
-	'uniformtimecourse' '{'
-	'id' ':' (id=ID)
-	'initialTime' ':' (initialTime=INT)
-	'outputStartTime' ':' (outputStartTime=INT)
-	'outputEndTime' ':' (outputEndTime=INT)
-	'numberOfPoints' ':' (numberOfPoints=INT)
-	(algorithm=algorithm)
-	'}';
+	'uniformtimecourse' '{' 'id' ':' (id=ID) 'initialTime' ':' (initialTime=INT) 'outputStartTime' ':'
+	(outputStartTime=INT) 'outputEndTime' ':' (outputEndTime=INT) 'numberOfPoints' ':' (numberOfPoints=INT)
+	(algorithm=algorithm) '}';
+
+oneStep:
+	'oneStep' '{' 'step' ':' (step=DOUBLE) '}';
+
+SteadyState:
+	'steadyState' '{' '}';
+
+DOUBLE:
+	('.')? (INT)?;
 
 algorithm:
-	'algorithm' '{'
-	'kisaoID' ':' (kisaoID=STRING)
-	'}';
+	'algorithm' '{' 'kisaoID' ':' (kisaoID=STRING) (ListOfAlgorithmParameters=listOfAlgorithmParameters) '}';
 
+listOfAlgorithmParameters:
+	'listOfAlgorithmParameters' '{' (AlgorithmParameter+=algorithmParameter)* '}';
+
+algorithmParameter:
+	'algorithmParameter' '{' 'kisaoID' ':' (kisaoID=STRING) 'value' ':' (value=DOUBLE) '}';
